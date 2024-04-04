@@ -8,9 +8,22 @@ import {
   Table,
 } from "semantic-ui-react";
 
+/**
+ * EventTable component renders a table with events data.
+ *
+ * @component
+ * @param {Array} events - Array of events objects.
+ * @property {string} events[].name - The name of the event.
+ * @property {string} events[].department - The department of the event.
+ * @property {string} events[].terminalId - The terminal id of the event.
+ * @property {string} events[].arrivalTime - The arrival time of the event.
+ * @property {string} events[].departureTime - The departure time of the event.
+ * @return {JSX.Element} The rendered EventTable component.
+ */
 const EventTable = ({ events }) => {
   return (
-    <Table striper>
+    <Table striped>
+      {/* Table header */}
       <TableHeader>
         <TableRow>
           <TableHeaderCell>Name</TableHeaderCell>
@@ -20,6 +33,8 @@ const EventTable = ({ events }) => {
           <TableHeaderCell>Departure Time</TableHeaderCell>
         </TableRow>
       </TableHeader>
+
+      {/* Table body */}
       <TableBody>
         {events.map((event, index) => (
           <TableRow key={index}>
