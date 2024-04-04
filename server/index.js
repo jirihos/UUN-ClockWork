@@ -1,3 +1,5 @@
+import "semantic-ui-css/semantic.min.css";
+
 require("dotenv").config();
 const express = require("express");
 const app = express();

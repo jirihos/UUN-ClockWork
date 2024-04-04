@@ -1,31 +1,37 @@
 import React from "react";
+import {
+  TableRow,
+  TableHeaderCell,
+  TableHeader,
+  TableCell,
+  TableBody,
+  Table,
+} from "semantic-ui-react";
 
 const EventTable = ({ events }) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Department</th>
-          <th>Terminal ID</th>
-          <th>Date</th>
-          <th>Arrival Time</th>
-          <th>Departure Time</th>
-        </tr>
-      </thead>
-      <tbody>
+    <Table striper>
+      <TableHeader>
+        <TableRow>
+          <TableHeaderCell>Name</TableHeaderCell>
+          <TableHeaderCell>Department</TableHeaderCell>
+          <TableHeaderCell>Terminal ID</TableHeaderCell>
+          <TableHeaderCell>Arrival Time</TableHeaderCell>
+          <TableHeaderCell>Departure Time</TableHeaderCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {events.map((event, index) => (
-          <tr key={index}>
-            <td>{event.name}</td>
-            <td>{event.department}</td>
-            <td>{event.terminalId}</td>
-            <td>{event.date}</td>
-            <td>{event.arrivalTime}</td>
-            <td>{event.departureTime}</td>
-          </tr>
+          <TableRow key={index}>
+            <TableCell>{event.name}</TableCell>
+            <TableCell>{event.department}</TableCell>
+            <TableCell>{event.terminalId}</TableCell>
+            <TableCell>{event.arrivalTime}</TableCell>
+            <TableCell>{event.departureTime}</TableCell>
+          </TableRow>
         ))}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   );
 };
 
