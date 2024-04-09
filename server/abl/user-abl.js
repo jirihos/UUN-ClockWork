@@ -1,53 +1,68 @@
-const userDao = require("../dao/user-mongo");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const userDao = require("../dao/user-mongo");
+const schemas = require("../schema/index");
+const { validate } = require("../validation");
+const errors = require("../errors");
 
 class UserAbl {
   async login(req, res) {
-    // TODO: validation
+    // validation
+    await validate(schemas.userLoginSchema, req.body);
 
+    // get user
     const user = await userDao.getByUsername(req.body.username);
     if (user === null) {
-      res.status(401).send("The user doesn't exist.");
-      return;
+      throw new errors.UserDoesNotExist();
     }
 
+    // compare the password
     const result = await bcrypt.compare(req.body.password, user.passwordHash);
 
     if (result) {
+      // create a token
       const payload = {
         username: user.username,
         role: user.role,
       };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn: "1h",
+        expiresIn: "14d", // TODO: change to 1h
       });
 
       res.json({ token });
     } else {
-      res.status(401).send("Incorrect password");
+      throw new errors.IncorrectPassword();
     }
   }
 
   async createUser(req, res) {
-    // TODO: validation
+    // validation
+    await validate(schemas.userCreateUserSchema, req.body);
 
     console.log(`User: ${JSON.stringify(req.user, null, 2)}`); // TODO: remove
 
+    // authorize admin
     if (req.user?.role !== "admin") {
-      res.status(403).json({ error: "User is not authorized" });
-      return;
+      throw new errors.NotAuthorized();
     }
 
+    // throw an error if the user already exists
+    const user = await userDao.getByUsername(req.body.username);
+    if (user !== null) {
+      throw new errors.UserAlreadyExists();
+    }
+
+    // hash the password
     const passwordHash = await bcrypt.hash(req.body.password, 10);
 
-    const user = await userDao.create({
+    // create a user in a database
+    const newUser = await userDao.create({
       username: req.body.username,
       passwordHash,
       role: req.body.role,
     });
 
-    res.json(user);
+    res.json(newUser);
   }
 }
 

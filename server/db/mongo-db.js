@@ -2,7 +2,23 @@ const { MongoClient } = require("mongodb");
 
 class MongoDb {
   constructor() {
-    this.client = new MongoClient(process.env.MONGODB_URI);
+    this.client = new MongoClient(process.env.MONGODB_URI, {
+      connectTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 5000,
+    });
+
+    // attempt to connect
+    this.client
+      .connect()
+      .then(() => {
+        console.log("MongoDB connected");
+      })
+      .catch((err) => {
+        console.error(err);
+        console.error("MongoDB failed to connect");
+        process.exit(1);
+      });
+
     this.db = this.client.db(process.env.MONGODB_DB_NAME);
   }
 

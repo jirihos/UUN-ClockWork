@@ -12,7 +12,8 @@ function authenticateToken(req, res, next) {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
-      res.status(401).send(err);
+      err.status = 401;
+      next(err);
     } else {
       req.user = decoded;
       next();
