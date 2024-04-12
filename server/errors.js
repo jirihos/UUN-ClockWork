@@ -1,4 +1,12 @@
 module.exports = {
+  QueryParametersValidationError: class extends Error {
+    constructor() {
+      super();
+      this.code = "QueryParametersValidationError";
+      this.message = "Query parameters are not valid.";
+      this.status = 400;
+    }
+  },
   UserDoesNotExist: class extends Error {
     constructor() {
       super();

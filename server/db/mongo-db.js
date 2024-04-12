@@ -38,6 +38,29 @@ class MongoDb {
       await initializer();
     }
   }
+
+  async listPage(collection, pageIndex, pageSize) {
+    const cursor = await collection.aggregate([
+      {
+        $facet: {
+          pageInfo: [{ $count: "totalCount" }],
+          items: [{ $skip: pageIndex * pageSize }, { $limit: pageSize }],
+        },
+      },
+    ]);
+
+    const data = await cursor.next();
+
+    // correct pageInfo
+    const totalCount = data.pageInfo[0].totalCount;
+    data.pageInfo = {
+      pageIndex,
+      pageSize,
+      totalCount,
+    };
+
+    return data;
+  }
 }
 
 module.exports = new MongoDb();

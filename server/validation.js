@@ -2,7 +2,9 @@ async function validate(schema, data) {
   try {
     await schema.validateAsync(data);
   } catch (e) {
-    e.status = 400;
+    if (e.name === "ValidationError") {
+      e.status = 400;
+    }
     throw e;
   }
 }

@@ -1,9 +1,9 @@
 const router = require("express").Router();
-
-const UserAbl = require("../abl/user-abl");
 const {
   authenticateToken,
 } = require("../middleware/authentication-middleware");
+
+const UserAbl = require("../abl/user-abl");
 
 router.post("/login", async (req, res, next) => {
   try {
