@@ -1,0 +1,25 @@
+services:
+  node-red:
+    build: .
+    depends_on:
+      - mongodb
+    environment:
+      NODE_ENV: production
+      TZ: ${TZ:-Europe/Amsterdam}
+    secrets:
+      - terminal_api_key
+    ports:
+      - 1881:1880
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27018:27017
+
+volumes:
+  mongodb:
+
+secrets:
+  terminal_api_key:
+    file: ./terminal_api_key.txt
