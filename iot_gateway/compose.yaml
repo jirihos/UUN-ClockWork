@@ -5,11 +5,13 @@ services:
       - mongodb
     environment:
       NODE_ENV: production
-      TZ: ${TZ:-Europe/Amsterdam}
+      TZ: ${TZ:-Europe/Prague}
     secrets:
       - terminal_api_key
     ports:
       - 1881:1880
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
   mongodb:
     image: mongo
     volumes:

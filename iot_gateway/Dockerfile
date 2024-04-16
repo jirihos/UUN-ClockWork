@@ -5,6 +5,7 @@ RUN apk update
 RUN apk add mosquitto mosquitto-clients
 RUN apk add python3 py3-pip
 RUN pip install --upgrade --no-cache-dir bcg
+RUN npm install pm2 -g
 
 USER node-red
 
