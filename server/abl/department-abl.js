@@ -28,13 +28,38 @@ class DepartmentAbl {
     // validation
     await validate(schemas.departmentCreateSchema, req.body);
 
-    let result = await departmentDao.findByCode(req.body);
+    // authorize admin
+    if (req.user?.role !== "admin") {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await departmentDao.findById(req.body);
 
     if (!result) {
       let newDepartment = await departmentDao.create(req.body);
       res.json(newDepartment);
     } else {
       throw new errors.UserAlreadyExists();
+    }
+  }
+
+  async delete(req, res) {
+    // validation
+    await validate(schemas.departmentCreateSchema, req.body);
+
+    // authorize admin
+    if (req.user?.role !== "admin") {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await departmentDao.findById(req.body);
+
+    if (result) {
+      // If department exists, delete it
+      await departmentDao.delete(req.body);
+      res.json({ message: "Department deleted successfully" });
+    } else {
+      throw new errors.UserDoesNotExist();
     }
   }
 }

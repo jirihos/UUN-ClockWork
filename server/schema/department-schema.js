@@ -6,8 +6,10 @@ Joi.objectId = require("joi-objectid")(Joi);
 //   id: Joi.objectId(),
 // });
 
-exports.departmentsCreateSchema = Joi.object({
-  id: Joi.ObjectId(),
+exports.departmentCreateSchema = Joi.object({
+  username: Joi.string().alphanum().min(3).max(20).required(),
+  password: Joi.string().min(1).max(72).required(),
+  id: Joi.objectId(),
   name: Joi.string().alphanum().min(2).max(50).required(),
 });
 
@@ -16,5 +18,5 @@ exports.departmentFindByNameSchema = Joi.object({
 });
 
 exports.departmentFindByIdSchema = Joi.object({
-  id: JoiObjectId(),
+  id: Joi.objectId(),
 });

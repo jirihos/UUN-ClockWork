@@ -23,7 +23,7 @@ router.post("/create", async (req, res, next) => {
 
 router.post("/delete", async (req, res, next) => {
   try {
-    await DepartmentAbl.create(req, res);
+    await DepartmentAbl.delete(req, res);
   } catch (e) {
     next(e);
   }

@@ -3,6 +3,14 @@ const mongo = require("../db/mongo-db");
 class DepartmentMongo {
   constructor() {
     this.departmentCol = mongo.getCollection("department");
+    mongo.initializeCollection("department", () => this.initialize());
+  }
+
+  async initialize() {
+    await this.departmentCol.createIndex(
+      { departmentName: 1 },
+      { unique: true },
+    );
   }
 
   async list(pageIndex, pageSize) {
@@ -21,6 +29,11 @@ class DepartmentMongo {
   }
   async getById(department) {
     return await this.departmentCol.findOne({
+      departmentId: department.departmentId,
+    });
+  }
+  async delete(department) {
+    return await this.departmentCol.deleteOne({
       departmentId: department.departmentId,
     });
   }
