@@ -23,6 +23,20 @@ class DepartmentAbl {
 
     res.json(output);
   }
+
+  async create(req, res) {
+    // validation
+    await validate(schemas.departmentCreateSchema, req.body);
+
+    let result = await departmentDao.findByCode(req.body);
+
+    if (!result) {
+      let newDepartment = await departmentDao.create(req.body);
+      res.json(newDepartment);
+    } else {
+      throw new errors.UserAlreadyExists();
+    }
+  }
 }
 
 module.exports = new DepartmentAbl();

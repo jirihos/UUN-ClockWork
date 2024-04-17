@@ -13,4 +13,20 @@ router.get("/list", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.post("/create", async (req, res, next) => {
+  try {
+    await DepartmentAbl.create(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.post("/delete", async (req, res, next) => {
+  try {
+    await DepartmentAbl.create(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
