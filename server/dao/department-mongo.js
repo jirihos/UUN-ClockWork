@@ -14,13 +14,15 @@ class DepartmentMongo {
       departmentName: department.departmentName,
     });
   }
-  async getByName(body) {
-    return await this.employeeCol.findOne({
-      employeeCode: body.departmentName,
+  async getByName(department) {
+    return await this.departmentCol.findOne({
+      departmentName: department.departmentName,
     });
   }
-  async getById(body) {
-    return await this.employeeCol.findOne({ employeeCode: body.departmentId });
+  async getById(department) {
+    return await this.departmentCol.findOne({
+      departmentId: department.departmentId,
+    });
   }
 }
 
