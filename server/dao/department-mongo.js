@@ -26,16 +26,16 @@ class DepartmentMongo {
       name: departmentName,
     });
   }
-  // TODO uprvit zbyle fkce
+
   async getById(_id) {
     return await this.departmentCol.findOne({
       _id: _id,
     });
   }
-  async delete(departmentName) {
+  async delete(_id) {
     // No need to return the result
     await this.departmentCol.deleteOne({
-      name: departmentName,
+      _id: _id,
     });
   }
 }

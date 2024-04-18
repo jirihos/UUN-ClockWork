@@ -57,10 +57,14 @@ class DepartmentAbl {
       throw new errors.NotAuthorized();
     }
     // Find department by ID
-    const result = await departmentDao.getByName(req.body.name);
+    const { ObjectId } = require("mongodb");
+
+    // Convert the _id string to ObjectId
+    const _id = new ObjectId(req.body._id);
+    const result = await departmentDao.getById(_id);
     if (result) {
       // If department exists, delete it
-      await departmentDao.delete(req.body.name);
+      await departmentDao.delete(_id);
       res.json(req.body);
     } else {
       throw new errors.DepartmentDoesNotExist();
