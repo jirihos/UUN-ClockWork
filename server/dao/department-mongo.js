@@ -1,6 +1,4 @@
 const mongo = require("../db/mongo-db");
-const Joi = require("joi");
-Joi.objectId = require("joi-objectid")(Joi);
 class DepartmentMongo {
   constructor() {
     this.departmentCol = mongo.getCollection("department");
