@@ -13,7 +13,7 @@ router.get("/list", authenticateToken, async (req, res, next) => {
   }
 });
 
-router.post("/create", async (req, res, next) => {
+router.post("/create", authenticateToken, async (req, res, next) => {
   try {
     await DepartmentAbl.create(req, res);
   } catch (e) {
@@ -21,7 +21,7 @@ router.post("/create", async (req, res, next) => {
   }
 });
 
-router.post("/delete", async (req, res, next) => {
+router.post("/delete", authenticateToken, async (req, res, next) => {
   try {
     await DepartmentAbl.delete(req, res);
   } catch (e) {

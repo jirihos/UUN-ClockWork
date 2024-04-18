@@ -39,4 +39,22 @@ module.exports = {
       this.status = 400;
     }
   },
+  DepartmentAlreadyExists: class extends Error {
+    constructor() {
+      super();
+      this.code = "DepartmentAlreadyExists";
+      this.message = "The department already exists.";
+      this.status = 400;
+    }
+  },
+  DepartmentDoesNotExist: class extends Error {
+    constructor() {
+      super();
+      this.code = "DepartmentDoesNotExist";
+      this.message = "The department doesn't exist.";
+      this.status = 401;
+    }
+  },
 };
+
+//TODO EROR dept exists

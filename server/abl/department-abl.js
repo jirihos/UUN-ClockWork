@@ -28,38 +28,42 @@ class DepartmentAbl {
     // validation
     await validate(schemas.departmentCreateSchema, req.body);
 
-    // authorize admin
-    if (req.user?.role !== "admin") {
+    //authorize admin
+    // authorization
+    if (req.user == null) {
       throw new errors.NotAuthorized();
     }
 
-    let result = await departmentDao.findById(req.body);
+    let result = await departmentDao.getByName(req.body.name);
 
     if (!result) {
-      let newDepartment = await departmentDao.create(req.body);
+      let department = {
+        name: req.body.name,
+        //id: req.body.insertedId,
+      };
+      let newDepartment = await departmentDao.create(department);
       res.json(newDepartment);
     } else {
-      throw new errors.UserAlreadyExists();
+      throw new errors.DepartmentAlreadyExists();
     }
   }
 
   async delete(req, res) {
     // validation
-    await validate(schemas.departmentCreateSchema, req.body);
+    await validate(schemas.departmentDeleteSchema, req.body);
 
-    // authorize admin
-    if (req.user?.role !== "admin") {
+    // authorization
+    if (!req.user) {
       throw new errors.NotAuthorized();
     }
-
-    let result = await departmentDao.findById(req.body);
-
+    // Find department by ID
+    const result = await departmentDao.getByName(req.body.name);
     if (result) {
       // If department exists, delete it
-      await departmentDao.delete(req.body);
-      res.json({ message: "Department deleted successfully" });
+      await departmentDao.delete(req.body.name);
+      res.json(req.body);
     } else {
-      throw new errors.UserDoesNotExist();
+      throw new errors.DepartmentDoesNotExist();
     }
   }
 }

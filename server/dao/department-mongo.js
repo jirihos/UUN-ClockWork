@@ -1,5 +1,6 @@
 const mongo = require("../db/mongo-db");
-
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 class DepartmentMongo {
   constructor() {
     this.departmentCol = mongo.getCollection("department");
@@ -7,34 +8,34 @@ class DepartmentMongo {
   }
 
   async initialize() {
-    await this.departmentCol.createIndex(
-      { departmentName: 1 },
-      { unique: true },
-    );
+    await this.departmentCol.createIndex({ name: 1 }, { unique: true });
   }
 
   async list(pageIndex, pageSize) {
     return await mongo.listPage(this.departmentCol, pageIndex, pageSize);
   }
 
-  async create(department) {
-    return await this.departmentCol.insertOne({
-      departmentName: department.departmentName,
-    });
+  async create(object) {
+    const result = await this.departmentCol.insertOne(object);
+    object._id = result.insertedId;
+    return object;
   }
-  async getByName(department) {
+
+  async getByName(departmentName) {
     return await this.departmentCol.findOne({
-      departmentName: department.departmentName,
+      name: departmentName,
     });
   }
-  async getById(department) {
+  // TODO uprvit zbyle fkce
+  async getById(_id) {
     return await this.departmentCol.findOne({
-      departmentId: department.departmentId,
+      _id: _id,
     });
   }
-  async delete(department) {
-    return await this.departmentCol.deleteOne({
-      departmentId: department.departmentId,
+  async delete(departmentName) {
+    // No need to return the result
+    await this.departmentCol.deleteOne({
+      name: departmentName,
     });
   }
 }
