@@ -1,0 +1,430 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1be85959efd6d9ef",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f18849d91eb5ebcb",
+        "type": "mongodb",
+        "hostname": "mongodb",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "clockwork-gateway",
+        "name": ""
+    },
+    {
+        "id": "afda953f5c974e93",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "afb0369c1244ceda"
+            ]
+        ]
+    },
+    {
+        "id": "afb0369c1244ceda",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a2e4e61e46401397",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "9d5824a429730b28"
+            ]
+        ]
+    },
+    {
+        "id": "9d5824a429730b28",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/get",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6dcf6125abb8951b",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "f76371fcaec11ec0"
+            ]
+        ]
+    },
+    {
+        "id": "f76371fcaec11ec0",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/start",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 470,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a832de492bcbf595",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "09a0dbbfc06fe9fa"
+            ]
+        ]
+    },
+    {
+        "id": "09a0dbbfc06fe9fa",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/stop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "11ece0c0373003d5",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "dd03fc639e1179b3"
+            ]
+        ]
+    },
+    {
+        "id": "dd03fc639e1179b3",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/purge",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "dbe17ea55b14a173",
+        "type": "mongodb out",
+        "z": "f6f2187d.f17ca8",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "test",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 460,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f4d9976a02551019",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"foo\":\"bar\"}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "dbe17ea55b14a173"
+            ]
+        ]
+    },
+    {
+        "id": "7ecfbdc3ca34f211",
+        "type": "file in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "filename": "/run/secrets/terminal_api_key",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "a5d844aacdfdd2ac"
+            ]
+        ]
+    },
+    {
+        "id": "cda5acc378081260",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "On start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 680,
+        "wires": [
+            [
+                "7ecfbdc3ca34f211"
+            ]
+        ]
+    },
+    {
+        "id": "a5d844aacdfdd2ac",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "api_key",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbb98daa7c298a05",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "e08953d02ae6cb07"
+            ]
+        ]
+    },
+    {
+        "id": "1abbe845999c9e55",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e08953d02ae6cb07",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "api_key",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 740,
+        "wires": [
+            [
+                "1abbe845999c9e55"
+            ]
+        ]
+    }
+]
