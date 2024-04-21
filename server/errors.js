@@ -55,6 +55,14 @@ module.exports = {
       this.status = 401;
     }
   },
+  TerminalAlreadyExists: class extends Error {
+    constructor() {
+      super();
+      this.code = "TerminalAlreadyExists";
+      this.message = "A terminal with the same name already exists.";
+      this.status = 400;
+    }
+  },
 };
 
 //TODO EROR dept exists

@@ -48,7 +48,7 @@ class UserAbl {
 
     // throw an error if the user already exists
     const user = await userDao.getByUsername(req.body.username);
-    if (user !== null) {
+    if (user != null) {
       throw new errors.UserAlreadyExists();
     }
 
