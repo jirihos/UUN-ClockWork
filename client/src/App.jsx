@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import EventTable from "./components/eventTable";
+import LoginForm from "./pages/loginForm";
 
 function App() {
   const [events, setEvents] = useState([
@@ -58,6 +59,7 @@ function App() {
     <>
       <div className="EventTable">
         <EventTable events={events} />
+        <LoginForm />
       </div>
     </>
   );
