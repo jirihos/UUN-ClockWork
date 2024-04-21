@@ -13,7 +13,7 @@ const generateData = () => {
   const departureTimes = ["16:30", "14:40", "15:31"];
 
   // Generate 35 events with random data.
-  for (let i = 0; i < 35; i++) {
+  for (let i = 0; i < 40; i++) {
     const name = names[Math.floor(Math.random() * names.length)];
     const department =
       departments[Math.floor(Math.random() * departments.length)];
