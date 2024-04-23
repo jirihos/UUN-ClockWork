@@ -7,6 +7,14 @@
         "info": ""
     },
     {
+        "id": "7ac262ccd2f7c0ee",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1be85959efd6d9ef",
         "type": "mqtt-broker",
         "name": "",
@@ -426,5 +434,197 @@
                 "1abbe845999c9e55"
             ]
         ]
+    },
+    {
+        "id": "649f9937cdbc1fd6",
+        "type": "mqtt in",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "",
+        "topic": "node/code-terminal:0/user",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "52cc213810d2179f"
+            ]
+        ]
+    },
+    {
+        "id": "ee938f5a5275a4d3",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "52cc213810d2179f",
+        "type": "function",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "Filter msg === 5 ",
+        "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "41dca48eb50c5aa2"
+            ],
+            [
+                "5266561aca1468ff"
+            ]
+        ]
+    },
+    {
+        "id": "41dca48eb50c5aa2",
+        "type": "function",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "msg.payload ",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = {\n    \"terminalId\": \"12345605692d59ee\",\n    //\"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 80,
+        "wires": [
+            [
+                "a355621189d74ea6",
+                "015e664e37848105"
+            ]
+        ]
+    },
+    {
+        "id": "a355621189d74ea6",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8c4571de0799860e",
+        "type": "mongodb out",
+        "z": "7ac262ccd2f7c0ee",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "test",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 640,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "015e664e37848105",
+        "type": "http request",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:3000/api/event/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "bearer",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 140,
+        "wires": [
+            [
+                "529588e8b9edbf29",
+                "ee938f5a5275a4d3"
+            ]
+        ]
+    },
+    {
+        "id": "5266561aca1468ff",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "529588e8b9edbf29",
+        "type": "function",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "If 200 response out 2, if non 200 response out1",
+        "func": "\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "8c4571de0799860e",
+                "fdaa478c4b12f466"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fdaa478c4b12f466",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 420,
+        "wires": []
     }
 ]
