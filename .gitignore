@@ -15,8 +15,8 @@ dist-ssr
 .flows.json.backup
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+/.vscode/*
+!/.vscode/extensions.json
 .vs
 .idea
 .DS_Store

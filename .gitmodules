@@ -1,0 +1,3 @@
+[submodule "iot_node/sdk"]
+	path = iot_node/sdk
+	url = https://github.com/hardwario/twr-sdk
