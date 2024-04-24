@@ -4,4 +4,4 @@ out/
 .DS_Store
 firmware.bin
 .pio/
-.vscode/
+
