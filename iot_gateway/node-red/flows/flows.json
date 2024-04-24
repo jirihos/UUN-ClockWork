@@ -449,7 +449,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "52cc213810d2179f"
@@ -465,10 +465,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
+        "x": 960,
         "y": 140,
         "wires": []
     },
@@ -484,14 +485,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 100,
+        "x": 420,
+        "y": 80,
         "wires": [
             [
                 "41dca48eb50c5aa2"
             ],
             [
-                "5266561aca1468ff"
+                "5266561aca1468ff",
+                "4c4074ab5c9bc5e8"
             ]
         ]
     },
@@ -507,8 +509,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 80,
+        "x": 710,
+        "y": 60,
         "wires": [
             [
                 "a355621189d74ea6",
@@ -529,8 +531,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 80,
+        "x": 960,
+        "y": 60,
         "wires": []
     },
     {
@@ -540,12 +542,12 @@
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
         "collection": "test",
-        "payonly": false,
+        "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 640,
-        "y": 360,
+        "x": 760,
+        "y": 460,
         "wires": []
     },
     {
@@ -564,7 +566,7 @@
         "authType": "bearer",
         "senderr": false,
         "headers": [],
-        "x": 810,
+        "x": 710,
         "y": 140,
         "wires": [
             [
@@ -585,30 +587,33 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 160,
+        "x": 180,
+        "y": 140,
         "wires": []
     },
     {
         "id": "529588e8b9edbf29",
         "type": "function",
         "z": "7ac262ccd2f7c0ee",
-        "name": "If 200 response out 2, if non 200 response out1",
-        "func": "\nreturn msg;",
+        "name": "response 200 1. out, else 2.",
+        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
-        "y": 420,
+        "x": 440,
+        "y": 240,
         "wires": [
             [
-                "8c4571de0799860e",
-                "fdaa478c4b12f466"
+                "fdaa478c4b12f466",
+                "ed135b327e6de5f9"
             ],
-            []
+            [
+                "1b704b56deaa69b5",
+                "8c4571de0799860e"
+            ]
         ]
     },
     {
@@ -620,11 +625,65 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 420,
+        "x": 780,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1b704b56deaa69b5",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ed135b327e6de5f9",
+        "type": "mqtt out",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "Flash LED twice 600 core",
+        "topic": "BC_RADIO_SUB_PT_FLOAT",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4c4074ab5c9bc5e8",
+        "type": "mqtt out",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "Flash LED once 1000 core",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 440,
+        "y": 140,
         "wires": []
     }
 ]
