@@ -266,50 +266,6 @@
         "wires": []
     },
     {
-        "id": "dbe17ea55b14a173",
-        "type": "mongodb out",
-        "z": "f6f2187d.f17ca8",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "test",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 460,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "f4d9976a02551019",
-        "type": "inject",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"foo\":\"bar\"}",
-        "payloadType": "json",
-        "x": 130,
-        "y": 500,
-        "wires": [
-            [
-                "dbe17ea55b14a173"
-            ]
-        ]
-    },
-    {
         "id": "7ecfbdc3ca34f211",
         "type": "file in",
         "z": "f6f2187d.f17ca8",
@@ -469,7 +425,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
+        "x": 1260,
         "y": 140,
         "wires": []
     },
@@ -514,7 +470,7 @@
         "wires": [
             [
                 "a355621189d74ea6",
-                "015e664e37848105"
+                "ff205f0a478fe040"
             ]
         ]
     },
@@ -541,13 +497,13 @@
         "z": "7ac262ccd2f7c0ee",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "test",
+        "collection": "logs",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 760,
-        "y": 460,
+        "x": 980,
+        "y": 400,
         "wires": []
     },
     {
@@ -566,7 +522,7 @@
         "authType": "bearer",
         "senderr": false,
         "headers": [],
-        "x": 710,
+        "x": 970,
         "y": 140,
         "wires": [
             [
@@ -587,7 +543,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 180,
+        "x": 140,
         "y": 140,
         "wires": []
     },
@@ -612,7 +568,7 @@
             ],
             [
                 "1b704b56deaa69b5",
-                "8c4571de0799860e"
+                "0c740a4d29dd74aa"
             ]
         ]
     },
@@ -630,7 +586,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 280,
+        "y": 220,
         "wires": []
     },
     {
@@ -646,8 +602,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 400,
+        "x": 780,
+        "y": 320,
         "wires": []
     },
     {
@@ -665,7 +621,7 @@
         "expiry": "",
         "broker": "1be85959efd6d9ef",
         "x": 830,
-        "y": 220,
+        "y": 260,
         "wires": []
     },
     {
@@ -684,6 +640,202 @@
         "broker": "1be85959efd6d9ef",
         "x": 440,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ff205f0a478fe040",
+        "type": "change",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 140,
+        "wires": [
+            [
+                "015e664e37848105"
+            ]
+        ]
+    },
+    {
+        "id": "0c740a4d29dd74aa",
+        "type": "change",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "8c4571de0799860e"
+            ]
+        ]
+    },
+    {
+        "id": "44d996027524d622",
+        "type": "inject",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "Every 15 mins get users",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "cc88084924178889"
+            ]
+        ]
+    },
+    {
+        "id": "cc88084924178889",
+        "type": "http request",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8080/api/getLists",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "authorization",
+                "valueType": "other",
+                "valueValue": "1"
+            }
+        ],
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "a93147792c6d62d3",
+                "b582d76535fa8c1f"
+            ]
+        ]
+    },
+    {
+        "id": "7d07312075571668",
+        "type": "mongodb out",
+        "z": "7ac262ccd2f7c0ee",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "users",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1150,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a93147792c6d62d3",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b582d76535fa8c1f",
+        "type": "function",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "response 200 1. out, else 2.",
+        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 620,
+        "wires": [
+            [
+                "7d07312075571668"
+            ],
+            [
+                "f9f3286d492b7972"
+            ]
+        ]
+    },
+    {
+        "id": "f9f3286d492b7972",
+        "type": "debug",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "810b679cc12bb435",
+        "type": "comment",
+        "z": "7ac262ccd2f7c0ee",
+        "name": "Get list of users into local DB TODO",
+        "info": "",
+        "x": 200,
+        "y": 560,
         "wires": []
     }
 ]
