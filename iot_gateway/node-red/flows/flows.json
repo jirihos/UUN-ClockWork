@@ -74,12 +74,12 @@
     {
         "id": "8e8c38f3867a2f4b",
         "type": "ui_group",
-        "name": "Server connection log",
+        "name": "Server response log",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false,
+        "collapse": true,
         "className": ""
     },
     {
@@ -195,7 +195,7 @@
         "order": 2,
         "disp": true,
         "width": "6",
-        "collapse": false,
+        "collapse": true,
         "className": ""
     },
     {
@@ -217,12 +217,31 @@
     {
         "id": "af810a62dae6c015",
         "type": "ui_group",
-        "name": "Update users DB",
+        "name": "Update users DB gateway",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "ac261bd52cf295e5",
+        "type": "ui_tab",
+        "name": "User list",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "24fc504cdf00f66a",
+        "type": "ui_group",
+        "name": "User list",
+        "tab": "ac261bd52cf295e5",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": true,
         "className": ""
     },
     {
@@ -714,7 +733,7 @@
         "multi": false,
         "operation": "store",
         "x": 510,
-        "y": 460,
+        "y": 400,
         "wires": []
     },
     {
@@ -796,8 +815,8 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 510,
-        "y": 300,
+        "x": 550,
+        "y": 280,
         "wires": []
     },
     {
@@ -864,8 +883,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 140,
-        "y": 360,
+        "x": 120,
+        "y": 300,
         "wires": [
             [
                 "0c47445f94556a8b",
@@ -883,7 +902,7 @@
         "collection": "users",
         "operation": "find",
         "x": 410,
-        "y": 540,
+        "y": 460,
         "wires": [
             [
                 "6d213f2b2c576b8d"
@@ -895,15 +914,15 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "name": "function 1",
-        "func": "var userId = 1101; // No quotation marks for numbers\n\n// Log the user ID being searched for\nnode.warn('Searching for user ID: ' + userId);\n\n// Check if msg.payload exists and contains the employeeCode\nif (msg.payload && msg.payload.employeeCode !== undefined) {\n    // Check if the employeeCode matches the userId\n    if (msg.payload.employeeCode === userId) {\n        node.warn('ID found in MongoDB');\n        // Perform actions if the ID is found\n    } else {\n        node.warn('ID not found in MongoDB');\n        // Perform actions if the ID is not found\n    }\n} else {\n    // Handle case where msg.payload doesn't contain employeeCode\n    node.warn('No employeeCode found in payload');\n}\n\nreturn msg;\n\n/*\nvar employeeCode = \"your_employee_code\"; // Replace with the employee code you want to search for\n\n// Define the query to find the user with the specified employee code\nvar query = {\n    id: employeeCode\n};\n\n// Configure the MongoDB node to find the user with the specified employee code\nvar findMsg = {\n    collection: \"users\", // Collection name\n    operation: \"find\",\n    query: query\n};\n\n// Send the findMsg and handle the callback\nnode.send(findMsg, function(response) {\n    if (response.error) {\n        // Handle any errors that occurred during the find operation\n        node.error(\"Error finding user: \" + response.error);\n        // Output 2 if an error occurs\n        node.send([null, { payload: 2 }]);\n    } else if (response.payload && response.payload.length > 0) {\n        // Employee code found, output 1\n        node.send([{ payload: 1 }, null]);\n    } else {\n        // Employee code not found, output 2\n        node.send([null, { payload: 2 }]);\n    }\n});\n*/",
+        "func": "var userId = 1101;\n\nif (msg.payload && msg.payload.employeeCode !== undefined) {\n    if (msg.payload.employeeCode === userId) {\n        //node.warn('ID found in MongoDB');\n      \n    } else {\n        //node.warn('ID not found in MongoDB');\n      \n    }\n} else {\n\n    //node.warn('No employeeCode found ');\n}\n\nreturn msg;\n\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 540,
+        "x": 620,
+        "y": 460,
         "wires": [
             [
                 "47bef20b8f1cfa94"
@@ -926,8 +945,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 520,
+        "x": 820,
+        "y": 460,
         "wires": []
     },
     {
@@ -943,8 +962,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 560,
+        "x": 820,
+        "y": 500,
         "wires": []
     },
     {
@@ -952,7 +971,7 @@
         "type": "debug",
         "z": "d537a249a96dc0df",
         "name": "debug 17",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -960,7 +979,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
-        "y": 400,
+        "y": 340,
         "wires": []
     },
     {
@@ -1002,7 +1021,7 @@
         "id": "810f708507612442",
         "type": "inject",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Every 1 min get users",
+        "name": "Every 10 min get list of users",
         "props": [
             {
                 "p": "payload"
@@ -1019,11 +1038,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 120,
+        "x": 170,
+        "y": 60,
         "wires": [
             [
-                "c20bc9ccb77a24e8"
+                "c68bf099a6769c18"
             ]
         ]
     },
@@ -1107,8 +1126,8 @@
         "z": "76b8d7d23f0dfbb5",
         "name": "Get list of users into local DB ",
         "info": "",
-        "x": 180,
-        "y": 60,
+        "x": 160,
+        "y": 20,
         "wires": []
     },
     {
@@ -1123,7 +1142,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
+        "x": 700,
         "y": 60,
         "wires": []
     },
@@ -1231,12 +1250,12 @@
         "z": "76b8d7d23f0dfbb5",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "userListCollection",
+        "collection": "userListUpdateCollection",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1130,
+        "x": 1150,
         "y": 280,
         "wires": []
     },
@@ -1251,11 +1270,77 @@
         "wires": []
     },
     {
+        "id": "a2c1c9d92c1b0756",
+        "type": "comment",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Log",
+        "info": "",
+        "x": 850,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c4c3270d4232f020",
+        "type": "ui_button",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "",
+        "group": "af810a62dae6c015",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET LIST OF USERS",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "c20bc9ccb77a24e8"
+            ]
+        ]
+    },
+    {
+        "id": "c68bf099a6769c18",
+        "type": "ui_button",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "",
+        "group": "24fc504cdf00f66a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET LIST OF USERS",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "c4c3270d4232f020"
+            ]
+        ]
+    },
+    {
         "id": "996b8d311bcda11f",
         "type": "ui_table",
         "z": "74d70de6eea550f9",
         "group": "af810a62dae6c015",
-        "name": "Users",
+        "name": "users",
         "order": 0,
         "width": "6",
         "height": "15",
@@ -1283,8 +1368,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 950,
-        "y": 100,
+        "x": 1010,
+        "y": 120,
         "wires": []
     },
     {
@@ -1293,41 +1378,13 @@
         "z": "74d70de6eea550f9",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "userListCollection",
+        "collection": "userListUpdateCollection",
         "operation": "find",
-        "x": 630,
-        "y": 100,
+        "x": 570,
+        "y": 120,
         "wires": [
             [
                 "996b8d311bcda11f"
-            ]
-        ]
-    },
-    {
-        "id": "c4c3270d4232f020",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "name": "",
-        "group": "af810a62dae6c015",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "button",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "8383109a01c9660c"
             ]
         ]
     },
@@ -1356,7 +1413,8 @@
         "y": 100,
         "wires": [
             [
-                "c4c3270d4232f020"
+                "02bf3d654cefb710",
+                "8383109a01c9660c"
             ]
         ]
     },
@@ -1367,7 +1425,7 @@
         "name": "Display log of user DB update (flow3) UI",
         "info": "",
         "x": 230,
-        "y": 60,
+        "y": 20,
         "wires": []
     },
     {
@@ -1411,13 +1469,11 @@
                 }
             }
         ],
-        "outputs": 1,
-        "cts": true,
+        "outputs": 0,
+        "cts": false,
         "x": 1110,
-        "y": 180,
-        "wires": [
-            []
-        ]
+        "y": 220,
+        "wires": []
     },
     {
         "id": "cbf7c6584f0a9148",
@@ -1441,7 +1497,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "05d406bbbd07e06b"
@@ -1458,7 +1514,7 @@
         "width": 0,
         "height": 0,
         "passthru": true,
-        "label": "Refresh ",
+        "label": "Refresh todo",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -1468,8 +1524,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 420,
-        "y": 180,
+        "x": 430,
+        "y": 220,
         "wires": [
             [
                 "ed6e78e62f6e89b8"
@@ -1485,7 +1541,7 @@
         "collection": "keyboardEventsCollection",
         "operation": "find",
         "x": 770,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "8d822c1ec888b9e2"
@@ -1499,7 +1555,7 @@
         "name": "Display keyboard events log (flow2) UI",
         "info": "",
         "x": 230,
-        "y": 140,
+        "y": 180,
         "wires": []
     },
     {
@@ -1509,7 +1565,7 @@
         "name": "Display server response log(flow2) UI",
         "info": "",
         "x": 230,
-        "y": 220,
+        "y": 260,
         "wires": []
     },
     {
@@ -1534,7 +1590,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "2daa2cbfa085b484"
@@ -1551,7 +1607,7 @@
         "width": 0,
         "height": 0,
         "passthru": true,
-        "label": "Refresh ",
+        "label": "Refresh todo",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -1561,8 +1617,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 400,
-        "y": 260,
+        "x": 410,
+        "y": 300,
         "wires": [
             [
                 "10186ab8cec6d099"
@@ -1578,7 +1634,7 @@
         "collection": "serverCommunicationCollection",
         "operation": "find",
         "x": 750,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "4e566a1b02d91ecd"
@@ -1619,7 +1675,49 @@
         "outputs": 0,
         "cts": false,
         "x": 1140,
-        "y": 260,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "42382caa7092aea9",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "group": "24fc504cdf00f66a",
+        "name": "List of users in gateway DB",
+        "order": 0,
+        "width": "8",
+        "height": "15",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 960,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "02bf3d654cefb710",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "users",
+        "operation": "find",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "42382caa7092aea9"
+            ]
+        ]
+    },
+    {
+        "id": "d3dd6876bf017c15",
+        "type": "comment",
+        "z": "74d70de6eea550f9",
+        "name": "todo",
+        "info": "",
+        "x": 750,
+        "y": 40,
         "wires": []
     }
 ]
