@@ -7,11 +7,7 @@
         "info": ""
     },
     {
-<<<<<<< Updated upstream
-        "id": "7ac262ccd2f7c0ee",
-=======
         "id": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "type": "tab",
         "label": "Flow 2",
         "disabled": false,
@@ -19,8 +15,6 @@
         "env": []
     },
     {
-<<<<<<< Updated upstream
-=======
         "id": "76b8d7d23f0dfbb5",
         "type": "tab",
         "label": "Flow 3",
@@ -29,7 +23,14 @@
         "env": []
     },
     {
->>>>>>> Stashed changes
+        "id": "74d70de6eea550f9",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1be85959efd6d9ef",
         "type": "mqtt-broker",
         "name": "",
@@ -73,11 +74,11 @@
     {
         "id": "8e8c38f3867a2f4b",
         "type": "ui_group",
-        "name": "Update of users gateway",
+        "name": "Server connection log",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "12",
+        "width": "6",
         "collapse": false,
         "className": ""
     },
@@ -187,6 +188,44 @@
         }
     },
     {
+        "id": "9e0481318c1e8033",
+        "type": "ui_group",
+        "name": "Keyboard events",
+        "tab": "886cc25582355e06",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fcc25c05bf681369",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3e5527040d40c85f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "af810a62dae6c015",
+        "type": "ui_group",
+        "name": "Update users DB",
+        "tab": "886cc25582355e06",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "afda953f5c974e93",
         "type": "mqtt in",
         "z": "f6f2187d.f17ca8",
@@ -210,7 +249,7 @@
         "type": "debug",
         "z": "f6f2187d.f17ca8",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -395,6 +434,50 @@
         "wires": []
     },
     {
+        "id": "dbe17ea55b14a173",
+        "type": "mongodb out",
+        "z": "f6f2187d.f17ca8",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "test",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 460,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f4d9976a02551019",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"foo\":\"bar\"}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "dbe17ea55b14a173"
+            ]
+        ]
+    },
+    {
         "id": "7ecfbdc3ca34f211",
         "type": "file in",
         "z": "f6f2187d.f17ca8",
@@ -482,7 +565,7 @@
         "type": "debug",
         "z": "f6f2187d.f17ca8",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -521,15 +604,9 @@
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "649f9937cdbc1fd6",
-        "type": "mqtt in",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "0e63ea1d3b6cab68",
         "type": "mqtt in",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "",
         "topic": "node/code-terminal:0/user",
         "qos": "2",
@@ -540,29 +617,19 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
-<<<<<<< Updated upstream
-                "52cc213810d2179f"
-=======
                 "94a2c8b60c41d056"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "ee938f5a5275a4d3",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "11350f0201874d8c",
         "type": "debug",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -570,25 +637,14 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-<<<<<<< Updated upstream
-        "x": 1260,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "52cc213810d2179f",
-        "type": "function",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "x": 960,
-        "y": 100,
+        "x": 1180,
+        "y": 120,
         "wires": []
     },
     {
         "id": "94a2c8b60c41d056",
         "type": "function",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "Filter msg === 5 ",
         "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
         "outputs": 2,
@@ -598,70 +654,43 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
-<<<<<<< Updated upstream
-                "41dca48eb50c5aa2"
-            ],
-            [
-                "5266561aca1468ff",
-                "4c4074ab5c9bc5e8"
-=======
                 "7e09073d61ddc699"
             ],
             [
                 "df733a253cb37688"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "41dca48eb50c5aa2",
-        "type": "function",
-        "z": "7ac262ccd2f7c0ee",
-        "name": "msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = {\n    \"terminalId\": \"12345605692d59ee\",\n    //\"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
-=======
         "id": "7e09073d61ddc699",
         "type": "function",
         "z": "d537a249a96dc0df",
-        "name": "msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = {\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
->>>>>>> Stashed changes
+        "name": "set msg.payload ",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 700,
         "y": 60,
         "wires": [
             [
-<<<<<<< Updated upstream
-                "a355621189d74ea6",
-                "ff205f0a478fe040"
-=======
                 "c623f8184c896132",
                 "c205155a2f3932fe"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "a355621189d74ea6",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "c623f8184c896132",
         "type": "debug",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -674,44 +703,24 @@
         "wires": []
     },
     {
-<<<<<<< Updated upstream
-        "id": "8c4571de0799860e",
-        "type": "mongodb out",
-        "z": "7ac262ccd2f7c0ee",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "logs",
-=======
         "id": "0c47445f94556a8b",
         "type": "mongodb out",
         "z": "d537a249a96dc0df",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "events",
->>>>>>> Stashed changes
+        "collection": "keyboardEventsCollection",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-<<<<<<< Updated upstream
-        "x": 980,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "015e664e37848105",
-        "type": "http request",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "x": 510,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
         "id": "2f8352811aacfd89",
         "type": "http request",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "",
         "method": "POST",
         "ret": "txt",
@@ -725,54 +734,34 @@
         "senderr": false,
         "headers": [],
         "x": 970,
-<<<<<<< Updated upstream
-        "y": 140,
-        "wires": [
-            [
-                "529588e8b9edbf29",
-                "ee938f5a5275a4d3"
-=======
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "d6f9f320f897c6ee",
                 "11350f0201874d8c"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "5266561aca1468ff",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "df733a253cb37688",
         "type": "debug",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 140,
+        "x": 180,
         "y": 140,
         "wires": []
     },
     {
-<<<<<<< Updated upstream
-        "id": "529588e8b9edbf29",
-        "type": "function",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "d6f9f320f897c6ee",
         "type": "function",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "response 200 1. out, else 2.",
         "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
         "outputs": 2,
@@ -781,98 +770,22 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 440,
+        "x": 180,
         "y": 240,
         "wires": [
             [
-                "fdaa478c4b12f466",
-                "ed135b327e6de5f9"
+                "7a6dc751a7fc8632"
             ],
             [
-                "1b704b56deaa69b5",
-                "0c740a4d29dd74aa"
-=======
-        "x": 180,
-        "y": 260,
-        "wires": [
-            [
-                "a4ccb1f651ed9df6",
-                "d5c29626588d1f2d"
-            ],
-            [
-                "9179bba45c2a3bbb",
-                "99940b665d510255"
->>>>>>> Stashed changes
+                "99940b665d510255",
+                "7a6dc751a7fc8632"
             ]
         ]
-    },
-    {
-<<<<<<< Updated upstream
-        "id": "fdaa478c4b12f466",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "id": "a4ccb1f651ed9df6",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-<<<<<<< Updated upstream
-        "x": 780,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "1b704b56deaa69b5",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "x": 640,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "9179bba45c2a3bbb",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-<<<<<<< Updated upstream
-        "x": 780,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "ed135b327e6de5f9",
-        "type": "mqtt out",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "x": 280,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "d5c29626588d1f2d",
         "type": "mqtt out",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "Flash LED twice 600 core",
         "topic": "BC_RADIO_SUB_PT_FLOAT",
         "qos": "",
@@ -883,17 +796,7 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-<<<<<<< Updated upstream
-        "x": 830,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "4c4074ab5c9bc5e8",
-        "type": "mqtt out",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "x": 690,
+        "x": 510,
         "y": 300,
         "wires": []
     },
@@ -901,7 +804,6 @@
         "id": "2d6a2ef4b7c6cecc",
         "type": "mqtt out",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "Flash LED once 1000 core",
         "topic": "",
         "qos": "",
@@ -912,24 +814,14 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 440,
-<<<<<<< Updated upstream
+        "x": 400,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "ff205f0a478fe040",
-        "type": "change",
-        "z": "7ac262ccd2f7c0ee",
-=======
-        "y": 160,
         "wires": []
     },
     {
         "id": "c205155a2f3932fe",
         "type": "change",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "",
         "rules": [
             {
@@ -945,32 +837,18 @@
         "from": "",
         "to": "",
         "reg": false,
-<<<<<<< Updated upstream
-        "x": 720,
-        "y": 140,
-        "wires": [
-            [
-                "015e664e37848105"
-=======
         "x": 700,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "2f8352811aacfd89"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "0c740a4d29dd74aa",
-        "type": "change",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "99940b665d510255",
         "type": "change",
         "z": "d537a249a96dc0df",
->>>>>>> Stashed changes
         "name": "",
         "rules": [
             {
@@ -986,31 +864,17 @@
         "from": "",
         "to": "",
         "reg": false,
-<<<<<<< Updated upstream
-        "x": 700,
-        "y": 400,
-        "wires": [
-            [
-                "8c4571de0799860e"
-=======
         "x": 140,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "0c47445f94556a8b",
                 "6f75b29bd35ca559",
                 "8b953bfae6810853"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "44d996027524d622",
-        "type": "inject",
-        "z": "7ac262ccd2f7c0ee",
-        "name": "Every 15 mins get users",
-=======
         "id": "8b953bfae6810853",
         "type": "mongodb in",
         "z": "d537a249a96dc0df",
@@ -1018,8 +882,8 @@
         "name": "Find user Id in users DB",
         "collection": "users",
         "operation": "find",
-        "x": 370,
-        "y": 500,
+        "x": 410,
+        "y": 540,
         "wires": [
             [
                 "6d213f2b2c576b8d"
@@ -1038,8 +902,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 500,
+        "x": 600,
+        "y": 540,
         "wires": [
             [
                 "47bef20b8f1cfa94"
@@ -1054,24 +918,7 @@
         "type": "debug",
         "z": "d537a249a96dc0df",
         "name": "debug 12",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "559a14406c21e1a2",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 13",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1084,19 +931,71 @@
         "wires": []
     },
     {
+        "id": "559a14406c21e1a2",
+        "type": "debug",
+        "z": "d537a249a96dc0df",
+        "name": "debug 13",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 560,
+        "wires": []
+    },
+    {
         "id": "6f75b29bd35ca559",
         "type": "debug",
         "z": "d537a249a96dc0df",
         "name": "debug 17",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 120,
-        "y": 480,
+        "x": 360,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7a6dc751a7fc8632",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response",
+        "func": "if (typeof msg.payload === 'string' && msg.payload.includes('RequestError')) {\n    // If msg.payload contains an error message, handle it accordingly\n    msg.payload = {\n        \"timestamp\": new Date().toISOString(),\n        \"update\": \"NOT SUCCESFULL\"\n    }\n    console.error(\"Error occurred:\", msg.payload);\n} else {\n\n    msg.payload = {\n      \"timestamp\": new Date().toISOString(),\n     \"update\": \"SUCCESFULL\"\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "8d92076ea8ee2d84"
+            ]
+        ]
+    },
+    {
+        "id": "8d92076ea8ee2d84",
+        "type": "mongodb out",
+        "z": "d537a249a96dc0df",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "serverCommunicationCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 930,
+        "y": 240,
         "wires": []
     },
     {
@@ -1104,7 +1003,6 @@
         "type": "inject",
         "z": "76b8d7d23f0dfbb5",
         "name": "Every 1 min get users",
->>>>>>> Stashed changes
         "props": [
             {
                 "p": "payload"
@@ -1114,43 +1012,25 @@
                 "vt": "str"
             }
         ],
-<<<<<<< Updated upstream
         "repeat": "600",
-=======
-        "repeat": "60",
->>>>>>> Stashed changes
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-<<<<<<< Updated upstream
-        "x": 190,
-        "y": 620,
-        "wires": [
-            [
-                "cc88084924178889"
-=======
         "x": 180,
         "y": 120,
         "wires": [
             [
                 "c20bc9ccb77a24e8"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "cc88084924178889",
-        "type": "http request",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "c20bc9ccb77a24e8",
         "type": "http request",
         "z": "76b8d7d23f0dfbb5",
->>>>>>> Stashed changes
         "name": "",
         "method": "GET",
         "ret": "txt",
@@ -1170,64 +1050,18 @@
                 "valueValue": "1"
             }
         ],
-<<<<<<< Updated upstream
-        "x": 470,
-        "y": 620,
-        "wires": [
-            [
-                "a93147792c6d62d3",
-                "b582d76535fa8c1f"
-=======
         "x": 410,
         "y": 120,
         "wires": [
             [
                 "9e354968b2f4414e"
->>>>>>> Stashed changes
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "7d07312075571668",
-        "type": "mongodb out",
-        "z": "7ac262ccd2f7c0ee",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "users",
-        "payonly": false,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 1150,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "a93147792c6d62d3",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "b582d76535fa8c1f",
-        "type": "function",
-        "z": "7ac262ccd2f7c0ee",
-=======
         "id": "9e354968b2f4414e",
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
->>>>>>> Stashed changes
         "name": "response 200 1. out, else 2.",
         "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
         "outputs": 2,
@@ -1236,42 +1070,26 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 780,
-        "y": 620,
-        "wires": [
-            [
-                "7d07312075571668"
-            ],
-            [
-                "f9f3286d492b7972"
-=======
-        "x": 660,
+        "x": 640,
         "y": 120,
         "wires": [
             [
                 "d080f2e1a17f7f9e",
-                "437c8c3a30167bbc"
+                "437c8c3a30167bbc",
+                "a7a28555fa3fc0ad"
             ],
             [
-                "cd0f2c06fdf27f5c"
->>>>>>> Stashed changes
+                "cd0f2c06fdf27f5c",
+                "a7a28555fa3fc0ad"
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-        "id": "f9f3286d492b7972",
-        "type": "debug",
-        "z": "7ac262ccd2f7c0ee",
-        "name": "debug 10",
-=======
         "id": "cd0f2c06fdf27f5c",
         "type": "debug",
         "z": "76b8d7d23f0dfbb5",
         "name": "debug 15",
->>>>>>> Stashed changes
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1279,20 +1097,6 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-<<<<<<< Updated upstream
-        "x": 1060,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "810b679cc12bb435",
-        "type": "comment",
-        "z": "7ac262ccd2f7c0ee",
-        "name": "Get list of users into local DB TODO",
-        "info": "",
-        "x": 200,
-        "y": 560,
-=======
         "x": 620,
         "y": 180,
         "wires": []
@@ -1312,7 +1116,7 @@
         "type": "debug",
         "z": "76b8d7d23f0dfbb5",
         "name": "debug 16",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1370,7 +1174,7 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 1200,
+        "x": 1180,
         "y": 160,
         "wires": []
     },
@@ -1378,11 +1182,444 @@
         "id": "859f1dad06c112b2",
         "type": "comment",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Get event and pos it to remote server, after response delete item ",
+        "name": "Get events and POST to remote server, after response delete item ",
         "info": "",
-        "x": 290,
+        "x": 300,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "a7a28555fa3fc0ad",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Log user list update",
+        "func": "if (typeof msg.payload === 'string' && msg.payload.includes('RequestError')) {\n    // If msg.payload contains an error message, handle it accordingly\n    msg.payload = {\n        \"timestamp\": new Date().toISOString(),\n        \"update\": \"NOT SUCCESFULL\"\n    }\n    console.error(\"Error occurred:\", msg.payload);\n} else {\n\n    msg.payload = {\n      \"timestamp\": new Date().toISOString(),\n     \"update\": \"SUCCESFULL\"\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 200,
+        "wires": [
+            [
+                "9969043e4229717d",
+                "20b10770f9327a5d"
+            ]
+        ]
+    },
+    {
+        "id": "9969043e4229717d",
+        "type": "debug",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "20b10770f9327a5d",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e999598846c02a95",
+        "type": "comment",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Replace DB ",
+        "info": "",
+        "x": 910,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "996b8d311bcda11f",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "group": "af810a62dae6c015",
+        "name": "Users",
+        "order": 0,
+        "width": "6",
+        "height": "15",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "update",
+                "title": "Update statuss",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 950,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8383109a01c9660c",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListCollection",
+        "operation": "find",
+        "x": 630,
+        "y": 100,
+        "wires": [
+            [
+                "996b8d311bcda11f"
+            ]
+        ]
+    },
+    {
+        "id": "c4c3270d4232f020",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "group": "af810a62dae6c015",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "8383109a01c9660c"
+            ]
+        ]
+    },
+    {
+        "id": "019cdc7a1de8d470",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "c4c3270d4232f020"
+            ]
+        ]
+    },
+    {
+        "id": "f04185034d3a2345",
+        "type": "comment",
+        "z": "74d70de6eea550f9",
+        "name": "Display log of user DB update (flow3) UI",
+        "info": "",
+        "x": 230,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8d822c1ec888b9e2",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "group": "9e0481318c1e8033",
+        "name": "Keyboard events",
+        "order": 0,
+        "width": "6",
+        "height": "15",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "employeeCode",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "type",
+                "title": "Action",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 1110,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbf7c6584f0a9148",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "name": "Refresh Table 10s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "05d406bbbd07e06b"
+            ]
+        ]
+    },
+    {
+        "id": "05d406bbbd07e06b",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "group": "9e0481318c1e8033",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "ed6e78e62f6e89b8"
+            ]
+        ]
+    },
+    {
+        "id": "ed6e78e62f6e89b8",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "keyboardEventsCollection",
+        "operation": "find",
+        "x": 770,
+        "y": 180,
+        "wires": [
+            [
+                "8d822c1ec888b9e2"
+            ]
+        ]
+    },
+    {
+        "id": "02d7e1010cac7ef5",
+        "type": "comment",
+        "z": "74d70de6eea550f9",
+        "name": "Display keyboard events log (flow2) UI",
+        "info": "",
+        "x": 230,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "036929e57912cc50",
+        "type": "comment",
+        "z": "74d70de6eea550f9",
+        "name": "Display server response log(flow2) UI",
+        "info": "",
+        "x": 230,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2bd43a2954daefc6",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "name": "Refresh Table 10s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
         "y": 260,
->>>>>>> Stashed changes
+        "wires": [
+            [
+                "2daa2cbfa085b484"
+            ]
+        ]
+    },
+    {
+        "id": "2daa2cbfa085b484",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "group": "8e8c38f3867a2f4b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "10186ab8cec6d099"
+            ]
+        ]
+    },
+    {
+        "id": "10186ab8cec6d099",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "serverCommunicationCollection",
+        "operation": "find",
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "4e566a1b02d91ecd"
+            ]
+        ]
+    },
+    {
+        "id": "4e566a1b02d91ecd",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "group": "8e8c38f3867a2f4b",
+        "name": "Server connection log",
+        "order": 2,
+        "width": "6",
+        "height": "15",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "update",
+                "title": "Update statuss",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1140,
+        "y": 260,
         "wires": []
     }
 ]
