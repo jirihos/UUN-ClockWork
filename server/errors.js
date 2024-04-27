@@ -64,5 +64,3 @@ module.exports = {
     }
   },
 };
-
-//TODO EROR dept exists

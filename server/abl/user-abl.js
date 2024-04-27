@@ -35,11 +35,9 @@ class UserAbl {
     }
   }
 
-  async createUser(req, res) {
+  async create(req, res) {
     // validation
-    await validate(schemas.userCreateUserSchema, req.body);
-
-    console.log(`User: ${JSON.stringify(req.user, null, 2)}`); // TODO: remove
+    await validate(schemas.userCreateSchema, req.body);
 
     // authorize admin
     if (req.user?.role !== "admin") {

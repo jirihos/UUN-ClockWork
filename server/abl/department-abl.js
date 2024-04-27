@@ -28,7 +28,6 @@ class DepartmentAbl {
     // validation
     await validate(schemas.departmentCreateSchema, req.body);
 
-    //authorize admin
     // authorization
     if (req.user == null) {
       throw new errors.NotAuthorized();
@@ -39,7 +38,6 @@ class DepartmentAbl {
     if (!result) {
       let department = {
         name: req.body.name,
-        //id: req.body.insertedId,
       };
       let newDepartment = await departmentDao.create(department);
       res.json(newDepartment);
