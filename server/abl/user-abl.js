@@ -20,16 +20,22 @@ class UserAbl {
     const result = await bcrypt.compare(req.body.password, user.passwordHash);
 
     if (result) {
+      const { username, role } = user;
+
       // create a token
       const payload = {
-        username: user.username,
-        role: user.role,
+        username,
+        role,
       };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "14d", // TODO: change to 1h
       });
 
-      res.json({ token });
+      res.json({
+        token,
+        username,
+        role,
+      });
     } else {
       throw new errors.IncorrectPassword();
     }
