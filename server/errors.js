@@ -63,4 +63,12 @@ module.exports = {
       this.status = 400;
     }
   },
+  MaximumNumberOfEmployeesReached: class extends Error {
+    constructor() {
+      super();
+      this.code = "MaximumNumberOfEmployeesReached";
+      this.message = "The system has reached the maximum number of employees.";
+      this.status = 403;
+    }
+  },
 };

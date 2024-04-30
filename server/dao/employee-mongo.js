@@ -1,24 +1,34 @@
 const mongo = require("../db/mongo-db");
 
-class employeeMongo {
+class EmployeeMongo {
   constructor() {
     this.employeeCol = mongo.getCollection("employee");
     mongo.initializeCollection("employee", () => this.initialize());
   }
 
   async initialize() {
-    await this.employeeCol.createIndex({ employeeCode: 1 }, { unique: true });
+    await this.employeeCol.createIndex({ code: 1 }, { unique: true });
   }
 
-  async create(employee) {
-    return await this.employeeCol.insertOne({
-      employeeCode: employee.employeeCode,
-    });
+  async create(object) {
+    const result = await this.employeeCol.insertOne(object);
+    object._id = result.insertedId;
+    return object;
   }
 
-  async findByCode(body) {
-    return await this.employeeCol.findOne({ employeeCode: body.employeeCode });
+  async findByCode(code) {
+    return await this.employeeCol.findOne({ code });
+  }
+
+  async getAllExistingCodes() {
+    const options = {
+      projection: { _id: 0, code: 1 },
+    };
+
+    const documents = await this.employeeCol.find({}, options).toArray();
+    const existingCodes = documents.map((document) => document.code);
+    return existingCodes;
   }
 }
 
-module.exports = new employeeMongo();
+module.exports = new EmployeeMongo();
