@@ -63,6 +63,20 @@ module.exports = {
       this.status = 400;
     }
   },
+  MaximumNumberOfEmployeesReached: class extends Error {
+    constructor() {
+      super();
+      this.code = "MaximumNumberOfEmployeesReached";
+      this.message = "The system has reached the maximum number of employees.";
+      this.status = 403;
+    }
+  },
+  EmployeeCodeNotFound: class extends Error {
+    constructor() {
+      super();
+      this.code = "EmployeeCodeNotFound";
+      this.message = "Couldn't find any employee with this code.";
+      this.status = 400;
+    }
+  },
 };
-
-//TODO EROR dept exists

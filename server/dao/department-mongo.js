@@ -1,4 +1,6 @@
 const mongo = require("../db/mongo-db");
+const { ObjectId } = require("mongodb");
+
 class DepartmentMongo {
   constructor() {
     this.departmentCol = mongo.getCollection("department");
@@ -25,15 +27,24 @@ class DepartmentMongo {
     });
   }
 
+  /**
+   * Get department by ID
+   * @param {string} _id
+   */
   async getById(_id) {
     return await this.departmentCol.findOne({
-      _id: _id,
+      _id: new ObjectId(_id),
     });
   }
+
+  /**
+   * Delete department by ID
+   * @param {string} _id
+   */
   async delete(_id) {
     // No need to return the result
     await this.departmentCol.deleteOne({
-      _id: _id,
+      _id: new ObjectId(_id),
     });
   }
 }

@@ -5,34 +5,21 @@ const { validate } = require("../validation");
 const errors = require("../errors");
 
 class eventAbl {
-
-    async create(req, res) {
-
+  async create(req, res) {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
 
-    let result = await employeeDao.findByCode(req.body);
+    // TODO authorize terminal
+
+    let result = await employeeDao.findByCode(req.body.employeeCode);
 
     if (result) {
-
-        req.body.timestamp = new Date().toJSON();
-        let newEvent = await eventDao.create(req.body);
-
-        res.json(newEvent);
-
+      let newEvent = await eventDao.create(req.body);
+      res.json(newEvent);
     } else {
-
-        throw new errors.UserDoesNotExist();
-
+      throw new errors.EmployeeCodeNotFound();
     }
-
-
-
-
-
-    
-    }
-
+  }
 }
 
 module.exports = new eventAbl();
