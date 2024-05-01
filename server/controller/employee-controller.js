@@ -5,7 +5,7 @@ const {
 
 const EmployeeAbl = require("../abl/employee-abl");
 
-router.get("/findByCode", async (req, res, next) => {
+router.get("/findByCode", authenticateToken, async (req, res, next) => {
   try {
     await EmployeeAbl.findByCode(req, res);
   } catch (e) {
