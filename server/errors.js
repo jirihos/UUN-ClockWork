@@ -76,7 +76,7 @@ module.exports = {
       super();
       this.code = "EmployeeCodeNotFound";
       this.message = "Couldn't find any employee with this code.";
-      this.status = 403;
+      this.status = 400;
     }
   },
 };

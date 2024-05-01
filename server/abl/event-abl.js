@@ -9,17 +9,12 @@ class eventAbl {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
 
-    // authorization
-    if (req.user?.role !== "admin") {
-      throw new errors.NotAuthorized();
-    }
+    // TODO authorize terminal
 
     let result = await employeeDao.findByCode(req.body.employeeCode);
 
     if (result) {
       let newEvent = await eventDao.create(req.body);
-      console.log(newEvent);
-
       res.json(newEvent);
     } else {
       throw new errors.EmployeeCodeNotFound();
