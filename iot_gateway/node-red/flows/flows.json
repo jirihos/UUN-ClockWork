@@ -1,15 +1,8 @@
 [
     {
-        "id": "f6f2187d.f17ca8",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "d537a249a96dc0df",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Recieve  IoT msg > server call > log > local check > msg. stash > msg out",
         "disabled": false,
         "info": "",
         "env": []
@@ -17,7 +10,7 @@
     {
         "id": "76b8d7d23f0dfbb5",
         "type": "tab",
-        "label": "Flow 3",
+        "label": "UsersCollection update, gateway tables",
         "disabled": false,
         "info": "",
         "env": []
@@ -25,7 +18,7 @@
     {
         "id": "74d70de6eea550f9",
         "type": "tab",
-        "label": "Flow 4",
+        "label": "Keyboard events, stashed events, gateway tables",
         "disabled": false,
         "info": "",
         "env": []
@@ -33,10 +26,296 @@
     {
         "id": "d7790596fee7e9be",
         "type": "tab",
-        "label": "Flow 5",
+        "label": "Stashed events POST",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Ideas",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d70cc115667768df",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Find user in local DB",
+        "style": {
+            "stroke": "#ffefbf",
+            "label": true,
+            "fill": "#ffefbf",
+            "label-position": "sw"
+        },
+        "nodes": [
+            "99940b665d510255",
+            "c886763ff525e7f5",
+            "60d9f8fe0958cf50",
+            "80888cdaf5d9a8b9"
+        ],
+        "x": 34,
+        "y": 339,
+        "w": 492,
+        "h": 330
+    },
+    {
+        "id": "2124c778e288492c",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "7a6dc751a7fc8632",
+            "8d92076ea8ee2d84",
+            "303311f5377ac92b",
+            "9301e7d80c610b92",
+            "71f7a3281684d237",
+            "00b99cdb0152d857"
+        ],
+        "x": 574,
+        "y": 179,
+        "w": 752,
+        "h": 210
+    },
+    {
+        "id": "dd73acae1f72be6e",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Employee exist in local DB",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "0c47445f94556a8b",
+            "12593b8dc90ac2cd",
+            "6cfb1baa922fad99",
+            "a16376362f98f38f"
+        ],
+        "x": 574,
+        "y": 499,
+        "w": 752,
+        "h": 170
+    },
+    {
+        "id": "3ae20c15f527cdf9",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Employee does not exist in local DB",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "4be098b25860ece8",
+            "a90667a04de81245"
+        ],
+        "x": 574,
+        "y": 399,
+        "w": 752,
+        "h": 90
+    },
+    {
+        "id": "e167cf4c1a22efbf",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Sort server response",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "d6f9f320f897c6ee"
+        ],
+        "x": 34,
+        "y": 191.5,
+        "w": 472,
+        "h": 105
+    },
+    {
+        "id": "aeb77755ee56e845",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Recieve message, server call",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffffbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "0e63ea1d3b6cab68",
+            "94a2c8b60c41d056",
+            "7e09073d61ddc699",
+            "2f8352811aacfd89",
+            "c205155a2f3932fe",
+            "404fcafe15a83f94"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1292,
+        "h": 130
+    },
+    {
+        "id": "ee274060183140ba",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Keyboard events gateway table",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "2bd43a2954daefc6",
+            "2daa2cbfa085b484",
+            "10186ab8cec6d099",
+            "31f18681ba01a9c0",
+            "4e566a1b02d91ecd"
+        ],
+        "x": 54,
+        "y": 199,
+        "w": 1332,
+        "h": 82
+    },
+    {
+        "id": "a6515923ca5b7293",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Stashed events gateway table",
+        "style": {
+            "label": true,
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3"
+        },
+        "nodes": [
+            "8d822c1ec888b9e2",
+            "cbf7c6584f0a9148",
+            "05d406bbbd07e06b",
+            "ed6e78e62f6e89b8",
+            "44aceb65fe221438"
+        ],
+        "x": 54,
+        "y": 79,
+        "w": 1332,
+        "h": 82
+    },
+    {
+        "id": "bce0c0495c57ea31",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display log of usersCollection update",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "996b8d311bcda11f",
+            "8383109a01c9660c",
+            "b018baf8c5bac8ba"
+        ],
+        "x": 354,
+        "y": 439,
+        "w": 1092,
+        "h": 82
+    },
+    {
+        "id": "4025ea06e340687a",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display List of users ",
+        "style": {
+            "label": true,
+            "stroke": "#ffffbf",
+            "fill": "#e3f3d3"
+        },
+        "nodes": [
+            "42382caa7092aea9",
+            "02bf3d654cefb710",
+            "65d1c00f1a3aec21"
+        ],
+        "x": 354,
+        "y": 339,
+        "w": 1092,
+        "h": 82
+    },
+    {
+        "id": "57ab287daac428f3",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Get/ Update list of users into local DB ",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffffbf",
+            "label": true
+        },
+        "nodes": [
+            "810f708507612442",
+            "c20bc9ccb77a24e8",
+            "9e354968b2f4414e",
+            "c4c3270d4232f020",
+            "c68bf099a6769c18"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 592,
+        "h": 202
+    },
+    {
+        "id": "2dfa0fcb02146650",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Log response of\"update list of users\"",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "a7a28555fa3fc0ad",
+            "20b10770f9327a5d",
+            "f6d6d05d984eee08"
+        ],
+        "x": 634,
+        "y": 199,
+        "w": 812,
+        "h": 122
+    },
+    {
+        "id": "541a9b2c482b7850",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Update of list of users",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "e6c2bdfd3eba38d2",
+            "437c8c3a30167bbc",
+            "6fbc632079c8a472",
+            "2e68e0c1a6dff21c",
+            "f2cc5306a2411e0c"
+        ],
+        "x": 634,
+        "y": 39,
+        "w": 812,
+        "h": 142
     },
     {
         "id": "1be85959efd6d9ef",
@@ -269,6 +548,1405 @@
         "icon": "fa-table",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "0e63ea1d3b6cab68",
+        "type": "mqtt in",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "topic": "node/code-terminal:0/user",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "94a2c8b60c41d056"
+            ]
+        ]
+    },
+    {
+        "id": "94a2c8b60c41d056",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "Filter msg === 5 ",
+        "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n    \n}\n    ",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "7e09073d61ddc699"
+            ],
+            [
+                "404fcafe15a83f94"
+            ]
+        ]
+    },
+    {
+        "id": "7e09073d61ddc699",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "set msg.payload ",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 80,
+        "wires": [
+            [
+                "c205155a2f3932fe"
+            ]
+        ]
+    },
+    {
+        "id": "0c47445f94556a8b",
+        "type": "mongodb out",
+        "z": "d537a249a96dc0df",
+        "g": "dd73acae1f72be6e",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1060,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2f8352811aacfd89",
+        "type": "http request",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:3000/api/event/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "bearer",
+        "senderr": false,
+        "headers": [],
+        "x": 1230,
+        "y": 80,
+        "wires": [
+            [
+                "d6f9f320f897c6ee"
+            ]
+        ]
+    },
+    {
+        "id": "c205155a2f3932fe",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 80,
+        "wires": [
+            [
+                "2f8352811aacfd89"
+            ]
+        ]
+    },
+    {
+        "id": "99940b665d510255",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "d70cc115667768df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "60d9f8fe0958cf50"
+            ]
+        ]
+    },
+    {
+        "id": "7a6dc751a7fc8632",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "name": "Log server response",
+        "func": "msg.payload = {\n    \"inputPayload\":flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n     msg.payload.status = \"OK\"\n     break;\n    case \"ECONNREFUSED\":\n     msg.payload.status = \"CONNECTION ERROR\"\n     break;\n    default:\n     msg.payload.status = msg.payload.payload.error.code\n     break;\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "8d92076ea8ee2d84"
+            ]
+        ]
+    },
+    {
+        "id": "8d92076ea8ee2d84",
+        "type": "mongodb out",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "keyboardEventsCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1090,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c886763ff525e7f5",
+        "type": "mongodb in",
+        "z": "d537a249a96dc0df",
+        "g": "d70cc115667768df",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 260,
+        "y": 500,
+        "wires": [
+            [
+                "80888cdaf5d9a8b9"
+            ]
+        ]
+    },
+    {
+        "id": "60d9f8fe0958cf50",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "d70cc115667768df",
+        "name": "find in usersCollection id",
+        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = {id:employeeCode};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 380,
+        "wires": [
+            [
+                "c886763ff525e7f5"
+            ]
+        ]
+    },
+    {
+        "id": "80888cdaf5d9a8b9",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "d70cc115667768df",
+        "name": "Is in usersCollection user with id ?",
+        "func": "if (msg.payload.length === 0) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n};",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 620,
+        "wires": [
+            [
+                "a90667a04de81245"
+            ],
+            [
+                "6cfb1baa922fad99",
+                "a16376362f98f38f"
+            ]
+        ]
+    },
+    {
+        "id": "404fcafe15a83f94",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "Wrong entry",
+        "name": "Wrong entry",
+        "x": 690,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4be098b25860ece8",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "g": "3ae20c15f527cdf9",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": " ACCESS DENIED (locally)",
+        "x": 1180,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12593b8dc90ac2cd",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "g": "dd73acae1f72be6e",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": "USER CHECKED LOCALLY OK",
+        "x": 1150,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a90667a04de81245",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "3ae20c15f527cdf9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACCESS DENIED (locally)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "4be098b25860ece8"
+            ]
+        ]
+    },
+    {
+        "id": "6cfb1baa922fad99",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "dd73acae1f72be6e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "USER CHECKED LOCALLY OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 620,
+        "wires": [
+            [
+                "12593b8dc90ac2cd"
+            ]
+        ]
+    },
+    {
+        "id": "303311f5377ac92b",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "USER CHECKED OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "9301e7d80c610b92"
+            ]
+        ]
+    },
+    {
+        "id": "9301e7d80c610b92",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": "USER CHECKED OK",
+        "x": 1120,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71f7a3281684d237",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACCES DENIED",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 340,
+        "wires": [
+            [
+                "00b99cdb0152d857"
+            ]
+        ]
+    },
+    {
+        "id": "00b99cdb0152d857",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": "ACCESS DENIED",
+        "x": 1110,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a16376362f98f38f",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "dd73acae1f72be6e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "0c47445f94556a8b"
+            ]
+        ]
+    },
+    {
+        "id": "d6f9f320f897c6ee",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "e167cf4c1a22efbf",
+        "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
+        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "7a6dc751a7fc8632",
+                "303311f5377ac92b"
+            ],
+            [
+                "7a6dc751a7fc8632",
+                "71f7a3281684d237"
+            ],
+            [
+                "7a6dc751a7fc8632",
+                "99940b665d510255"
+            ]
+        ]
+    },
+    {
+        "id": "810f708507612442",
+        "type": "inject",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "Every 10 min get list of users",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "c68bf099a6769c18"
+            ]
+        ]
+    },
+    {
+        "id": "c20bc9ccb77a24e8",
+        "type": "http request",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8080/api/getLists",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "authorization",
+                "valueType": "other",
+                "valueValue": "1"
+            }
+        ],
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "9e354968b2f4414e"
+            ]
+        ]
+    },
+    {
+        "id": "9e354968b2f4414e",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "response 200 1. out, else 2.",
+        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "a7a28555fa3fc0ad",
+                "2e68e0c1a6dff21c",
+                "f2cc5306a2411e0c"
+            ],
+            [
+                "f6d6d05d984eee08"
+            ]
+        ]
+    },
+    {
+        "id": "e6c2bdfd3eba38d2",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "541a9b2c482b7850",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "Remove list",
+        "collection": "usersCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "437c8c3a30167bbc",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "541a9b2c482b7850",
+        "name": "add users each to collection",
+        "func": "msg.users = JSON.parse(msg.payload);\n\nif (msg.users && Array.isArray(msg.users)) {\n    \n    msg.payload = msg.users;\n    return msg;\n\n} else {\n    node.error(\"Invalid users array.\");\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 140,
+        "wires": [
+            [
+                "6fbc632079c8a472"
+            ]
+        ]
+    },
+    {
+        "id": "6fbc632079c8a472",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "541a9b2c482b7850",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "Insert users",
+        "collection": "usersCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 1350,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a7a28555fa3fc0ad",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "name": "Log user list update SUCESS",
+        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [
+                "20b10770f9327a5d"
+            ]
+        ]
+    },
+    {
+        "id": "20b10770f9327a5d",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListUpdateCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1210,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c4c3270d4232f020",
+        "type": "ui_button",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "",
+        "group": "af810a62dae6c015",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET LIST OF USERS",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "c20bc9ccb77a24e8",
+                "b018baf8c5bac8ba",
+                "65d1c00f1a3aec21"
+            ]
+        ]
+    },
+    {
+        "id": "c68bf099a6769c18",
+        "type": "ui_button",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "",
+        "group": "24fc504cdf00f66a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET LIST OF USERS",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "c4c3270d4232f020"
+            ]
+        ]
+    },
+    {
+        "id": "996b8d311bcda11f",
+        "type": "ui_table",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "group": "af810a62dae6c015",
+        "name": "Update list of users DB gateway",
+        "order": 0,
+        "width": "14",
+        "height": "10",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "update",
+                "title": "Update statuss",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "msg",
+                "title": "Message",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1290,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8383109a01c9660c",
+        "type": "mongodb in",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListUpdateCollection",
+        "operation": "find",
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "996b8d311bcda11f"
+            ]
+        ]
+    },
+    {
+        "id": "f04185034d3a2345",
+        "type": "comment",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display log of user DB update UI",
+        "info": "",
+        "x": 150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "42382caa7092aea9",
+        "type": "ui_table",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "4025ea06e340687a",
+        "group": "24fc504cdf00f66a",
+        "name": "List of users in gateway DB",
+        "order": 0,
+        "width": "11",
+        "height": "10",
+        "columns": [
+            {
+                "field": "id",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "surname",
+                "title": "Surname",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "department",
+                "title": "Department",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1300,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "02bf3d654cefb710",
+        "type": "mongodb in",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "4025ea06e340687a",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "42382caa7092aea9"
+            ]
+        ]
+    },
+    {
+        "id": "a35ddb1cb45ecaee",
+        "type": "inject",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Refresh Dashboard every 5s todo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "b018baf8c5bac8ba",
+                "65d1c00f1a3aec21"
+            ]
+        ]
+    },
+    {
+        "id": "f6d6d05d984eee08",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "name": "Log user list update FAIL",
+        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 280,
+        "wires": [
+            [
+                "20b10770f9327a5d"
+            ]
+        ]
+    },
+    {
+        "id": "2e68e0c1a6dff21c",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "541a9b2c482b7850",
+        "name": "Remove all users in usersCollection",
+        "func": "msg.payload = {};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 80,
+        "wires": [
+            [
+                "e6c2bdfd3eba38d2"
+            ]
+        ]
+    },
+    {
+        "id": "f2cc5306a2411e0c",
+        "type": "delay",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "541a9b2c482b7850",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 140,
+        "wires": [
+            [
+                "437c8c3a30167bbc"
+            ]
+        ]
+    },
+    {
+        "id": "b018baf8c5bac8ba",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "name": "Sort by timestamp dsc",
+        "func": "msg.sort = { timestamp: -1 };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 480,
+        "wires": [
+            [
+                "8383109a01c9660c"
+            ]
+        ]
+    },
+    {
+        "id": "65d1c00f1a3aec21",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "4025ea06e340687a",
+        "name": "Sort by id asc",
+        "func": "msg.sort = { id: 1 };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 380,
+        "wires": [
+            [
+                "02bf3d654cefb710"
+            ]
+        ]
+    },
+    {
+        "id": "8d822c1ec888b9e2",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "group": "9e0481318c1e8033",
+        "name": "Stashed keyboard events",
+        "order": 0,
+        "width": "13",
+        "height": "10",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "employeeCode",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "type",
+                "title": "Action",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1250,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cbf7c6584f0a9148",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "name": "Refresh Table 5s todo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "05d406bbbd07e06b"
+            ]
+        ]
+    },
+    {
+        "id": "05d406bbbd07e06b",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "name": "",
+        "group": "9e0481318c1e8033",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh todo",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "44aceb65fe221438"
+            ]
+        ]
+    },
+    {
+        "id": "ed6e78e62f6e89b8",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "operation": "find",
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "8d822c1ec888b9e2"
+            ]
+        ]
+    },
+    {
+        "id": "f17ae95c73b4bc0e",
+        "type": "debug",
+        "z": "74d70de6eea550f9",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "44aceb65fe221438",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "name": "Sort",
+        "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 120,
+        "wires": [
+            [
+                "ed6e78e62f6e89b8"
+            ]
+        ]
+    },
+    {
+        "id": "2bd43a2954daefc6",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "ee274060183140ba",
+        "name": "Refresh Table 5s todo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "2daa2cbfa085b484"
+            ]
+        ]
+    },
+    {
+        "id": "2daa2cbfa085b484",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "g": "ee274060183140ba",
+        "name": "",
+        "group": "8e8c38f3867a2f4b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh todo",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "31f18681ba01a9c0"
+            ]
+        ]
+    },
+    {
+        "id": "10186ab8cec6d099",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "g": "ee274060183140ba",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "keyboardEventsCollection",
+        "operation": "find",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            [
+                "4e566a1b02d91ecd"
+            ]
+        ]
+    },
+    {
+        "id": "31f18681ba01a9c0",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "ee274060183140ba",
+        "name": "Sort",
+        "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "10186ab8cec6d099"
+            ]
+        ]
+    },
+    {
+        "id": "4e566a1b02d91ecd",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "g": "ee274060183140ba",
+        "group": "8e8c38f3867a2f4b",
+        "name": "Keyboard events",
+        "order": 2,
+        "width": "13",
+        "height": "10",
+        "columns": [
+            {
+                "field": "inputPayload.timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "inputPayload.employeeCode",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "inputPayload.type",
+                "title": "Action",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status",
+                "title": "Server response",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1270,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "511ccb281833db51",
+        "type": "comment",
+        "z": "d7790596fee7e9be",
+        "name": "POST stashed events from keyboard",
+        "info": "",
+        "x": 180,
+        "y": 40,
+        "wires": []
     },
     {
         "id": "afda953f5c974e93",
@@ -646,1615 +2324,6 @@
             [
                 "1abbe845999c9e55"
             ]
-        ]
-    },
-    {
-        "id": "0e63ea1d3b6cab68",
-        "type": "mqtt in",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "topic": "node/code-terminal:0/user",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "1be85959efd6d9ef",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 100,
-        "wires": [
-            [
-                "94a2c8b60c41d056"
-            ]
-        ]
-    },
-    {
-        "id": "94a2c8b60c41d056",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Filter msg === 5 ",
-        "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n    \n}\n    ",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 100,
-        "wires": [
-            [
-                "7e09073d61ddc699"
-            ],
-            [
-                "404fcafe15a83f94"
-            ]
-        ]
-    },
-    {
-        "id": "7e09073d61ddc699",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 80,
-        "wires": [
-            [
-                "c205155a2f3932fe"
-            ]
-        ]
-    },
-    {
-        "id": "0c47445f94556a8b",
-        "type": "mongodb out",
-        "z": "d537a249a96dc0df",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "stashedKeyboardEventsCollection",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 700,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "2f8352811aacfd89",
-        "type": "http request",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://host.docker.internal:3000/api/event/create",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "bearer",
-        "senderr": false,
-        "headers": [],
-        "x": 130,
-        "y": 180,
-        "wires": [
-            [
-                "d6f9f320f897c6ee"
-            ]
-        ]
-    },
-    {
-        "id": "d6f9f320f897c6ee",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "response 200.1, 400.2, 401.3, else.4.",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null, null];\n\n} else if (msg.statusCode === 400) { // bad request\n    return [null, msg, null, null];\n   \n} else if (msg.statusCode === 403) { // access denied\n    return [null, null, msg, null];\n\n} else { // error\n    return [null, null, null, msg];\n};\n",
-        "outputs": 4,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 210,
-        "y": 300,
-        "wires": [
-            [
-                "7a6dc751a7fc8632"
-            ],
-            [
-                "4eec8e00cae7f1e3",
-                "b8f6b606e4f9ec5b"
-            ],
-            [
-                "0997bfee7e0ad6f1"
-            ],
-            [
-                "99940b665d510255"
-            ]
-        ]
-    },
-    {
-        "id": "c205155a2f3932fe",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 120,
-        "wires": [
-            [
-                "2f8352811aacfd89"
-            ]
-        ]
-    },
-    {
-        "id": "99940b665d510255",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 460,
-        "wires": [
-            [
-                "56a5f23fd3add7a3",
-                "0c47445f94556a8b",
-                "60d9f8fe0958cf50"
-            ]
-        ]
-    },
-    {
-        "id": "7a6dc751a7fc8632",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Log server response 200",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"OK 200\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED OK\");\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 240,
-        "wires": [
-            [
-                "8d92076ea8ee2d84",
-                "303311f5377ac92b"
-            ]
-        ]
-    },
-    {
-        "id": "8d92076ea8ee2d84",
-        "type": "mongodb out",
-        "z": "d537a249a96dc0df",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "keyboardEventsCollection",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 950,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "4eec8e00cae7f1e3",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Log server response 400",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Error 400\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"ERROR BAD REQUEST\");\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 280,
-        "wires": [
-            [
-                "8d92076ea8ee2d84"
-            ]
-        ]
-    },
-    {
-        "id": "0997bfee7e0ad6f1",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Log server response 403",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Access denied 403\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED ACCESS DENIED\");\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 320,
-        "wires": [
-            [
-                "8d92076ea8ee2d84",
-                "71f7a3281684d237"
-            ]
-        ]
-    },
-    {
-        "id": "56a5f23fd3add7a3",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Log server response Err",
-        "func": "let payloadString = msg.payload.toString();\n\nmsg.payload = {\n    \"timestamp\": msg.payload.timestamp,\n    \"employeeCode\": msg.payload.employeeCode,\n    \"type\": msg.payload.type,\n    \"update\": \"Connection error\",  \n};\n\nnode.warn(\"CONNECTION ERROR\");\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 360,
-        "wires": [
-            [
-                "8d92076ea8ee2d84"
-            ]
-        ]
-    },
-    {
-        "id": "b8f6b606e4f9ec5b",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Log server response 400",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 170,
-        "y": 500,
-        "wires": [
-            [
-                "0c47445f94556a8b",
-                "60d9f8fe0958cf50"
-            ]
-        ]
-    },
-    {
-        "id": "a93ea25313b7dcf7",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "Recive ID+action from keyboard",
-        "info": "",
-        "x": 170,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "c886763ff525e7f5",
-        "type": "mongodb in",
-        "z": "d537a249a96dc0df",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "usersCollection",
-        "operation": "find",
-        "x": 900,
-        "y": 560,
-        "wires": [
-            [
-                "80888cdaf5d9a8b9",
-                "41409294c2ebe3b5"
-            ]
-        ]
-    },
-    {
-        "id": "60d9f8fe0958cf50",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "find in usersCollection id",
-        "func": "var employeeCode = msg.payload.employeeCode\n\nvar findMsg = {\n    collection: \"usersCollection\", // Collection name\n    action: \"find\",\n    payload: {\n        'payload.id': employeeCode,\n    }\n};\n\nnode.send(findMsg);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 560,
-        "wires": [
-            [
-                "c886763ff525e7f5"
-            ]
-        ]
-    },
-    {
-        "id": "80888cdaf5d9a8b9",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "Is in usersCollection user with id ?",
-        "func": "if (msg.payload.length === 0) {\n    node.warn(\"User not found\"); \n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 640,
-        "wires": [
-            [
-                "a369ae9174888f4b",
-                "a90667a04de81245"
-            ],
-            [
-                "a369ae9174888f4b",
-                "6cfb1baa922fad99",
-                "1663392a3bfb8433"
-            ]
-        ]
-    },
-    {
-        "id": "a369ae9174888f4b",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 700,
-        "wires": [
-            [
-                "f88db32ba06e4406"
-            ]
-        ]
-    },
-    {
-        "id": "f88db32ba06e4406",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 23",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "9c99398c78e5f781",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "Sort response",
-        "info": "",
-        "x": 130,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "9bbcaccf8168057c",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "Response message to keyboardEventsCollection",
-        "info": "",
-        "x": 640,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "0de411870f1f233a",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "No access to server check entry locally",
-        "info": "",
-        "x": 210,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "cd2332bc79b74a0c",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "Check if user is in usersCollection database",
-        "info": "",
-        "x": 630,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "997d10c9c55e4269",
-        "type": "comment",
-        "z": "d537a249a96dc0df",
-        "name": "Save entry to POST it to server later",
-        "info": "",
-        "x": 600,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "404fcafe15a83f94",
-        "type": "ui_toast",
-        "z": "d537a249a96dc0df",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": true,
-        "className": "",
-        "topic": "Wrong entry",
-        "name": "Wrong entry",
-        "x": 630,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4be098b25860ece8",
-        "type": "ui_toast",
-        "z": "d537a249a96dc0df",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "payload",
-        "name": " ACCESS DENIED (locally)",
-        "x": 1140,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "12593b8dc90ac2cd",
-        "type": "ui_toast",
-        "z": "d537a249a96dc0df",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "payload",
-        "name": "USER CHECKED LOCALLY OK",
-        "x": 1150,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a90667a04de81245",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ACCESS DENIED (locally)",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 620,
-        "wires": [
-            [
-                "4be098b25860ece8"
-            ]
-        ]
-    },
-    {
-        "id": "6cfb1baa922fad99",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "USER CHECKED LOCALLY OK",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 660,
-        "wires": [
-            [
-                "12593b8dc90ac2cd"
-            ]
-        ]
-    },
-    {
-        "id": "41409294c2ebe3b5",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 29",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "303311f5377ac92b",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "USER CHECKED OK",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 240,
-        "wires": [
-            [
-                "9301e7d80c610b92"
-            ]
-        ]
-    },
-    {
-        "id": "9301e7d80c610b92",
-        "type": "ui_toast",
-        "z": "d537a249a96dc0df",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "payload",
-        "name": "USER CHECKED OK",
-        "x": 1040,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "71f7a3281684d237",
-        "type": "change",
-        "z": "d537a249a96dc0df",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ACCES DENIED",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 340,
-        "wires": [
-            [
-                "00b99cdb0152d857"
-            ]
-        ]
-    },
-    {
-        "id": "00b99cdb0152d857",
-        "type": "ui_toast",
-        "z": "d537a249a96dc0df",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "payload",
-        "name": "ACCESS DENIED",
-        "x": 1030,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1663392a3bfb8433",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 30",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 900,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "810f708507612442",
-        "type": "inject",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Every 10 min get list of users",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 170,
-        "y": 60,
-        "wires": [
-            [
-                "c68bf099a6769c18"
-            ]
-        ]
-    },
-    {
-        "id": "c20bc9ccb77a24e8",
-        "type": "http request",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://host.docker.internal:8080/api/getLists",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "authorization",
-                "valueType": "other",
-                "valueValue": "1"
-            }
-        ],
-        "x": 410,
-        "y": 120,
-        "wires": [
-            [
-                "9e354968b2f4414e",
-                "b29a6bef20b63c72"
-            ]
-        ]
-    },
-    {
-        "id": "9e354968b2f4414e",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "response 200 1. out, else 2.",
-        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 120,
-        "wires": [
-            [
-                "437c8c3a30167bbc",
-                "a7a28555fa3fc0ad"
-            ],
-            [
-                "f6d6d05d984eee08"
-            ]
-        ]
-    },
-    {
-        "id": "8dddd2cf652c6554",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Get/ Update list of users into local DB ",
-        "info": "",
-        "x": 170,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "e6c2bdfd3eba38d2",
-        "type": "mongodb out",
-        "z": "76b8d7d23f0dfbb5",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "Remove list",
-        "collection": "usersCollection",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "delete",
-        "x": 1290,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "437c8c3a30167bbc",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "add users each to collection",
-        "func": "msg.users = JSON.parse(msg.payload);\n\nvar deleteMsg = {\n    collection: \"usersCollection\", // Collection name\n    action: \"remove\",\n    payload: {}\n};\nnode.send(deleteMsg);\n\n\nif (msg.users && Array.isArray(msg.users)) {\n    for (var i = 0; i < msg.users.length; i++) {\n        var user = msg.users[i];\n\n        // Insert user\n        var insertMsg = {\n            collection: \"usersCollection\", // Collection name\n            payload: user\n        };\n\n        node.send(insertMsg);\n    }\n} else {\n    node.error(\"Invalid users array.\");\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1020,
-        "y": 100,
-        "wires": [
-            [
-                "6fbc632079c8a472",
-                "e6c2bdfd3eba38d2"
-            ]
-        ]
-    },
-    {
-        "id": "6fbc632079c8a472",
-        "type": "mongodb out",
-        "z": "76b8d7d23f0dfbb5",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "Insert users",
-        "collection": "usersCollection",
-        "payonly": false,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 1290,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "a7a28555fa3fc0ad",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Log user list update SUCESS",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1030,
-        "y": 200,
-        "wires": [
-            [
-                "20b10770f9327a5d"
-            ]
-        ]
-    },
-    {
-        "id": "20b10770f9327a5d",
-        "type": "mongodb out",
-        "z": "76b8d7d23f0dfbb5",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "userListUpdateCollection",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 1430,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "e999598846c02a95",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Replace DB",
-        "info": "",
-        "x": 970,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "a2c1c9d92c1b0756",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Log response",
-        "info": "",
-        "x": 970,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "c4c3270d4232f020",
-        "type": "ui_button",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "",
-        "group": "af810a62dae6c015",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "GET LIST OF USERS",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 160,
-        "y": 120,
-        "wires": [
-            [
-                "c20bc9ccb77a24e8",
-                "02bf3d654cefb710",
-                "8383109a01c9660c"
-            ]
-        ]
-    },
-    {
-        "id": "c68bf099a6769c18",
-        "type": "ui_button",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "",
-        "group": "24fc504cdf00f66a",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "GET LIST OF USERS",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 440,
-        "y": 60,
-        "wires": [
-            [
-                "c4c3270d4232f020"
-            ]
-        ]
-    },
-    {
-        "id": "996b8d311bcda11f",
-        "type": "ui_table",
-        "z": "76b8d7d23f0dfbb5",
-        "group": "af810a62dae6c015",
-        "name": "Update list of users DB gateway",
-        "order": 0,
-        "width": "14",
-        "height": "10",
-        "columns": [
-            {
-                "field": "timestamp",
-                "title": "Timestamp",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "update",
-                "title": "Update statuss",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "msg",
-                "title": "Message",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1030,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "8383109a01c9660c",
-        "type": "mongodb in",
-        "z": "76b8d7d23f0dfbb5",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "userListUpdateCollection",
-        "operation": "aggregate",
-        "x": 630,
-        "y": 440,
-        "wires": [
-            [
-                "996b8d311bcda11f",
-                "fe4883d317199546"
-            ]
-        ]
-    },
-    {
-        "id": "f04185034d3a2345",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Display log of user DB update UI",
-        "info": "",
-        "x": 170,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "42382caa7092aea9",
-        "type": "ui_table",
-        "z": "76b8d7d23f0dfbb5",
-        "group": "24fc504cdf00f66a",
-        "name": "List of users in gateway DB",
-        "order": 0,
-        "width": "11",
-        "height": "10",
-        "columns": [
-            {
-                "field": "payload.id",
-                "title": "Employee ID",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "payload.surname",
-                "title": "Surname",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "payload.name",
-                "title": "Name",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "payload.department",
-                "title": "Department",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1020,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "02bf3d654cefb710",
-        "type": "mongodb in",
-        "z": "76b8d7d23f0dfbb5",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "usersCollection",
-        "operation": "aggregate",
-        "x": 600,
-        "y": 360,
-        "wires": [
-            [
-                "42382caa7092aea9"
-            ]
-        ]
-    },
-    {
-        "id": "fe4883d317199546",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 20",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "a35ddb1cb45ecaee",
-        "type": "inject",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Refresh Dashboard every 5s",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "date"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            [
-                "02bf3d654cefb710",
-                "8383109a01c9660c"
-            ]
-        ]
-    },
-    {
-        "id": "3ea5fb05032f3c8c",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Display log of usersCollection update",
-        "info": "",
-        "x": 1040,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "6f6c2e4c6ab55fc0",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Display List of users ",
-        "info": "",
-        "x": 990,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "f6d6d05d984eee08",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Log user list update FAIL",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1010,
-        "y": 240,
-        "wires": [
-            [
-                "20b10770f9327a5d",
-                "3fb904db9d25c02b"
-            ]
-        ]
-    },
-    {
-        "id": "3fb904db9d25c02b",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 25",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "b29a6bef20b63c72",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 27",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "8d822c1ec888b9e2",
-        "type": "ui_table",
-        "z": "74d70de6eea550f9",
-        "group": "9e0481318c1e8033",
-        "name": "Stashed keyboard events",
-        "order": 0,
-        "width": "13",
-        "height": "10",
-        "columns": [
-            {
-                "field": "timestamp",
-                "title": "Timestamp",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "employeeCode",
-                "title": "Employee ID",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "type",
-                "title": "Action",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1210,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "cbf7c6584f0a9148",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "name": "Refresh Table 5s",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 120,
-        "wires": [
-            [
-                "05d406bbbd07e06b"
-            ]
-        ]
-    },
-    {
-        "id": "05d406bbbd07e06b",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "name": "",
-        "group": "9e0481318c1e8033",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh todo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 430,
-        "y": 120,
-        "wires": [
-            [
-                "ed6e78e62f6e89b8"
-            ]
-        ]
-    },
-    {
-        "id": "ed6e78e62f6e89b8",
-        "type": "mongodb in",
-        "z": "74d70de6eea550f9",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "stashedKeyboardEventsCollection",
-        "operation": "find",
-        "x": 800,
-        "y": 120,
-        "wires": [
-            [
-                "8d822c1ec888b9e2"
-            ]
-        ]
-    },
-    {
-        "id": "02d7e1010cac7ef5",
-        "type": "comment",
-        "z": "74d70de6eea550f9",
-        "name": "Display keyboard events log (flow2) UI",
-        "info": "",
-        "x": 230,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "036929e57912cc50",
-        "type": "comment",
-        "z": "74d70de6eea550f9",
-        "name": "Display server response log(flow2) UI",
-        "info": "",
-        "x": 230,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "2bd43a2954daefc6",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "name": "Refresh Table 5s",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 200,
-        "wires": [
-            [
-                "2daa2cbfa085b484"
-            ]
-        ]
-    },
-    {
-        "id": "2daa2cbfa085b484",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "name": "",
-        "group": "8e8c38f3867a2f4b",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh todo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 410,
-        "y": 200,
-        "wires": [
-            [
-                "10186ab8cec6d099"
-            ]
-        ]
-    },
-    {
-        "id": "10186ab8cec6d099",
-        "type": "mongodb in",
-        "z": "74d70de6eea550f9",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "keyboardEventsCollection",
-        "operation": "find",
-        "x": 730,
-        "y": 200,
-        "wires": [
-            [
-                "4e566a1b02d91ecd"
-            ]
-        ]
-    },
-    {
-        "id": "4e566a1b02d91ecd",
-        "type": "ui_table",
-        "z": "74d70de6eea550f9",
-        "group": "8e8c38f3867a2f4b",
-        "name": "Keyboard events",
-        "order": 2,
-        "width": "13",
-        "height": "10",
-        "columns": [
-            {
-                "field": "timestamp",
-                "title": "Timestamp",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "employeeCode",
-                "title": "Employee ID",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "type",
-                "title": "Action",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "update",
-                "title": "Server response",
-                "width": "",
-                "align": "center",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1110,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "f17ae95c73b4bc0e",
-        "type": "debug",
-        "z": "74d70de6eea550f9",
-        "name": "debug 19",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1540,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "511ccb281833db51",
-        "type": "comment",
-        "z": "d7790596fee7e9be",
-        "name": "POST stashed events from keyboard",
-        "info": "",
-        "x": 180,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "abcc11f42d635328",
-        "type": "http request",
-        "z": "d7790596fee7e9be",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://host.docker.internal:3000/api/event/create",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "bearer",
-        "senderr": false,
-        "headers": [],
-        "x": 510,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f3e31cca429dc6a2",
-        "type": "inject",
-        "z": "d7790596fee7e9be",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1200",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "807ba165fd557106",
-        "type": "function",
-        "z": "d7790596fee7e9be",
-        "name": "function 1",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 140,
-        "wires": [
-            []
         ]
     }
 ]

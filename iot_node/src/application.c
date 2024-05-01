@@ -39,11 +39,6 @@ void matrix_event_handler(twr_matrix_t *self, twr_matrix_event_t event, void *ev
     {
         return;
     }
-    else if (matrix_state & (1 << 14)) // delete
-    {
-         memset(codeBuffer, 0, sizeof(codeBuffer));
-        return;
-    }
     else if (matrix_state & (1 << 3)) // Arrived
     {
         char xFunc[] = "A";  // Arrived
@@ -71,7 +66,7 @@ void matrix_event_handler(twr_matrix_t *self, twr_matrix_event_t event, void *ev
         twr_led_pulse(&led, 30);
         return;
     }
-    else if (matrix_state & (1 << 15)) // Doctor
+    else if (matrix_state & (1 << 15)) // Holiday
     {
         char xFunc[] = "H"; // Holiday
         sprintf(codeBuffer, "%s%s", codeBuffer, xFunc);
