@@ -13,9 +13,13 @@ class eventAbl {
 
     let result = await employeeDao.findByCode(req.body);
 
+    // authorization
+    if (req.user == null) {
+        throw new errors.NotAuthorized();
+      }
+
     if (result) {
 
-        req.body.timestamp = new Date().toJSON();
         let newEvent = await eventDao.create(req.body);
 
         res.json(newEvent);
