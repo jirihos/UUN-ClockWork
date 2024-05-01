@@ -756,7 +756,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "name": "response 200.1, 400.2, 401.3, else.4.",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null, null];\n\n} else if (msg.statusCode === 400) { // bad request\n    return [null, msg, null, null];\n   \n} else if (msg.statusCode === 401) { // access denied\n    return [null, null, msg, null];\n\n} else { // error\n    return [null, null, null, msg];\n};\n",
+        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null, null];\n\n} else if (msg.statusCode === 400) { // bad request\n    return [null, msg, null, null];\n   \n} else if (msg.statusCode === 403) { // access denied\n    return [null, null, msg, null];\n\n} else { // error\n    return [null, null, null, msg];\n};\n",
         "outputs": 4,
         "timeout": 0,
         "noerr": 0,
@@ -853,7 +853,8 @@
         "y": 240,
         "wires": [
             [
-                "8d92076ea8ee2d84"
+                "8d92076ea8ee2d84",
+                "303311f5377ac92b"
             ]
         ]
     },
@@ -896,8 +897,8 @@
         "id": "0997bfee7e0ad6f1",
         "type": "function",
         "z": "d537a249a96dc0df",
-        "name": "Log server response 401",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Access denied 401\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED ACCESS DENIED\");\n\nreturn msg;",
+        "name": "Log server response 403",
+        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Access denied 403\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED ACCESS DENIED\");\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -908,7 +909,8 @@
         "y": 320,
         "wires": [
             [
-                "8d92076ea8ee2d84"
+                "8d92076ea8ee2d84",
+                "71f7a3281684d237"
             ]
         ]
     },
@@ -1005,7 +1007,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "name": "Is in usersCollection user with id ?",
-        "func": "if (msg.payload.length === 0) {\n    node.warn(\"User not found\"); \n    msg = { payload: {\n         message: \"USER NOT FOUND LOCALLY ACCESS DENIED\"\n    } \n    }\n    return [ msg, null ];\n} else {\n    node.warn(\"User found\");\n    msg = { payload: {\n         message: \"USER FOUND LOCALLY OK\"\n    } \n    }\n    return [ null, msg ];\n}",
+        "func": "if (msg.payload.length === 0) {\n    node.warn(\"User not found\"); \n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -1021,7 +1023,8 @@
             ],
             [
                 "a369ae9174888f4b",
-                "6cfb1baa922fad99"
+                "6cfb1baa922fad99",
+                "1663392a3bfb8433"
             ]
         ]
     },
@@ -1152,9 +1155,9 @@
         "cancel": "",
         "raw": false,
         "className": "",
-        "topic": "payload.message",
-        "name": "\"USER CHECKED LOCALLY ACCESS DENIED\"",
-        "x": 1210,
+        "topic": "payload",
+        "name": " ACCESS DENIED (locally)",
+        "x": 1140,
         "y": 620,
         "wires": [
             []
@@ -1173,7 +1176,7 @@
         "cancel": "",
         "raw": false,
         "className": "",
-        "topic": "payload.message",
+        "topic": "payload",
         "name": "USER CHECKED LOCALLY OK",
         "x": 1150,
         "y": 660,
@@ -1191,8 +1194,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.message",
-                "tot": "msg"
+                "to": "ACCESS DENIED (locally)",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1218,8 +1221,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.message",
-                "tot": "msg"
+                "to": "USER CHECKED LOCALLY OK",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1250,6 +1253,118 @@
         "statusType": "auto",
         "x": 1260,
         "y": 560,
+        "wires": []
+    },
+    {
+        "id": "303311f5377ac92b",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "USER CHECKED OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "9301e7d80c610b92"
+            ]
+        ]
+    },
+    {
+        "id": "9301e7d80c610b92",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": "USER CHECKED OK",
+        "x": 1040,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71f7a3281684d237",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACCES DENIED",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 340,
+        "wires": [
+            [
+                "00b99cdb0152d857"
+            ]
+        ]
+    },
+    {
+        "id": "00b99cdb0152d857",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload",
+        "name": "ACCESS DENIED",
+        "x": 1030,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1663392a3bfb8433",
+        "type": "debug",
+        "z": "d537a249a96dc0df",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 720,
         "wires": []
     },
     {
@@ -1358,7 +1473,7 @@
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1210,
+        "x": 1290,
         "y": 80,
         "wires": []
     },
@@ -1374,7 +1489,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
+        "x": 1020,
         "y": 100,
         "wires": [
             [
@@ -1394,7 +1509,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1210,
+        "x": 1290,
         "y": 140,
         "wires": []
     },
@@ -1410,7 +1525,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
+        "x": 1030,
         "y": 200,
         "wires": [
             [
@@ -1429,7 +1544,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1330,
+        "x": 1430,
         "y": 220,
         "wires": []
     },
@@ -1437,9 +1552,9 @@
         "id": "e999598846c02a95",
         "type": "comment",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Replace DB (todo, object)",
+        "name": "Replace DB",
         "info": "",
-        "x": 950,
+        "x": 970,
         "y": 60,
         "wires": []
     },
@@ -1449,7 +1564,7 @@
         "z": "76b8d7d23f0dfbb5",
         "name": "Log response",
         "info": "",
-        "x": 890,
+        "x": 970,
         "y": 160,
         "wires": []
     },
@@ -1737,7 +1852,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
+        "x": 1010,
         "y": 240,
         "wires": [
             [
@@ -1758,7 +1873,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
+        "x": 1280,
         "y": 280,
         "wires": []
     },
