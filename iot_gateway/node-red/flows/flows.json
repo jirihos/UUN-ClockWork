@@ -31,6 +31,14 @@
         "env": []
     },
     {
+        "id": "d7790596fee7e9be",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1be85959efd6d9ef",
         "type": "mqtt-broker",
         "name": "",
@@ -74,11 +82,11 @@
     {
         "id": "8e8c38f3867a2f4b",
         "type": "ui_group",
-        "name": "Server response log",
+        "name": "Keyboard events",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "13",
         "collapse": true,
         "className": ""
     },
@@ -190,11 +198,11 @@
     {
         "id": "9e0481318c1e8033",
         "type": "ui_group",
-        "name": "Keyboard events",
+        "name": "Stashed keyboard events",
         "tab": "886cc25582355e06",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": "13",
         "collapse": true,
         "className": ""
     },
@@ -217,18 +225,18 @@
     {
         "id": "af810a62dae6c015",
         "type": "ui_group",
-        "name": "Update users DB gateway",
-        "tab": "886cc25582355e06",
+        "name": "Update list of users DB gateway",
+        "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "14",
         "collapse": true,
         "className": ""
     },
     {
         "id": "ac261bd52cf295e5",
         "type": "ui_tab",
-        "name": "User list",
+        "name": "List of users",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
@@ -236,13 +244,31 @@
     {
         "id": "24fc504cdf00f66a",
         "type": "ui_group",
-        "name": "User list",
+        "name": "List of users",
         "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "8",
+        "width": "11",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "c91332c0.50c11",
+        "type": "ui_group",
+        "name": "commands",
+        "tab": "379a501f.53b59",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "379a501f.53b59",
+        "type": "ui_tab",
+        "name": "ui-table command",
+        "icon": "fa-table",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "afda953f5c974e93",
@@ -636,7 +662,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "94a2c8b60c41d056"
@@ -644,28 +670,11 @@
         ]
     },
     {
-        "id": "11350f0201874d8c",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1180,
-        "y": 120,
-        "wires": []
-    },
-    {
         "id": "94a2c8b60c41d056",
         "type": "function",
         "z": "d537a249a96dc0df",
         "name": "Filter msg === 5 ",
-        "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
+        "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n    \n}\n    ",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -673,13 +682,13 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "7e09073d61ddc699"
             ],
             [
-                "df733a253cb37688"
+                "404fcafe15a83f94"
             ]
         ]
     },
@@ -688,38 +697,20 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 60,
+        "x": 640,
+        "y": 80,
         "wires": [
             [
-                "c623f8184c896132",
                 "c205155a2f3932fe"
             ]
         ]
-    },
-    {
-        "id": "c623f8184c896132",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 4",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "0c47445f94556a8b",
@@ -727,13 +718,13 @@
         "z": "d537a249a96dc0df",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "keyboardEventsCollection",
+        "collection": "stashedKeyboardEventsCollection",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 510,
-        "y": 400,
+        "x": 700,
+        "y": 440,
         "wires": []
     },
     {
@@ -742,7 +733,7 @@
         "z": "d537a249a96dc0df",
         "name": "",
         "method": "POST",
-        "ret": "txt",
+        "ret": "obj",
         "paytoqs": "ignore",
         "url": "http://host.docker.internal:3000/api/event/create",
         "tls": "",
@@ -752,90 +743,43 @@
         "authType": "bearer",
         "senderr": false,
         "headers": [],
-        "x": 970,
-        "y": 120,
+        "x": 130,
+        "y": 180,
         "wires": [
             [
-                "d6f9f320f897c6ee",
-                "11350f0201874d8c"
+                "d6f9f320f897c6ee"
             ]
         ]
-    },
-    {
-        "id": "df733a253cb37688",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 6",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 180,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "d6f9f320f897c6ee",
         "type": "function",
         "z": "d537a249a96dc0df",
-        "name": "response 200 1. out, else 2.",
-        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
-        "outputs": 2,
+        "name": "response 200.1, 400.2, 401.3, else.4.",
+        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null, null];\n\n} else if (msg.statusCode === 400) { // bad request\n    return [null, msg, null, null];\n   \n} else if (msg.statusCode === 401) { // access denied\n    return [null, null, msg, null];\n\n} else { // error\n    return [null, null, null, msg];\n};\n",
+        "outputs": 4,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 240,
+        "x": 210,
+        "y": 300,
         "wires": [
             [
                 "7a6dc751a7fc8632"
             ],
             [
-                "99940b665d510255",
-                "7a6dc751a7fc8632"
+                "4eec8e00cae7f1e3",
+                "b8f6b606e4f9ec5b"
+            ],
+            [
+                "0997bfee7e0ad6f1"
+            ],
+            [
+                "99940b665d510255"
             ]
         ]
-    },
-    {
-        "id": "d5c29626588d1f2d",
-        "type": "mqtt out",
-        "z": "d537a249a96dc0df",
-        "name": "Flash LED twice 600 core",
-        "topic": "BC_RADIO_SUB_PT_FLOAT",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "1be85959efd6d9ef",
-        "x": 550,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "2d6a2ef4b7c6cecc",
-        "type": "mqtt out",
-        "z": "d537a249a96dc0df",
-        "name": "Flash LED once 1000 core",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "1be85959efd6d9ef",
-        "x": 400,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "c205155a2f3932fe",
@@ -856,7 +800,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
+        "x": 820,
         "y": 120,
         "wires": [
             [
@@ -883,118 +827,29 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
-        "y": 300,
+        "x": 140,
+        "y": 460,
         "wires": [
             [
+                "56a5f23fd3add7a3",
                 "0c47445f94556a8b",
-                "6f75b29bd35ca559",
-                "8b953bfae6810853"
+                "60d9f8fe0958cf50"
             ]
         ]
-    },
-    {
-        "id": "8b953bfae6810853",
-        "type": "mongodb in",
-        "z": "d537a249a96dc0df",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "Find user Id in users DB",
-        "collection": "users",
-        "operation": "find",
-        "x": 410,
-        "y": 460,
-        "wires": [
-            [
-                "6d213f2b2c576b8d"
-            ]
-        ]
-    },
-    {
-        "id": "6d213f2b2c576b8d",
-        "type": "function",
-        "z": "d537a249a96dc0df",
-        "name": "function 1",
-        "func": "var userId = 1101;\n\nif (msg.payload && msg.payload.employeeCode !== undefined) {\n    if (msg.payload.employeeCode === userId) {\n        //node.warn('ID found in MongoDB');\n      \n    } else {\n        //node.warn('ID not found in MongoDB');\n      \n    }\n} else {\n\n    //node.warn('No employeeCode found ');\n}\n\nreturn msg;\n\n",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 460,
-        "wires": [
-            [
-                "47bef20b8f1cfa94"
-            ],
-            [
-                "559a14406c21e1a2"
-            ]
-        ]
-    },
-    {
-        "id": "47bef20b8f1cfa94",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 12",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "559a14406c21e1a2",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 13",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "6f75b29bd35ca559",
-        "type": "debug",
-        "z": "d537a249a96dc0df",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "7a6dc751a7fc8632",
         "type": "function",
         "z": "d537a249a96dc0df",
-        "name": "Log server response",
-        "func": "if (typeof msg.payload === 'string' && msg.payload.includes('RequestError')) {\n    // If msg.payload contains an error message, handle it accordingly\n    msg.payload = {\n        \"timestamp\": new Date().toISOString(),\n        \"update\": \"NOT SUCCESFULL\"\n    }\n    console.error(\"Error occurred:\", msg.payload);\n} else {\n\n    msg.payload = {\n      \"timestamp\": new Date().toISOString(),\n     \"update\": \"SUCCESFULL\"\n    }\n}\nreturn msg;",
+        "name": "Log server response 200",
+        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"OK 200\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED OK\");\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 570,
         "y": 240,
         "wires": [
             [
@@ -1008,13 +863,393 @@
         "z": "d537a249a96dc0df",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "serverCommunicationCollection",
+        "collection": "keyboardEventsCollection",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 930,
+        "x": 950,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4eec8e00cae7f1e3",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response 400",
+        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Error 400\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"ERROR BAD REQUEST\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "8d92076ea8ee2d84"
+            ]
+        ]
+    },
+    {
+        "id": "0997bfee7e0ad6f1",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response 401",
+        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n    \"update\": \"Access denied 401\",\n    \"msg\": msg.payload\n};\n\nnode.warn(\"USER LOGGED ACCESS DENIED\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "8d92076ea8ee2d84"
+            ]
+        ]
+    },
+    {
+        "id": "56a5f23fd3add7a3",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response Err",
+        "func": "let payloadString = msg.payload.toString();\n\nmsg.payload = {\n    \"timestamp\": msg.payload.timestamp,\n    \"employeeCode\": msg.payload.employeeCode,\n    \"type\": msg.payload.type,\n    \"update\": \"Connection error\",  \n};\n\nnode.warn(\"CONNECTION ERROR\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "8d92076ea8ee2d84"
+            ]
+        ]
+    },
+    {
+        "id": "b8f6b606e4f9ec5b",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Log server response 400",
+        "func": "msg.payload = {\n    \"timestamp\": msg.payload.error._original.timestamp,\n    \"employeeCode\": msg.payload.error._original.employeeCode,\n    \"type\": msg.payload.error._original.type,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "0c47445f94556a8b",
+                "60d9f8fe0958cf50"
+            ]
+        ]
+    },
+    {
+        "id": "a93ea25313b7dcf7",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "Recive ID+action from keyboard",
+        "info": "",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "c886763ff525e7f5",
+        "type": "mongodb in",
+        "z": "d537a249a96dc0df",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 900,
+        "y": 560,
+        "wires": [
+            [
+                "80888cdaf5d9a8b9",
+                "41409294c2ebe3b5"
+            ]
+        ]
+    },
+    {
+        "id": "60d9f8fe0958cf50",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "find in usersCollection id",
+        "func": "var employeeCode = msg.payload.employeeCode\n\nvar findMsg = {\n    collection: \"usersCollection\", // Collection name\n    action: \"find\",\n    payload: {\n        'payload.id': employeeCode,\n    }\n};\n\nnode.send(findMsg);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 560,
+        "wires": [
+            [
+                "c886763ff525e7f5"
+            ]
+        ]
+    },
+    {
+        "id": "80888cdaf5d9a8b9",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "name": "Is in usersCollection user with id ?",
+        "func": "if (msg.payload.length === 0) {\n    node.warn(\"User not found\"); \n    msg = { payload: {\n         message: \"USER NOT FOUND LOCALLY ACCESS DENIED\"\n    } \n    }\n    return [ msg, null ];\n} else {\n    node.warn(\"User found\");\n    msg = { payload: {\n         message: \"USER FOUND LOCALLY OK\"\n    } \n    }\n    return [ null, msg ];\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 640,
+        "wires": [
+            [
+                "a369ae9174888f4b",
+                "a90667a04de81245"
+            ],
+            [
+                "a369ae9174888f4b",
+                "6cfb1baa922fad99"
+            ]
+        ]
+    },
+    {
+        "id": "a369ae9174888f4b",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "f88db32ba06e4406"
+            ]
+        ]
+    },
+    {
+        "id": "f88db32ba06e4406",
+        "type": "debug",
+        "z": "d537a249a96dc0df",
+        "name": "debug 23",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9c99398c78e5f781",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "Sort response",
+        "info": "",
+        "x": 130,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9bbcaccf8168057c",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "Response message to keyboardEventsCollection",
+        "info": "",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0de411870f1f233a",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "No access to server check entry locally",
+        "info": "",
+        "x": 210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cd2332bc79b74a0c",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "Check if user is in usersCollection database",
+        "info": "",
+        "x": 630,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "997d10c9c55e4269",
+        "type": "comment",
+        "z": "d537a249a96dc0df",
+        "name": "Save entry to POST it to server later",
+        "info": "",
+        "x": 600,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "404fcafe15a83f94",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "Wrong entry",
+        "name": "Wrong entry",
+        "x": 630,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4be098b25860ece8",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload.message",
+        "name": "\"USER CHECKED LOCALLY ACCESS DENIED\"",
+        "x": 1210,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12593b8dc90ac2cd",
+        "type": "ui_toast",
+        "z": "d537a249a96dc0df",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "payload.message",
+        "name": "USER CHECKED LOCALLY OK",
+        "x": 1150,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a90667a04de81245",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 620,
+        "wires": [
+            [
+                "4be098b25860ece8"
+            ]
+        ]
+    },
+    {
+        "id": "6cfb1baa922fad99",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 660,
+        "wires": [
+            [
+                "12593b8dc90ac2cd"
+            ]
+        ]
+    },
+    {
+        "id": "41409294c2ebe3b5",
+        "type": "debug",
+        "z": "d537a249a96dc0df",
+        "name": "debug 29",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 560,
         "wires": []
     },
     {
@@ -1073,7 +1308,8 @@
         "y": 120,
         "wires": [
             [
-                "9e354968b2f4414e"
+                "9e354968b2f4414e",
+                "b29a6bef20b63c72"
             ]
         ]
     },
@@ -1082,7 +1318,7 @@
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
         "name": "response 200 1. out, else 2.",
-        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}\n    ",
+        "func": "if (msg.statusCode === 200){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -1093,57 +1329,22 @@
         "y": 120,
         "wires": [
             [
-                "d080f2e1a17f7f9e",
                 "437c8c3a30167bbc",
                 "a7a28555fa3fc0ad"
             ],
             [
-                "cd0f2c06fdf27f5c",
-                "a7a28555fa3fc0ad"
+                "f6d6d05d984eee08"
             ]
         ]
-    },
-    {
-        "id": "cd0f2c06fdf27f5c",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 15",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "8dddd2cf652c6554",
         "type": "comment",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Get list of users into local DB ",
+        "name": "Get/ Update list of users into local DB ",
         "info": "",
-        "x": 160,
+        "x": 170,
         "y": 20,
-        "wires": []
-    },
-    {
-        "id": "d080f2e1a17f7f9e",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 16",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 60,
         "wires": []
     },
     {
@@ -1152,12 +1353,12 @@
         "z": "76b8d7d23f0dfbb5",
         "mongodb": "f18849d91eb5ebcb",
         "name": "Remove list",
-        "collection": "users",
+        "collection": "usersCollection",
         "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1190,
+        "x": 1210,
         "y": 80,
         "wires": []
     },
@@ -1166,7 +1367,7 @@
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
         "name": "add users each to collection",
-        "func": "msg.users = JSON.parse(msg.payload);\n\nvar deleteMsg = {\n    collection: \"users\", // Collection name\n    action: \"remove\",\n    payload: {} // Empty query to delete all documents\n};\n\nnode.send(deleteMsg);\n\nif (msg.users && Array.isArray(msg.users)) {\n    for (var i = 0; i < msg.users.length; i++) {\n        var user = msg.users[i];\n        \n        // Insert the user into MongoDB\n        var insertMsg = {\n            collection: \"users\", // Collection name\n            payload: user\n        };\n        \n        node.send(insertMsg);\n    }\n} else {\n    node.error(\"Invalid or empty users array.\");\n}",
+        "func": "msg.users = JSON.parse(msg.payload);\n\nvar deleteMsg = {\n    collection: \"usersCollection\", // Collection name\n    action: \"remove\",\n    payload: {}\n};\nnode.send(deleteMsg);\n\n\nif (msg.users && Array.isArray(msg.users)) {\n    for (var i = 0; i < msg.users.length; i++) {\n        var user = msg.users[i];\n\n        // Insert user\n        var insertMsg = {\n            collection: \"usersCollection\", // Collection name\n            payload: user\n        };\n\n        node.send(insertMsg);\n    }\n} else {\n    node.error(\"Invalid users array.\");\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1174,11 +1375,11 @@
         "finalize": "",
         "libs": [],
         "x": 960,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
-                "e6c2bdfd3eba38d2",
-                "6fbc632079c8a472"
+                "6fbc632079c8a472",
+                "e6c2bdfd3eba38d2"
             ]
         ]
     },
@@ -1187,62 +1388,35 @@
         "type": "mongodb out",
         "z": "76b8d7d23f0dfbb5",
         "mongodb": "f18849d91eb5ebcb",
-        "name": "Insert list",
-        "collection": "users",
-        "payonly": true,
+        "name": "Insert users",
+        "collection": "usersCollection",
+        "payonly": false,
         "upsert": false,
         "multi": false,
-        "operation": "insert",
-        "x": 1180,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "859f1dad06c112b2",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Get events and POST to remote server, after response delete item ",
-        "info": "",
-        "x": 300,
-        "y": 400,
+        "operation": "store",
+        "x": 1210,
+        "y": 140,
         "wires": []
     },
     {
         "id": "a7a28555fa3fc0ad",
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Log user list update",
-        "func": "if (typeof msg.payload === 'string' && msg.payload.includes('RequestError')) {\n    // If msg.payload contains an error message, handle it accordingly\n    msg.payload = {\n        \"timestamp\": new Date().toISOString(),\n        \"update\": \"NOT SUCCESFULL\"\n    }\n    console.error(\"Error occurred:\", msg.payload);\n} else {\n\n    msg.payload = {\n      \"timestamp\": new Date().toISOString(),\n     \"update\": \"SUCCESFULL\"\n    }\n}\nreturn msg;",
+        "name": "Log user list update SUCESS",
+        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
+        "x": 930,
         "y": 200,
         "wires": [
             [
-                "9969043e4229717d",
                 "20b10770f9327a5d"
             ]
         ]
-    },
-    {
-        "id": "9969043e4229717d",
-        "type": "debug",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "debug 18",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1100,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "20b10770f9327a5d",
@@ -1255,17 +1429,17 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1150,
-        "y": 280,
+        "x": 1330,
+        "y": 220,
         "wires": []
     },
     {
         "id": "e999598846c02a95",
         "type": "comment",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Replace DB ",
+        "name": "Replace DB (todo, object)",
         "info": "",
-        "x": 910,
+        "x": 950,
         "y": 60,
         "wires": []
     },
@@ -1273,9 +1447,9 @@
         "id": "a2c1c9d92c1b0756",
         "type": "comment",
         "z": "76b8d7d23f0dfbb5",
-        "name": "Log",
+        "name": "Log response",
         "info": "",
-        "x": 850,
+        "x": 890,
         "y": 160,
         "wires": []
     },
@@ -1303,7 +1477,9 @@
         "y": 120,
         "wires": [
             [
-                "c20bc9ccb77a24e8"
+                "c20bc9ccb77a24e8",
+                "02bf3d654cefb710",
+                "8383109a01c9660c"
             ]
         ]
     },
@@ -1338,12 +1514,12 @@
     {
         "id": "996b8d311bcda11f",
         "type": "ui_table",
-        "z": "74d70de6eea550f9",
+        "z": "76b8d7d23f0dfbb5",
         "group": "af810a62dae6c015",
-        "name": "users",
+        "name": "Update list of users DB gateway",
         "order": 0,
-        "width": "6",
-        "height": "15",
+        "width": "14",
+        "height": "10",
         "columns": [
             {
                 "field": "timestamp",
@@ -1364,53 +1540,164 @@
                 "formatterParams": {
                     "target": "_blank"
                 }
+            },
+            {
+                "field": "msg",
+                "title": "Message",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
             }
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1010,
-        "y": 120,
+        "x": 1030,
+        "y": 440,
         "wires": []
     },
     {
         "id": "8383109a01c9660c",
         "type": "mongodb in",
-        "z": "74d70de6eea550f9",
+        "z": "76b8d7d23f0dfbb5",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
         "collection": "userListUpdateCollection",
-        "operation": "find",
-        "x": 570,
-        "y": 120,
+        "operation": "aggregate",
+        "x": 630,
+        "y": 440,
         "wires": [
             [
-                "996b8d311bcda11f"
+                "996b8d311bcda11f",
+                "fe4883d317199546"
             ]
         ]
     },
     {
-        "id": "019cdc7a1de8d470",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
+        "id": "f04185034d3a2345",
+        "type": "comment",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display log of user DB update UI",
+        "info": "",
+        "x": 170,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "42382caa7092aea9",
+        "type": "ui_table",
+        "z": "76b8d7d23f0dfbb5",
+        "group": "24fc504cdf00f66a",
+        "name": "List of users in gateway DB",
+        "order": 0,
+        "width": "11",
+        "height": "10",
+        "columns": [
+            {
+                "field": "payload.id",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.surname",
+                "title": "Surname",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.name",
+                "title": "Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.department",
+                "title": "Department",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1020,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "02bf3d654cefb710",
+        "type": "mongodb in",
+        "z": "76b8d7d23f0dfbb5",
+        "mongodb": "f18849d91eb5ebcb",
         "name": "",
+        "collection": "usersCollection",
+        "operation": "aggregate",
+        "x": 600,
+        "y": 360,
+        "wires": [
+            [
+                "42382caa7092aea9"
+            ]
+        ]
+    },
+    {
+        "id": "fe4883d317199546",
+        "type": "debug",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "debug 20",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a35ddb1cb45ecaee",
+        "type": "inject",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Refresh Dashboard every 5s",
         "props": [
             {
                 "p": "payload"
             },
             {
                 "p": "topic",
-                "vt": "str"
+                "v": "",
+                "vt": "date"
             }
         ],
-        "repeat": "10",
+        "repeat": "5",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 100,
+        "x": 190,
+        "y": 360,
         "wires": [
             [
                 "02bf3d654cefb710",
@@ -1419,13 +1706,77 @@
         ]
     },
     {
-        "id": "f04185034d3a2345",
+        "id": "3ea5fb05032f3c8c",
         "type": "comment",
-        "z": "74d70de6eea550f9",
-        "name": "Display log of user DB update (flow3) UI",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display log of usersCollection update",
         "info": "",
-        "x": 230,
-        "y": 20,
+        "x": 1040,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6f6c2e4c6ab55fc0",
+        "type": "comment",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Display List of users ",
+        "info": "",
+        "x": 990,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f6d6d05d984eee08",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "Log user list update FAIL",
+        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 240,
+        "wires": [
+            [
+                "20b10770f9327a5d",
+                "3fb904db9d25c02b"
+            ]
+        ]
+    },
+    {
+        "id": "3fb904db9d25c02b",
+        "type": "debug",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b29a6bef20b63c72",
+        "type": "debug",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "debug 27",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 160,
         "wires": []
     },
     {
@@ -1433,10 +1784,10 @@
         "type": "ui_table",
         "z": "74d70de6eea550f9",
         "group": "9e0481318c1e8033",
-        "name": "Keyboard events",
+        "name": "Stashed keyboard events",
         "order": 0,
-        "width": "6",
-        "height": "15",
+        "width": "13",
+        "height": "10",
         "columns": [
             {
                 "field": "timestamp",
@@ -1471,15 +1822,15 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1110,
-        "y": 220,
+        "x": 1210,
+        "y": 120,
         "wires": []
     },
     {
         "id": "cbf7c6584f0a9148",
         "type": "inject",
         "z": "74d70de6eea550f9",
-        "name": "Refresh Table 10s",
+        "name": "Refresh Table 5s",
         "props": [
             {
                 "p": "payload"
@@ -1489,7 +1840,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "10",
+        "repeat": "5",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -1497,7 +1848,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 220,
+        "y": 120,
         "wires": [
             [
                 "05d406bbbd07e06b"
@@ -1525,7 +1876,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 430,
-        "y": 220,
+        "y": 120,
         "wires": [
             [
                 "ed6e78e62f6e89b8"
@@ -1538,10 +1889,10 @@
         "z": "74d70de6eea550f9",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "keyboardEventsCollection",
+        "collection": "stashedKeyboardEventsCollection",
         "operation": "find",
-        "x": 770,
-        "y": 220,
+        "x": 800,
+        "y": 120,
         "wires": [
             [
                 "8d822c1ec888b9e2"
@@ -1555,7 +1906,7 @@
         "name": "Display keyboard events log (flow2) UI",
         "info": "",
         "x": 230,
-        "y": 180,
+        "y": 80,
         "wires": []
     },
     {
@@ -1565,14 +1916,14 @@
         "name": "Display server response log(flow2) UI",
         "info": "",
         "x": 230,
-        "y": 260,
+        "y": 160,
         "wires": []
     },
     {
         "id": "2bd43a2954daefc6",
         "type": "inject",
         "z": "74d70de6eea550f9",
-        "name": "Refresh Table 10s",
+        "name": "Refresh Table 5s",
         "props": [
             {
                 "p": "payload"
@@ -1582,7 +1933,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "10",
+        "repeat": "5",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -1590,7 +1941,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "2daa2cbfa085b484"
@@ -1618,7 +1969,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 410,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "10186ab8cec6d099"
@@ -1631,10 +1982,10 @@
         "z": "74d70de6eea550f9",
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
-        "collection": "serverCommunicationCollection",
+        "collection": "keyboardEventsCollection",
         "operation": "find",
-        "x": 750,
-        "y": 300,
+        "x": 730,
+        "y": 200,
         "wires": [
             [
                 "4e566a1b02d91ecd"
@@ -1646,10 +1997,10 @@
         "type": "ui_table",
         "z": "74d70de6eea550f9",
         "group": "8e8c38f3867a2f4b",
-        "name": "Server connection log",
+        "name": "Keyboard events",
         "order": 2,
-        "width": "6",
-        "height": "15",
+        "width": "13",
+        "height": "10",
         "columns": [
             {
                 "field": "timestamp",
@@ -1662,8 +2013,28 @@
                 }
             },
             {
+                "field": "employeeCode",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "type",
+                "title": "Action",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
                 "field": "update",
-                "title": "Update statuss",
+                "title": "Server response",
                 "width": "",
                 "align": "center",
                 "formatter": "plaintext",
@@ -1674,50 +2045,101 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1140,
-        "y": 300,
+        "x": 1110,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "42382caa7092aea9",
-        "type": "ui_table",
+        "id": "f17ae95c73b4bc0e",
+        "type": "debug",
         "z": "74d70de6eea550f9",
-        "group": "24fc504cdf00f66a",
-        "name": "List of users in gateway DB",
-        "order": 0,
-        "width": "8",
-        "height": "15",
-        "columns": [],
-        "outputs": 0,
-        "cts": false,
-        "x": 960,
-        "y": 60,
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "02bf3d654cefb710",
-        "type": "mongodb in",
-        "z": "74d70de6eea550f9",
-        "mongodb": "f18849d91eb5ebcb",
+        "id": "511ccb281833db51",
+        "type": "comment",
+        "z": "d7790596fee7e9be",
+        "name": "POST stashed events from keyboard",
+        "info": "",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "abcc11f42d635328",
+        "type": "http request",
+        "z": "d7790596fee7e9be",
         "name": "",
-        "collection": "users",
-        "operation": "find",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:3000/api/event/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "bearer",
+        "senderr": false,
+        "headers": [],
         "x": 510,
-        "y": 60,
+        "y": 140,
         "wires": [
-            [
-                "42382caa7092aea9"
-            ]
+            []
         ]
     },
     {
-        "id": "d3dd6876bf017c15",
-        "type": "comment",
-        "z": "74d70de6eea550f9",
-        "name": "todo",
-        "info": "",
-        "x": 750,
-        "y": 40,
-        "wires": []
+        "id": "f3e31cca429dc6a2",
+        "type": "inject",
+        "z": "d7790596fee7e9be",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1200",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "807ba165fd557106",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 140,
+        "wires": [
+            []
+        ]
     }
 ]
