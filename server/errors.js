@@ -39,4 +39,36 @@ module.exports = {
       this.status = 400;
     }
   },
+  DepartmentAlreadyExists: class extends Error {
+    constructor() {
+      super();
+      this.code = "DepartmentAlreadyExists";
+      this.message = "The department already exists.";
+      this.status = 400;
+    }
+  },
+  DepartmentDoesNotExist: class extends Error {
+    constructor() {
+      super();
+      this.code = "DepartmentDoesNotExist";
+      this.message = "The department doesn't exist.";
+      this.status = 401;
+    }
+  },
+  TerminalAlreadyExists: class extends Error {
+    constructor() {
+      super();
+      this.code = "TerminalAlreadyExists";
+      this.message = "A terminal with the same name already exists.";
+      this.status = 400;
+    }
+  },
+  MaximumNumberOfEmployeesReached: class extends Error {
+    constructor() {
+      super();
+      this.code = "MaximumNumberOfEmployeesReached";
+      this.message = "The system has reached the maximum number of employees.";
+      this.status = 403;
+    }
+  },
 };

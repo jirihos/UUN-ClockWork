@@ -1,15 +1,28 @@
 services:
   node-red:
-    build: .
+    build: ./node-red
     depends_on:
+      - bcg
+      - mosquitto
       - mongodb
     environment:
       NODE_ENV: production
-      TZ: ${TZ:-Europe/Amsterdam}
+      TZ: ${TZ:-Europe/Prague}
+      FLOWS: /data/flows/flows.json
     secrets:
       - terminal_api_key
     ports:
       - 1881:1880
+    volumes:
+      - ./node-red/flows:/data/flows
+  bcg:
+    build: ./bcg
+    depends_on:
+      - mosquitto
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+  mosquitto:
+    build: ./mosquitto
   mongodb:
     image: mongo
     volumes:

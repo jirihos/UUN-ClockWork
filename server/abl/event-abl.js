@@ -11,7 +11,7 @@ class eventAbl {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
 
-    let result = await employeeDao.findByCode(req.body);
+    let result = await employeeDao.findByCode(req.body.employeeCode);
 
     // authorization
     if (req.user == null) {

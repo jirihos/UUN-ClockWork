@@ -13,9 +13,9 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-router.post("/createUser", authenticateToken, async (req, res, next) => {
+router.post("/create", authenticateToken, async (req, res, next) => {
   try {
-    await UserAbl.createUser(req, res);
+    await UserAbl.create(req, res);
   } catch (e) {
     next(e);
   }

@@ -1,65 +1,23 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { UserProvider } from "./components/userContext";
 
-import EventTable from "./components/eventTable";
+import Dashboard from "./pages/dashboard";
+import Table from "./pages/table";
+import LoginForm from "./pages/loginForm";
+import NotFound from "./pages/notFound";
+import TestSite from "./pages/testSite";
 
 function App() {
-  const [events, setEvents] = useState([
-    {
-      name: "Carl Berry",
-      department: "IT",
-      terminalId: "123",
-      date: "2022-01-01",
-      arrivalTime: "08:00",
-      departureTime: "16:30",
-    },
-    {
-      name: "John Doe",
-      department: "HR",
-      terminalId: "456",
-      date: "2022-01-01",
-      arrivalTime: "08:00",
-      departureTime: "16:30",
-    },
-    {
-      name: "Paul Smith",
-      department: "IT",
-      terminalId: "789",
-      date: "2022-01-01",
-      arrivalTime: "08:00",
-      departureTime: "16:30",
-    },
-    {
-      name: "Carl Berry",
-      department: "IT",
-      terminalId: "123",
-      date: "2022-01-02",
-      arrivalTime: "08:00",
-      departureTime: "14:40",
-    },
-    {
-      name: "John Doe",
-      department: "HR",
-      terminalId: "456",
-      date: "2022-01-02",
-      arrivalTime: "08:00",
-      departureTime: "15:31",
-    },
-    {
-      name: "Paul Smith",
-      department: "IT",
-      terminalId: "789",
-      date: "2022-01-02",
-      arrivalTime: "08:00",
-      departureTime: "16:30",
-    },
-  ]);
-
   return (
-    <>
-      <div className="EventTable">
-        <EventTable events={events} />
-      </div>
-    </>
+    <UserProvider>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/events" element={<Table />} />
+        <Route path="/test" element={<TestSite />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </UserProvider>
   );
 }
 

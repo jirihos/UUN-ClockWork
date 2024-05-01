@@ -1,11 +1,12 @@
 const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 
 exports.employeeCreateSchema = Joi.object({
-  username: Joi.string().alphanum().min(3).max(20).required(),
-  password: Joi.string().min(1).max(72).required(),
-  employeeCode: Joi.number().min(1).max(9999).required(),
+  departmentId: Joi.objectId().required(),
+  firstName: Joi.string().min(1).max(50).required(),
+  lastName: Joi.string().min(1).max(50).required(),
 });
 
 exports.employeeFindByCodeSchema = Joi.object({
-    employeeCode: Joi.number().min(1).max(9999).required(),
-  });
+  code: Joi.number().min(0).max(9999).required(),
+});

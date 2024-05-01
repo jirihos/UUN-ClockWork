@@ -23,6 +23,50 @@ class DepartmentAbl {
 
     res.json(output);
   }
+
+  async create(req, res) {
+    // validation
+    await validate(schemas.departmentCreateSchema, req.body);
+
+    // authorization
+    if (req.user == null) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await departmentDao.getByName(req.body.name);
+
+    if (!result) {
+      let department = {
+        name: req.body.name,
+      };
+      let newDepartment = await departmentDao.create(department);
+      res.json(newDepartment);
+    } else {
+      throw new errors.DepartmentAlreadyExists();
+    }
+  }
+
+  async delete(req, res) {
+    // validation
+    await validate(schemas.departmentDeleteSchema, req.body);
+
+    // authorization
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    // Find department by ID
+    const { _id } = req.body;
+    const result = await departmentDao.getById(_id);
+
+    if (result) {
+      // If department exists, delete it
+      await departmentDao.delete(_id);
+      res.json(req.body);
+    } else {
+      throw new errors.DepartmentDoesNotExist();
+    }
+  }
 }
 
 module.exports = new DepartmentAbl();

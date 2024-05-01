@@ -20,26 +20,30 @@ class UserAbl {
     const result = await bcrypt.compare(req.body.password, user.passwordHash);
 
     if (result) {
+      const { username, role } = user;
+
       // create a token
       const payload = {
-        username: user.username,
-        role: user.role,
+        username,
+        role,
       };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "14d", // TODO: change to 1h
       });
 
-      res.json({ token });
+      res.json({
+        token,
+        username,
+        role,
+      });
     } else {
       throw new errors.IncorrectPassword();
     }
   }
 
-  async createUser(req, res) {
+  async create(req, res) {
     // validation
-    await validate(schemas.userCreateUserSchema, req.body);
-
-    console.log(`User: ${JSON.stringify(req.user, null, 2)}`); // TODO: remove
+    await validate(schemas.userCreateSchema, req.body);
 
     // authorize admin
     if (req.user?.role !== "admin") {
@@ -48,7 +52,7 @@ class UserAbl {
 
     // throw an error if the user already exists
     const user = await userDao.getByUsername(req.body.username);
-    if (user !== null) {
+    if (user != null) {
       throw new errors.UserAlreadyExists();
     }
 
