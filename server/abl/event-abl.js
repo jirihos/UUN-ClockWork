@@ -5,38 +5,26 @@ const { validate } = require("../validation");
 const errors = require("../errors");
 
 class eventAbl {
-
-    async create(req, res) {
-
+  async create(req, res) {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
 
+    // authorization
+    if (req.user?.role !== "admin") {
+      throw new errors.NotAuthorized();
+    }
+
     let result = await employeeDao.findByCode(req.body.employeeCode);
 
-    // authorization
-    if (req.user == null) {
-        throw new errors.NotAuthorized();
-      }
-
     if (result) {
+      let newEvent = await eventDao.create(req.body);
+      console.log(newEvent);
 
-        let newEvent = await eventDao.create(req.body);
-
-        res.json(newEvent);
-
+      res.json(newEvent);
     } else {
-
-        throw new errors.UserDoesNotExist();
-
+      throw new errors.EmployeeCodeNotFound();
     }
-
-
-
-
-
-    
-    }
-
+  }
 }
 
 module.exports = new eventAbl();

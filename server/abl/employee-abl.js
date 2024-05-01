@@ -51,15 +51,19 @@ class EmployeeAbl {
   }
 
   async findByCode(req, res) {
+    if (req.user == null) {
+      throw new errors.NotAuthorized();
+    }
+
     //validace inputu
     await validate(schemas.employeeFindByCodeSchema, req.body);
 
-    let result = await employeeDao.findByCode(req.body.code);
+    let result = await employeeDao.findByCode(req.body.employeeCode);
 
     if (result) {
       res.json(result);
     } else {
-      throw new errors.UserDoesNotExist();
+      throw new errors.EmployeeCodeNotFound();
     }
   }
 }

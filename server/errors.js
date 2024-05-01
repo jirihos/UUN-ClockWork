@@ -71,4 +71,12 @@ module.exports = {
       this.status = 403;
     }
   },
+  EmployeeCodeNotFound: class extends Error {
+    constructor() {
+      super();
+      this.code = "EmployeeCodeNotFound";
+      this.message = "Couldn't find any employee with this code.";
+      this.status = 403;
+    }
+  },
 };
