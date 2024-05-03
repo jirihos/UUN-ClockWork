@@ -20,6 +20,10 @@ class EmployeeMongo {
     return await this.employeeCol.findOne({ code });
   }
 
+  async list() {
+    return await this.employeeCol.find({}).toArray();
+  }
+
   async getAllExistingCodes() {
     const options = {
       projection: { _id: 0, code: 1 },
