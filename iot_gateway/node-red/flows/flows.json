@@ -226,11 +226,12 @@
         "nodes": [
             "996b8d311bcda11f",
             "8383109a01c9660c",
-            "b018baf8c5bac8ba"
+            "b018baf8c5bac8ba",
+            "a787e0b9e85b6bd2"
         ],
-        "x": 354,
+        "x": 314,
         "y": 439,
-        "w": 1092,
+        "w": 1132,
         "h": 82
     },
     {
@@ -246,11 +247,12 @@
         "nodes": [
             "42382caa7092aea9",
             "02bf3d654cefb710",
-            "65d1c00f1a3aec21"
+            "65d1c00f1a3aec21",
+            "bace35dfe37e3ffd"
         ],
-        "x": 354,
+        "x": 314,
         "y": 339,
-        "w": 1092,
+        "w": 1132,
         "h": 82
     },
     {
@@ -272,8 +274,8 @@
         ],
         "x": 14,
         "y": 39,
-        "w": 592,
-        "h": 202
+        "w": 572,
+        "h": 282
     },
     {
         "id": "2dfa0fcb02146650",
@@ -1111,7 +1113,7 @@
         "repeat": "600",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "5",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -1147,7 +1149,7 @@
                 "valueValue": "1"
             }
         ],
-        "x": 390,
+        "x": 350,
         "y": 140,
         "wires": [
             [
@@ -1168,16 +1170,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 200,
+        "x": 160,
+        "y": 280,
         "wires": [
             [
                 "a7a28555fa3fc0ad",
                 "2e68e0c1a6dff21c",
-                "f2cc5306a2411e0c"
+                "f2cc5306a2411e0c",
+                "a787e0b9e85b6bd2",
+                "bace35dfe37e3ffd"
             ],
             [
-                "f6d6d05d984eee08"
+                "f6d6d05d984eee08",
+                "a787e0b9e85b6bd2"
             ]
         ]
     },
@@ -1296,9 +1301,7 @@
         "y": 140,
         "wires": [
             [
-                "c20bc9ccb77a24e8",
-                "b018baf8c5bac8ba",
-                "65d1c00f1a3aec21"
+                "c20bc9ccb77a24e8"
             ]
         ]
     },
@@ -1388,23 +1391,13 @@
         "name": "",
         "collection": "userListUpdateCollection",
         "operation": "find",
-        "x": 870,
+        "x": 910,
         "y": 480,
         "wires": [
             [
                 "996b8d311bcda11f"
             ]
         ]
-    },
-    {
-        "id": "f04185034d3a2345",
-        "type": "comment",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Display log of user DB update UI",
-        "info": "",
-        "x": 150,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "42382caa7092aea9",
@@ -1473,42 +1466,11 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 880,
+        "x": 960,
         "y": 380,
         "wires": [
             [
                 "42382caa7092aea9"
-            ]
-        ]
-    },
-    {
-        "id": "a35ddb1cb45ecaee",
-        "type": "inject",
-        "z": "76b8d7d23f0dfbb5",
-        "name": "Refresh Dashboard every 5s todo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "date"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 400,
-        "wires": [
-            [
-                "b018baf8c5bac8ba",
-                "65d1c00f1a3aec21"
             ]
         ]
     },
@@ -1593,7 +1555,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
+        "x": 580,
         "y": 480,
         "wires": [
             [
@@ -1614,11 +1576,63 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 660,
         "y": 380,
         "wires": [
             [
                 "02bf3d654cefb710"
+            ]
+        ]
+    },
+    {
+        "id": "bace35dfe37e3ffd",
+        "type": "delay",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "4025ea06e340687a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 380,
+        "wires": [
+            [
+                "65d1c00f1a3aec21"
+            ]
+        ]
+    },
+    {
+        "id": "a787e0b9e85b6bd2",
+        "type": "delay",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "b018baf8c5bac8ba"
             ]
         ]
     },
