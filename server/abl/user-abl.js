@@ -89,7 +89,7 @@ class UserAbl {
 
     if (result) {
       // If user exists, delete it
-      await userDao.delete(username);
+      await userDao.deleteByUsername(username);
       res.json(req.body);
     } else {
       throw new errors.UserDoesNotExist();
