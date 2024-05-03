@@ -68,6 +68,33 @@ class UserAbl {
 
     res.json(newUser);
   }
+
+  async delete(req, res) {
+    // validation
+    await validate(schemas.userDeleteSchema, req.body);
+
+    // authorization
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    // authorize admin
+    if (req.user?.role !== "admin") {
+      throw new errors.NotAuthorized();
+    }
+
+    // Find user by username
+    const { username } = req.body;
+    const result = await userDao.getByUsername(username);
+
+    if (result) {
+      // If user exists, delete it
+      await userDao.delete(username);
+      res.json(req.body);
+    } else {
+      throw new errors.UserDoesNotExist();
+    }
+  }
 }
 
 module.exports = new UserAbl();

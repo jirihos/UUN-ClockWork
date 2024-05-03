@@ -1,4 +1,5 @@
 const departmentDao = require("../dao/department-mongo");
+const employeeDao = require("../dao/employee-mongo");
 const schemas = require("../schema/index");
 const { validate } = require("../validation");
 const errors = require("../errors");
@@ -58,6 +59,11 @@ class DepartmentAbl {
     // Find department by ID
     const { _id } = req.body;
     const result = await departmentDao.getById(_id);
+
+    const employee = await employeeDao.getByDepartmentId(_id);
+    if (employee) {
+      throw new errors.DepartmentHasEmployee();
+    }
 
     if (result) {
       // If department exists, delete it
