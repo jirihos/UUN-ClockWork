@@ -66,6 +66,16 @@ class EmployeeAbl {
       throw new errors.EmployeeCodeNotFound();
     }
   }
+
+  async list(req, res) {
+
+    let result = await employeeDao.list();
+
+    let itemList = {items: result}
+
+    res.json(itemList);
+
+  }
 }
 
 module.exports = new EmployeeAbl();

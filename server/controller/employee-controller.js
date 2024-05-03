@@ -21,4 +21,12 @@ router.post("/create", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.get("/list", async (req, res, next) => {
+  try {
+    await EmployeeAbl.list(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
