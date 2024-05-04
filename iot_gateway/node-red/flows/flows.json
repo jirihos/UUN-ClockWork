@@ -188,7 +188,7 @@
         ],
         "x": 54,
         "y": 199,
-        "w": 1332,
+        "w": 1432,
         "h": 82
     },
     {
@@ -210,7 +210,7 @@
         ],
         "x": 54,
         "y": 79,
-        "w": 1332,
+        "w": 1432,
         "h": 82
     },
     {
@@ -229,9 +229,9 @@
             "b018baf8c5bac8ba",
             "a787e0b9e85b6bd2"
         ],
-        "x": 314,
+        "x": 334,
         "y": 439,
-        "w": 1132,
+        "w": 1112,
         "h": 82
     },
     {
@@ -250,9 +250,9 @@
             "65d1c00f1a3aec21",
             "bace35dfe37e3ffd"
         ],
-        "x": 314,
+        "x": 334,
         "y": 339,
-        "w": 1132,
+        "w": 1112,
         "h": 82
     },
     {
@@ -603,7 +603,7 @@
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nmsg.headers = {};\nmsg.headers['authorization'] = '10';\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\n//msg.headers = {};\n//msg.headers['authorization'] = '10';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -774,7 +774,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "d70cc115667768df",
-        "name": "find in usersCollection id",
+        "name": "find id in usersCollection ",
         "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = {id:employeeCode};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
@@ -795,7 +795,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "d70cc115667768df",
-        "name": "Is in usersCollection user with id ?",
+        "name": "Is user with id in usersCollection  ?",
         "func": "if (msg.payload.length === 0) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n};",
         "outputs": 2,
         "timeout": 0,
@@ -874,7 +874,7 @@
         "raw": false,
         "className": "",
         "topic": "payload",
-        "name": "USER CHECKED LOCALLY OK",
+        "name": "USER CHECKED OK (locally)",
         "x": 1150,
         "y": 620,
         "wires": [
@@ -920,7 +920,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "USER CHECKED LOCALLY OK",
+                "to": "USER CHECKED OK (locally)",
                 "tot": "str"
             }
         ],
@@ -981,7 +981,7 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK",
-        "x": 1120,
+        "x": 1160,
         "y": 300,
         "wires": [
             []
@@ -1031,7 +1031,7 @@
         "className": "",
         "topic": "payload",
         "name": "ACCESS DENIED",
-        "x": 1110,
+        "x": 1150,
         "y": 340,
         "wires": [
             []
@@ -1170,7 +1170,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 160,
+        "x": 180,
         "y": 280,
         "wires": [
             [
@@ -1182,7 +1182,8 @@
             ],
             [
                 "f6d6d05d984eee08",
-                "a787e0b9e85b6bd2"
+                "a787e0b9e85b6bd2",
+                "bace35dfe37e3ffd"
             ]
         ]
     },
@@ -1207,7 +1208,7 @@
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
         "g": "541a9b2c482b7850",
-        "name": "add users each to collection",
+        "name": "add users to usersCollection",
         "func": "msg.users = JSON.parse(msg.payload);\n\nif (msg.users && Array.isArray(msg.users)) {\n    \n    msg.payload = msg.users;\n    return msg;\n\n} else {\n    node.error(\"Invalid users array.\");\n}",
         "outputs": 1,
         "timeout": 0,
@@ -1391,7 +1392,7 @@
         "name": "",
         "collection": "userListUpdateCollection",
         "operation": "find",
-        "x": 910,
+        "x": 930,
         "y": 480,
         "wires": [
             [
@@ -1508,7 +1509,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
+        "x": 800,
         "y": 80,
         "wires": [
             [
@@ -1555,7 +1556,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
+        "x": 600,
         "y": 480,
         "wires": [
             [
@@ -1576,7 +1577,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
+        "x": 620,
         "y": 380,
         "wires": [
             [
@@ -1602,7 +1603,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 420,
         "y": 380,
         "wires": [
             [
@@ -1628,7 +1629,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 420,
         "y": 480,
         "wires": [
             [
@@ -1680,7 +1681,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1250,
+        "x": 1350,
         "y": 120,
         "wires": []
     },
@@ -1752,7 +1753,7 @@
         "name": "",
         "collection": "stashedKeyboardEventsCollection",
         "operation": "find",
-        "x": 880,
+        "x": 980,
         "y": 120,
         "wires": [
             [
@@ -1761,27 +1762,11 @@
         ]
     },
     {
-        "id": "f17ae95c73b4bc0e",
-        "type": "debug",
-        "z": "74d70de6eea550f9",
-        "name": "debug 19",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1540,
-        "y": 120,
-        "wires": []
-    },
-    {
         "id": "44aceb65fe221438",
         "type": "function",
         "z": "74d70de6eea550f9",
         "g": "a6515923ca5b7293",
-        "name": "Sort",
+        "name": "Sort by timestamp desc.",
         "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1789,7 +1774,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 610,
         "y": 120,
         "wires": [
             [
@@ -1865,7 +1850,7 @@
         "name": "",
         "collection": "keyboardEventsCollection",
         "operation": "find",
-        "x": 850,
+        "x": 990,
         "y": 240,
         "wires": [
             [
@@ -1878,7 +1863,7 @@
         "type": "function",
         "z": "74d70de6eea550f9",
         "g": "ee274060183140ba",
-        "name": "Sort",
+        "name": "Sort by timestamp desc.",
         "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1886,7 +1871,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 630,
         "y": 240,
         "wires": [
             [
@@ -1948,7 +1933,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1270,
+        "x": 1370,
         "y": 240,
         "wires": []
     },
