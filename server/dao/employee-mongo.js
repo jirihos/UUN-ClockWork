@@ -33,6 +33,15 @@ class EmployeeMongo {
     const existingCodes = documents.map((document) => document.code);
     return existingCodes;
   }
+  /**
+   * Get employee by departmentId
+   * @param {string} departmentId
+   */
+  async getByDepartmentId(departmentId) {
+    return await this.employeeCol.findOne({
+      departmentId: departmentId,
+    });
+  }
 }
 
 module.exports = new EmployeeMongo();
