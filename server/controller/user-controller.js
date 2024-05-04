@@ -21,4 +21,12 @@ router.post("/create", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.post("/deleteByUsername", authenticateToken, async (req, res, next) => {
+  try {
+    await UserAbl.delete(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;

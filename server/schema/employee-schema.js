@@ -10,7 +10,3 @@ exports.employeeCreateSchema = Joi.object({
 exports.employeeFindByCodeSchema = Joi.object({
   code: Joi.number().min(0).max(9999).required(),
 });
-
-exports.employeeFindByDepartmentIdSchema = Joi.object({
-  _id: Joi.objectId().required(),
-});

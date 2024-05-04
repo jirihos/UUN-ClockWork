@@ -84,7 +84,7 @@ module.exports = {
       super();
       this.code = "DepartmentHasEmployee";
       this.message = "Department can not be deleted because there is employee.";
-      this.status = 404;
+      this.status = 400;
     }
   },
 };

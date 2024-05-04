@@ -71,7 +71,7 @@ class UserAbl {
 
   async delete(req, res) {
     // validation
-    await validate(schemas.userDeleteSchema, req.body);
+    await validate(schemas.userDeleteByUsernameSchema, req.body);
 
     // authorization
     if (!req.user) {

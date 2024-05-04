@@ -12,6 +12,6 @@ exports.userCreateSchema = Joi.object({
   role: Joi.string().valid("manager", "admin").required(),
 });
 
-exports.userDeleteSchema = Joi.object({
+exports.userDeleteByUsernameSchema = Joi.object({
   username: Joi.string().alphanum().min(3).max(20).required(),
 });
