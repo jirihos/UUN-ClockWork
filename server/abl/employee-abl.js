@@ -58,7 +58,7 @@ class EmployeeAbl {
     //validace inputu
     await validate(schemas.employeeFindByCodeSchema, req.body);
 
-    let result = await employeeDao.findByCode(req.body.employeeCode);
+    let result = await employeeDao.findByCode(req.body.code);
 
     if (result) {
       res.json(result);
@@ -68,13 +68,11 @@ class EmployeeAbl {
   }
 
   async list(req, res) {
-
     let result = await employeeDao.list();
 
-    let itemList = {items: result}
+    let itemList = { items: result };
 
     res.json(itemList);
-
   }
 }
 
