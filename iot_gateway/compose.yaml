@@ -9,6 +9,7 @@ services:
       NODE_ENV: production
       TZ: ${TZ:-Europe/Prague}
       FLOWS: /data/flows/flows.json
+      BACKEND_URL: ${BACKEND_URL:-http://host.docker.internal:3000}
     secrets:
       - terminal_api_key
     ports:

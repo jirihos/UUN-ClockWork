@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {
   authenticateToken,
+  authenticateApiKey,
 } = require("../middleware/authentication-middleware");
 
 const EmployeeAbl = require("../abl/employee-abl");
@@ -21,7 +22,7 @@ router.post("/create", authenticateToken, async (req, res, next) => {
   }
 });
 
-router.get("/list", async (req, res, next) => {
+router.get("/list", authenticateApiKey, async (req, res, next) => {
   try {
     await EmployeeAbl.list(req, res);
   } catch (e) {

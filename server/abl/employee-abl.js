@@ -68,6 +68,11 @@ class EmployeeAbl {
   }
 
   async list(req, res) {
+    // authorize terminal
+    if (!req.terminal) {
+      throw new errors.NotAuthorized();
+    }
+
     let result = await employeeDao.list();
 
     let itemList = { items: result };
