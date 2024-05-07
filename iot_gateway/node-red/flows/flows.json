@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "d7790596fee7e9be",
+        "type": "tab",
+        "label": "Stashed events POST",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "74d70de6eea550f9",
         "type": "tab",
         "label": "Keyboard events, stashed events, gateway tables",
@@ -24,9 +32,9 @@
         "env": []
     },
     {
-        "id": "d7790596fee7e9be",
+        "id": "703dc2c481ddf6ab",
         "type": "tab",
-        "label": "Stashed events POST",
+        "label": "TEST FLOW",
         "disabled": false,
         "info": "",
         "env": []
@@ -57,7 +65,7 @@
         ],
         "x": 34,
         "y": 339,
-        "w": 492,
+        "w": 472,
         "h": 330
     },
     {
@@ -204,9 +212,8 @@
         "nodes": [
             "8d822c1ec888b9e2",
             "cbf7c6584f0a9148",
-            "05d406bbbd07e06b",
             "ed6e78e62f6e89b8",
-            "44aceb65fe221438"
+            "7c551ef32e98efb6"
         ],
         "x": 54,
         "y": 79,
@@ -226,12 +233,12 @@
         "nodes": [
             "996b8d311bcda11f",
             "8383109a01c9660c",
-            "b018baf8c5bac8ba",
-            "a787e0b9e85b6bd2"
+            "a787e0b9e85b6bd2",
+            "8045367908ff23d5"
         ],
         "x": 334,
         "y": 439,
-        "w": 1112,
+        "w": 1152,
         "h": 82
     },
     {
@@ -247,12 +254,12 @@
         "nodes": [
             "42382caa7092aea9",
             "02bf3d654cefb710",
-            "65d1c00f1a3aec21",
-            "bace35dfe37e3ffd"
+            "bace35dfe37e3ffd",
+            "ba82d36c698f8a7b"
         ],
         "x": 334,
         "y": 339,
-        "w": 1112,
+        "w": 1152,
         "h": 82
     },
     {
@@ -294,7 +301,7 @@
         ],
         "x": 634,
         "y": 199,
-        "w": 812,
+        "w": 932,
         "h": 122
     },
     {
@@ -316,8 +323,119 @@
         ],
         "x": 634,
         "y": 39,
-        "w": 812,
+        "w": 932,
         "h": 142
+    },
+    {
+        "id": "b834f4ef255fea59",
+        "type": "group",
+        "z": "d7790596fee7e9be",
+        "name": "POST stashed events from collection",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "ba32127318c8a1a2",
+            "984d777333c3e122",
+            "3c156e2a20f86e79",
+            "2d93e9c6fd6f7b32",
+            "5e2003d9c1ad71a8",
+            "991c1e6feedfa4b1",
+            "dbacf1335303f72f"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1472,
+        "h": 150
+    },
+    {
+        "id": "7607e31cccc8cd69",
+        "type": "group",
+        "z": "d7790596fee7e9be",
+        "name": "Sort server response",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "e1c1870ce0bd1278"
+        ],
+        "x": 34,
+        "y": 211.5,
+        "w": 472,
+        "h": 105
+    },
+    {
+        "id": "a9d1e52d72a110cb",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Header Date/ Time",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "36b6ae18aa8a04e1"
+        ],
+        "x": 54,
+        "y": 499,
+        "w": 212,
+        "h": 82
+    },
+    {
+        "id": "8b1fb312af5f5207",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Non existent users keyboard events",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "48939d5169b3dc1d",
+            "9224049ff9507c2b",
+            "e23e54d43474feff",
+            "d3f22ad954efe27c",
+            "0d245001fbeea1ca",
+            "bd464a090c494d7e"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 1432,
+        "h": 142
+    },
+    {
+        "id": "3528e7c07d677b4d",
+        "type": "group",
+        "z": "d7790596fee7e9be",
+        "name": "Delete posted events, refused events move to non existent users keyboard events",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "3674db40486b4944",
+            "504edbf8d8bcac20",
+            "65db048f5948f060",
+            "2890d95a38a9ccd7",
+            "4e39b4c98e846c34",
+            "058d5b19765351d2",
+            "add31e4973f08134",
+            "4f8f2918bd55aceb"
+        ],
+        "x": 574,
+        "y": 219,
+        "w": 932,
+        "h": 270
     },
     {
         "id": "1be85959efd6d9ef",
@@ -363,11 +481,11 @@
     {
         "id": "8e8c38f3867a2f4b",
         "type": "ui_group",
-        "name": "Keyboard events",
+        "name": "Keyboard eventsc",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "13",
+        "width": "16",
         "collapse": true,
         "className": ""
     },
@@ -376,6 +494,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -483,25 +602,9 @@
         "tab": "886cc25582355e06",
         "order": 2,
         "disp": true,
-        "width": "13",
+        "width": "10",
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "fcc25c05bf681369",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "3e5527040d40c85f",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "af810a62dae6c015",
@@ -519,6 +622,7 @@
         "type": "ui_tab",
         "name": "List of users",
         "icon": "dashboard",
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -534,22 +638,24 @@
         "className": ""
     },
     {
-        "id": "c91332c0.50c11",
-        "type": "ui_group",
-        "name": "commands",
-        "tab": "379a501f.53b59",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "379a501f.53b59",
+        "id": "91d4b4ec44690f96",
         "type": "ui_tab",
-        "name": "ui-table command",
-        "icon": "fa-table",
+        "name": "List of non existent users in keyboard events",
+        "icon": "dashboard",
+        "order": 3,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "2429789384419515",
+        "type": "ui_group",
+        "name": "Non existent users keyboard events",
+        "tab": "91d4b4ec44690f96",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": true,
+        "className": ""
     },
     {
         "id": "0e63ea1d3b6cab68",
@@ -603,7 +709,7 @@
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\n//msg.headers = {};\n//msg.headers['authorization'] = '10';\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -721,7 +827,7 @@
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
         "name": "Log server response",
-        "func": "msg.payload = {\n    \"inputPayload\":flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n     msg.payload.status = \"OK\"\n     break;\n    case \"ECONNREFUSED\":\n     msg.payload.status = \"CONNECTION ERROR\"\n     break;\n    default:\n     msg.payload.status = msg.payload.payload.error.code\n     break;\n};\n\nreturn msg;",
+        "func": "msg.payload = {\n    \"inputPayload\":flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n     msg.payload.status = \"OK\"\n     break;\n    case \"ECONNREFUSED\":\n     msg.payload.status = \"STASHED (connection error)\"\n     break;\n    default:\n     msg.payload.status = msg.payload.payload.error.code\n     break;\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -782,7 +888,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 370,
         "y": 380,
         "wires": [
             [
@@ -1199,7 +1305,7 @@
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1350,
+        "x": 1450,
         "y": 80,
         "wires": []
     },
@@ -1236,7 +1342,7 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 1350,
+        "x": 1470,
         "y": 140,
         "wires": []
     },
@@ -1273,7 +1379,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1210,
+        "x": 1330,
         "y": 260,
         "wires": []
     },
@@ -1379,7 +1485,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1290,
+        "x": 1330,
         "y": 480,
         "wires": []
     },
@@ -1392,7 +1498,7 @@
         "name": "",
         "collection": "userListUpdateCollection",
         "operation": "find",
-        "x": 930,
+        "x": 950,
         "y": 480,
         "wires": [
             [
@@ -1407,7 +1513,7 @@
         "g": "4025ea06e340687a",
         "group": "24fc504cdf00f66a",
         "name": "List of users in gateway DB",
-        "order": 0,
+        "order": 2,
         "width": "11",
         "height": "10",
         "columns": [
@@ -1454,7 +1560,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1300,
+        "x": 1340,
         "y": 380,
         "wires": []
     },
@@ -1467,7 +1573,7 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 960,
+        "x": 920,
         "y": 380,
         "wires": [
             [
@@ -1544,48 +1650,6 @@
         ]
     },
     {
-        "id": "b018baf8c5bac8ba",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "g": "bce0c0495c57ea31",
-        "name": "Sort by timestamp dsc",
-        "func": "msg.sort = { timestamp: -1 };\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 480,
-        "wires": [
-            [
-                "8383109a01c9660c"
-            ]
-        ]
-    },
-    {
-        "id": "65d1c00f1a3aec21",
-        "type": "function",
-        "z": "76b8d7d23f0dfbb5",
-        "g": "4025ea06e340687a",
-        "name": "Sort by id asc",
-        "func": "msg.sort = { id: 1 };\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 380,
-        "wires": [
-            [
-                "02bf3d654cefb710"
-            ]
-        ]
-    },
-    {
         "id": "bace35dfe37e3ffd",
         "type": "delay",
         "z": "76b8d7d23f0dfbb5",
@@ -1607,7 +1671,7 @@
         "y": 380,
         "wires": [
             [
-                "65d1c00f1a3aec21"
+                "ba82d36c698f8a7b"
             ]
         ]
     },
@@ -1633,7 +1697,421 @@
         "y": 480,
         "wires": [
             [
-                "b018baf8c5bac8ba"
+                "8045367908ff23d5"
+            ]
+        ]
+    },
+    {
+        "id": "ba82d36c698f8a7b",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "4025ea06e340687a",
+        "name": "Sort by employeeCode",
+        "func": "msg.sort = { 'employeeCode': 1 }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "02bf3d654cefb710"
+            ]
+        ]
+    },
+    {
+        "id": "8045367908ff23d5",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "name": "Sort by employeeCode",
+        "func": "msg.sort = { 'timestamp': -1 }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "8383109a01c9660c"
+            ]
+        ]
+    },
+    {
+        "id": "991c1e6feedfa4b1",
+        "type": "http request",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:3000/api/event/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "bearer",
+        "senderr": false,
+        "headers": [],
+        "x": 950,
+        "y": 140,
+        "wires": [
+            [
+                "e1c1870ce0bd1278"
+            ]
+        ]
+    },
+    {
+        "id": "e1c1870ce0bd1278",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "7607e31cccc8cd69",
+        "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
+        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 260,
+        "wires": [
+            [
+                "3674db40486b4944"
+            ],
+            [
+                "2890d95a38a9ccd7"
+            ],
+            [
+                "65db048f5948f060"
+            ]
+        ]
+    },
+    {
+        "id": "ba32127318c8a1a2",
+        "type": "inject",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "5e2003d9c1ad71a8"
+            ]
+        ]
+    },
+    {
+        "id": "984d777333c3e122",
+        "type": "mongodb in",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "operation": "find",
+        "x": 1240,
+        "y": 80,
+        "wires": [
+            [
+                "3c156e2a20f86e79"
+            ]
+        ]
+    },
+    {
+        "id": "3674db40486b4944",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "name": "Delete msg by id",
+        "func": "var _id = msg.originalMsg._id;\n\nmsg.payload = {_id};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "add31e4973f08134"
+            ]
+        ]
+    },
+    {
+        "id": "504edbf8d8bcac20",
+        "type": "mongodb out",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "nonExistentUsersEnymoreCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 1240,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3c156e2a20f86e79",
+        "type": "split",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "Split array into objects",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 180,
+        "y": 140,
+        "wires": [
+            [
+                "dbacf1335303f72f"
+            ]
+        ]
+    },
+    {
+        "id": "2d93e9c6fd6f7b32",
+        "type": "change",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "Remove _id",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "\\",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "991c1e6feedfa4b1"
+            ]
+        ]
+    },
+    {
+        "id": "5e2003d9c1ad71a8",
+        "type": "ui_button",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "",
+        "group": "9e0481318c1e8033",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "POST stashed events to server",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "984d777333c3e122"
+            ]
+        ]
+    },
+    {
+        "id": "65db048f5948f060",
+        "type": "ui_toast",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "position": "bottom right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "Stashed events 'Server not responding'",
+        "name": "Stashed events 'Server not responding'",
+        "x": 760,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2890d95a38a9ccd7",
+        "type": "change",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "originalMsg",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "058d5b19765351d2",
+                "4f8f2918bd55aceb"
+            ]
+        ]
+    },
+    {
+        "id": "4e39b4c98e846c34",
+        "type": "mongodb out",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "058d5b19765351d2",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "name": "Delete msg by id",
+        "func": "var _id = msg.originalMsg._id;\n\nmsg.payload = {_id};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "4e39b4c98e846c34"
+            ]
+        ]
+    },
+    {
+        "id": "add31e4973f08134",
+        "type": "mongodb out",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1240,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "dbacf1335303f72f",
+        "type": "change",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "Original msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "originalMsg",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "2d93e9c6fd6f7b32"
+            ]
+        ]
+    },
+    {
+        "id": "4f8f2918bd55aceb",
+        "type": "change",
+        "z": "d7790596fee7e9be",
+        "g": "3528e7c07d677b4d",
+        "name": "Remove _id",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "\\",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 320,
+        "wires": [
+            [
+                "504edbf8d8bcac20"
             ]
         ]
     },
@@ -1644,9 +2122,9 @@
         "g": "a6515923ca5b7293",
         "group": "9e0481318c1e8033",
         "name": "Stashed keyboard events",
-        "order": 0,
-        "width": "13",
-        "height": "10",
+        "order": 1,
+        "width": "10",
+        "height": "15",
         "columns": [
             {
                 "field": "timestamp",
@@ -1679,11 +2157,13 @@
                 }
             }
         ],
-        "outputs": 0,
-        "cts": false,
+        "outputs": 1,
+        "cts": true,
         "x": 1350,
         "y": 120,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "cbf7c6584f0a9148",
@@ -1711,36 +2191,7 @@
         "y": 120,
         "wires": [
             [
-                "05d406bbbd07e06b"
-            ]
-        ]
-    },
-    {
-        "id": "05d406bbbd07e06b",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "g": "a6515923ca5b7293",
-        "name": "",
-        "group": "9e0481318c1e8033",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh todo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 410,
-        "y": 120,
-        "wires": [
-            [
-                "44aceb65fe221438"
+                "7c551ef32e98efb6"
             ]
         ]
     },
@@ -1753,32 +2204,11 @@
         "name": "",
         "collection": "stashedKeyboardEventsCollection",
         "operation": "find",
-        "x": 980,
+        "x": 860,
         "y": 120,
         "wires": [
             [
                 "8d822c1ec888b9e2"
-            ]
-        ]
-    },
-    {
-        "id": "44aceb65fe221438",
-        "type": "function",
-        "z": "74d70de6eea550f9",
-        "g": "a6515923ca5b7293",
-        "name": "Sort by timestamp desc.",
-        "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 610,
-        "y": 120,
-        "wires": [
-            [
-                "ed6e78e62f6e89b8"
             ]
         ]
     },
@@ -1887,8 +2317,8 @@
         "group": "8e8c38f3867a2f4b",
         "name": "Keyboard events",
         "order": 2,
-        "width": "13",
-        "height": "10",
+        "width": "16",
+        "height": "15",
         "columns": [
             {
                 "field": "inputPayload.timestamp",
@@ -1938,13 +2368,203 @@
         "wires": []
     },
     {
-        "id": "511ccb281833db51",
-        "type": "comment",
-        "z": "d7790596fee7e9be",
-        "name": "POST stashed events from keyboard",
-        "info": "",
-        "x": 180,
-        "y": 40,
+        "id": "36b6ae18aa8a04e1",
+        "type": "ui_template",
+        "z": "74d70de6eea550f9",
+        "g": "a9d1e52d72a110cb",
+        "group": "8e8c38f3867a2f4b",
+        "name": "Clock Toolbar",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "global",
+        "className": "",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c551ef32e98efb6",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "a6515923ca5b7293",
+        "name": "Sort by timestamp desc.",
+        "func": "msg.sort = { 'timestamp': -1 }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "ed6e78e62f6e89b8"
+            ]
+        ]
+    },
+    {
+        "id": "48939d5169b3dc1d",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "9224049ff9507c2b"
+            ]
+        ]
+    },
+    {
+        "id": "9224049ff9507c2b",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "Sort by timestamp desc.",
+        "func": "msg.sort = { 'inputPayload.timestamp': -1}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "e23e54d43474feff"
+            ]
+        ]
+    },
+    {
+        "id": "e23e54d43474feff",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "nonExistentUsersEnymoreCollection",
+        "operation": "find",
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "d3f22ad954efe27c"
+            ]
+        ]
+    },
+    {
+        "id": "d3f22ad954efe27c",
+        "type": "ui_table",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "group": "2429789384419515",
+        "name": "Non existent users keyboard events",
+        "order": 1,
+        "width": "18",
+        "height": "15",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "employeeCode",
+                "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "type",
+                "title": "Action",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "0d245001fbeea1ca"
+            ]
+        ]
+    },
+    {
+        "id": "0d245001fbeea1ca",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "function 1",
+        "func": "var timestamp = msg.payload.timestamp;\n\nmsg.payload = { timestamp };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "bd464a090c494d7e"
+            ]
+        ]
+    },
+    {
+        "id": "bd464a090c494d7e",
+        "type": "mongodb out",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "nonExistentUsersEnymoreCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1220,
+        "y": 340,
         "wires": []
     },
     {
