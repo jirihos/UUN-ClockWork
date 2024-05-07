@@ -20,6 +20,10 @@ class EmployeeMongo {
     return await this.employeeCol.findOne({ code });
   }
 
+  async list() {
+    return await this.employeeCol.find({}).toArray();
+  }
+
   async getAllExistingCodes() {
     const options = {
       projection: { _id: 0, code: 1 },
@@ -28,6 +32,15 @@ class EmployeeMongo {
     const documents = await this.employeeCol.find({}, options).toArray();
     const existingCodes = documents.map((document) => document.code);
     return existingCodes;
+  }
+  /**
+   * Get employee by departmentId
+   * @param {string} departmentId
+   */
+  async getByDepartmentId(departmentId) {
+    return await this.employeeCol.findOne({
+      departmentId: departmentId,
+    });
   }
 }
 

@@ -9,12 +9,23 @@ class eventAbl {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
 
-    // TODO authorize terminal
+    // authorize terminal
+    if (!req.terminal) {
+      throw new errors.NotAuthorized();
+    }
 
-    let result = await employeeDao.findByCode(req.body.employeeCode);
+    const terminalId = req.terminal._id.toString();
+    const { employeeCode, type, timestamp } = req.body;
+
+    let result = await employeeDao.findByCode(employeeCode);
 
     if (result) {
-      let newEvent = await eventDao.create(req.body);
+      let newEvent = await eventDao.create({
+        terminalId,
+        employeeCode,
+        type,
+        timestamp: new Date(timestamp),
+      });
       res.json(newEvent);
     } else {
       throw new errors.EmployeeCodeNotFound();

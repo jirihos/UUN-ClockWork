@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const terminalDao = require("../dao/terminal-mongo");
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
@@ -21,6 +22,22 @@ function authenticateToken(req, res, next) {
   });
 }
 
+async function authenticateApiKey(req, res, next) {
+  const apiKey = req.headers["x-api-key"];
+
+  if (!apiKey) {
+    req.terminal = null;
+    next();
+    return;
+  }
+
+  const terminal = await terminalDao.findByApiKey(apiKey);
+
+  req.terminal = terminal;
+  next();
+}
+
 module.exports = {
   authenticateToken,
+  authenticateApiKey,
 };

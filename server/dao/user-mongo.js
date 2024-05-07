@@ -25,6 +25,15 @@ class UserMongo {
   async getByUsername(username) {
     return await this.userCol.findOne({ username });
   }
+
+  /**
+   * Delete user by username
+   * @param {string} username
+   */
+  async deleteByUsername(username) {
+    // No need to return the result
+    await this.userCol.deleteOne({ username });
+  }
 }
 
 module.exports = new UserMongo();

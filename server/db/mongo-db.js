@@ -52,7 +52,7 @@ class MongoDb {
     const data = await cursor.next();
 
     // correct pageInfo
-    const totalCount = data.pageInfo[0].totalCount;
+    const totalCount = data.pageInfo[0]?.totalCount || 0;
     data.pageInfo = {
       pageIndex,
       pageSize,

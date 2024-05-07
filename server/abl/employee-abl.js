@@ -58,13 +58,26 @@ class EmployeeAbl {
     //validace inputu
     await validate(schemas.employeeFindByCodeSchema, req.body);
 
-    let result = await employeeDao.findByCode(req.body.employeeCode);
+    let result = await employeeDao.findByCode(req.body.code);
 
     if (result) {
       res.json(result);
     } else {
       throw new errors.EmployeeCodeNotFound();
     }
+  }
+
+  async list(req, res) {
+    // authorize terminal
+    if (!req.terminal) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await employeeDao.list();
+
+    let itemList = { items: result };
+
+    res.json(itemList);
   }
 }
 

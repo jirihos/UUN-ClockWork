@@ -20,6 +20,10 @@ class TerminalMongo {
   async findByName(name) {
     return this.terminalCol.findOne({ name });
   }
+
+  async findByApiKey(apiKey) {
+    return this.terminalCol.findOne({ apiKey });
+  }
 }
 
 module.exports = new TerminalMongo();
