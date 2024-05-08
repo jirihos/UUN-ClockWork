@@ -42,6 +42,45 @@ class EmployeeMongo {
       departmentId: departmentId,
     });
   }
-}
 
+  async search(body, pageIndex, pageSize) {
+    console.log(body);
+
+    const filter = {};
+
+    if (body.firstName) {
+      filter.firstName = {$regex: body.firstName}
+    }
+    if (body.lastName) {
+      filter.lastName = {$regex: body.lastName}
+    }
+    if (body.departmentId) {
+      filter.departmentId = body.departmentId;
+    }
+
+    const cursor = await this.employeeCol.aggregate([
+      {
+        $match: filter,
+      },
+      {
+        $facet: {
+          pageInfo: [{ $count: "totalCount" }],
+          items: [{ $skip: pageIndex * pageSize }, { $limit: pageSize }],
+        },
+      },
+    ]);
+
+
+    const data = await cursor.next();
+
+    const totalCount = data.pageInfo[0]?.totalCount || 0;
+    data.pageInfo = {
+      pageIndex,
+      pageSize,
+      totalCount,
+    };
+    
+    return data;
+  }
+}
 module.exports = new EmployeeMongo();
