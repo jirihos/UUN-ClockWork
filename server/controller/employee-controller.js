@@ -30,4 +30,12 @@ router.get("/list", authenticateApiKey, async (req, res, next) => {
   }
 });
 
+router.post("/search", authenticateToken, async (req, res, next) => {
+  try {
+    await EmployeeAbl.search(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
