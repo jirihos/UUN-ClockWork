@@ -64,7 +64,7 @@
             "80888cdaf5d9a8b9"
         ],
         "x": 34,
-        "y": 339,
+        "y": 479,
         "w": 472,
         "h": 330
     },
@@ -87,10 +87,10 @@
             "71f7a3281684d237",
             "00b99cdb0152d857"
         ],
-        "x": 574,
-        "y": 179,
+        "x": 554,
+        "y": 259,
         "w": 752,
-        "h": 210
+        "h": 190
     },
     {
         "id": "dd73acae1f72be6e",
@@ -109,8 +109,8 @@
             "6cfb1baa922fad99",
             "a16376362f98f38f"
         ],
-        "x": 574,
-        "y": 499,
+        "x": 554,
+        "y": 639,
         "w": 752,
         "h": 170
     },
@@ -129,8 +129,8 @@
             "4be098b25860ece8",
             "a90667a04de81245"
         ],
-        "x": 574,
-        "y": 399,
+        "x": 554,
+        "y": 479,
         "w": 752,
         "h": 90
     },
@@ -149,7 +149,7 @@
             "d6f9f320f897c6ee"
         ],
         "x": 34,
-        "y": 191.5,
+        "y": 271.5,
         "w": 472,
         "h": 105
     },
@@ -170,12 +170,15 @@
             "7e09073d61ddc699",
             "2f8352811aacfd89",
             "c205155a2f3932fe",
-            "404fcafe15a83f94"
+            "404fcafe15a83f94",
+            "9b354d9dba50c1d2",
+            "7fc55615f6c4ce14",
+            "9c933f3688f9d9a1"
         ],
         "x": 34,
-        "y": 39,
-        "w": 1292,
-        "h": 130
+        "y": 59,
+        "w": 1272,
+        "h": 170
     },
     {
         "id": "ee274060183140ba",
@@ -344,7 +347,8 @@
             "2d93e9c6fd6f7b32",
             "5e2003d9c1ad71a8",
             "991c1e6feedfa4b1",
-            "dbacf1335303f72f"
+            "dbacf1335303f72f",
+            "cddaf976743603fb"
         ],
         "x": 34,
         "y": 39,
@@ -403,11 +407,11 @@
             "9224049ff9507c2b",
             "e23e54d43474feff",
             "d3f22ad954efe27c",
-            "0d245001fbeea1ca",
-            "bd464a090c494d7e"
+            "bd464a090c494d7e",
+            "4ad305dfaa268fb4"
         ],
         "x": 54,
-        "y": 299,
+        "y": 319,
         "w": 1432,
         "h": 142
     },
@@ -481,11 +485,11 @@
     {
         "id": "8e8c38f3867a2f4b",
         "type": "ui_group",
-        "name": "Keyboard eventsc",
+        "name": "Keyboard events",
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "16",
+        "width": "24",
         "collapse": true,
         "className": ""
     },
@@ -599,8 +603,8 @@
         "id": "9e0481318c1e8033",
         "type": "ui_group",
         "name": "Stashed keyboard events",
-        "tab": "886cc25582355e06",
-        "order": 2,
+        "tab": "91d4b4ec44690f96",
+        "order": 1,
         "disp": true,
         "width": "10",
         "collapse": true,
@@ -651,7 +655,7 @@
         "type": "ui_group",
         "name": "Non existent users keyboard events",
         "tab": "91d4b4ec44690f96",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "18",
         "collapse": true,
@@ -672,7 +676,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "94a2c8b60c41d056"
@@ -692,8 +696,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 80,
+        "x": 380,
+        "y": 100,
         "wires": [
             [
                 "7e09073d61ddc699"
@@ -709,15 +713,15 @@
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"terminalId\": \"12345605692d59ee\",\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nlet url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 80,
+        "x": 580,
+        "y": 100,
         "wires": [
             [
                 "c205155a2f3932fe"
@@ -736,8 +740,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1060,
-        "y": 540,
+        "x": 1040,
+        "y": 680,
         "wires": []
     },
     {
@@ -749,16 +753,23 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://host.docker.internal:3000/api/event/create",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
-        "authType": "bearer",
+        "authType": "",
         "senderr": false,
-        "headers": [],
-        "x": 1230,
-        "y": 80,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "x-api-key",
+                "valueType": "msg",
+                "valueValue": "api_key"
+            }
+        ],
+        "x": 1210,
+        "y": 180,
         "wires": [
             [
                 "d6f9f320f897c6ee"
@@ -770,7 +781,7 @@
         "type": "change",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "name": "",
+        "name": "Set context/ Set header - api key",
         "rules": [
             {
                 "t": "set",
@@ -778,6 +789,13 @@
                 "pt": "flow",
                 "to": "payload",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "api_key",
+                "pt": "msg",
+                "to": "api_key",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -785,11 +803,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
-        "y": 80,
+        "x": 850,
+        "y": 100,
         "wires": [
             [
-                "2f8352811aacfd89"
+                "9b354d9dba50c1d2"
             ]
         ]
     },
@@ -814,7 +832,7 @@
         "to": "",
         "reg": false,
         "x": 140,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
                 "60d9f8fe0958cf50"
@@ -827,15 +845,15 @@
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
         "name": "Log server response",
-        "func": "msg.payload = {\n    \"inputPayload\":flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n     msg.payload.status = \"OK\"\n     break;\n    case \"ECONNREFUSED\":\n     msg.payload.status = \"STASHED (connection error)\"\n     break;\n    default:\n     msg.payload.status = msg.payload.payload.error.code\n     break;\n};\n\nreturn msg;",
+        "func": "var knownUser = (flow.get(\"userPayload\").length === 0);\n\nmsg.payload = {\n    \"inputPayload\": flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload,\n    \"userInfo\": flow.get(\"userPayload\")\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n        msg.payload.status = \"OK\";\n        break;\n    case \"ECONNREFUSED\":\n        if (!knownUser) {\n            msg.payload.status = \"STASHED (connection error)\";\n        } else {\n            msg.payload.status = \"DENIED (connection error)\";\n        }\n        break;\n    default:\n        msg.payload.status = msg.payload.payload.error.code;\n        break;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 220,
+        "x": 680,
+        "y": 300,
         "wires": [
             [
                 "8d92076ea8ee2d84"
@@ -854,8 +872,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1090,
-        "y": 220,
+        "x": 1070,
+        "y": 300,
         "wires": []
     },
     {
@@ -868,7 +886,7 @@
         "collection": "usersCollection",
         "operation": "find",
         "x": 260,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "80888cdaf5d9a8b9"
@@ -889,7 +907,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
                 "c886763ff525e7f5"
@@ -910,7 +928,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 620,
+        "y": 760,
         "wires": [
             [
                 "a90667a04de81245"
@@ -937,8 +955,8 @@
         "className": "",
         "topic": "Wrong entry",
         "name": "Wrong entry",
-        "x": 690,
-        "y": 120,
+        "x": 150,
+        "y": 160,
         "wires": [
             []
         ]
@@ -959,8 +977,8 @@
         "className": "",
         "topic": "payload",
         "name": " ACCESS DENIED (locally)",
-        "x": 1180,
-        "y": 440,
+        "x": 1160,
+        "y": 520,
         "wires": [
             []
         ]
@@ -981,8 +999,8 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK (locally)",
-        "x": 1150,
-        "y": 620,
+        "x": 1130,
+        "y": 760,
         "wires": [
             []
         ]
@@ -1007,8 +1025,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 440,
+        "x": 660,
+        "y": 520,
         "wires": [
             [
                 "4be098b25860ece8"
@@ -1035,8 +1053,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 620,
+        "x": 660,
+        "y": 760,
         "wires": [
             [
                 "12593b8dc90ac2cd"
@@ -1063,8 +1081,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 300,
+        "x": 660,
+        "y": 360,
         "wires": [
             [
                 "9301e7d80c610b92"
@@ -1087,8 +1105,8 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK",
-        "x": 1160,
-        "y": 300,
+        "x": 1140,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1113,8 +1131,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 340,
+        "x": 660,
+        "y": 400,
         "wires": [
             [
                 "00b99cdb0152d857"
@@ -1137,8 +1155,8 @@
         "className": "",
         "topic": "payload",
         "name": "ACCESS DENIED",
-        "x": 1150,
-        "y": 340,
+        "x": 1130,
+        "y": 400,
         "wires": [
             []
         ]
@@ -1163,8 +1181,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 540,
+        "x": 660,
+        "y": 680,
         "wires": [
             [
                 "0c47445f94556a8b"
@@ -1185,7 +1203,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 240,
+        "y": 320,
         "wires": [
             [
                 "7a6dc751a7fc8632",
@@ -1198,6 +1216,79 @@
             [
                 "7a6dc751a7fc8632",
                 "99940b665d510255"
+            ]
+        ]
+    },
+    {
+        "id": "9b354d9dba50c1d2",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "function 5",
+        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = { id: employeeCode };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "7fc55615f6c4ce14"
+            ]
+        ]
+    },
+    {
+        "id": "7fc55615f6c4ce14",
+        "type": "mongodb in",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 640,
+        "y": 180,
+        "wires": [
+            [
+                "9c933f3688f9d9a1"
+            ]
+        ]
+    },
+    {
+        "id": "9c933f3688f9d9a1",
+        "type": "change",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "userPayload",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 180,
+        "wires": [
+            [
+                "2f8352811aacfd89"
             ]
         ]
     },
@@ -1752,15 +1843,22 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://host.docker.internal:3000/api/event/create",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
-        "authType": "bearer",
+        "authType": "",
         "senderr": false,
-        "headers": [],
-        "x": 950,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "x-api-key",
+                "valueType": "msg",
+                "valueValue": "api_key"
+            }
+        ],
+        "x": 1010,
         "y": 140,
         "wires": [
             [
@@ -1908,6 +2006,13 @@
         "rules": [
             {
                 "t": "set",
+                "p": "api_key",
+                "pt": "msg",
+                "to": "api_key",
+                "tot": "global"
+            },
+            {
+                "t": "set",
                 "p": "payload._id",
                 "pt": "msg",
                 "to": "\\",
@@ -1919,11 +2024,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 750,
+        "x": 590,
         "y": 140,
         "wires": [
             [
-                "991c1e6feedfa4b1"
+                "cddaf976743603fb"
             ]
         ]
     },
@@ -2079,7 +2184,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 390,
         "y": 140,
         "wires": [
             [
@@ -2112,6 +2217,27 @@
         "wires": [
             [
                 "504edbf8d8bcac20"
+            ]
+        ]
+    },
+    {
+        "id": "cddaf976743603fb",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "Set API",
+        "func": "let url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 140,
+        "wires": [
+            [
+                "991c1e6feedfa4b1"
             ]
         ]
     },
@@ -2280,7 +2406,7 @@
         "name": "",
         "collection": "keyboardEventsCollection",
         "operation": "find",
-        "x": 990,
+        "x": 970,
         "y": 240,
         "wires": [
             [
@@ -2317,7 +2443,7 @@
         "group": "8e8c38f3867a2f4b",
         "name": "Keyboard events",
         "order": 2,
-        "width": "16",
+        "width": "24",
         "height": "15",
         "columns": [
             {
@@ -2333,6 +2459,36 @@
             {
                 "field": "inputPayload.employeeCode",
                 "title": "Employee ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "userInfo.0.surname",
+                "title": "Surname",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "userInfo.0.name",
+                "title": "Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "userInfo.0.department",
+                "title": "Department",
                 "width": "",
                 "align": "center",
                 "formatter": "plaintext",
@@ -2433,7 +2589,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "9224049ff9507c2b"
@@ -2454,7 +2610,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "e23e54d43474feff"
@@ -2471,7 +2627,7 @@
         "collection": "nonExistentUsersEnymoreCollection",
         "operation": "find",
         "x": 340,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "d3f22ad954efe27c"
@@ -2523,31 +2679,10 @@
         "outputs": 1,
         "cts": true,
         "x": 700,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
-                "0d245001fbeea1ca"
-            ]
-        ]
-    },
-    {
-        "id": "0d245001fbeea1ca",
-        "type": "function",
-        "z": "74d70de6eea550f9",
-        "g": "8b1fb312af5f5207",
-        "name": "function 1",
-        "func": "var timestamp = msg.payload.timestamp;\n\nmsg.payload = { timestamp };\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 400,
-        "wires": [
-            [
-                "bd464a090c494d7e"
+                "4ad305dfaa268fb4"
             ]
         ]
     },
@@ -2564,8 +2699,74 @@
         "multi": false,
         "operation": "delete",
         "x": 1220,
-        "y": 340,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "4ad305dfaa268fb4",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "function 4",
+        "func": "var timestamp = msg.payload.timestamp;\n\nmsg.payload = { timestamp };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 420,
+        "wires": [
+            [
+                "bd464a090c494d7e"
+            ]
+        ]
+    },
+    {
+        "id": "d87ac70e8db63cda",
+        "type": "inject",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e4d599b9151175b",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "name": "function 6",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 100,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "afda953f5c974e93",
@@ -2776,50 +2977,6 @@
         "wires": []
     },
     {
-        "id": "dbe17ea55b14a173",
-        "type": "mongodb out",
-        "z": "f6f2187d.f17ca8",
-        "mongodb": "f18849d91eb5ebcb",
-        "name": "",
-        "collection": "test",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "store",
-        "x": 460,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "f4d9976a02551019",
-        "type": "inject",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"foo\":\"bar\"}",
-        "payloadType": "json",
-        "x": 130,
-        "y": 500,
-        "wires": [
-            [
-                "dbe17ea55b14a173"
-            ]
-        ]
-    },
-    {
         "id": "7ecfbdc3ca34f211",
         "type": "file in",
         "z": "f6f2187d.f17ca8",
@@ -2831,7 +2988,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 340,
+        "x": 360,
         "y": 680,
         "wires": [
             [
@@ -2850,7 +3007,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 120,
+        "x": 140,
         "y": 680,
         "wires": [
             [
@@ -2877,7 +3034,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 610,
         "y": 680,
         "wires": [
             []
@@ -2911,7 +3068,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 480,
