@@ -459,12 +459,14 @@
             "92deceb80e14e7ff",
             "62d4ae1e2798fc85",
             "2ec89de0bc1fde04",
-            "02e6cffbf5cb6392"
+            "02e6cffbf5cb6392",
+            "9af2e759ee4e3b5a",
+            "421842dd816509fc"
         ],
         "x": 334,
         "y": 639,
         "w": 1232,
-        "h": 90
+        "h": 150
     },
     {
         "id": "b6a8575e2f75783e",
@@ -1661,8 +1663,7 @@
         "y": 560,
         "wires": [
             [
-                "996b8d311bcda11f",
-                "92deceb80e14e7ff"
+                "996b8d311bcda11f"
             ]
         ]
     },
@@ -1910,8 +1911,8 @@
         "outputDeaths": true,
         "outputs": 2,
         "nodeName": "TTL Check",
-        "x": 710,
-        "y": 680,
+        "x": 730,
+        "y": 740,
         "wires": [
             [],
             [
@@ -1931,8 +1932,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 410,
-        "y": 680,
+        "x": 430,
+        "y": 740,
         "wires": [
             [
                 "2ec89de0bc1fde04"
@@ -1952,8 +1953,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 680,
+        "x": 960,
+        "y": 740,
         "wires": [
             [
                 "02e6cffbf5cb6392"
@@ -1994,8 +1995,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 680,
+        "x": 560,
+        "y": 740,
         "wires": [
             [
                 "b288e13cb75f301f"
@@ -2015,8 +2016,55 @@
         "multi": false,
         "operation": "delete",
         "x": 1330,
-        "y": 680,
+        "y": 740,
         "wires": []
+    },
+    {
+        "id": "9af2e759ee4e3b5a",
+        "type": "mongodb in",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListUpdateCollection",
+        "operation": "find",
+        "x": 810,
+        "y": 680,
+        "wires": [
+            [
+                "92deceb80e14e7ff"
+            ]
+        ]
+    },
+    {
+        "id": "421842dd816509fc",
+        "type": "inject",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "1x hour check TTL",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 470,
+        "y": 680,
+        "wires": [
+            [
+                "9af2e759ee4e3b5a"
+            ]
+        ]
     },
     {
         "id": "991c1e6feedfa4b1",
