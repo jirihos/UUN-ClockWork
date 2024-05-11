@@ -85,11 +85,12 @@
             "303311f5377ac92b",
             "9301e7d80c610b92",
             "71f7a3281684d237",
-            "00b99cdb0152d857"
+            "00b99cdb0152d857",
+            "a3f26508d916884a"
         ],
         "x": 554,
         "y": 259,
-        "w": 752,
+        "w": 852,
         "h": 190
     },
     {
@@ -111,7 +112,7 @@
         ],
         "x": 554,
         "y": 639,
-        "w": 752,
+        "w": 852,
         "h": 170
     },
     {
@@ -131,7 +132,7 @@
         ],
         "x": 554,
         "y": 479,
-        "w": 752,
+        "w": 852,
         "h": 90
     },
     {
@@ -177,7 +178,7 @@
         ],
         "x": 34,
         "y": 59,
-        "w": 1272,
+        "w": 1372,
         "h": 170
     },
     {
@@ -237,11 +238,11 @@
             "996b8d311bcda11f",
             "8383109a01c9660c",
             "a787e0b9e85b6bd2",
-            "8045367908ff23d5"
+            "fa1ef6a4075d912e"
         ],
         "x": 334,
-        "y": 439,
-        "w": 1152,
+        "y": 519,
+        "w": 1232,
         "h": 82
     },
     {
@@ -261,8 +262,8 @@
             "ba82d36c698f8a7b"
         ],
         "x": 334,
-        "y": 339,
-        "w": 1152,
+        "y": 419,
+        "w": 1232,
         "h": 82
     },
     {
@@ -300,10 +301,11 @@
         "nodes": [
             "a7a28555fa3fc0ad",
             "20b10770f9327a5d",
-            "f6d6d05d984eee08"
+            "f6d6d05d984eee08",
+            "71b81da74b181148"
         ],
         "x": 634,
-        "y": 199,
+        "y": 219,
         "w": 932,
         "h": 122
     },
@@ -388,7 +390,7 @@
             "36b6ae18aa8a04e1"
         ],
         "x": 54,
-        "y": 499,
+        "y": 699,
         "w": 212,
         "h": 82
     },
@@ -411,7 +413,7 @@
             "4ad305dfaa268fb4"
         ],
         "x": 54,
-        "y": 319,
+        "y": 519,
         "w": 1432,
         "h": 142
     },
@@ -440,6 +442,54 @@
         "y": 219,
         "w": 932,
         "h": 270
+    },
+    {
+        "id": "1bc801493ded71d2",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "TTL userListUpdateCollection",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "b288e13cb75f301f",
+            "92deceb80e14e7ff",
+            "62d4ae1e2798fc85",
+            "2ec89de0bc1fde04",
+            "02e6cffbf5cb6392"
+        ],
+        "x": 334,
+        "y": 639,
+        "w": 1232,
+        "h": 90
+    },
+    {
+        "id": "b6a8575e2f75783e",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "TTL keyboardEventsCollection",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "748fcf2c4586b526",
+            "a970f8a143ae4fc1",
+            "da301eb6488cac64",
+            "0c6587995b5b6ac2",
+            "ae6b5d826aaefdbc",
+            "17a74412e42e603f",
+            "8b72e5f5770c578a"
+        ],
+        "x": 54,
+        "y": 319,
+        "w": 1432,
+        "h": 150
     },
     {
         "id": "1be85959efd6d9ef",
@@ -740,7 +790,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1040,
+        "x": 1140,
         "y": 680,
         "wires": []
     },
@@ -768,7 +818,7 @@
                 "valueValue": "api_key"
             }
         ],
-        "x": 1210,
+        "x": 1310,
         "y": 180,
         "wires": [
             [
@@ -845,14 +895,14 @@
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
         "name": "Log server response",
-        "func": "var knownUser = (flow.get(\"userPayload\").length === 0);\n\nmsg.payload = {\n    \"inputPayload\": flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload,\n    \"userInfo\": flow.get(\"userPayload\")\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n        msg.payload.status = \"OK\";\n        break;\n    case \"ECONNREFUSED\":\n        if (!knownUser) {\n            msg.payload.status = \"STASHED (connection error)\";\n        } else {\n            msg.payload.status = \"DENIED (connection error)\";\n        }\n        break;\n    default:\n        msg.payload.status = msg.payload.payload.error.code;\n        break;\n}\n\nreturn msg;\n",
+        "func": "var knownUser = (flow.get(\"userPayload\").length === 0);\n\nmsg.payload = {\n    \"inputPayload\": flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload,\n    \"userInfo\": flow.get(\"userPayload\"),\n    \"_tod\": msg._tod\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n        msg.payload.status = \"OK\";\n        break;\n    case \"ECONNREFUSED\":\n        if (!knownUser) {\n            msg.payload.status = \"STASHED (connection error)\";\n        } else {\n            msg.payload.status = \"DENIED (connection error)\";\n        }\n        break;\n    default:\n        msg.payload.status = msg.payload.payload.error.code;\n        break;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
+        "x": 840,
         "y": 300,
         "wires": [
             [
@@ -872,7 +922,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1070,
+        "x": 1170,
         "y": 300,
         "wires": []
     },
@@ -977,7 +1027,7 @@
         "className": "",
         "topic": "payload",
         "name": " ACCESS DENIED (locally)",
-        "x": 1160,
+        "x": 1260,
         "y": 520,
         "wires": [
             []
@@ -999,7 +1049,7 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK (locally)",
-        "x": 1130,
+        "x": 1250,
         "y": 760,
         "wires": [
             []
@@ -1105,7 +1155,7 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK",
-        "x": 1140,
+        "x": 1280,
         "y": 360,
         "wires": [
             []
@@ -1155,7 +1205,7 @@
         "className": "",
         "topic": "payload",
         "name": "ACCESS DENIED",
-        "x": 1130,
+        "x": 1290,
         "y": 400,
         "wires": [
             []
@@ -1206,16 +1256,16 @@
         "y": 320,
         "wires": [
             [
-                "7a6dc751a7fc8632",
-                "303311f5377ac92b"
+                "303311f5377ac92b",
+                "a3f26508d916884a"
             ],
             [
-                "7a6dc751a7fc8632",
-                "71f7a3281684d237"
+                "71f7a3281684d237",
+                "a3f26508d916884a"
             ],
             [
-                "7a6dc751a7fc8632",
-                "99940b665d510255"
+                "99940b665d510255",
+                "a3f26508d916884a"
             ]
         ]
     },
@@ -1289,6 +1339,24 @@
         "wires": [
             [
                 "2f8352811aacfd89"
+            ]
+        ]
+    },
+    {
+        "id": "a3f26508d916884a",
+        "type": "ttl-set",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "ttl": "48",
+        "ttlType": "num",
+        "units": "Hours",
+        "unitsType": "select",
+        "nodeName": "TTL  set 48h",
+        "x": 650,
+        "y": 300,
+        "wires": [
+            [
+                "7a6dc751a7fc8632"
             ]
         ]
     },
@@ -1451,10 +1519,10 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 240,
+        "y": 260,
         "wires": [
             [
-                "20b10770f9327a5d"
+                "71b81da74b181148"
             ]
         ]
     },
@@ -1466,12 +1534,12 @@
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
         "collection": "userListUpdateCollection",
-        "payonly": true,
+        "payonly": false,
         "upsert": false,
         "multi": false,
-        "operation": "store",
+        "operation": "insert",
         "x": 1330,
-        "y": 260,
+        "y": 280,
         "wires": []
     },
     {
@@ -1544,7 +1612,7 @@
         "height": "10",
         "columns": [
             {
-                "field": "timestamp",
+                "field": "payload.timestamp",
                 "title": "Timestamp",
                 "width": "",
                 "align": "center",
@@ -1554,7 +1622,7 @@
                 }
             },
             {
-                "field": "update",
+                "field": "payload.update",
                 "title": "Update statuss",
                 "width": "",
                 "align": "center",
@@ -1564,7 +1632,7 @@
                 }
             },
             {
-                "field": "msg",
+                "field": "payload.msg",
                 "title": "Message",
                 "width": "",
                 "align": "center",
@@ -1576,8 +1644,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1330,
-        "y": 480,
+        "x": 1410,
+        "y": 560,
         "wires": []
     },
     {
@@ -1590,10 +1658,11 @@
         "collection": "userListUpdateCollection",
         "operation": "find",
         "x": 950,
-        "y": 480,
+        "y": 560,
         "wires": [
             [
-                "996b8d311bcda11f"
+                "996b8d311bcda11f",
+                "92deceb80e14e7ff"
             ]
         ]
     },
@@ -1651,8 +1720,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1340,
-        "y": 380,
+        "x": 1420,
+        "y": 460,
         "wires": []
     },
     {
@@ -1665,7 +1734,7 @@
         "collection": "usersCollection",
         "operation": "find",
         "x": 920,
-        "y": 380,
+        "y": 460,
         "wires": [
             [
                 "42382caa7092aea9"
@@ -1686,10 +1755,10 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
-                "20b10770f9327a5d"
+                "71b81da74b181148"
             ]
         ]
     },
@@ -1759,7 +1828,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 420,
-        "y": 380,
+        "y": 460,
         "wires": [
             [
                 "ba82d36c698f8a7b"
@@ -1785,10 +1854,10 @@
         "allowrate": false,
         "outputs": 1,
         "x": 420,
-        "y": 480,
+        "y": 560,
         "wires": [
             [
-                "8045367908ff23d5"
+                "fa1ef6a4075d912e"
             ]
         ]
     },
@@ -1806,7 +1875,7 @@
         "finalize": "",
         "libs": [],
         "x": 600,
-        "y": 380,
+        "y": 460,
         "wires": [
             [
                 "02bf3d654cefb710"
@@ -1814,25 +1883,140 @@
         ]
     },
     {
-        "id": "8045367908ff23d5",
+        "id": "71b81da74b181148",
+        "type": "ttl-set",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "ttl": "10",
+        "ttlType": "num",
+        "units": "Hours",
+        "unitsType": "select",
+        "nodeName": "TTL  set 10h",
+        "x": 1030,
+        "y": 280,
+        "wires": [
+            [
+                "20b10770f9327a5d"
+            ]
+        ]
+    },
+    {
+        "id": "b288e13cb75f301f",
+        "type": "ttl-check",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "throwErrors": false,
+        "killNoTod": false,
+        "outputDeaths": true,
+        "outputs": 2,
+        "nodeName": "TTL Check",
+        "x": 710,
+        "y": 680,
+        "wires": [
+            [],
+            [
+                "62d4ae1e2798fc85"
+            ]
+        ]
+    },
+    {
+        "id": "92deceb80e14e7ff",
+        "type": "split",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "2ec89de0bc1fde04"
+            ]
+        ]
+    },
+    {
+        "id": "62d4ae1e2798fc85",
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
-        "g": "bce0c0495c57ea31",
-        "name": "Sort by employeeCode",
-        "func": "msg.sort = { 'timestamp': -1 }\nreturn msg;",
+        "g": "1bc801493ded71d2",
+        "name": "Remove _id with TTL \"dead\"",
+        "func": "var _id = msg._id;\n\nmsg.payload = { '_id':_id };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 480,
+        "x": 940,
+        "y": 680,
+        "wires": [
+            [
+                "02e6cffbf5cb6392"
+            ]
+        ]
+    },
+    {
+        "id": "fa1ef6a4075d912e",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "name": "Sort by timestamp",
+        "func": "msg.sort = { 'payload.timestamp': -1 }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 560,
         "wires": [
             [
                 "8383109a01c9660c"
             ]
         ]
+    },
+    {
+        "id": "2ec89de0bc1fde04",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "Set msg",
+        "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 680,
+        "wires": [
+            [
+                "b288e13cb75f301f"
+            ]
+        ]
+    },
+    {
+        "id": "02e6cffbf5cb6392",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "userListUpdateCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1330,
+        "y": 680,
+        "wires": []
     },
     {
         "id": "991c1e6feedfa4b1",
@@ -2540,7 +2724,7 @@
         "templateScope": "global",
         "className": "",
         "x": 160,
-        "y": 540,
+        "y": 740,
         "wires": [
             []
         ]
@@ -2589,7 +2773,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 360,
+        "y": 560,
         "wires": [
             [
                 "9224049ff9507c2b"
@@ -2610,7 +2794,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 360,
+        "y": 560,
         "wires": [
             [
                 "e23e54d43474feff"
@@ -2627,7 +2811,7 @@
         "collection": "nonExistentUsersEnymoreCollection",
         "operation": "find",
         "x": 340,
-        "y": 420,
+        "y": 620,
         "wires": [
             [
                 "d3f22ad954efe27c"
@@ -2679,7 +2863,7 @@
         "outputs": 1,
         "cts": true,
         "x": 700,
-        "y": 360,
+        "y": 560,
         "wires": [
             [
                 "4ad305dfaa268fb4"
@@ -2699,7 +2883,7 @@
         "multi": false,
         "operation": "delete",
         "x": 1220,
-        "y": 360,
+        "y": 560,
         "wires": []
     },
     {
@@ -2716,10 +2900,154 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 420,
+        "y": 620,
         "wires": [
             [
                 "bd464a090c494d7e"
+            ]
+        ]
+    },
+    {
+        "id": "748fcf2c4586b526",
+        "type": "ttl-check",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "throwErrors": false,
+        "killNoTod": false,
+        "outputDeaths": true,
+        "outputs": 2,
+        "nodeName": "TTL Check",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [],
+            [
+                "da301eb6488cac64"
+            ]
+        ]
+    },
+    {
+        "id": "a970f8a143ae4fc1",
+        "type": "split",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "0c6587995b5b6ac2"
+            ]
+        ]
+    },
+    {
+        "id": "da301eb6488cac64",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "Remove _id with TTL \"dead\"",
+        "func": "var _id = msg._id;\n\nmsg = { '_id':_id };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 420,
+        "wires": [
+            [
+                "ae6b5d826aaefdbc"
+            ]
+        ]
+    },
+    {
+        "id": "0c6587995b5b6ac2",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "Set msg",
+        "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "748fcf2c4586b526"
+            ]
+        ]
+    },
+    {
+        "id": "ae6b5d826aaefdbc",
+        "type": "mongodb out",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "keyboardEventsCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1250,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "17a74412e42e603f",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "keyboardEventsCollection",
+        "operation": "find",
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "a970f8a143ae4fc1"
+            ]
+        ]
+    },
+    {
+        "id": "8b72e5f5770c578a",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "1x hour check TTL",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "17a74412e42e603f"
             ]
         ]
     },
