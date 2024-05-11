@@ -79,6 +79,23 @@ class EmployeeAbl {
 
     res.json(itemList);
   }
+
+  async search(req, res) {
+    await validate(schemas.employeeSearchSchema, req.body);
+
+    let { pageIndex, pageSize } = req.body.pageInfo || {};
+
+    pageIndex = pageIndex || 0;
+    pageSize = pageSize || 20;
+
+    if (req.user == null) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await employeeDao.search(req.body, pageIndex, pageSize);
+
+    res.json(result);
+  }
 }
 
 module.exports = new EmployeeAbl();
