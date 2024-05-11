@@ -380,19 +380,20 @@
         "id": "a9d1e52d72a110cb",
         "type": "group",
         "z": "74d70de6eea550f9",
-        "name": "Header Date/ Time",
+        "name": "Header Date/ Time + theme (https://flows.nodered.org)",
         "style": {
             "stroke": "#ffefbf",
             "fill": "#e3f3d3",
             "label": true
         },
         "nodes": [
-            "36b6ae18aa8a04e1"
+            "36b6ae18aa8a04e1",
+            "85965edc.72971"
         ],
         "x": 54,
         "y": 699,
-        "w": 212,
-        "h": 82
+        "w": 347,
+        "h": 162
     },
     {
         "id": "8b1fb312af5f5207",
@@ -410,7 +411,8 @@
             "e23e54d43474feff",
             "d3f22ad954efe27c",
             "bd464a090c494d7e",
-            "4ad305dfaa268fb4"
+            "4ad305dfaa268fb4",
+            "77c4966462c4c94b"
         ],
         "x": 54,
         "y": 519,
@@ -570,13 +572,15 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
                 "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
@@ -712,6 +716,25 @@
         "width": "18",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "2a745e6b.07df92",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e63bce2d.68925",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "e63bce2d.68925",
+        "type": "ui_tab",
+        "name": "Denon",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "0e63ea1d3b6cab68",
@@ -996,11 +1019,11 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": true,
@@ -1009,20 +1032,18 @@
         "name": "Wrong entry",
         "x": 150,
         "y": 160,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "4be098b25860ece8",
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "3ae20c15f527cdf9",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
@@ -1031,20 +1052,18 @@
         "name": " ACCESS DENIED (locally)",
         "x": 1260,
         "y": 520,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "12593b8dc90ac2cd",
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "dd73acae1f72be6e",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
@@ -1053,9 +1072,7 @@
         "name": "USER CHECKED OK (locally)",
         "x": 1250,
         "y": 760,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "a90667a04de81245",
@@ -1146,11 +1163,11 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
@@ -1159,9 +1176,7 @@
         "name": "USER CHECKED OK",
         "x": 1280,
         "y": 360,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "71f7a3281684d237",
@@ -1196,11 +1211,11 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
@@ -1209,9 +1224,7 @@
         "name": "ACCESS DENIED",
         "x": 1290,
         "y": 400,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "a16376362f98f38f",
@@ -2298,7 +2311,7 @@
         "type": "ui_toast",
         "z": "d7790596fee7e9be",
         "g": "3528e7c07d677b4d",
-        "position": "bottom right",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
@@ -2482,7 +2495,7 @@
         "name": "Stashed keyboard events",
         "order": 1,
         "width": "10",
-        "height": "15",
+        "height": "12",
         "columns": [
             {
                 "field": "timestamp",
@@ -2676,7 +2689,7 @@
         "name": "Keyboard events",
         "order": 2,
         "width": "24",
-        "height": "15",
+        "height": "12",
         "columns": [
             {
                 "field": "inputPayload.timestamp",
@@ -2762,7 +2775,7 @@
         "g": "a9d1e52d72a110cb",
         "group": "8e8c38f3867a2f4b",
         "name": "Clock Toolbar",
-        "order": 2,
+        "order": 3,
         "width": "0",
         "height": "0",
         "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
@@ -2824,7 +2837,7 @@
         "y": 560,
         "wires": [
             [
-                "9224049ff9507c2b"
+                "77c4966462c4c94b"
             ]
         ]
     },
@@ -2841,7 +2854,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 630,
         "y": 560,
         "wires": [
             [
@@ -2858,7 +2871,7 @@
         "name": "",
         "collection": "nonExistentUsersEnymoreCollection",
         "operation": "find",
-        "x": 340,
+        "x": 500,
         "y": 620,
         "wires": [
             [
@@ -2873,9 +2886,9 @@
         "g": "8b1fb312af5f5207",
         "group": "2429789384419515",
         "name": "Non existent users keyboard events",
-        "order": 1,
+        "order": 2,
         "width": "18",
-        "height": "15",
+        "height": "12",
         "columns": [
             {
                 "field": "timestamp",
@@ -2910,8 +2923,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 700,
-        "y": 560,
+        "x": 920,
+        "y": 620,
         "wires": [
             [
                 "4ad305dfaa268fb4"
@@ -2947,7 +2960,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 1160,
         "y": 620,
         "wires": [
             [
@@ -3096,6 +3109,57 @@
         "wires": [
             [
                 "17a74412e42e603f"
+            ]
+        ]
+    },
+    {
+        "id": "85965edc.72971",
+        "type": "ui_template",
+        "z": "74d70de6eea550f9",
+        "g": "a9d1e52d72a110cb",
+        "group": "2a745e6b.07df92",
+        "name": "Dashboard Theme : Modern Dark",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            --background: #212529;\n            --on-background: white;\n            --surface: #2d3136;\n            --on-surface: white;\n            --primary: var(--nr-dashboard-widgetColor);\n            --on-primary: white;\n            --secondary: var(--nr-dashboard-groupTextColor);\n            --accent: red;\n            --radius-s: 8px;\n            --font-weight-m: 300;\n            --font-weight-m: 500;\n            --font-weight-l: 700;\n            --space-s: 8px;\n            --space-m: 16px;\n            --space-l: 32px;\n        }\n\n        body.nr-dashboard-theme {\n            background-color: var(--background);\n            font-family: 'Montserrat', sans-serif;\n        }\n        .nr-dashboard-theme ui-card-panel {\n            background-color: var(--background);\n            border: 0;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button {\n            background-color: var(--primary);\n            border-radius: var(--radius-s);\n            padding: 8px !important;\n            line-height: inherit;\n            font-weight: var(--font-weight-l);\n            color: var(--on-primary);\n        }\n        .nr-dashboard-theme [ui-card-size=\"2x2\"].nr-dashboard-button .md-button {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            white-space: pre-line;\n        }\n        \n        .nr-dashboard-theme .nr-dashboard-button .md-button ui-icon {\n                margin-bottom: 8px;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button:hover {\n            background-color: var(--secondary);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            background-color: var(--surface);\n        }\n        md-card.md-default-theme, md-card {\n            border-radius: var(--radius-s);\n        }\n        .nr-dashboard-theme .nr-dashboard-gauge-titlel {\n            font-weight: var(--font-weight-l) !important;      \n        }\n        .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n            font-weight: var(--font-weight-l);  \n            text-transform: capitalize;\n            color: var(--on-background);\n        }\n        .nr-dashboard-cardpanel > p {\n            margin-left: 0;\n            padding-left: 16px;\n        }\n        body.nr-dashboard-theme md-toolbar {\n            background-color: var(--surface);\n        }\n        .md-default-theme .md-datepicker-calendar, .md-datepicker-calendar,\n        .md-default-theme .md-calendar, .md-calendar{\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .md-default-theme .md-datepicker-calendar-pane, .md-datepicker-calendar-pane{\n            border: 0;\n        }\n        .md-default-theme .md-calendar-month-label md-icon, .md-calendar-month-label md-icon, .md-default-theme .md-datepicker-input, .md-datepicker-input {\n            color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-numeric .value {\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value, .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value.md-select-placeholder {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown .md-select-icon {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker md-input-container .md-input {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker .md-datepicker-triangle-button .md-datepicker-expand-triangle {\n            border-top-color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-sidenav {\n            background-color: var(--surface);\n        }\n        md-list-item._md-button-wrap > div.md-button:first-child, md-list-item .md-list-item-inner {\n            background-color: var(--surface);\n        }\n    </style>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "global",
+        "x": 220,
+        "y": 820,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_colour_picker.png",
+        "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
+    },
+    {
+        "id": "77c4966462c4c94b",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "",
+        "group": "2429789384419515",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "DELETE selected events",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 390,
+        "y": 560,
+        "wires": [
+            [
+                "9224049ff9507c2b"
             ]
         ]
     },
