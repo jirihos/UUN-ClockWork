@@ -23,16 +23,14 @@ const Dashboard = () => {
   const [openUser, setOpenUser] = useState(null);
 
   useEffect(() => {
-    const loadDepartments = async () => {
+    const loadData = async () => {
       try {
         const data = await call("GET", "/api/department/list");
         setDepartments(data.items);
       } catch (error) {
         console.error(error);
       }
-    };
 
-    const loadUsers = async () => {
       try {
         const data = await call("GET", "/api/employee/list");
         setUsers(data.items);
@@ -41,9 +39,8 @@ const Dashboard = () => {
       }
     };
 
-    loadDepartments();
-    loadUsers();
-  }, [call]);
+    loadData();
+  }, []);
 
   const handleItemClick = (e, { name }) => setActiveItem(name);
   const handleNameChange = (e) => setName(e.target.value);
