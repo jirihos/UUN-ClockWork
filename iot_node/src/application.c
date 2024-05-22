@@ -172,13 +172,13 @@ void matrix_event_handler(twr_matrix_t *self, twr_matrix_event_t event, void *ev
     else if (matrix_state & (1 << 12)) // Delete
     {
         memset(codeBuffer, 0, sizeof(codeBuffer));
-        twr_led_pulse(&led, 800);
+        twr_led_pulse(&led, 500);
         return;
     }
     else if (strlen(codeBuffer) > 3) // Delete more than 4 digits long entry
     {
         memset(codeBuffer, 0, sizeof(codeBuffer)); 
-        twr_led_pulse(&led, 800); 
+        twr_led_pulse(&led, 1000); 
         return;  
     }
 
