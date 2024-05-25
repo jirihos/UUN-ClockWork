@@ -40,7 +40,14 @@ class MongoDb {
   }
 
   async listPage(collection, pageIndex, pageSize) {
+    return await this.listPipelinePage(collection, null, pageIndex, pageSize);
+  }
+
+  async listPipelinePage(collection, pipeline, pageIndex, pageSize) {
+    pipeline = pipeline || [];
+
     const cursor = await collection.aggregate([
+      ...pipeline,
       {
         $facet: {
           pageInfo: [{ $count: "totalCount" }],
