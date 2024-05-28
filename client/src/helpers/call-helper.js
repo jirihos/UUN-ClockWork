@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../components/userContext";
 
-const origin = new URL(import.meta.env.VITE_BACKEND_URL).origin;
+export const origin = new URL(import.meta.env.VITE_BACKEND_URL).origin;
 
 export function useCall() {
   const { token } = useContext(UserContext);
@@ -20,6 +20,15 @@ export function useCall() {
     }
 
     const response = await fetch(origin + path, options);
-    return await response.json();
+    const data = await response.json();
+
+    if (response.status < 200 || response.status > 399) {
+      const err = new Error(response.statusText);
+      err.response = response;
+      err.data = data;
+      throw err;
+    }
+
+    return data;
   };
 }

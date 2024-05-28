@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { origin } from "../helpers/call-helper";
+import { Loader } from "semantic-ui-react";
 
 const UserContext = createContext();
 
@@ -7,10 +9,27 @@ const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [value, setValue] = useState(null);
 
-  function reload() {
-    const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
-    const role = localStorage.getItem("role");
+  async function reload() {
+    let token = localStorage.getItem("token");
+    let username = null;
+    let role = null;
+
+    if (token != null) {
+      const response = await fetch(origin + "/api/user/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 200) {
+        const json = await response.json();
+        username = json.username;
+        role = json.role;
+      } else {
+        token = null;
+        localStorage.removeItem("token");
+      }
+    }
 
     if (token == null) {
       navigate("/login");
@@ -24,11 +43,13 @@ const UserProvider = ({ children }) => {
     });
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(reload, []);
+  useEffect(() => {
+    reload();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (value == null) {
-    return null;
+    return <Loader active>Loading</Loader>;
   }
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

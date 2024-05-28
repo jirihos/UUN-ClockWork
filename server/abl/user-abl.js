@@ -69,6 +69,18 @@ class UserAbl {
     res.json(newUser);
   }
 
+  async me(req, res) {
+    // authorization
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    res.json({
+      username: req.user.username,
+      role: req.user.role,
+    });
+  }
+
   async delete(req, res) {
     // validation
     await validate(schemas.userDeleteByUsernameSchema, req.body);

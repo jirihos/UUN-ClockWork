@@ -13,21 +13,17 @@ export function useLogin() {
     });
 
     localStorage.setItem("token", response.token);
-    localStorage.setItem("username", response.username);
-    localStorage.setItem("role", response.role);
 
-    userContext.reload();
+    await userContext.reload();
   };
 }
 
 export function useLogout() {
   const userContext = useContext(UserContext);
 
-  return () => {
+  return async () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    localStorage.removeItem("role");
 
-    userContext.reload();
+    await userContext.reload();
   };
 }
