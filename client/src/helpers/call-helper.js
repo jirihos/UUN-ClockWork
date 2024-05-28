@@ -20,7 +20,17 @@ export function useCall() {
     }
 
     const response = await fetch(origin + path, options);
-    const data = await response.json();
+    let data;
+    switch (response.headers["Content-Type"]) {
+      case "application/json":
+        data = await response.json();
+        break;
+      case "text/csv":
+        data = await response.blob();
+        break;
+      default:
+        data = await response.text();
+    }
 
     if (response.status < 200 || response.status > 399) {
       const err = new Error(response.statusText);

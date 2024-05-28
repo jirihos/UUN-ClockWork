@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App.jsx";
 
 import "semantic-ui-css/semantic.min.css";
+import "./css/utility.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

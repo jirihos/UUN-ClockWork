@@ -1,27 +1,46 @@
-import React from "react";
-import { Button, ButtonGroup } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button, Image, Menu, MenuItem } from "semantic-ui-react";
 import { useLogout } from "../helpers/authentication-helper";
+import { UserContext } from "./userContext";
 
 const Header = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const user = useContext(UserContext);
   const logout = useLogout();
+
   return (
-    <div className="header-button-group">
-      <ButtonGroup size="medium" floated="left" color="teal">
-        <Button as={Link} to="/" primary>
-          Dashboard
-        </Button>
-        <Button as={Link} to="/events" primary>
-          Event Table
-        </Button>
-        <Button as={Link} to="/test" primary>
-          Test Site
-        </Button>
-      </ButtonGroup>
-      <ButtonGroup size="medium" floated="right">
+    <Menu stackable>
+      <MenuItem header>
+        <Image
+          src="https://placehold.co/50x40" // TODO logo
+          style={{ marginRight: 5 }}
+        ></Image>
+        ClockWork
+      </MenuItem>
+      <MenuItem
+        name="dashboard"
+        active={pathname === "/"}
+        onClick={() => {
+          navigate("/");
+        }}
+      />
+      <MenuItem
+        name="export"
+        active={pathname === "/export"}
+        onClick={() => {
+          navigate("/export");
+        }}
+      />
+
+      <MenuItem position="right">
+        <span style={{ marginRight: 12 }}>
+          Logged in as <b>{user.username}</b>
+        </span>
         <Button onClick={logout}>Logout</Button>
-      </ButtonGroup>
-    </div>
+      </MenuItem>
+    </Menu>
   );
 };
 
