@@ -1,5 +1,6 @@
 const employeeDao = require("../dao/employee-mongo");
 const departmentDao = require("../dao/department-mongo");
+const eventDao = require("../dao/event-mongo");
 const schemas = require("../schema/index");
 const { validate } = require("../validation");
 const errors = require("../errors");
@@ -93,6 +94,22 @@ class EmployeeAbl {
     }
 
     let result = await employeeDao.search(req.body, pageIndex, pageSize);
+
+    res.json(result);
+  }
+
+  async listPresent(req, res) {
+
+    let { pageIndex, pageSize } = req.body.pageInfo || {};
+
+    pageIndex = pageIndex || 0;
+    pageSize = pageSize || 20;
+
+    if (req.user == null) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await employeeDao.listPresent(pageIndex, pageSize);
 
     res.json(result);
   }

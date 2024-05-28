@@ -24,6 +24,50 @@ class EmployeeMongo {
     return await this.employeeCol.find({}).toArray();
   }
 
+  async listPresent(pageIndex, pageSize) {
+
+    const cursor = await this.employeeCol.aggregate([
+      {
+        $lookup:
+        {
+          from: "event",
+          localField: "code",
+          foreignField: "employeeCode",
+          pipeline: [
+            { $sort: { "timestamp": -1 } },
+            { $limit: 1 }
+          ],
+          as: "lastEvent"
+        },
+      },
+      {
+        $unwind: "$lastEvent"
+      },
+      {
+        $match: {
+        'lastEvent.type': "arrival" 
+      },
+      },
+      {
+        $facet: {
+          pageInfo: [{ $count: "totalCount" }],
+          items: [{ $skip: pageIndex * pageSize }, { $limit: pageSize }],
+        },
+      },
+    ]);
+
+    const data = await cursor.next();
+
+    const totalCount = data.pageInfo[0]?.totalCount || 0;
+    data.pageInfo = {
+      pageIndex,
+      pageSize,
+      totalCount,
+    };
+    
+    return data;
+  }
+
   async getAllExistingCodes() {
     const options = {
       projection: { _id: 0, code: 1 },

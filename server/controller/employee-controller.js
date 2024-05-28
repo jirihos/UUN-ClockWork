@@ -38,4 +38,12 @@ router.post("/search", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.get("/listPresent", authenticateToken, async (req, res, next) => {
+  try {
+    await EmployeeAbl.listPresent(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
