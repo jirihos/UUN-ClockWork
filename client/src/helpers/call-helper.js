@@ -20,8 +20,9 @@ export function useCall() {
     }
 
     const response = await fetch(origin + path, options);
+    const contentType = response.headers.get("Content-Type").split(";")[0];
     let data;
-    switch (response.headers["Content-Type"]) {
+    switch (contentType) {
       case "application/json":
         data = await response.json();
         break;
