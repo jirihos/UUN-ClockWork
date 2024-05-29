@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../helpers/authentication-helper";
-import { UserContext } from "../components/userContext";
+import { toast } from "react-toastify";
 import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
+import { UserContext } from "../components/userContext";
+import { useLogin } from "../helpers/authentication-helper";
 
 function LoginForm() {
   const user = useContext(UserContext);
@@ -22,11 +23,17 @@ function LoginForm() {
     setLoading(true);
     login(username, password)
       .then(() => {
+        setLoading(false);
         navigate("/");
       })
       .catch((e) => {
+        setLoading(false);
+        if (e?.data?.error?.code === "IncorrectPassword") {
+          toast.error("Incorrect credentials.");
+          return;
+        }
         console.error(e);
-        // TODO: handle error
+        console.dir(e);
       });
   }
 

@@ -1,15 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { origin } from "../helpers/call-helper";
+import { toast } from "react-toastify";
 import { Loader } from "semantic-ui-react";
+import { origin } from "../helpers/call-helper";
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [value, setValue] = useState(null);
+  const [expiresIn, setExpiresIn] = useState(null);
 
-  async function reload() {
+  const reload = useCallback(async () => {
     let token = localStorage.getItem("token");
     let username = null;
     let role = null;
@@ -25,6 +27,8 @@ const UserProvider = ({ children }) => {
         const json = await response.json();
         username = json.username;
         role = json.role;
+
+        setExpiresIn(json.expiresIn - 2000);
       } else {
         token = null;
         localStorage.removeItem("token");
@@ -32,6 +36,7 @@ const UserProvider = ({ children }) => {
     }
 
     if (token == null) {
+      setExpiresIn(null);
       navigate("/login");
     }
 
@@ -41,12 +46,37 @@ const UserProvider = ({ children }) => {
       role,
       reload,
     });
-  }
+  }, [navigate]);
+
+  // expiration timeouts
+  useEffect(() => {
+    if (expiresIn == null) return;
+
+    const notificationTimeoutID = setTimeout(
+      () => {
+        toast.warn(
+          "Your session expires in 3 minutes and you will be logged out.",
+          { autoClose: 8000 },
+        );
+      },
+      expiresIn - 1000 * 60 * 3, // 3 minutes before expiration
+    );
+
+    const logoutTimeoutID = setTimeout(() => {
+      localStorage.removeItem("token");
+      reload();
+      toast.info("Your session expired.");
+    }, expiresIn);
+
+    return () => {
+      clearTimeout(notificationTimeoutID);
+      clearTimeout(logoutTimeoutID);
+    };
+  }, [expiresIn, reload]);
 
   useEffect(() => {
     reload();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [reload]);
 
   if (value == null) {
     return <Loader active>Loading</Loader>;

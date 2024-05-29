@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Container } from "semantic-ui-react";
+import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./components/userContext";
 
 import Dashboard from "./pages/dashboard";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/export" element={<ExportPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ToastContainer position="top-center" />
       </Container>
     </UserProvider>
   );

@@ -75,9 +75,12 @@ class UserAbl {
       throw new errors.NotAuthorized();
     }
 
+    const { username, role, exp } = req.user;
+
     res.json({
-      username: req.user.username,
-      role: req.user.role,
+      username: username,
+      role: role,
+      expiresIn: exp * 1000 - Date.now(),
     });
   }
 
