@@ -17,12 +17,6 @@ class eventMongo {
     return event;
   }
 
-  async getLastEvent(code) {
-
-    return await this.eventCol.findOne({employeeCode: code});
-
-  }
-
   async listShiftsByEmployeeCode(employeeCode, pageIndex, pageSize) {
     const pipeline = [
       {

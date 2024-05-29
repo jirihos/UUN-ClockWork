@@ -99,12 +99,16 @@ class EmployeeAbl {
   }
 
   async listPresent(req, res) {
+    let { pageIndex, pageSize } = req.query;
+    pageIndex = parseInt(pageIndex || 0);
+    pageSize = parseInt(pageSize || 20);
 
-    let { pageIndex, pageSize } = req.body.pageInfo || {};
+    // validation
+    if (Number.isNaN(pageIndex) || Number.isNaN(pageSize)) {
+      throw new errors.QueryParametersValidationError();
+    }
 
-    pageIndex = pageIndex || 0;
-    pageSize = pageSize || 20;
-
+    // authorization
     if (req.user == null) {
       throw new errors.NotAuthorized();
     }
