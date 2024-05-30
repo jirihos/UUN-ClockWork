@@ -3,10 +3,7 @@ const { MongoClient } = require("mongodb");
 class MongoDb {
   constructor() {
     this.client = new MongoClient(process.env.MONGODB_URI, {
-      // connectTimeoutMS: 5000,
-      // serverSelectionTimeoutMS: 5000,
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
+      serverSelectionTimeoutMS: 5000,
     });
 
     // attempt to connect
