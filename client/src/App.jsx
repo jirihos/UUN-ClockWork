@@ -6,7 +6,7 @@ import { UserProvider } from "./components/userContext";
 import Dashboard from "./pages/dashboard";
 import LoginForm from "./pages/loginForm";
 import SearchPage from "./pages/SearchPage";
-import ExportPage from "./pages/exportPage";
+import ExportPage from "./pages/ExportPage";
 import NotFound from "./pages/notFound";
 
 function App() {
