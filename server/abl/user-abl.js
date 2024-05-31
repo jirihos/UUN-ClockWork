@@ -28,7 +28,7 @@ class UserAbl {
         role,
       };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn: "14d", // TODO: change to 1h
+        expiresIn: "1h",
       });
 
       res.json({
@@ -67,6 +67,21 @@ class UserAbl {
     });
 
     res.json(newUser);
+  }
+
+  async me(req, res) {
+    // authorization
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    const { username, role, exp } = req.user;
+
+    res.json({
+      username: username,
+      role: role,
+      expiresIn: exp * 1000 - Date.now(),
+    });
   }
 
   async delete(req, res) {

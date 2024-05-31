@@ -1,5 +1,5 @@
-const { object } = require("joi");
 const mongo = require("../db/mongo-db");
+const { shiftsPipeline } = require("../db/mongo-pipeline");
 
 class eventMongo {
   constructor() {
@@ -15,6 +15,24 @@ class eventMongo {
     const result = await this.eventCol.insertOne(event);
     event._id = result.insertedId;
     return event;
+  }
+
+  async listShiftsByEmployeeCode(employeeCode, pageIndex, pageSize) {
+    const pipeline = [
+      {
+        $match: {
+          employeeCode,
+        },
+      },
+      ...shiftsPipeline,
+    ];
+
+    return await mongo.listPipelinePage(
+      this.eventCol,
+      pipeline,
+      pageIndex,
+      pageSize,
+    );
   }
 }
 

@@ -31,6 +31,35 @@ class eventAbl {
       throw new errors.EmployeeCodeNotFound();
     }
   }
+
+  async listShiftsByEmployeeCode(req, res) {
+    let { employeeCode, pageIndex, pageSize } = req.query;
+    employeeCode = parseInt(employeeCode);
+    pageIndex = parseInt(pageIndex || 0);
+    pageSize = parseInt(pageSize || 20);
+
+    // validation
+    if (
+      Number.isNaN(employeeCode) ||
+      Number.isNaN(pageIndex) ||
+      Number.isNaN(pageSize)
+    ) {
+      throw new errors.QueryParametersValidationError();
+    }
+
+    // authorization
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    const shifts = await eventDao.listShiftsByEmployeeCode(
+      employeeCode,
+      pageIndex,
+      pageSize,
+    );
+
+    res.json(shifts);
+  }
 }
 
 module.exports = new eventAbl();

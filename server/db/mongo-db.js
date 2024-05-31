@@ -3,7 +3,6 @@ const { MongoClient } = require("mongodb");
 class MongoDb {
   constructor() {
     this.client = new MongoClient(process.env.MONGODB_URI, {
-      connectTimeoutMS: 5000,
       serverSelectionTimeoutMS: 5000,
     });
 
@@ -40,7 +39,14 @@ class MongoDb {
   }
 
   async listPage(collection, pageIndex, pageSize) {
+    return await this.listPipelinePage(collection, null, pageIndex, pageSize);
+  }
+
+  async listPipelinePage(collection, pipeline, pageIndex, pageSize) {
+    pipeline = pipeline || [];
+
     const cursor = await collection.aggregate([
+      ...pipeline,
       {
         $facet: {
           pageInfo: [{ $count: "totalCount" }],

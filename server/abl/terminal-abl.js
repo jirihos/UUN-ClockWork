@@ -2,7 +2,7 @@ const terminalDao = require("../dao/terminal-mongo");
 const schemas = require("../schema/index");
 const { validate } = require("../validation");
 const errors = require("../errors");
-const { generateApiKey } = require("../helpers/api-key-helper");
+const { generateApiKey } = require("../helper/api-key-helper");
 
 class TerminalAbl {
   async create(req, res) {
