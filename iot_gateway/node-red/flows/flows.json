@@ -32,19 +32,19 @@
         "env": []
     },
     {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Ideas",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "703dc2c481ddf6ab",
         "type": "tab",
         "label": "TEST FLOW",
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "f6f2187d.f17ca8",
-        "type": "tab",
-        "label": "Ideas",
-        "disabled": false,
-        "info": ""
     },
     {
         "id": "d70cc115667768df",
@@ -63,10 +63,10 @@
             "60d9f8fe0958cf50",
             "80888cdaf5d9a8b9"
         ],
-        "x": 34,
-        "y": 679,
-        "w": 512,
-        "h": 330
+        "x": 74,
+        "y": 539,
+        "w": 472,
+        "h": 210
     },
     {
         "id": "2124c778e288492c",
@@ -89,13 +89,8 @@
             "a3f26508d916884a"
         ],
         "x": 554,
-<<<<<<< Updated upstream
-        "y": 259,
-        "w": 852,
-=======
         "y": 319,
         "w": 892,
->>>>>>> Stashed changes
         "h": 190
     },
     {
@@ -116,13 +111,8 @@
             "a16376362f98f38f"
         ],
         "x": 554,
-<<<<<<< Updated upstream
-        "y": 639,
-        "w": 852,
-=======
-        "y": 839,
+        "y": 879,
         "w": 892,
->>>>>>> Stashed changes
         "h": 170
     },
     {
@@ -141,13 +131,8 @@
             "a90667a04de81245"
         ],
         "x": 554,
-<<<<<<< Updated upstream
-        "y": 479,
-        "w": 852,
-=======
-        "y": 719,
+        "y": 779,
         "w": 892,
->>>>>>> Stashed changes
         "h": 90
     },
     {
@@ -164,7 +149,7 @@
         "nodes": [
             "d6f9f320f897c6ee"
         ],
-        "x": 34,
+        "x": 54,
         "y": 351.5,
         "w": 472,
         "h": 105
@@ -192,18 +177,13 @@
             "9c933f3688f9d9a1",
             "3d15ab43c8ab519a",
             "feb1107b306b5946",
-            "a84e35068f94e0c4"
+            "a84e35068f94e0c4",
+            "3b73e3cd944e187c"
         ],
-        "x": 34,
-<<<<<<< Updated upstream
-        "y": 59,
-        "w": 1372,
-        "h": 170
-=======
-        "y": 79,
-        "w": 1412,
-        "h": 210
->>>>>>> Stashed changes
+        "x": 14,
+        "y": -1,
+        "w": 1432,
+        "h": 270
     },
     {
         "id": "ee274060183140ba",
@@ -213,11 +193,10 @@
         "style": {
             "stroke": "#ffefbf",
             "fill": "#e3f3d3",
-            "label": true
+            "label": true,
+            "label-position": "sw"
         },
         "nodes": [
-            "2bd43a2954daefc6",
-            "2daa2cbfa085b484",
             "10186ab8cec6d099",
             "31f18681ba01a9c0",
             "4e566a1b02d91ecd"
@@ -225,7 +204,7 @@
         "x": 54,
         "y": 199,
         "w": 1432,
-        "h": 82
+        "h": 90
     },
     {
         "id": "a6515923ca5b7293",
@@ -239,13 +218,12 @@
         },
         "nodes": [
             "8d822c1ec888b9e2",
-            "cbf7c6584f0a9148",
             "ed6e78e62f6e89b8",
             "7c551ef32e98efb6"
         ],
         "x": 54,
-        "y": 79,
-        "w": 1432,
+        "y": 39,
+        "w": 1392,
         "h": 82
     },
     {
@@ -264,13 +242,8 @@
             "a787e0b9e85b6bd2",
             "fa1ef6a4075d912e"
         ],
-<<<<<<< Updated upstream
-        "x": 334,
-        "y": 519,
-=======
         "x": 634,
         "y": 539,
->>>>>>> Stashed changes
         "w": 1232,
         "h": 82
     },
@@ -290,11 +263,7 @@
             "bace35dfe37e3ffd",
             "ba82d36c698f8a7b"
         ],
-<<<<<<< Updated upstream
-        "x": 334,
-=======
         "x": 634,
->>>>>>> Stashed changes
         "y": 419,
         "w": 1232,
         "h": 82
@@ -337,17 +306,13 @@
             "a7a28555fa3fc0ad",
             "20b10770f9327a5d",
             "f6d6d05d984eee08",
-            "71b81da74b181148"
+            "71b81da74b181148",
+            "1b3bf9104b597ba7"
         ],
         "x": 634,
-<<<<<<< Updated upstream
-        "y": 219,
-        "w": 932,
-=======
-        "y": 239,
+        "y": 199,
         "w": 1232,
->>>>>>> Stashed changes
-        "h": 122
+        "h": 162
     },
     {
         "id": "541a9b2c482b7850",
@@ -390,7 +355,8 @@
             "5e2003d9c1ad71a8",
             "991c1e6feedfa4b1",
             "dbacf1335303f72f",
-            "cddaf976743603fb"
+            "cddaf976743603fb",
+            "09aad63796c769b3"
         ],
         "x": 34,
         "y": 39,
@@ -428,20 +394,12 @@
         },
         "nodes": [
             "36b6ae18aa8a04e1",
-<<<<<<< Updated upstream
-            "85965edc.72971"
-=======
             "68f82fd49ed5ef19"
->>>>>>> Stashed changes
         ],
-        "x": 54,
-        "y": 699,
+        "x": 1134,
+        "y": 979,
         "w": 347,
-<<<<<<< Updated upstream
-        "h": 162
-=======
-        "h": 122
->>>>>>> Stashed changes
+        "h": 242
     },
     {
         "id": "8b1fb312af5f5207",
@@ -460,12 +418,15 @@
             "d3f22ad954efe27c",
             "bd464a090c494d7e",
             "4ad305dfaa268fb4",
-            "77c4966462c4c94b"
+            "77c4966462c4c94b",
+            "8a3d368b091346dd",
+            "9bf475db6c560dc8",
+            "0dc83fdc2d1ee1ec"
         ],
         "x": 54,
         "y": 519,
         "w": 1432,
-        "h": 142
+        "h": 202
     },
     {
         "id": "3528e7c07d677b4d",
@@ -513,13 +474,8 @@
             "9af2e759ee4e3b5a",
             "421842dd816509fc"
         ],
-<<<<<<< Updated upstream
-        "x": 334,
-        "y": 639,
-=======
         "x": 634,
         "y": 659,
->>>>>>> Stashed changes
         "w": 1232,
         "h": 150
     },
@@ -541,16 +497,15 @@
             "0c6587995b5b6ac2",
             "ae6b5d826aaefdbc",
             "17a74412e42e603f",
-            "8b72e5f5770c578a"
+            "8b72e5f5770c578a",
+            "5c044c093f63f345"
         ],
         "x": 54,
-        "y": 319,
+        "y": 299,
         "w": 1432,
-        "h": 150
+        "h": 210
     },
     {
-<<<<<<< Updated upstream
-=======
         "id": "a10b30921cdeeca4",
         "type": "group",
         "z": "703dc2c481ddf6ab",
@@ -598,7 +553,7 @@
             "973cf5dc42eaf43d"
         ],
         "x": 234,
-        "y": 419,
+        "y": 299,
         "w": 1552,
         "h": 90
     },
@@ -622,12 +577,133 @@
             "de23cc0cc57560a5"
         ],
         "x": 774,
-        "y": 539,
+        "y": 519,
         "w": 672,
-        "h": 150
+        "h": 230
     },
     {
->>>>>>> Stashed changes
+        "id": "17b6146060188785",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Server status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "7a2ec748e7ea9d17",
+            "1ed2eb3c4c0edf4c",
+            "ae8829c1c3f8c336"
+        ],
+        "x": 54,
+        "y": 739,
+        "w": 1432,
+        "h": 90
+    },
+    {
+        "id": "64b8798ede85c7d8",
+        "type": "group",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "a2e4e61e46401397",
+            "9d5824a429730b28",
+            "6dcf6125abb8951b",
+            "f76371fcaec11ec0",
+            "a832de492bcbf595",
+            "09a0dbbfc06fe9fa",
+            "11ece0c0373003d5",
+            "dd03fc639e1179b3"
+        ],
+        "x": 34,
+        "y": 119,
+        "w": 612,
+        "h": 262
+    },
+    {
+        "id": "d7ffca66265109a5",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Microcontroller status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "2c258774973706cd",
+            "9b12a3ecd9f3424a",
+            "60eb9ff12213c94b"
+        ],
+        "x": 54,
+        "y": 859,
+        "w": 1432,
+        "h": 90
+    },
+    {
+        "id": "0e3745d94f4715e6",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Mocrocontroller status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "9e9526883b5fb8e9",
+            "970a828d4a8e0d1d",
+            "80608c3731ce5b3d",
+            "fc64dd16a86f41a7",
+            "7d6f036c9c1b2ae2",
+            "19233c246a4b0fbf",
+            "2bc3c8c86dc19b14",
+            "e7eb87403244d7af"
+        ],
+        "x": 54,
+        "y": 979,
+        "w": 1052,
+        "h": 250
+    },
+    {
+        "id": "c380b8bac82c0dd7",
+        "type": "group",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "34898cdf7e4ff7c0",
+            "d1170e639aef5227",
+            "f576433e951d1b68",
+            "cdf223bb7a7b0ec4",
+            "c7f6ea2f868640ce",
+            "974023178f68b771",
+            "ad82f5a13a6eb935",
+            "7289ecb03673dec5",
+            "5bf5da3728ec4507",
+            "588fd6f245e4f382",
+            "2e09f3afbe330899",
+            "13416614d578b728"
+        ],
+        "x": 234,
+        "y": 499,
+        "w": 672,
+        "h": 262
+    },
+    {
         "id": "1be85959efd6d9ef",
         "type": "mqtt-broker",
         "name": "",
@@ -675,7 +751,7 @@
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "18",
+        "width": 30,
         "collapse": true,
         "className": ""
     },
@@ -805,7 +881,7 @@
         "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "14",
+        "width": 16,
         "collapse": true,
         "className": ""
     },
@@ -825,7 +901,7 @@
         "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "11",
+        "width": 14,
         "collapse": true,
         "className": ""
     },
@@ -862,28 +938,33 @@
     {
         "id": "e63bce2d.68925",
         "type": "ui_tab",
-<<<<<<< Updated upstream
-        "name": "Denon",
-=======
         "name": "TEST",
->>>>>>> Stashed changes
         "icon": "dashboard",
-        "order": 2,
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
     {
-<<<<<<< Updated upstream
-=======
-        "id": "700e0299.f39d8c",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "id": "53bc0c7b51c50fc0",
+        "type": "ui_spacer",
+        "z": "703dc2c481ddf6ab",
+        "name": "spacer",
+        "group": "8e8c38f3867a2f4b",
+        "order": 6,
+        "width": 10,
+        "height": 1
     },
     {
->>>>>>> Stashed changes
+        "id": "5518c91aa2a46037",
+        "type": "ui_spacer",
+        "z": "703dc2c481ddf6ab",
+        "name": "spacer",
+        "group": "8e8c38f3867a2f4b",
+        "order": 8,
+        "width": 10,
+        "height": 1
+    },
+    {
         "id": "0e63ea1d3b6cab68",
         "type": "mqtt in",
         "z": "d537a249a96dc0df",
@@ -897,11 +978,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 180,
+        "x": 150,
+        "y": 100,
         "wires": [
             [
-                "94a2c8b60c41d056"
+                "94a2c8b60c41d056",
+                "3b73e3cd944e187c"
             ]
         ]
     },
@@ -919,7 +1001,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 180,
+        "y": 100,
         "wires": [
             [
                 "7e09073d61ddc699"
@@ -936,15 +1018,15 @@
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nlet url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\nlet eventTimestamp = flow.get(\"timestamp\");\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    case 'D':\n        actionName = 'doctor';\n        break;\n    case 'H':\n        actionName = 'holiday';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload =\n{\n    \"timestamp\": eventTimestamp,\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nlet url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 180,
+        "x": 660,
+        "y": 100,
         "wires": [
             [
                 "c205155a2f3932fe"
@@ -963,12 +1045,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1140,
-<<<<<<< Updated upstream
-        "y": 680,
-=======
-        "y": 880,
->>>>>>> Stashed changes
+        "x": 1180,
+        "y": 920,
         "wires": []
     },
     {
@@ -995,13 +1073,8 @@
                 "valueValue": "api_key"
             }
         ],
-<<<<<<< Updated upstream
-        "x": 1310,
-        "y": 180,
-=======
-        "x": 1350,
-        "y": 240,
->>>>>>> Stashed changes
+        "x": 1250,
+        "y": 220,
         "wires": [
             [
                 "d6f9f320f897c6ee"
@@ -1035,8 +1108,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 180,
+        "x": 910,
+        "y": 100,
         "wires": [
             [
                 "9b354d9dba50c1d2"
@@ -1063,8 +1136,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 140,
-        "y": 720,
+        "x": 180,
+        "y": 580,
         "wires": [
             [
                 "60d9f8fe0958cf50"
@@ -1085,11 +1158,7 @@
         "finalize": "",
         "libs": [],
         "x": 840,
-<<<<<<< Updated upstream
-        "y": 300,
-=======
         "y": 360,
->>>>>>> Stashed changes
         "wires": [
             [
                 "8d92076ea8ee2d84"
@@ -1108,13 +1177,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-<<<<<<< Updated upstream
-        "x": 1170,
-        "y": 300,
-=======
         "x": 1210,
         "y": 360,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -1126,8 +1190,8 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 260,
-        "y": 840,
+        "x": 320,
+        "y": 640,
         "wires": [
             [
                 "80888cdaf5d9a8b9"
@@ -1148,7 +1212,7 @@
         "finalize": "",
         "libs": [],
         "x": 410,
-        "y": 720,
+        "y": 580,
         "wires": [
             [
                 "c886763ff525e7f5"
@@ -1168,8 +1232,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 960,
+        "x": 300,
+        "y": 700,
         "wires": [
             [
                 "a90667a04de81245"
@@ -1195,14 +1259,9 @@
         "raw": true,
         "className": "",
         "topic": "Wrong entry",
-        "name": "Wrong entry",
-<<<<<<< Updated upstream
-        "x": 150,
+        "name": "Wrong entry Gateway",
+        "x": 400,
         "y": 160,
-=======
-        "x": 370,
-        "y": 240,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -1221,13 +1280,8 @@
         "className": "",
         "topic": "payload",
         "name": " ACCESS DENIED (locally)",
-<<<<<<< Updated upstream
-        "x": 1260,
-        "y": 520,
-=======
         "x": 1300,
-        "y": 760,
->>>>>>> Stashed changes
+        "y": 820,
         "wires": []
     },
     {
@@ -1246,13 +1300,8 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK (locally)",
-<<<<<<< Updated upstream
-        "x": 1250,
-        "y": 760,
-=======
         "x": 1290,
-        "y": 960,
->>>>>>> Stashed changes
+        "y": 1000,
         "wires": []
     },
     {
@@ -1264,17 +1313,17 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ACCESS DENIED (locally)",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "payload.led",
                 "pt": "msg",
                 "to": "0",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "USER DENIED (locally)",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1283,7 +1332,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "4be098b25860ece8",
@@ -1312,7 +1361,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 960,
+        "y": 1000,
         "wires": [
             [
                 "12593b8dc90ac2cd",
@@ -1364,14 +1413,9 @@
         "raw": false,
         "className": "",
         "topic": "payload",
-        "name": "USER CHECKED OK",
-<<<<<<< Updated upstream
-        "x": 1280,
-        "y": 360,
-=======
-        "x": 1320,
+        "name": "USER CHECKED OK Gateway",
+        "x": 1270,
         "y": 420,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -1383,17 +1427,17 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ACCES DENIED",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "payload.led",
                 "pt": "msg",
                 "to": "0",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACCES DENIED",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1425,14 +1469,9 @@
         "raw": false,
         "className": "",
         "topic": "payload",
-        "name": "ACCESS DENIED",
-<<<<<<< Updated upstream
-        "x": 1290,
-        "y": 400,
-=======
-        "x": 1330,
+        "name": "ACCESS DENIED Gateway",
+        "x": 1280,
         "y": 460,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -1456,7 +1495,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 880,
+        "y": 920,
         "wires": [
             [
                 "0c47445f94556a8b"
@@ -1469,14 +1508,14 @@
         "z": "d537a249a96dc0df",
         "g": "e167cf4c1a22efbf",
         "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\";\n\nif (msg.statusCode === 200) { // ok\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [null, msg, null];\n   \n} else { // error\n    global.set(serverConnectionKeyboard, connectionKeyboard = 0);\n    return [null, null, msg];\n};\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
+        "x": 290,
         "y": 400,
         "wires": [
             [
@@ -1488,8 +1527,8 @@
                 "a3f26508d916884a"
             ],
             [
-                "99940b665d510255",
-                "a3f26508d916884a"
+                "a3f26508d916884a",
+                "99940b665d510255"
             ]
         ]
     },
@@ -1498,7 +1537,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "name": "Get user by id",
+        "name": "Get user by id from user collection",
         "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = { code: employeeCode };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1506,8 +1545,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1100,
-        "y": 180,
+        "x": 1280,
+        "y": 100,
         "wires": [
             [
                 "7fc55615f6c4ce14"
@@ -1523,8 +1562,8 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 660,
-        "y": 240,
+        "x": 760,
+        "y": 220,
         "wires": [
             [
                 "9c933f3688f9d9a1"
@@ -1558,8 +1597,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 980,
-        "y": 240,
+        "x": 1060,
+        "y": 220,
         "wires": [
             [
                 "2f8352811aacfd89"
@@ -1577,11 +1616,7 @@
         "unitsType": "select",
         "nodeName": "TTL  set 48h",
         "x": 650,
-<<<<<<< Updated upstream
-        "y": 300,
-=======
         "y": 360,
->>>>>>> Stashed changes
         "wires": [
             [
                 "7a6dc751a7fc8632"
@@ -1589,8 +1624,6 @@
         ]
     },
     {
-<<<<<<< Updated upstream
-=======
         "id": "2e5a1881ab9317d7",
         "type": "mqtt out",
         "z": "d537a249a96dc0df",
@@ -1614,7 +1647,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "1650f82db34b29ba",
-        "name": "Set LED OK",
+        "name": "Set LED OK Microcontroller",
         "func": "msg.payload = 1;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1622,8 +1655,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 580,
+        "x": 920,
+        "y": 560,
         "wires": [
             [
                 "a69c25e0b94337b8"
@@ -1648,8 +1681,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1050,
-        "y": 580,
+        "x": 1030,
+        "y": 620,
         "wires": [
             [
                 "2e5a1881ab9317d7"
@@ -1672,7 +1705,7 @@
         "expiry": "",
         "broker": "1be85959efd6d9ef",
         "x": 1280,
-        "y": 640,
+        "y": 680,
         "wires": []
     },
     {
@@ -1680,7 +1713,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "1650f82db34b29ba",
-        "name": "Set LED denied",
+        "name": "Set LED denied Microcontroller",
         "func": "msg.payload = 0;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1688,8 +1721,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 640,
+        "x": 930,
+        "y": 660,
         "wires": [
             [
                 "de23cc0cc57560a5"
@@ -1714,8 +1747,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1050,
-        "y": 640,
+        "x": 1030,
+        "y": 700,
         "wires": [
             [
                 "ad0f3f1f2b7cd7e9"
@@ -1737,8 +1770,8 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 1040,
-        "y": 120,
+        "x": 1120,
+        "y": 160,
         "wires": []
     },
     {
@@ -1754,8 +1787,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 120,
+        "x": 660,
+        "y": 160,
         "wires": [
             [
                 "a84e35068f94e0c4"
@@ -1780,8 +1813,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 790,
-        "y": 120,
+        "x": 850,
+        "y": 160,
         "wires": [
             [
                 "3d15ab43c8ab519a"
@@ -1789,7 +1822,30 @@
         ]
     },
     {
->>>>>>> Stashed changes
+        "id": "3b73e3cd944e187c",
+        "type": "moment",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "Timestamp Europe\\ Prague to flow .timestamp +2h",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Prague",
+        "adjAmount": "2",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "cz-EU",
+        "output": "timestamp",
+        "outputType": "flow",
+        "outTz": "Europe/Prague",
+        "x": 490,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "810f708507612442",
         "type": "inject",
         "z": "76b8d7d23f0dfbb5",
@@ -1872,12 +1928,14 @@
                 "2e68e0c1a6dff21c",
                 "f2cc5306a2411e0c",
                 "a787e0b9e85b6bd2",
-                "bace35dfe37e3ffd"
+                "bace35dfe37e3ffd",
+                "1b3bf9104b597ba7"
             ],
             [
                 "f6d6d05d984eee08",
                 "a787e0b9e85b6bd2",
-                "bace35dfe37e3ffd"
+                "bace35dfe37e3ffd",
+                "1b3bf9104b597ba7"
             ]
         ]
     },
@@ -1940,7 +1998,7 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "2dfa0fcb02146650",
         "name": "Log user list update SUCESS",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 1);\n\nmsg.payload = {\n    \"timestamp\": flow.get(\"timestamp1\"),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1948,11 +2006,7 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-<<<<<<< Updated upstream
-        "y": 260,
-=======
         "y": 280,
->>>>>>> Stashed changes
         "wires": [
             [
                 "71b81da74b181148"
@@ -1971,13 +2025,8 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-<<<<<<< Updated upstream
-        "x": 1330,
-        "y": 280,
-=======
         "x": 1630,
         "y": 300,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -2045,9 +2094,9 @@
         "g": "bce0c0495c57ea31",
         "group": "af810a62dae6c015",
         "name": "Update list of users DB gateway",
-        "order": 0,
-        "width": "14",
-        "height": "10",
+        "order": 2,
+        "width": 16,
+        "height": 12,
         "columns": [
             {
                 "field": "payload.timestamp",
@@ -2082,13 +2131,8 @@
         ],
         "outputs": 0,
         "cts": false,
-<<<<<<< Updated upstream
-        "x": 1410,
-        "y": 560,
-=======
         "x": 1710,
         "y": 580,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -2100,13 +2144,8 @@
         "name": "",
         "collection": "userListUpdateCollection",
         "operation": "find",
-<<<<<<< Updated upstream
-        "x": 950,
-        "y": 560,
-=======
         "x": 1250,
         "y": 580,
->>>>>>> Stashed changes
         "wires": [
             [
                 "996b8d311bcda11f"
@@ -2121,8 +2160,8 @@
         "group": "24fc504cdf00f66a",
         "name": "List of users in gateway DB",
         "order": 2,
-        "width": "11",
-        "height": "10",
+        "width": 14,
+        "height": 12,
         "columns": [
             {
                 "field": "code",
@@ -2167,11 +2206,7 @@
         ],
         "outputs": 0,
         "cts": false,
-<<<<<<< Updated upstream
-        "x": 1420,
-=======
         "x": 1720,
->>>>>>> Stashed changes
         "y": 460,
         "wires": []
     },
@@ -2184,11 +2219,7 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-<<<<<<< Updated upstream
-        "x": 920,
-=======
         "x": 1220,
->>>>>>> Stashed changes
         "y": 460,
         "wires": [
             [
@@ -2202,7 +2233,7 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "2dfa0fcb02146650",
         "name": "Log user list update FAIL",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 0);\n\nmsg.payload = {\n    \"timestamp\": flow.get(\"timestamp1\"),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2210,11 +2241,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-<<<<<<< Updated upstream
-        "y": 300,
-=======
         "y": 320,
->>>>>>> Stashed changes
         "wires": [
             [
                 "71b81da74b181148"
@@ -2286,11 +2313,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-<<<<<<< Updated upstream
-        "x": 420,
-=======
         "x": 720,
->>>>>>> Stashed changes
         "y": 460,
         "wires": [
             [
@@ -2316,13 +2339,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-<<<<<<< Updated upstream
-        "x": 420,
-        "y": 560,
-=======
         "x": 720,
         "y": 580,
->>>>>>> Stashed changes
         "wires": [
             [
                 "fa1ef6a4075d912e"
@@ -2342,11 +2360,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 600,
-=======
         "x": 900,
->>>>>>> Stashed changes
         "y": 460,
         "wires": [
             [
@@ -2365,11 +2379,7 @@
         "unitsType": "select",
         "nodeName": "TTL  set 10h",
         "x": 1030,
-<<<<<<< Updated upstream
-        "y": 280,
-=======
         "y": 300,
->>>>>>> Stashed changes
         "wires": [
             [
                 "20b10770f9327a5d"
@@ -2386,13 +2396,8 @@
         "outputDeaths": true,
         "outputs": 2,
         "nodeName": "TTL Check",
-<<<<<<< Updated upstream
-        "x": 730,
-        "y": 740,
-=======
         "x": 1110,
         "y": 760,
->>>>>>> Stashed changes
         "wires": [
             [],
             [
@@ -2405,24 +2410,15 @@
         "type": "split",
         "z": "76b8d7d23f0dfbb5",
         "g": "1bc801493ded71d2",
-<<<<<<< Updated upstream
-        "name": "",
-=======
         "name": "Split 1 by 1",
->>>>>>> Stashed changes
         "splt": "\\n",
         "spltType": "str",
         "arraySplt": 1,
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-<<<<<<< Updated upstream
-        "x": 430,
-        "y": 740,
-=======
         "x": 750,
         "y": 760,
->>>>>>> Stashed changes
         "wires": [
             [
                 "2ec89de0bc1fde04"
@@ -2442,13 +2438,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 960,
-        "y": 740,
-=======
         "x": 1340,
         "y": 760,
->>>>>>> Stashed changes
         "wires": [
             [
                 "02e6cffbf5cb6392"
@@ -2468,13 +2459,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 610,
-        "y": 560,
-=======
         "x": 910,
         "y": 580,
->>>>>>> Stashed changes
         "wires": [
             [
                 "8383109a01c9660c"
@@ -2486,11 +2472,7 @@
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
         "g": "1bc801493ded71d2",
-<<<<<<< Updated upstream
-        "name": "Set msg",
-=======
         "name": "Set msg _id & _tod",
->>>>>>> Stashed changes
         "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -2498,13 +2480,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 560,
-        "y": 740,
-=======
         "x": 930,
         "y": 760,
->>>>>>> Stashed changes
         "wires": [
             [
                 "b288e13cb75f301f"
@@ -2517,23 +2494,14 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "1bc801493ded71d2",
         "mongodb": "f18849d91eb5ebcb",
-<<<<<<< Updated upstream
-        "name": "",
-=======
         "name": "REMOVE by _id userListUpdateCollection",
->>>>>>> Stashed changes
         "collection": "userListUpdateCollection",
         "payonly": false,
         "upsert": false,
         "multi": false,
         "operation": "delete",
-<<<<<<< Updated upstream
-        "x": 1330,
-        "y": 740,
-=======
         "x": 1680,
         "y": 760,
->>>>>>> Stashed changes
         "wires": []
     },
     {
@@ -2542,19 +2510,11 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "1bc801493ded71d2",
         "mongodb": "f18849d91eb5ebcb",
-<<<<<<< Updated upstream
-        "name": "",
-        "collection": "userListUpdateCollection",
-        "operation": "find",
-        "x": 810,
-        "y": 680,
-=======
         "name": "GET userListUpdateCollection",
         "collection": "userListUpdateCollection",
         "operation": "find",
         "x": 1170,
         "y": 700,
->>>>>>> Stashed changes
         "wires": [
             [
                 "92deceb80e14e7ff"
@@ -2583,22 +2543,16 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-<<<<<<< Updated upstream
-        "x": 470,
-        "y": 680,
-=======
         "x": 770,
         "y": 700,
->>>>>>> Stashed changes
         "wires": [
             [
-                "9af2e759ee4e3b5a"
+                "9af2e759ee4e3b5a",
+                "a787e0b9e85b6bd2"
             ]
         ]
     },
     {
-<<<<<<< Updated upstream
-=======
         "id": "879a66595b3fc576",
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
@@ -2648,7 +2602,30 @@
         ]
     },
     {
->>>>>>> Stashed changes
+        "id": "1b3bf9104b597ba7",
+        "type": "moment",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "name": "Timestamp Europe\\ Prague to flow .timestamp +2h",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Prague",
+        "adjAmount": "2",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "cz-EU",
+        "output": "timestamp1",
+        "outputType": "flow",
+        "outTz": "Europe/Prague",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "991c1e6feedfa4b1",
         "type": "http request",
         "z": "d7790596fee7e9be",
@@ -2686,7 +2663,7 @@
         "z": "d7790596fee7e9be",
         "g": "7607e31cccc8cd69",
         "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\n\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 1);\n\n\nif (msg.statusCode === 200) { // ok\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [null, msg, null];\n   \n} else { // error\n    global.set(serverConnectionKeyboard, connectionKeyboard = 0);\n    return [null, null, msg];\n};\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
@@ -2702,7 +2679,9 @@
             [
                 "2890d95a38a9ccd7"
             ],
-            []
+            [
+                "65db048f5948f060"
+            ]
         ]
     },
     {
@@ -2801,7 +2780,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 180,
+        "x": 160,
         "y": 140,
         "wires": [
             [
@@ -2869,7 +2848,7 @@
         "y": 80,
         "wires": [
             [
-                "984d777333c3e122"
+                "09aad63796c769b3"
             ]
         ]
     },
@@ -3054,6 +3033,108 @@
         ]
     },
     {
+        "id": "09aad63796c769b3",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "function 6",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 80,
+        "wires": [
+            [
+                "984d777333c3e122"
+            ]
+        ]
+    },
+    {
+        "id": "05cb095c1d4a76c4",
+        "type": "inject",
+        "z": "d7790596fee7e9be",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "f2c2d61087e2ced7"
+            ]
+        ]
+    },
+    {
+        "id": "2109abbeb7bf00d8",
+        "type": "mongodb in",
+        "z": "d7790596fee7e9be",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "operation": "find",
+        "x": 840,
+        "y": 560,
+        "wires": [
+            [
+                "ac762c9c9b70cbbc"
+            ]
+        ]
+    },
+    {
+        "id": "ac762c9c9b70cbbc",
+        "type": "debug",
+        "z": "d7790596fee7e9be",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f2c2d61087e2ced7",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "name": "function 8",
+        "func": "msg.limit = 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "2109abbeb7bf00d8"
+            ]
+        ]
+    },
+    {
         "id": "8d822c1ec888b9e2",
         "type": "ui_table",
         "z": "74d70de6eea550f9",
@@ -3097,40 +3178,10 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 1350,
-        "y": 120,
+        "x": 1310,
+        "y": 80,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "cbf7c6584f0a9148",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "g": "a6515923ca5b7293",
-        "name": "Refresh Table 5s todo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 120,
-        "wires": [
-            [
-                "7c551ef32e98efb6"
-            ]
         ]
     },
     {
@@ -3142,70 +3193,11 @@
         "name": "",
         "collection": "stashedKeyboardEventsCollection",
         "operation": "find",
-        "x": 860,
-        "y": 120,
+        "x": 660,
+        "y": 80,
         "wires": [
             [
                 "8d822c1ec888b9e2"
-            ]
-        ]
-    },
-    {
-        "id": "2bd43a2954daefc6",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "g": "ee274060183140ba",
-        "name": "Refresh Table 5s todo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 240,
-        "wires": [
-            [
-                "2daa2cbfa085b484"
-            ]
-        ]
-    },
-    {
-        "id": "2daa2cbfa085b484",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "g": "ee274060183140ba",
-        "name": "",
-        "group": "8e8c38f3867a2f4b",
-        "order": 1,
-        "width": "18",
-        "height": "1",
-        "passthru": true,
-        "label": "Refresh todo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [
-                "31f18681ba01a9c0"
             ]
         ]
     },
@@ -3218,7 +3210,7 @@
         "name": "",
         "collection": "keyboardEventsCollection",
         "operation": "find",
-        "x": 970,
+        "x": 610,
         "y": 240,
         "wires": [
             [
@@ -3239,7 +3231,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 190,
         "y": 240,
         "wires": [
             [
@@ -3255,12 +3247,8 @@
         "group": "8e8c38f3867a2f4b",
         "name": "Keyboard events",
         "order": 2,
-<<<<<<< Updated upstream
-        "width": "24",
-=======
-        "width": "18",
->>>>>>> Stashed changes
-        "height": "12",
+        "width": 20,
+        "height": 13,
         "columns": [
             {
                 "field": "inputPayload.timestamp",
@@ -3346,17 +3334,17 @@
         "g": "a9d1e52d72a110cb",
         "group": "8e8c38f3867a2f4b",
         "name": "Clock Toolbar",
-        "order": 3,
-        "width": "0",
-        "height": "0",
+        "order": 7,
+        "width": 10,
+        "height": 1,
         "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
         "templateScope": "global",
         "className": "",
-        "x": 160,
-        "y": 740,
+        "x": 1240,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -3374,8 +3362,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 120,
+        "x": 190,
+        "y": 80,
         "wires": [
             [
                 "ed6e78e62f6e89b8"
@@ -3425,7 +3413,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 610,
         "y": 560,
         "wires": [
             [
@@ -3442,12 +3430,8 @@
         "name": "",
         "collection": "nonExistentUsersEnymoreCollection",
         "operation": "find",
-<<<<<<< Updated upstream
-        "x": 500,
-=======
-        "x": 340,
->>>>>>> Stashed changes
-        "y": 620,
+        "x": 1220,
+        "y": 560,
         "wires": [
             [
                 "d3f22ad954efe27c"
@@ -3498,11 +3482,11 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 920,
+        "x": 240,
         "y": 620,
         "wires": [
             [
-                "4ad305dfaa268fb4"
+                "9bf475db6c560dc8"
             ]
         ]
     },
@@ -3518,8 +3502,8 @@
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1220,
-        "y": 560,
+        "x": 520,
+        "y": 680,
         "wires": []
     },
     {
@@ -3527,19 +3511,20 @@
         "type": "function",
         "z": "74d70de6eea550f9",
         "g": "8b1fb312af5f5207",
-        "name": "function 4",
-        "func": "var timestamp = msg.payload.timestamp;\n\nmsg.payload = { timestamp };\n\nreturn msg;",
-        "outputs": 1,
+        "name": "IF OK delete item by timestamp",
+        "func": "var toDelete = flow.get('toDelete');\nvar timestamp = toDelete ? toDelete.timestamp : null;\n\nif (msg.payload && msg.payload === \"Cancel\") {\n    return [msg, null]; // Send first output\n} else {\n    return [null, {timestamp}]; // Send timestamp directly\n}\n\n",
+        "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
+        "x": 1330,
         "y": 620,
         "wires": [
+            [],
             [
-                "bd464a090c494d7e"
+                "0dc83fdc2d1ee1ec"
             ]
         ]
     },
@@ -3553,12 +3538,8 @@
         "outputDeaths": true,
         "outputs": 2,
         "nodeName": "TTL Check",
-<<<<<<< Updated upstream
-        "x": 470,
-=======
         "x": 630,
->>>>>>> Stashed changes
-        "y": 420,
+        "y": 460,
         "wires": [
             [],
             [
@@ -3571,23 +3552,15 @@
         "type": "split",
         "z": "74d70de6eea550f9",
         "g": "b6a8575e2f75783e",
-<<<<<<< Updated upstream
-        "name": "",
-=======
         "name": "Split 1 by 1",
->>>>>>> Stashed changes
         "splt": "\\n",
         "spltType": "str",
         "arraySplt": 1,
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-<<<<<<< Updated upstream
-        "x": 150,
-=======
         "x": 170,
->>>>>>> Stashed changes
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "0c6587995b5b6ac2"
@@ -3607,12 +3580,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 700,
-=======
         "x": 900,
->>>>>>> Stashed changes
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "ae6b5d826aaefdbc"
@@ -3624,11 +3593,7 @@
         "type": "function",
         "z": "74d70de6eea550f9",
         "g": "b6a8575e2f75783e",
-<<<<<<< Updated upstream
-        "name": "Set msg",
-=======
         "name": "Set msg _id & _tod",
->>>>>>> Stashed changes
         "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -3636,12 +3601,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-<<<<<<< Updated upstream
-        "x": 300,
-=======
         "x": 410,
->>>>>>> Stashed changes
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "748fcf2c4586b526"
@@ -3654,22 +3615,14 @@
         "z": "74d70de6eea550f9",
         "g": "b6a8575e2f75783e",
         "mongodb": "f18849d91eb5ebcb",
-<<<<<<< Updated upstream
-        "name": "",
-=======
         "name": "DELETE by _id keyboardEventsCollection",
->>>>>>> Stashed changes
         "collection": "keyboardEventsCollection",
         "payonly": false,
         "upsert": false,
         "multi": false,
         "operation": "delete",
-<<<<<<< Updated upstream
-        "x": 1250,
-=======
         "x": 1300,
->>>>>>> Stashed changes
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -3678,18 +3631,11 @@
         "z": "74d70de6eea550f9",
         "g": "b6a8575e2f75783e",
         "mongodb": "f18849d91eb5ebcb",
-<<<<<<< Updated upstream
-        "name": "",
-        "collection": "keyboardEventsCollection",
-        "operation": "find",
-        "x": 610,
-=======
         "name": "GET keyboardEventsCollection",
         "collection": "keyboardEventsCollection",
         "operation": "find",
         "x": 450,
->>>>>>> Stashed changes
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "a970f8a143ae4fc1"
@@ -3698,7 +3644,6 @@
     },
     {
         "id": "8b72e5f5770c578a",
-<<<<<<< Updated upstream
         "type": "inject",
         "z": "74d70de6eea550f9",
         "g": "b6a8575e2f75783e",
@@ -3720,93 +3665,11 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
-                "17a74412e42e603f"
-            ]
-        ]
-    },
-    {
-        "id": "85965edc.72971",
-        "type": "ui_template",
-        "z": "74d70de6eea550f9",
-        "g": "a9d1e52d72a110cb",
-        "group": "2a745e6b.07df92",
-        "name": "Dashboard Theme : Modern Dark",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<div>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            --background: #212529;\n            --on-background: white;\n            --surface: #2d3136;\n            --on-surface: white;\n            --primary: var(--nr-dashboard-widgetColor);\n            --on-primary: white;\n            --secondary: var(--nr-dashboard-groupTextColor);\n            --accent: red;\n            --radius-s: 8px;\n            --font-weight-m: 300;\n            --font-weight-m: 500;\n            --font-weight-l: 700;\n            --space-s: 8px;\n            --space-m: 16px;\n            --space-l: 32px;\n        }\n\n        body.nr-dashboard-theme {\n            background-color: var(--background);\n            font-family: 'Montserrat', sans-serif;\n        }\n        .nr-dashboard-theme ui-card-panel {\n            background-color: var(--background);\n            border: 0;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button {\n            background-color: var(--primary);\n            border-radius: var(--radius-s);\n            padding: 8px !important;\n            line-height: inherit;\n            font-weight: var(--font-weight-l);\n            color: var(--on-primary);\n        }\n        .nr-dashboard-theme [ui-card-size=\"2x2\"].nr-dashboard-button .md-button {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            white-space: pre-line;\n        }\n        \n        .nr-dashboard-theme .nr-dashboard-button .md-button ui-icon {\n                margin-bottom: 8px;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button:hover {\n            background-color: var(--secondary);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            background-color: var(--surface);\n        }\n        md-card.md-default-theme, md-card {\n            border-radius: var(--radius-s);\n        }\n        .nr-dashboard-theme .nr-dashboard-gauge-titlel {\n            font-weight: var(--font-weight-l) !important;      \n        }\n        .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n            font-weight: var(--font-weight-l);  \n            text-transform: capitalize;\n            color: var(--on-background);\n        }\n        .nr-dashboard-cardpanel > p {\n            margin-left: 0;\n            padding-left: 16px;\n        }\n        body.nr-dashboard-theme md-toolbar {\n            background-color: var(--surface);\n        }\n        .md-default-theme .md-datepicker-calendar, .md-datepicker-calendar,\n        .md-default-theme .md-calendar, .md-calendar{\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .md-default-theme .md-datepicker-calendar-pane, .md-datepicker-calendar-pane{\n            border: 0;\n        }\n        .md-default-theme .md-calendar-month-label md-icon, .md-calendar-month-label md-icon, .md-default-theme .md-datepicker-input, .md-datepicker-input {\n            color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-numeric .value {\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value, .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value.md-select-placeholder {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown .md-select-icon {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker md-input-container .md-input {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker .md-datepicker-triangle-button .md-datepicker-expand-triangle {\n            border-top-color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-sidenav {\n            background-color: var(--surface);\n        }\n        md-list-item._md-button-wrap > div.md-button:first-child, md-list-item .md-list-item-inner {\n            background-color: var(--surface);\n        }\n    </style>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "global",
-        "x": 220,
-        "y": 820,
-        "wires": [
-            []
-        ],
-        "icon": "node-red-dashboard/ui_colour_picker.png",
-        "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
-    },
-    {
-        "id": "77c4966462c4c94b",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "g": "8b1fb312af5f5207",
-        "name": "",
-        "group": "2429789384419515",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "DELETE selected events",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 390,
-        "y": 560,
-        "wires": [
-            [
-                "9224049ff9507c2b"
-            ]
-        ]
-    },
-    {
-        "id": "d87ac70e8db63cda",
-=======
->>>>>>> Stashed changes
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "g": "b6a8575e2f75783e",
-        "name": "1x hour check TTL",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "10",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            [
-                "17a74412e42e603f"
+                "17a74412e42e603f",
+                "5c044c093f63f345"
             ]
         ]
     },
@@ -3821,7 +3684,7 @@
         "width": 0,
         "height": 0,
         "passthru": true,
-        "label": "DELETE selected events",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -3831,7 +3694,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 390,
+        "x": 330,
         "y": 560,
         "wires": [
             [
@@ -3855,8 +3718,8 @@
         "resendOnRefresh": false,
         "templateScope": "global",
         "className": "",
-        "x": 220,
-        "y": 780,
+        "x": 1300,
+        "y": 1180,
         "wires": [
             []
         ],
@@ -3864,12 +3727,844 @@
         "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
     },
     {
+        "id": "7a2ec748e7ea9d17",
+        "type": "ui_text",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "group": "8e8c38f3867a2f4b",
+        "order": 4,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "SERVER STATUS",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#bab521",
+        "x": 1370,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1ed2eb3c4c0edf4c",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "name": "Server statuss ",
+        "func": "if (global.get('serverResponse') === 1) { // ok\n    msg.payload = \"CONNECTED\";\n} else { // error\n    msg.payload = \"NOT CONNECTED\";\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 780,
+        "wires": [
+            [
+                "7a2ec748e7ea9d17"
+            ]
+        ]
+    },
+    {
+        "id": "ae8829c1c3f8c336",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 780,
+        "wires": [
+            [
+                "1ed2eb3c4c0edf4c"
+            ]
+        ]
+    },
+    {
+        "id": "9e9526883b5fb8e9",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "",
+        "topic": "node/code-terminal:0/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1180,
+        "wires": [
+            [
+                "80608c3731ce5b3d",
+                "fc64dd16a86f41a7",
+                "e7eb87403244d7af"
+            ]
+        ]
+    },
+    {
+        "id": "970a828d4a8e0d1d",
+        "type": "ui_gauge",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "",
+        "group": "8e8c38f3867a2f4b",
+        "order": 3,
+        "width": 10,
+        "height": 9,
+        "gtype": "gage",
+        "title": "WORKPLACE TEMPERATURE",
+        "label": "celsius",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "50",
+        "colors": [
+            "#2547d0",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "16",
+        "seg2": "37",
+        "diff": false,
+        "className": "",
+        "x": 950,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "80608c3731ce5b3d",
+        "type": "trigger",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Watchdog 70s then set",
+        "op1": "",
+        "op2": "timeout",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "70",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 540,
+        "y": 1120,
+        "wires": [
+            [
+                "7d6f036c9c1b2ae2"
+            ]
+        ]
+    },
+    {
+        "id": "fc64dd16a86f41a7",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set  status to connected",
+        "func": "var connection = 0;\nvar microcontrollerConnection = \"microcontrollerConnection\";\n\nglobal.set(microcontrollerConnection, connection = 1);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d6f036c9c1b2ae2",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set  status to not connected",
+        "func": "var connection = 0;\nvar microcontrollerConnection = \"microcontrollerConnection\";\n\nglobal.set(microcontrollerConnection, connection = 0);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c258774973706cd",
+        "type": "ui_text",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "group": "8e8c38f3867a2f4b",
+        "order": 5,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "MICROCONTROLLER STATUS",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#bab521",
+        "x": 1330,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "9b12a3ecd9f3424a",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "name": "Microcontroller status",
+        "func": "if (global.get('microcontrollerConnection') === 1) { // ok\n    msg.payload = \"CONNECTED\";\n} else { // error\n    msg.payload = \"NOT CONNECTED\";\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 900,
+        "wires": [
+            [
+                "2c258774973706cd"
+            ]
+        ]
+    },
+    {
+        "id": "60eb9ff12213c94b",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 900,
+        "wires": [
+            [
+                "9b12a3ecd9f3424a"
+            ]
+        ]
+    },
+    {
+        "id": "19233c246a4b0fbf",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Every msg set  status to connected",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1020,
+        "wires": [
+            [
+                "fc64dd16a86f41a7"
+            ]
+        ]
+    },
+    {
+        "id": "2bc3c8c86dc19b14",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set \"not connected after start\"",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1100,
+        "wires": [
+            [
+                "7d6f036c9c1b2ae2",
+                "e7eb87403244d7af"
+            ]
+        ]
+    },
+    {
+        "id": "b56f1d7b3baafd18",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "name": "LED MQTT message to refresh tables",
+        "topic": "node/code-terminal:0/led/-/set/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "7c551ef32e98efb6",
+                "31f18681ba01a9c0"
+            ]
+        ]
+    },
+    {
+        "id": "e7eb87403244d7af",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "IF microcontroller disconnected temp = \"\"",
+        "func": "if (global.get('microcontrollerConnection') === 0) { // ok\n    msg.payload = \"\";\n} else { // error\n    msg.payload = msg.payload;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1180,
+        "wires": [
+            [
+                "970a828d4a8e0d1d"
+            ]
+        ]
+    },
+    {
+        "id": "8a3d368b091346dd",
+        "type": "ui_toast",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": true,
+        "className": "",
+        "topic": "Do you want to delete this log?",
+        "name": "Do you want to delete this log?",
+        "x": 930,
+        "y": 620,
+        "wires": [
+            [
+                "4ad305dfaa268fb4"
+            ]
+        ]
+    },
+    {
+        "id": "9bf475db6c560dc8",
+        "type": "change",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "toDelete",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "8a3d368b091346dd"
+            ]
+        ]
+    },
+    {
+        "id": "0dc83fdc2d1ee1ec",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "function 7",
+        "func": "var timestamp = msg.timestamp;\n\nmsg.payload = { timestamp };\n\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "bd464a090c494d7e"
+            ]
+        ]
+    },
+    {
+        "id": "a79b4a5e876a3be0",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "7c551ef32e98efb6"
+            ]
+        ]
+    },
+    {
+        "id": "5c044c093f63f345",
+        "type": "delay",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "31f18681ba01a9c0"
+            ]
+        ]
+    },
+    {
+        "id": "afda953f5c974e93",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "afb0369c1244ceda"
+            ]
+        ]
+    },
+    {
+        "id": "afb0369c1244ceda",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a2e4e61e46401397",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "9d5824a429730b28"
+            ]
+        ]
+    },
+    {
+        "id": "9d5824a429730b28",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/get",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6dcf6125abb8951b",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "f76371fcaec11ec0"
+            ]
+        ]
+    },
+    {
+        "id": "f76371fcaec11ec0",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/start",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 470,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a832de492bcbf595",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "09a0dbbfc06fe9fa"
+            ]
+        ]
+    },
+    {
+        "id": "09a0dbbfc06fe9fa",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/stop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "11ece0c0373003d5",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "dd03fc639e1179b3"
+            ]
+        ]
+    },
+    {
+        "id": "dd03fc639e1179b3",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/purge",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7ecfbdc3ca34f211",
+        "type": "file in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "filename": "/run/secrets/terminal_api_key",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 360,
+        "y": 440,
+        "wires": [
+            [
+                "a5d844aacdfdd2ac"
+            ]
+        ]
+    },
+    {
+        "id": "cda5acc378081260",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "On start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "7ecfbdc3ca34f211"
+            ]
+        ]
+    },
+    {
+        "id": "a5d844aacdfdd2ac",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "api_key",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbb98daa7c298a05",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "e08953d02ae6cb07"
+            ]
+        ]
+    },
+    {
+        "id": "1abbe845999c9e55",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e08953d02ae6cb07",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "api_key",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 500,
+        "wires": [
+            [
+                "1abbe845999c9e55"
+            ]
+        ]
+    },
+    {
         "id": "3e4d599b9151175b",
         "type": "function",
         "z": "703dc2c481ddf6ab",
         "g": "a10b30921cdeeca4",
         "name": "Events",
-        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp.toISOString(),\n    \"employeeCode\": userId,\n    \"type\": \"arrival\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp\", timestamp);\n\nreturn msg;",
+        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp,\n    \"employeeCode\": userId,\n    \"type\": \"arrival\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp\", timestamp);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4012,7 +4707,7 @@
         "stream": false,
         "addname": "",
         "x": 870,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "458f06ec24e848ed"
@@ -4029,7 +4724,7 @@
         "collection": "usersCollection",
         "operation": "find",
         "x": 500,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "973cf5dc42eaf43d"
@@ -4042,7 +4737,7 @@
         "z": "703dc2c481ddf6ab",
         "g": "e473421683d57dc0",
         "name": "Events",
-        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp1\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\n//  random milliseconds between 5000 and 15000\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp.toISOString(),\n    \"employeeCode\": userId,\n    \"type\": \"leave\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp1\", timestamp);\n\nreturn msg;",
+        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp1\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\n//  random milliseconds between 5000 and 15000\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp,\n    \"employeeCode\": userId,\n    \"type\": \"leave\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp1\", timestamp);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4050,7 +4745,7 @@
         "finalize": "",
         "libs": [],
         "x": 1210,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "344e808564720fda",
@@ -4073,7 +4768,7 @@
         "finalize": "",
         "libs": [],
         "x": 1030,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "a4791ab37a2e6fd2"
@@ -4099,7 +4794,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1380,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "d18b82a922caf95d"
@@ -4125,7 +4820,7 @@
         "to": "",
         "reg": false,
         "x": 1630,
-        "y": 460,
+        "y": 340,
         "wires": [
             []
         ]
@@ -4149,7 +4844,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 320,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "f9bd9b9c523c512c"
@@ -4191,7 +4886,7 @@
         "finalize": "",
         "libs": [],
         "x": 700,
-        "y": 460,
+        "y": 340,
         "wires": [
             [
                 "37dc1e350aa11259"
@@ -4210,8 +4905,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 360,
+        "x": 130,
+        "y": 220,
         "wires": [
             [
                 "bcca943a5da1ce17",
@@ -4223,6 +4918,7 @@
         "id": "0b2310e9cf221788",
         "type": "mongodb out",
         "z": "703dc2c481ddf6ab",
+        "d": true,
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
         "collection": "stashedKeyboardEventsCollection",
@@ -4231,7 +4927,7 @@
         "multi": false,
         "operation": "store",
         "x": 1540,
-        "y": 320,
+        "y": 140,
         "wires": []
     },
     {
@@ -4239,7 +4935,7 @@
         "type": "debug",
         "z": "703dc2c481ddf6ab",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4248,7 +4944,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1360,
-        "y": 380,
+        "y": 80,
         "wires": []
     },
     {
@@ -4263,8 +4959,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 360,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
                 "6138466ad9d300ab"
@@ -4286,7 +4982,7 @@
         "topicType": "msg",
         "className": "",
         "x": 130,
-        "y": 360,
+        "y": 80,
         "wires": [
             [
                 "c8dc967a95966515"
@@ -4315,47 +5011,10 @@
         ]
     },
     {
-        "id": "afda953f5c974e93",
-        "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "topic": "#",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "1be85959efd6d9ef",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 130,
-        "y": 60,
-        "wires": [
-            [
-                "afb0369c1244ceda"
-            ]
-        ]
-    },
-    {
-        "id": "afb0369c1244ceda",
-        "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "a2e4e61e46401397",
+        "id": "34898cdf7e4ff7c0",
         "type": "inject",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "props": [
             {
@@ -4369,18 +5028,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 130,
-        "y": 160,
+        "x": 330,
+        "y": 540,
         "wires": [
             [
-                "9d5824a429730b28"
+                "5bf5da3728ec4507"
             ]
         ]
     },
     {
-        "id": "9d5824a429730b28",
+        "id": "d1170e639aef5227",
         "type": "mqtt out",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "topic": "gateway/usb-dongle/nodes/get",
         "qos": "",
@@ -4391,14 +5051,15 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 450,
-        "y": 160,
+        "x": 710,
+        "y": 540,
         "wires": []
     },
     {
-        "id": "6dcf6125abb8951b",
+        "id": "f576433e951d1b68",
         "type": "inject",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "props": [
             {
@@ -4412,18 +5073,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 130,
-        "y": 220,
+        "x": 330,
+        "y": 600,
         "wires": [
             [
-                "f76371fcaec11ec0"
+                "588fd6f245e4f382"
             ]
         ]
     },
     {
-        "id": "f76371fcaec11ec0",
+        "id": "cdf223bb7a7b0ec4",
         "type": "mqtt out",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "topic": "gateway/usb-dongle/pairing-mode/start",
         "qos": "",
@@ -4434,14 +5096,15 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 470,
-        "y": 220,
+        "x": 730,
+        "y": 600,
         "wires": []
     },
     {
-        "id": "a832de492bcbf595",
+        "id": "c7f6ea2f868640ce",
         "type": "inject",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "props": [
             {
@@ -4455,18 +5118,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 130,
-        "y": 280,
+        "x": 330,
+        "y": 660,
         "wires": [
             [
-                "09a0dbbfc06fe9fa"
+                "2e09f3afbe330899"
             ]
         ]
     },
     {
-        "id": "09a0dbbfc06fe9fa",
+        "id": "974023178f68b771",
         "type": "mqtt out",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "topic": "gateway/usb-dongle/pairing-mode/stop",
         "qos": "",
@@ -4477,14 +5141,15 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 470,
-        "y": 280,
+        "x": 730,
+        "y": 660,
         "wires": []
     },
     {
-        "id": "11ece0c0373003d5",
+        "id": "ad82f5a13a6eb935",
         "type": "inject",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "props": [
             {
@@ -4498,18 +5163,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 130,
-        "y": 340,
+        "x": 330,
+        "y": 720,
         "wires": [
             [
-                "dd03fc639e1179b3"
+                "13416614d578b728"
             ]
         ]
     },
     {
-        "id": "dd03fc639e1179b3",
+        "id": "7289ecb03673dec5",
         "type": "mqtt out",
-        "z": "f6f2187d.f17ca8",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
         "topic": "gateway/usb-dongle/nodes/purge",
         "qos": "",
@@ -4520,99 +5186,154 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 460,
-        "y": 340,
+        "x": 720,
+        "y": 720,
         "wires": []
     },
     {
-        "id": "7ecfbdc3ca34f211",
-        "type": "file in",
-        "z": "f6f2187d.f17ca8",
+        "id": "5bf5da3728ec4507",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
-        "filename": "/run/secrets/terminal_api_key",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 360,
-        "y": 440,
+        "group": "2a745e6b.07df92",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 540,
         "wires": [
             [
-                "a5d844aacdfdd2ac"
+                "d1170e639aef5227",
+                "bfb096e007cec840"
             ]
         ]
     },
     {
-        "id": "cda5acc378081260",
-        "type": "inject",
-        "z": "f6f2187d.f17ca8",
-        "name": "On start",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 140,
-        "y": 440,
+        "id": "588fd6f245e4f382",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "START",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 600,
         "wires": [
             [
-                "7ecfbdc3ca34f211"
+                "cdf223bb7a7b0ec4"
             ]
         ]
     },
     {
-        "id": "a5d844aacdfdd2ac",
-        "type": "change",
-        "z": "f6f2187d.f17ca8",
+        "id": "2e09f3afbe330899",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "api_key",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 610,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dbb98daa7c298a05",
-        "type": "inject",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 500,
+        "group": "2a745e6b.07df92",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "STOP",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 660,
         "wires": [
             [
-                "e08953d02ae6cb07"
+                "974023178f68b771"
             ]
         ]
     },
     {
-        "id": "1abbe845999c9e55",
+        "id": "13416614d578b728",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "PURGE",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "7289ecb03673dec5"
+            ]
+        ]
+    },
+    {
+        "id": "62699983f402c823",
+        "type": "mqtt in",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "topic": "gateway/usb-dongle/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 820,
+        "wires": [
+            [
+                "8261b5a8d40b4a1d"
+            ]
+        ]
+    },
+    {
+        "id": "8261b5a8d40b4a1d",
         "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 2",
-        "active": false,
+        "z": "703dc2c481ddf6ab",
+        "name": "debug 7",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4620,35 +5341,25 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 500,
+        "x": 840,
+        "y": 820,
         "wires": []
     },
     {
-        "id": "e08953d02ae6cb07",
-        "type": "change",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "api_key",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 500,
-        "wires": [
-            [
-                "1abbe845999c9e55"
-            ]
-        ]
+        "id": "bfb096e007cec840",
+        "type": "debug",
+        "z": "703dc2c481ddf6ab",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 460,
+        "wires": []
     }
 ]
