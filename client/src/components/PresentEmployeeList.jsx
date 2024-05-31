@@ -13,9 +13,11 @@ import {
   Segment,
 } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import Error from "./Error";
 
 const PresentEmployeesList = () => {
   const call = useCall();
+  const [error, setError] = useState(null);
   const [employees, setEmployees] = useState([]);
   const [activePage, setActivePage] = useState(1);
   const [totalPages, setTotalPages] = useState(-1);
@@ -25,10 +27,16 @@ const PresentEmployeesList = () => {
   const reload = useCallback(async () => {
     setTotalPages(-1);
     const pageIndex = activePage - 1;
-    const data = await call(
-      "GET",
-      `/api/employee/listPresent?pageIndex=${pageIndex}&pageSize=${pageSize}`,
-    );
+    let data;
+    try {
+      data = await call(
+        "GET",
+        `/api/employee/listPresent?pageIndex=${pageIndex}&pageSize=${pageSize}`,
+      );
+    } catch (e) {
+      setError(e);
+      throw e;
+    }
     setEmployees(data.items);
     const { totalCount } = data.pageInfo;
     setTotalPages(Math.ceil(totalCount / pageSize));
@@ -43,7 +51,11 @@ const PresentEmployeesList = () => {
       <Header attached="top" size="huge">
         Present Employees
       </Header>
-      <Segment attached loading={!loaded} placeholder={totalPages === 0}>
+      <Segment
+        attached
+        loading={!loaded && !error}
+        placeholder={totalPages === 0}
+      >
         {totalPages > 0 && (
           <>
             <List divided>
@@ -79,13 +91,15 @@ const PresentEmployeesList = () => {
           </div>
         )}
 
-        {!loaded && (
+        {!loaded && !error && (
           <Placeholder>
             {Array.from({ length: pageSize * 2 }).map((_, index) => (
               <PlaceholderLine key={index} />
             ))}
           </Placeholder>
         )}
+
+        {error && <Error error={error} />}
       </Segment>
     </div>
   );

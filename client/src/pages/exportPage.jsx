@@ -20,6 +20,7 @@ const ExportPage = () => {
       timestampFrom: new Date(dateFrom).toISOString(),
       timestampTo: new Date(dateTo).toISOString(),
     });
+    // TODO handle errors
 
     const objectUrl = URL.createObjectURL(csvBlob);
     const a = document.createElement("a");

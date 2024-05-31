@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import EmployeeSearchResults from "./EmployeeSearchResults";
+import Error from "./Error";
 
 function getInitialFormData(searchParams) {
   return {
@@ -21,11 +22,13 @@ function getInitialFormData(searchParams) {
 
 const EmployeeSearch = () => {
   const call = useCall();
+  const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [formData, setFormData] = useState(getInitialFormData(searchParams));
-  const [departments, setDepartments] = useState([]);
+  const [departments, setDepartments] = useState(null);
 
   const departmentOptions = useMemo(() => {
+    if (departments === null) return null;
     return departments.map((department) => {
       return { value: department._id, text: department.name };
     });
@@ -40,10 +43,16 @@ const EmployeeSearch = () => {
   }, [searchParams]);
 
   const reloadDepartments = useCallback(async () => {
-    const response = await call(
-      "GET",
-      "/api/department/list?pageIndex=0&pageSize=1000",
-    );
+    let response;
+    try {
+      response = await call(
+        "GET",
+        "/api/department/list?pageIndex=0&pageSize=1000",
+      );
+    } catch (e) {
+      setError(e);
+      throw e;
+    }
     setDepartments(response.items);
   }, [call]);
 
@@ -68,45 +77,53 @@ const EmployeeSearch = () => {
   }
 
   return (
-    <div>
-      <Form onSubmit={submit} style={{ marginBottom: 10 }}>
-        <FormGroup style={{ rowGap: 6, justifyContent: "center" }}>
-          <FormField>
-            <Dropdown
-              placeholder="Department"
-              name="departmentId"
-              selection
-              search
-              clearable
-              options={departmentOptions}
-              value={formData.departmentId}
-              onChange={onChange}
-            />
-          </FormField>
-          <FormField>
-            <Input
-              placeholder="First name"
-              name="firstName"
-              value={formData.firstName}
-              onChange={onChange}
-            />
-          </FormField>
-          <FormField>
-            <Input
-              placeholder="Last name"
-              name="lastName"
-              value={formData.lastName}
-              onChange={onChange}
-            />
-          </FormField>
-          <Button type="submit" primary>
-            Search
-          </Button>
-        </FormGroup>
-      </Form>
+    <>
+      {!error ? (
+        <div>
+          <Form onSubmit={submit} style={{ marginBottom: 10 }}>
+            <FormGroup style={{ rowGap: 6, justifyContent: "center" }}>
+              <FormField>
+                <Dropdown
+                  placeholder="Department"
+                  name="departmentId"
+                  selection
+                  search
+                  clearable
+                  options={departmentOptions}
+                  loading={departmentOptions === null}
+                  disabled={departmentOptions === null}
+                  value={formData.departmentId}
+                  onChange={onChange}
+                />
+              </FormField>
+              <FormField>
+                <Input
+                  placeholder="First name"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={onChange}
+                />
+              </FormField>
+              <FormField>
+                <Input
+                  placeholder="Last name"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={onChange}
+                />
+              </FormField>
+              <Button type="submit" primary>
+                Search
+              </Button>
+            </FormGroup>
+          </Form>
 
-      <EmployeeSearchResults filter={filter} departments={departments} />
-    </div>
+          <EmployeeSearchResults filter={filter} departments={departments} />
+        </div>
+      ) : (
+        <Error error={error} />
+      )}
+    </>
   );
 };
 

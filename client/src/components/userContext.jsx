@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Loader } from "semantic-ui-react";
 import { origin } from "../helpers/call-helper";
+import Error from "./Error";
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [value, setValue] = useState(null);
+  const [error, setError] = useState(null);
   const [expiresIn, setExpiresIn] = useState(null);
 
   const reload = useCallback(async () => {
@@ -17,11 +19,17 @@ const UserProvider = ({ children }) => {
     let role = null;
 
     if (token != null) {
-      const response = await fetch(origin + "/api/user/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      let response;
+      try {
+        response = await fetch(origin + "/api/user/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      } catch (e) {
+        setError(e);
+        throw e;
+      }
 
       if (response.status === 200) {
         const json = await response.json();
@@ -79,7 +87,9 @@ const UserProvider = ({ children }) => {
   }, [reload]);
 
   if (value == null) {
-    return <Loader active>Loading</Loader>;
+    return (
+      <>{!error ? <Loader active>Loading</Loader> : <Error error={error} />}</>
+    );
   }
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

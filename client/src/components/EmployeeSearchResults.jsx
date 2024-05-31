@@ -17,9 +17,11 @@ import {
   TableRow,
 } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import Error from "./Error";
 
 const EmployeeSearchResults = ({ filter, departments }) => {
   const call = useCall();
+  const [error, setError] = useState(null);
   const [employeeList, setEmployeeList] = useState([]);
   const [callState, setCallState] = useState("pending");
   const [activePage, setActivePage] = useState(1);
@@ -30,7 +32,13 @@ const EmployeeSearchResults = ({ filter, departments }) => {
     return Math.ceil(totalCount / pageSize);
   }, [totalCount]);
 
+  departments = useMemo(() => {
+    if (departments == null) return [];
+    return departments;
+  }, [departments]);
+
   const reloadEmployees = useCallback(async () => {
+    setError(null);
     if (Object.keys(filter).length > 0) {
       setCallState("pending");
       const pageIndex = activePage - 1;
@@ -40,7 +48,14 @@ const EmployeeSearchResults = ({ filter, departments }) => {
       };
       const callPromise = call("POST", "/api/employee/search", filter);
       const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 200));
-      const [response] = await Promise.all([callPromise, timeoutPromise]);
+      let response;
+      try {
+        [response] = await Promise.all([callPromise, timeoutPromise]);
+      } catch (e) {
+        setCallState("error");
+        setError(e);
+        throw e;
+      }
       const items = response.items;
       items.forEach((item) => {
         const department = departments.find(
@@ -149,6 +164,8 @@ const EmployeeSearchResults = ({ filter, departments }) => {
           </Header>
         </Segment>
       )}
+
+      {error && <Error error={error} />}
     </>
   );
 };

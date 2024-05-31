@@ -4,12 +4,14 @@ import { toast } from "react-toastify";
 import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
 import { UserContext } from "../components/userContext";
 import { useLogin } from "../helpers/authentication-helper";
+import Error from "../components/Error";
 
 function LoginForm() {
   const user = useContext(UserContext);
   const login = useLogin();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +23,7 @@ function LoginForm() {
 
   function submit() {
     setLoading(true);
+    setError(null);
     login(username, password)
       .then(() => {
         setLoading(false);
@@ -32,8 +35,8 @@ function LoginForm() {
           toast.error("Incorrect credentials.");
           return;
         }
-        console.error(e);
-        console.dir(e);
+        setError(e);
+        throw e;
       });
   }
 
@@ -79,6 +82,8 @@ function LoginForm() {
             </Button>
           </Segment>
         </Form>
+
+        {error && <Error error={error} />}
       </Grid.Column>
     </Grid>
   );
