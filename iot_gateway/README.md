@@ -1,6 +1,8 @@
-## Running
+## Requirements
 
-`docker compose up --build` - build and run containers
+- Docker (if you are on Windows, you should use WSL 2 backend)
+- if you need to change the URL of the backend (by default it assumes local environment), you need to create `.env` file in this directory and add a line like this `BACKEND_URL=http://example.com`
+- generate a terminal API key by calling a backend endpoint and paste it into a new file in this directory called `terminal_api_key.txt`
 
 ## Setup on Windows
 
@@ -8,6 +10,10 @@ Connect the HARDWARIO Radio Dongle (USB Dongle) to your default WSL 2 distributi
 
 `usbipd list` - list USB devices  
 `usbipd attach --wsl --busid <busid>` - connect the USB device to WSL
+
+## Running
+
+`docker compose up --build` - build and run containers
 
 ## Useful resources:
 
