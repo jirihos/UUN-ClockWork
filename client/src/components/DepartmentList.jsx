@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Table, Segment, Button, Icon } from "semantic-ui-react";
+import { Table, Button, Icon } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import ModalAddDepartment from "./ModalAddDepartment";
 import Error from "./Error";
@@ -40,7 +40,7 @@ const DepartmentList = () => {
   };
 
   return (
-    <Segment>
+    <>
       {!error ? (
         <>
           <Table>
@@ -54,15 +54,22 @@ const DepartmentList = () => {
               {departments.map((department) => (
                 <Table.Row key={department._id}>
                   <Table.Cell>
-                    <Link to={`/search?departmentId=${department._id}`}>
+                    <Link
+                      to={`/search?departmentId=${department._id}`}
+                      color="teal"
+                    >
                       {department.name}
                     </Link>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
                     <Button
+                      color="teal"
+                      icon
+                      labelPosition="left"
                       onClick={() => handleDeleteDepartment(department._id)}
                     >
                       <Icon name="trash" />
+                      Delete
                     </Button>
                   </Table.Cell>
                 </Table.Row>
@@ -78,7 +85,7 @@ const DepartmentList = () => {
       ) : (
         <Error error={error} />
       )}
-    </Segment>
+    </>
   );
 };
 

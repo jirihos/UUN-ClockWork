@@ -76,8 +76,8 @@ const ModalAddEmployee = () => {
 
   return (
     <div>
-      <Button primary onClick={handleOpen}>
-        <Icon name="plus" /> Add Employee
+      <Button color="teal" onClick={handleOpen}>
+        Add Employee
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>Add Employee</Modal.Header>
