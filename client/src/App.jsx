@@ -8,7 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
 import ExportPage from "./pages/ExportPage";
 import NotFound from "./pages/notFound";
-import Employee from "./pages/employee";
+import EmployeePage from "./pages/EmployeePage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/export" element={<ExportPage />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/employee/:code" element={<Employee />} />
+          <Route path="/employee/:code" element={<EmployeePage />} />
         </Routes>
         <ToastContainer position="top-center" />
       </Container>
