@@ -22,7 +22,9 @@ class eventAbl {
       terminalId = req.terminal._id.toString();
     }
 
-    const { employeeCode, type, timestamp } = req.body;
+    let { employeeCode, type, timestamp } = req.body;
+
+    employeeCode = Number(employeeCode) 
 
     let result = await employeeDao.findByCode(employeeCode);
 
