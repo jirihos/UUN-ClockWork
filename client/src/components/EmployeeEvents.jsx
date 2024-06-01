@@ -18,7 +18,6 @@ import {
   Modal,
   Button,
 } from "semantic-ui-react";
-import ModalAddEvent from "./ModalAddEvent";
 
 const Employee = ({ code }) => {
   const [shiftData, setShiftData] = useState(null);
@@ -26,6 +25,7 @@ const Employee = ({ code }) => {
   const [error, setError] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentId, setCurrentId] = useState(null);
+  const [deleteType, setDeleteType] = useState(null);
   const call = useCall();
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const Employee = ({ code }) => {
           "GET",
           `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
         );
+        console.log("Shift Data:", response.items); // Ladicí výpis
         setShiftData(response.items);
         setLoading(false);
       } catch (err) {
@@ -48,17 +49,35 @@ const Employee = ({ code }) => {
 
   const handleDelete = async () => {
     try {
-      await call("POST", "/api/event/delete", { _id: currentId });
-      setShiftData(shiftData.filter((entry) => entry._id !== currentId));
+      console.log("Current ID:", currentId); // Ladicí výpis
+      const response = await call("POST", "/api/event/delete", {
+        _id: currentId,
+      });
+      console.log("Delete response:", response); // Ladicí výpis
+      setShiftData(
+        shiftData.filter((entry) => {
+          if (deleteType === "arrival") {
+            return entry.arrivalEventId !== currentId;
+          } else {
+            return entry.leaveEventId !== currentId;
+          }
+        }),
+      );
       setModalOpen(false);
     } catch (err) {
+      console.error("Delete error:", err); // Ladicí výpis chyby
       setError(err);
       setModalOpen(false);
     }
   };
 
-  const openModal = (id) => {
+  const openModal = (id, type) => {
+    console.log(`Opening modal for ID: ${id}, Type: ${type}`); // Ladicí výpis
+    if (!id) {
+      console.error("No ID provided"); // Ladicí výpis
+    }
     setCurrentId(id);
+    setDeleteType(type);
     setModalOpen(true);
   };
 
@@ -72,7 +91,6 @@ const Employee = ({ code }) => {
 
   return (
     <div className="container">
-      <ModalAddEvent employeeCode={code} />
       <Table celled>
         <TableHeader>
           <TableRow>
@@ -97,7 +115,7 @@ const Employee = ({ code }) => {
                   <FontAwesomeIcon
                     icon={faTrash}
                     className="delete-icon"
-                    onClick={() => openModal(entry._id)}
+                    onClick={() => openModal(entry.arrivalEventId, "arrival")}
                   />
                 </TableCell>
                 <TableCell className="table-cell">
@@ -112,7 +130,7 @@ const Employee = ({ code }) => {
                   <FontAwesomeIcon
                     icon={faTrash}
                     className="delete-icon"
-                    onClick={() => openModal(entry._id)}
+                    onClick={() => openModal(entry.leaveEventId, "leave")}
                   />
                 </TableCell>
               </TableRow>
