@@ -112,7 +112,7 @@ const EmployeeSearch = () => {
                   onChange={onChange}
                 />
               </FormField>
-              <Button type="submit" primary>
+              <Button color="teal" type="submit">
                 Search
               </Button>
             </FormGroup>
