@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { UserContext } from "../components/userContext";
+import { UserContext } from "../components/UserContext";
 
 export const origin = new URL(import.meta.env.VITE_BACKEND_URL).origin;
 

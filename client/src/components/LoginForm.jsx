@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Button, Form, Segment } from "semantic-ui-react";
-import { UserContext } from "../components/userContext";
+import { UserContext } from "./UserContext";
 import { useLogin } from "../helpers/authentication-helper";
-import Error from "../components/Error";
+import Error from "./Error";
 
 const LoginForm = () => {
   const user = useContext(UserContext);

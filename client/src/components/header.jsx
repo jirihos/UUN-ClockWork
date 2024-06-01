@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Image, Menu, MenuItem } from "semantic-ui-react";
 import { useLogout } from "../helpers/authentication-helper";
-import { UserContext } from "./userContext";
+import { UserContext } from "./UserContext";
 import Logo from "../assets/ClockWork_Logo.png";
 
 const Header = () => {
