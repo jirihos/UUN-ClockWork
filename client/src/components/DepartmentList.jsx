@@ -63,7 +63,6 @@ const DepartmentList = () => {
     <>
       {!error ? (
         <>
-          <ToastContainer position="top-center" />
           <Table style={{ marginTop: "0px" }}>
             <Table.Header>
               <Table.Row>

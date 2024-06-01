@@ -8,7 +8,7 @@ import {
   Icon,
 } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Error from "./Error";
 
@@ -86,7 +86,6 @@ const ModalAddEmployee = () => {
 
   return (
     <div>
-      <ToastContainer position="top-center" />
       <Button color="teal" onClick={handleOpen}>
         Add Employee
       </Button>
