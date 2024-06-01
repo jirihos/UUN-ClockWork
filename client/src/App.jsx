@@ -3,7 +3,7 @@ import { Container } from "semantic-ui-react";
 import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./components/UserContext";
 
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
 import ExportPage from "./pages/ExportPage";
