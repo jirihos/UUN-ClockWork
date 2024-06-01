@@ -1,4 +1,4 @@
-const Joi = require("joi").extend(require("@hapi/joi-date"));
+const Joi = require("joi");
 
 exports.eventCreateSchema = Joi.object({
   employeeCode: Joi.number().min(1).max(9999).required(),
@@ -9,6 +9,6 @@ exports.eventDeleteSchema = Joi.object({
   _id: Joi.objectId().required(),
 });
 exports.eventExportschema = Joi.object({
-  timestampFrom: Joi.date().format("iso").required(),
-  timestampTo: Joi.date().format("iso").required(),
+  timestampFrom: Joi.date().iso().required(),
+  timestampTo: Joi.date().iso().required(),
 });
