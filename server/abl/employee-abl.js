@@ -61,8 +61,6 @@ class EmployeeAbl {
 
     let result = await employeeDao.findByCode(req.query.code);
 
-    console.log(result);
-
     if (result) {
       res.json(result);
     } else {
