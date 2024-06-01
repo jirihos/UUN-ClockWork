@@ -16,8 +16,12 @@ class EmployeeMongo {
     return object;
   }
 
-  async findByCode(code) {
-    return await this.employeeCol.findOne({ code });
+  async findByCode(employeeCode) {
+    const filter = {
+      code: Number(employeeCode),
+    };
+
+    return await this.employeeCol.findOne(filter);
   }
 
   async list() {
