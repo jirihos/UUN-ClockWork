@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
+import { Message } from "semantic-ui-react";
 
 const EmployeeInfo = ({ code }) => {
   const [employeeInfo, setEmployeeInfo] = useState(null);
@@ -44,13 +45,11 @@ const EmployeeInfo = ({ code }) => {
   return (
     <div className="employee-info">
       {employeeInfo && (
-        <>
-          <h2>
-            {employeeInfo.firstName} {employeeInfo.lastName}
-          </h2>
-          <h4>Code: {employeeInfo.code}</h4>
-          <h3>Department: {departmentName || "N/A"}</h3>
-        </>
+        <Message
+          icon="user"
+          header={`${employeeInfo.firstName} ${employeeInfo.lastName}`}
+          content={`Code: ${employeeInfo.code}, Department: ${departmentName || "N/A"}`}
+        />
       )}
     </div>
   );
