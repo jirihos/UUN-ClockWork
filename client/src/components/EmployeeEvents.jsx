@@ -4,6 +4,7 @@ import {
   faDoorOpen,
   faDoorClosed,
   faTrash,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
@@ -18,38 +19,40 @@ import {
   Modal,
   Button,
 } from "semantic-ui-react";
-import ModalAddEvent from "./ModalAddEvent";
 
-const Employee = ({ code }) => {
+const EmployeeEvents = ({ code }) => {
   const [shiftData, setShiftData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentId, setCurrentId] = useState(null);
+  const [deleteType, setDeleteType] = useState(null);
   const call = useCall();
 
-  useEffect(() => {
-    const fetchShiftData = async () => {
-      try {
-        const response = await call(
-          "GET",
-          `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
-        );
-        setShiftData(response.items);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
-      }
-    };
+  const fetchShiftData = async () => {
+    try {
+      const response = await call(
+        "GET",
+        `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
+      );
+      setShiftData(response.items);
+      setLoading(false);
+    } catch (err) {
+      setError(err);
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchShiftData();
   }, [code, call]);
 
   const handleDelete = async () => {
     try {
-      await call("POST", "/api/event/delete", { _id: currentId });
-      setShiftData(shiftData.filter((entry) => entry._id !== currentId));
+      const response = await call("POST", "/api/event/delete", {
+        _id: currentId,
+      });
+      await fetchShiftData();
       setModalOpen(false);
     } catch (err) {
       setError(err);
@@ -57,8 +60,9 @@ const Employee = ({ code }) => {
     }
   };
 
-  const openModal = (id) => {
+  const openModal = (id, type) => {
     setCurrentId(id);
+    setDeleteType(type);
     setModalOpen(true);
   };
 
@@ -72,7 +76,6 @@ const Employee = ({ code }) => {
 
   return (
     <div className="container">
-      <ModalAddEvent employeeCode={code} />
       <Table celled>
         <TableHeader>
           <TableRow>
@@ -85,34 +88,56 @@ const Employee = ({ code }) => {
           {shiftData &&
             shiftData.map((entry, index) => (
               <TableRow key={index}>
-                <TableCell className="table-cell">
+                <TableCell>
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorOpen}
                       className="arrival-icon"
+                      color={entry.arrivalTimestamp ? "black" : "red"}
                     />
-                    {new Date(entry.arrivalTimestamp).toLocaleDateString()}
+                    <span
+                      style={{ color: entry.arrivalTimestamp ? "" : "red" }}
+                    >
+                      {entry.arrivalTimestamp
+                        ? new Date(entry.arrivalTimestamp).toLocaleDateString()
+                        : "No record"}
+                    </span>
                   </Label>
-                  {new Date(entry.arrivalTimestamp).toLocaleTimeString()}
+                  <span style={{ color: entry.arrivalTimestamp ? "" : "red" }}>
+                    {entry.arrivalTimestamp
+                      ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
+                      : "No record"}
+                  </span>
                   <FontAwesomeIcon
-                    icon={faTrash}
-                    className="delete-icon"
-                    onClick={() => openModal(entry._id)}
+                    icon={entry.arrivalTimestamp ? faTrash : faTimes}
+                    className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
+                    onClick={() => openModal(entry.arrivalEventId, "arrival")}
                   />
                 </TableCell>
-                <TableCell className="table-cell">
+                <TableCell
+                  className={`table-cell ${entry.leaveTimestamp ? "" : "no-record"}`}
+                >
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorClosed}
                       className="departure-icon"
+                      color={entry.leaveTimestamp ? "black" : "red"}
                     />
-                    {new Date(entry.leaveTimestamp).toLocaleDateString()}
+                    <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
+                      {entry.leaveTimestamp
+                        ? new Date(entry.leaveTimestamp).toLocaleDateString()
+                        : "No record"}
+                    </span>
                   </Label>
-                  {new Date(entry.leaveTimestamp).toLocaleTimeString()}
+                  <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
+                    {entry.leaveTimestamp
+                      ? new Date(entry.leaveTimestamp).toLocaleTimeString()
+                      : "No record"}
+                  </span>
                   <FontAwesomeIcon
-                    icon={faTrash}
-                    className="delete-icon"
-                    onClick={() => openModal(entry._id)}
+                    icon={entry.leaveTimestamp ? faTrash : faTimes}
+                    className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
+                    onClick={() => openModal(entry.leaveEventId, "leave")}
                   />
                 </TableCell>
               </TableRow>
@@ -138,4 +163,4 @@ const Employee = ({ code }) => {
   );
 };
 
-export default Employee;
+export default EmployeeEvents;
