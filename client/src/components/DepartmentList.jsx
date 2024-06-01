@@ -75,12 +75,18 @@ const DepartmentList = () => {
                 </Table.Row>
               ))}
             </Table.Body>
+            <Table.Footer>
+              <Table.Row>
+                <Table.HeaderCell colSpan="2" textAlign="left">
+                  <ModalAddDepartment
+                    open={openDepartmentModal}
+                    onClose={() => setOpenDepartmentModal(false)}
+                    onSuccess={handleAddDepartmentSuccess}
+                  />
+                </Table.HeaderCell>
+              </Table.Row>
+            </Table.Footer>
           </Table>
-          <ModalAddDepartment
-            open={openDepartmentModal}
-            onClose={() => setOpenDepartmentModal(false)}
-            onSuccess={handleAddDepartmentSuccess}
-          />
         </>
       ) : (
         <Error error={error} />
