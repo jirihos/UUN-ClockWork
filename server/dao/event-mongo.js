@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const mongo = require("../db/mongo-db");
 const { shiftsPipeline } = require("../db/mongo-pipeline");
 
@@ -33,6 +34,10 @@ class eventMongo {
       pageIndex,
       pageSize,
     );
+  }
+
+  async delete(_id) {
+    return await this.eventCol.deleteOne({ _id: new ObjectId(_id) });
   }
 }
 
