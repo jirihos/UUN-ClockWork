@@ -68,3 +68,7 @@ tr:hover {
 .table-cell {
   position: relative;
 }
+
+.wide-input {
+  width: 210px; /* Adjust width as needed */
+}

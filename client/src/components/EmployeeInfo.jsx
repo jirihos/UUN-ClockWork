@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
-import { Loader, Message, Button, Icon, Modal } from "semantic-ui-react";
+import { Loader, Message, Button, Icon } from "semantic-ui-react";
 import Error from "./Error";
 import ModalAddEvent from "./ModalAddEvent";
 
@@ -10,6 +10,7 @@ const EmployeeInfo = ({ code, onEventAdded }) => {
   const [departmentName, setDepartmentName] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [employeeNotFound, setEmployeeNotFound] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const call = useCall();
 
@@ -20,6 +21,11 @@ const EmployeeInfo = ({ code, onEventAdded }) => {
           "GET",
           `/api/employee/findByCode?code=${code}`,
         );
+        if (!response) {
+          setEmployeeNotFound(true);
+          setLoading(false);
+          return;
+        }
         setEmployeeInfo(response);
 
         // Fetch department name
@@ -54,7 +60,17 @@ const EmployeeInfo = ({ code, onEventAdded }) => {
         <Loader active inline="centered" />
       </div>
     );
-  if (error) return <Error error={error} />;
+  if (error)
+    return (
+      <div className="employee-info">
+        <Message negative>
+          <Message.Header>Employee Not Found</Message.Header>
+          <p>
+            No employee with the <strong>{code}</strong> was found.
+          </p>
+        </Message>
+      </div>
+    );
 
   return (
     <div className="employee-info">

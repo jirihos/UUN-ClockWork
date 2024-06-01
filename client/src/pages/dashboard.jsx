@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ModalAddEmployee from "../components/ModalAddEmployee";
 import DepartmentList from "../components/DepartmentList";
 import PresentEmployeesList from "../components/PresentEmployeeList";
+import EmployeeSearchCode from "../components/EmployeeSearchCode";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,9 @@ const Dashboard = () => {
 
       <Grid stackable>
         <Grid.Row columns="equal">
-          <Grid.Column>{/* Empty space */}</Grid.Column>
+          <Grid.Column>
+            <EmployeeSearchCode />
+          </Grid.Column>
           <Grid.Column textAlign="right">
             <ModalAddEmployee />
           </Grid.Column>
