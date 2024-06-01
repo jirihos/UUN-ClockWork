@@ -3,7 +3,7 @@ import { Button, Dropdown, Form, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
 
-const ModalAddEvent = ({ employeeCode }) => {
+const ModalAddEvent = ({ employeeCode, onClose }) => {
   const call = useCall();
   const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
@@ -14,7 +14,12 @@ const ModalAddEvent = ({ employeeCode }) => {
   console.log(timestampString);
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   async function onSubmit(e) {
     e.preventDefault();
