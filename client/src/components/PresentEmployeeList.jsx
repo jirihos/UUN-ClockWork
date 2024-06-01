@@ -48,12 +48,12 @@ const PresentEmployeesList = () => {
   }, [reload]);
 
   return (
-    <div style={{ minWidth: 300, maxWidth: 400 }}>
+    <div>
       <Header
         attached="top"
         size="huge"
         className="center-vertical"
-        style={{ justifyContent: "space-between" }}
+        style={{ justifyContent: "space-between", marginTop: 0 }}
       >
         Present Employees
         <Button primary size="tiny" onClick={reload}>
