@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Table, Segment, Button, Icon } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
-import ModalAddDepartment from "./modalAddDepartment";
+import ModalAddDepartment from "./ModalAddDepartment";
 import Error from "./Error";
 
 const DepartmentList = () => {

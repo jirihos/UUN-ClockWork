@@ -1,9 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Modal, Form, Button, FormField, Dropdown } from "semantic-ui-react";
+import {
+  Modal,
+  Form,
+  Button,
+  FormField,
+  Dropdown,
+  Icon,
+} from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
-
-import "../css/modalAddEmployee.css";
 
 const ModalAddEmployee = () => {
   const call = useCall();
@@ -41,6 +46,9 @@ const ModalAddEmployee = () => {
 
   const handleOpen = () => {
     setOpen(true);
+    setFirstName("");
+    setLastName("");
+    setDepartmentId("");
   };
 
   const handleClose = () => {
@@ -69,7 +77,7 @@ const ModalAddEmployee = () => {
   return (
     <div>
       <Button primary onClick={handleOpen}>
-        Add Employee
+        <Icon name="plus" /> Add Employee
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>Add Employee</Modal.Header>
@@ -90,6 +98,7 @@ const ModalAddEmployee = () => {
             <FormField>
               <label>Department</label>
               <Dropdown
+                onClick={reloadDepartments}
                 placeholder="Department"
                 name="departmentId"
                 selection

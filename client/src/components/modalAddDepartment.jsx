@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Modal, Form, Button, Icon } from "semantic-ui-react";
+import { Modal, Form, Button, Icon, Message } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 
-const ModalAddDepartment = () => {
+const ModalAddDepartment = ({ onSuccess }) => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const call = useCall();
 
   const handleOpen = () => {
@@ -13,19 +14,27 @@ const ModalAddDepartment = () => {
 
   const handleClose = () => {
     setOpen(false);
+    setError("");
+    setName("");
   };
 
   const handleNameChange = (e) => setName(e.target.value);
 
   const handleAddDepartment = async () => {
+    if (!name.trim()) {
+      setError("Name cannot be empty");
+      return;
+    }
+
     try {
-      await call("POST", "/api/department/create", {
+      const newDepartment = await call("POST", "/api/department/create", {
         name,
       });
       setName("");
       setOpen(false);
+      onSuccess(newDepartment);
     } catch (error) {
-      console.error(error);
+      console.error("Error adding department:", error);
     }
   };
 
@@ -37,12 +46,18 @@ const ModalAddDepartment = () => {
       <Modal open={open} onClose={handleClose} size="tiny">
         <Modal.Header>Add Department</Modal.Header>
         <Modal.Content>
-          <Form>
-            <Form.Input label="Name" value={name} onChange={handleNameChange} />
+          {error && <Message error content={error} />}
+          <Form onSubmit={handleAddDepartment}>
+            <Form.Input
+              label="Name"
+              value={name}
+              onChange={handleNameChange}
+              required
+            />
           </Form>
         </Modal.Content>
         <Modal.Actions>
-          <Button color="teal" onClick={handleAddDepartment}>
+          <Button type="submit" color="teal" onClick={handleAddDepartment}>
             <Icon name="check" /> Add
           </Button>
           <Button onClick={handleClose}>
