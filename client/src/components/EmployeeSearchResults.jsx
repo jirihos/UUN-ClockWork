@@ -121,32 +121,30 @@ const EmployeeSearchResults = ({ filter, departments }) => {
             <TableFooter>
               <TableRow>
                 <TableHeaderCell colSpan="5">
-                  {
-                    <div
-                      className="center-vertical"
-                      style={{
-                        justifyContent: "space-between",
-                        flexWrap: "wrap",
-                        rowGap: "8px",
-                        columnGap: "12px",
+                  <div
+                    className="center-vertical"
+                    style={{
+                      justifyContent: "space-between",
+                      flexWrap: "wrap",
+                      rowGap: "8px",
+                      columnGap: "12px",
+                    }}
+                  >
+                    <span>Found {totalCount} employees</span>
+                    <Pagination
+                      siblingRange={2}
+                      boundaryRange={1}
+                      nextItem={null}
+                      prevItem={null}
+                      firstItem={null}
+                      lastItem={null}
+                      activePage={activePage}
+                      onPageChange={(e, data) => {
+                        setActivePage(data.activePage);
                       }}
-                    >
-                      <span>Found {totalCount} employees</span>
-                      <Pagination
-                        siblingRange={2}
-                        boundaryRange={1}
-                        nextItem={null}
-                        prevItem={null}
-                        firstItem={null}
-                        lastItem={null}
-                        activePage={activePage}
-                        onPageChange={(e, data) => {
-                          setActivePage(data.activePage);
-                        }}
-                        totalPages={totalPages}
-                      />
-                    </div>
-                  }
+                      totalPages={totalPages}
+                    />
+                  </div>
                 </TableHeaderCell>
               </TableRow>
             </TableFooter>

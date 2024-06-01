@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDoorOpen,
   faDoorClosed,
   faTrash,
-  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
@@ -18,7 +17,13 @@ import {
   Label,
   Modal,
   Button,
+  Pagination,
+  TableFooter,
+  Loader,
+  Dimmer,
+  DimmerDimmable,
 } from "semantic-ui-react";
+import Error from "./Error";
 
 const EmployeeEvents = ({ code }) => {
   const [shiftData, setShiftData] = useState(null);
@@ -29,27 +34,39 @@ const EmployeeEvents = ({ code }) => {
   const [deleteType, setDeleteType] = useState(null);
   const call = useCall();
 
-  const fetchShiftData = async () => {
+  const [activePage, setActivePage] = useState(1);
+  const [totalCount, setTotalCount] = useState(-1);
+  const pageSize = 10;
+  const totalPages = useMemo(() => {
+    return Math.ceil(totalCount / pageSize);
+  }, [totalCount]);
+
+  const fetchShiftData = useCallback(async () => {
+    setLoading(true);
+    const pageIndex = activePage - 1;
     try {
       const response = await call(
         "GET",
-        `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
+        `/api/event/listShiftsByEmployeeCode?pageIndex=${pageIndex}&pageSize=${pageSize}&employeeCode=${code}`,
       );
       setShiftData(response.items);
+      const { totalCount } = response.pageInfo;
+      setTotalCount(totalCount);
       setLoading(false);
     } catch (err) {
       setError(err);
       setLoading(false);
+      throw err;
     }
-  };
+  }, [call, code, activePage]);
 
   useEffect(() => {
     fetchShiftData();
-  }, [code, call]);
+  }, [fetchShiftData]);
 
   const handleDelete = async () => {
     try {
-      const response = await call("POST", "/api/event/delete", {
+      await call("POST", "/api/event/delete", {
         _id: currentId,
       });
       await fetchShiftData();
@@ -70,82 +87,121 @@ const EmployeeEvents = ({ code }) => {
     setModalOpen(false);
   };
 
-  if (loading) return <div className="loading">Loading...</div>;
-  if (error)
-    return <div className="error">Error loading data: {error.message}</div>;
+  if (error) return <Error error={error} />;
 
   return (
     <div className="container">
-      <Table celled>
-        <TableHeader>
-          <TableRow>
-            <TableHeaderCell>Arrival</TableHeaderCell>
-            <TableHeaderCell>Departure</TableHeaderCell>
-          </TableRow>
-        </TableHeader>
+      <DimmerDimmable>
+        <Table celled>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderCell>Arrival</TableHeaderCell>
+              <TableHeaderCell>Departure</TableHeaderCell>
+            </TableRow>
+          </TableHeader>
 
-        <TableBody>
-          {shiftData &&
-            shiftData.map((entry, index) => (
-              <TableRow key={index}>
-                <TableCell>
-                  <Label ribbon>
-                    <FontAwesomeIcon
-                      icon={faDoorOpen}
-                      className={`arrival-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
-                      color={entry.arrivalTimestamp ? "black" : "red"}
-                    />
+          <TableBody>
+            {shiftData &&
+              shiftData.map((entry, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Label ribbon>
+                      <FontAwesomeIcon
+                        icon={faDoorOpen}
+                        className={`arrival-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
+                        color={entry.arrivalTimestamp ? "black" : "red"}
+                      />
+                      <span
+                        style={{
+                          color: entry.arrivalTimestamp ? "" : "red",
+                        }}
+                      >
+                        {entry.arrivalTimestamp
+                          ? new Date(
+                              entry.arrivalTimestamp,
+                            ).toLocaleDateString()
+                          : "No record"}
+                      </span>
+                    </Label>
                     <span
-                      style={{
-                        color: entry.arrivalTimestamp ? "" : "red",
-                      }}
+                      style={{ color: entry.arrivalTimestamp ? "" : "red" }}
                     >
                       {entry.arrivalTimestamp
-                        ? new Date(entry.arrivalTimestamp).toLocaleDateString()
-                        : "No record"}
+                        ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
+                        : ""}
                     </span>
-                  </Label>
-                  <span style={{ color: entry.arrivalTimestamp ? "" : "red" }}>
-                    {entry.arrivalTimestamp
-                      ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
-                      : ""}
-                  </span>
-                  <FontAwesomeIcon
-                    icon={entry.arrivalTimestamp ? faTrash : ""}
-                    className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
-                    onClick={() => openModal(entry.arrivalEventId, "arrival")}
-                  />
-                </TableCell>
-                <TableCell
-                  className={`table-cell ${entry.leaveTimestamp ? "" : "no-record"}`}
-                >
-                  <Label ribbon>
                     <FontAwesomeIcon
-                      icon={faDoorClosed}
-                      className={`departure-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
-                      color={entry.leaveTimestamp ? "black" : "red"}
+                      icon={entry.arrivalTimestamp ? faTrash : ""}
+                      className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
+                      onClick={() => openModal(entry.arrivalEventId, "arrival")}
                     />
+                  </TableCell>
+                  <TableCell
+                    className={`table-cell ${entry.leaveTimestamp ? "" : "no-record"}`}
+                  >
+                    <Label ribbon>
+                      <FontAwesomeIcon
+                        icon={faDoorClosed}
+                        className={`departure-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
+                        color={entry.leaveTimestamp ? "black" : "red"}
+                      />
+                      <span
+                        style={{ color: entry.leaveTimestamp ? "" : "red" }}
+                      >
+                        {entry.leaveTimestamp
+                          ? new Date(entry.leaveTimestamp).toLocaleDateString()
+                          : "No record"}
+                      </span>
+                    </Label>
                     <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
                       {entry.leaveTimestamp
-                        ? new Date(entry.leaveTimestamp).toLocaleDateString()
-                        : "No record"}
+                        ? new Date(entry.leaveTimestamp).toLocaleTimeString()
+                        : ""}
                     </span>
-                  </Label>
-                  <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
-                    {entry.leaveTimestamp
-                      ? new Date(entry.leaveTimestamp).toLocaleTimeString()
-                      : ""}
-                  </span>
-                  <FontAwesomeIcon
-                    icon={entry.leaveTimestamp ? faTrash : ""}
-                    className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
-                    onClick={() => openModal(entry.leaveEventId, "leave")}
+                    <FontAwesomeIcon
+                      icon={entry.leaveTimestamp ? faTrash : ""}
+                      className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
+                      onClick={() => openModal(entry.leaveEventId, "leave")}
+                    />
+                  </TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableHeaderCell colSpan="2">
+                <div
+                  className="center-vertical"
+                  style={{
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    rowGap: "8px",
+                    columnGap: "12px",
+                  }}
+                >
+                  <span>Found {totalCount} shifts</span>
+                  <Pagination
+                    siblingRange={2}
+                    boundaryRange={1}
+                    nextItem={null}
+                    prevItem={null}
+                    firstItem={null}
+                    lastItem={null}
+                    activePage={activePage}
+                    onPageChange={(e, data) => {
+                      setActivePage(data.activePage);
+                    }}
+                    totalPages={totalPages}
                   />
-                </TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
-      </Table>
+                </div>
+              </TableHeaderCell>
+            </TableRow>
+          </TableFooter>
+        </Table>
+        <Dimmer active={loading} inverted>
+          <Loader />
+        </Dimmer>
+      </DimmerDimmable>
 
       <Modal open={modalOpen} onClose={closeModal} size="small">
         <Modal.Header>Confirm Deletion</Modal.Header>
