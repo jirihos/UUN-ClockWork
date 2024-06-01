@@ -73,6 +73,24 @@ class DepartmentAbl {
       throw new errors.DepartmentDoesNotExist();
     }
   }
+
+  async findById(req, res) {
+    // validation
+    await validate(schemas.departmentFindByIdSchema, req.query);
+
+    // authorization
+    if (req.user == null) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await departmentDao.findById(req.query._id);
+
+    if (result) {
+      res.json(result);
+    } else {
+      throw new errors.DepartmentDoesNotExist();
+    }
+  }
 }
 
 module.exports = new DepartmentAbl();
