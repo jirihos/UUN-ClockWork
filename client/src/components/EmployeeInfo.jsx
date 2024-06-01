@@ -4,6 +4,7 @@ import "../css/employee.css";
 
 const EmployeeInfo = ({ code }) => {
   const [employeeInfo, setEmployeeInfo] = useState(null);
+  const [departmentName, setDepartmentName] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const call = useCall();
@@ -16,6 +17,16 @@ const EmployeeInfo = ({ code }) => {
           `/api/employee/findByCode?code=${code}`,
         );
         setEmployeeInfo(response);
+
+        // Fetch department name
+        if (response.departmentId) {
+          const departmentResponse = await call(
+            "GET",
+            `/api/department/findById?_id=${response.departmentId}`,
+          );
+          setDepartmentName(departmentResponse.name);
+        }
+
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -37,7 +48,7 @@ const EmployeeInfo = ({ code }) => {
           <h2>
             {employeeInfo.firstName} {employeeInfo.lastName}
           </h2>
-          <p>Department ID: {employeeInfo.departmentId}</p>
+          <h3>Department: {departmentName || "N/A"}</h3>
         </>
       )}
     </div>

@@ -57,14 +57,20 @@ const Employee = ({ code }) => {
               <TableRow key={index}>
                 <TableCell>
                   <Label ribbon>
-                    <FontAwesomeIcon icon={faDoorOpen} className="icon" />
+                    <FontAwesomeIcon
+                      icon={faDoorOpen}
+                      className="arrival-icon"
+                    />
                     {new Date(entry.arrivalTimestamp).toLocaleDateString()}
                   </Label>
                   {new Date(entry.arrivalTimestamp).toLocaleTimeString()}
                 </TableCell>
                 <TableCell>
                   <Label ribbon>
-                    <FontAwesomeIcon icon={faDoorClosed} className="icon" />
+                    <FontAwesomeIcon
+                      icon={faDoorClosed}
+                      className="departure-icon"
+                    />
                     {new Date(entry.leaveTimestamp).toLocaleDateString()}
                   </Label>
                   {new Date(entry.leaveTimestamp).toLocaleTimeString()}
