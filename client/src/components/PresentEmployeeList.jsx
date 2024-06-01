@@ -85,7 +85,7 @@ const PresentEmployeesList = () => {
         {totalPages === 0 && (
           <div className="center" style={{ flexDirection: "column" }}>
             <Header>No employees are present</Header>
-            <Button primary onClick={reload}>
+            <Button color="teal" onClick={reload}>
               Reload
             </Button>
           </div>

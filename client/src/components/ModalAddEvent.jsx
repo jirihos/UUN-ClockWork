@@ -40,7 +40,7 @@ const ModalAddEvent = ({ employeeCode }) => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>
+      <Button color="teal" onClick={handleOpen}>
         <Icon name="plus" /> Add Event
       </Button>
       <Modal open={open} onClose={handleClose} size="tiny">

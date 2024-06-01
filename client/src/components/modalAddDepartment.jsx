@@ -31,7 +31,7 @@ const ModalAddDepartment = () => {
 
   return (
     <div>
-      <Button primary onClick={handleOpen}>
+      <Button color="teal" onClick={handleOpen}>
         <Icon name="plus" /> Add Department
       </Button>
       <Modal open={open} onClose={handleClose} size="tiny">
