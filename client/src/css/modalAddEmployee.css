@@ -1,8 +1,0 @@
-.modal-actions {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-actions button {
-  margin: auto;
-}
