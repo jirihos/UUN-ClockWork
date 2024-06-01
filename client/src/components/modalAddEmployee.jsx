@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Modal, Form, Button } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 
@@ -41,7 +41,9 @@ const ModalAddEmployee = () => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Add Employee</Button>
+      <Button primary onClick={handleOpen}>
+        Add Employee
+      </Button>
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>Add Employee</Modal.Header>
         <Modal.Content>
