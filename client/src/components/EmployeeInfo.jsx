@@ -48,6 +48,7 @@ const EmployeeInfo = ({ code }) => {
           <h2>
             {employeeInfo.firstName} {employeeInfo.lastName}
           </h2>
+          <h4>Code: {employeeInfo.code}</h4>
           <h3>Department: {departmentName || "N/A"}</h3>
         </>
       )}
