@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDoorOpen, faDoorClosed } from "@fortawesome/free-solid-svg-icons";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
 import {
@@ -55,12 +57,14 @@ const Employee = ({ code }) => {
               <TableRow key={index}>
                 <TableCell>
                   <Label ribbon>
+                    <FontAwesomeIcon icon={faDoorOpen} className="icon" />
                     {new Date(entry.arrivalTimestamp).toLocaleDateString()}
                   </Label>
                   {new Date(entry.arrivalTimestamp).toLocaleTimeString()}
                 </TableCell>
                 <TableCell>
                   <Label ribbon>
+                    <FontAwesomeIcon icon={faDoorClosed} className="icon" />
                     {new Date(entry.leaveTimestamp).toLocaleDateString()}
                   </Label>
                   {new Date(entry.leaveTimestamp).toLocaleTimeString()}
