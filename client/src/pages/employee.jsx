@@ -1,20 +1,25 @@
-import { useEffect, useState, useParams } from "react";
-import axios from "axios";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useCall } from "../helpers/call-helper"; // Adjust the import path as necessary
 import Header from "../components/header";
+import { UserContext } from "../components/userContext";
 
 const Employee = () => {
+  const { code } = useParams();
   const [shiftData, setShiftData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { code } = useParams();
+  const call = useCall();
+  const userContext = useContext(UserContext);
 
   useEffect(() => {
     const fetchShiftData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
+        const response = await call(
+          "GET",
+          `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
         );
-        setShiftData(response.data.items);
+        setShiftData(response.items); // Assuming the response has an items property
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -23,7 +28,7 @@ const Employee = () => {
     };
 
     fetchShiftData();
-  }, [code]);
+  }, [code, call]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading data: {error.message}</div>;
