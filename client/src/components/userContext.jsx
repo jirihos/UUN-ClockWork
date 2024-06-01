@@ -12,6 +12,8 @@ const UserProvider = ({ children }) => {
   const [value, setValue] = useState(null);
   const [error, setError] = useState(null);
   const [expiresIn, setExpiresIn] = useState(null);
+  const [expirationNotificationSent, setExpirationNotificationSent] =
+    useState(false);
 
   const reload = useCallback(async () => {
     let token = localStorage.getItem("token");
@@ -62,10 +64,12 @@ const UserProvider = ({ children }) => {
 
     const notificationTimeoutID = setTimeout(
       () => {
+        if (expirationNotificationSent) return;
         toast.warn(
           "Your session expires in 3 minutes and you will be logged out.",
           { autoClose: 8000 },
         );
+        setExpirationNotificationSent(true);
       },
       expiresIn - 1000 * 60 * 3, // 3 minutes before expiration
     );
@@ -80,7 +84,7 @@ const UserProvider = ({ children }) => {
       clearTimeout(notificationTimeoutID);
       clearTimeout(logoutTimeoutID);
     };
-  }, [expiresIn, reload]);
+  }, [expiresIn, expirationNotificationSent, reload]);
 
   useEffect(() => {
     reload();
