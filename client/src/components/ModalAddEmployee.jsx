@@ -75,8 +75,8 @@ const ModalAddEmployee = () => {
         </>,
       );
     } catch (error) {
-      console.error(error);
-      toast.error("Failed to add employee.");
+      setError(error);
+      throw error;
     }
   };
 
@@ -88,7 +88,7 @@ const ModalAddEmployee = () => {
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>Add Employee</Modal.Header>
         <Modal.Content>
-          <Form>
+          <Form id="ModalAddEmployeeForm" onSubmit={handleAddEmployee}>
             <Form.Input
               label="First Name"
               value={firstName}
@@ -121,7 +121,7 @@ const ModalAddEmployee = () => {
           {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions className="modal-actions">
-          <Button color="teal" onClick={handleAddEmployee}>
+          <Button color="teal" type="submit" form="ModalAddEmployeeForm">
             Add
           </Button>
           <Button onClick={handleClose}>Close</Button>

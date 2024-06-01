@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Dropdown, Form, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
@@ -9,7 +9,6 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
   const [open, setOpen] = useState(false);
   const [type, setType] = useState("arrival");
   const [timestampString, setTimestampString] = useState("");
-  const formRef = React.createRef();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -20,7 +19,6 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
   };
 
   async function onSubmit(e) {
-    e.preventDefault();
     try {
       await call("POST", "/api/event/create", {
         employeeCode,
@@ -34,13 +32,6 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
     handleClose();
   }
 
-  function submitForm() {
-    // TODO validation doesn't trigger
-    formRef.current.dispatchEvent(
-      new Event("submit", { cancelable: true, bubbles: true }),
-    );
-  }
-
   return (
     <div>
       <Button color="teal" onClick={handleOpen}>
@@ -49,7 +40,7 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
       <Modal open={open} onClose={handleClose} size="tiny">
         <Modal.Header>Add Event</Modal.Header>
         <Modal.Content>
-          <Form onSubmit={onSubmit} ref={formRef}>
+          <Form id="ModalAddEventForm" onSubmit={onSubmit}>
             <Form.Group>
               <Form.Field>
                 <label>Type</label>
@@ -78,7 +69,7 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
           {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions>
-          <Button color="teal" onClick={submitForm}>
+          <Button color="teal" type="submit" form="ModalAddEventForm">
             <Icon name="check" /> Add
           </Button>
           <Button onClick={handleClose}>

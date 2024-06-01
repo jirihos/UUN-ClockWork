@@ -6,7 +6,7 @@ import Error from "./Error";
 const ModalAddDepartment = ({ onSuccess }) => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const call = useCall();
 
   const handleOpen = () => {
@@ -15,18 +15,13 @@ const ModalAddDepartment = ({ onSuccess }) => {
 
   const handleClose = () => {
     setOpen(false);
-    setError("");
+    setError(null);
     setName("");
   };
 
   const handleNameChange = (e) => setName(e.target.value);
 
   const handleAddDepartment = async () => {
-    if (!name.trim()) {
-      setError("Name cannot be empty");
-      return;
-    }
-
     try {
       const newDepartment = await call("POST", "/api/department/create", {
         name,
@@ -35,7 +30,8 @@ const ModalAddDepartment = ({ onSuccess }) => {
       setOpen(false);
       onSuccess(newDepartment);
     } catch (error) {
-      console.error("Error adding department:", error);
+      setError(error);
+      throw error;
     }
   };
 
@@ -47,7 +43,7 @@ const ModalAddDepartment = ({ onSuccess }) => {
       <Modal open={open} onClose={handleClose} size="tiny">
         <Modal.Header>Add Department</Modal.Header>
         <Modal.Content>
-          <Form onSubmit={handleAddDepartment}>
+          <Form id="ModalAddDepartmentForm" onSubmit={handleAddDepartment}>
             <Form.Input
               label="Name"
               value={name}
@@ -58,7 +54,7 @@ const ModalAddDepartment = ({ onSuccess }) => {
           {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions>
-          <Button type="submit" color="teal" onClick={handleAddDepartment}>
+          <Button color="teal" type="submit" form="ModalAddDepartmentForm">
             <Icon name="check" /> Add
           </Button>
           <Button onClick={handleClose}>
