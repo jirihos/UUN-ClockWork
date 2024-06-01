@@ -8,6 +8,8 @@ import {
   Icon,
 } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Error from "./Error";
 
 const ModalAddEmployee = () => {
@@ -60,7 +62,7 @@ const ModalAddEmployee = () => {
 
   const handleAddEmployee = async () => {
     try {
-      await call("POST", "/api/employee/create", {
+      const newEmployee = await call("POST", "/api/employee/create", {
         departmentId,
         firstName,
         lastName,
@@ -69,13 +71,22 @@ const ModalAddEmployee = () => {
       setLastName("");
       setDepartmentId("");
       setOpen(false);
+      toast.success(
+        <>
+          Employee added successfully!
+          <br />
+          <strong>Code: {newEmployee.code}</strong>
+        </>,
+      );
     } catch (error) {
       console.error(error);
+      toast.error("Failed to add employee.");
     }
   };
 
   return (
     <div>
+      <ToastContainer position="top-center" />
       <Button color="teal" onClick={handleOpen}>
         Add Employee
       </Button>
