@@ -49,3 +49,16 @@ tr:hover {
   font-size: 1.5em;
   color: teal;
 }
+
+.delete-icon {
+  cursor: pointer;
+  float: right;
+  color: rgb(180, 180, 180);
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.table-cell {
+  position: relative;
+}
