@@ -87,14 +87,8 @@ class eventAbl {
   }
 
   async exportAllShifts(req, res) {
-    let { pageIndex, pageSize, timestampFrom, timestampTo } = req.query;
-    pageIndex = parseInt(pageIndex || 0);
-    pageSize = parseInt(pageSize || 20);
-
-    // validation
-    if (Number.isNaN(pageIndex) || Number.isNaN(pageSize)) {
-      throw new errors.QueryParametersValidationError();
-    }
+    //validace inputu
+    await validate(schemas.eventExportschema, req.body);
 
     // authorization
     if (!req.user) {
@@ -107,14 +101,12 @@ class eventAbl {
     }
 
     const shifts = await eventDao.listShifts(
-      pageIndex,
-      pageSize,
-      timestampFrom,
-      timestampTo,
+      req.body.timestampFrom, // todo
+      req.body.timestampTo,
     );
 
     // Convert JSON to CSV
-    const csv = papa.unparse(shifts.items[0].items);
+    const csv = papa.unparse(shifts);
     // Set response headers to indicate a CSV file
     res.header("Content-Type", "text/csv");
     res.send(csv);
