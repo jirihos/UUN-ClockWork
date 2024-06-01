@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Table, Button, Icon, Modal, Message } from "semantic-ui-react";
+import { Table, Button, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ModalAddDepartment from "./ModalAddDepartment";
 import Error from "./Error";
 
@@ -12,8 +14,6 @@ const DepartmentList = () => {
   const [openDepartmentModal, setOpenDepartmentModal] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentDepartmentId, setCurrentDepartmentId] = useState(null);
-  const [deleteError, setDeleteError] = useState(null);
-  const [deleteSuccess, setDeleteSuccess] = useState(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -29,24 +29,6 @@ const DepartmentList = () => {
     loadData();
   }, [call]);
 
-  useEffect(() => {
-    if (deleteError) {
-      const timer = setTimeout(() => {
-        setDeleteError(null);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [deleteError]);
-
-  useEffect(() => {
-    if (deleteSuccess) {
-      const timer = setTimeout(() => {
-        setDeleteSuccess(null);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [deleteSuccess]);
-
   const handleAddDepartmentSuccess = (newDepartment) => {
     setDepartments([...departments, newDepartment]);
   };
@@ -59,15 +41,11 @@ const DepartmentList = () => {
       const data = await call("GET", "/api/department/list");
       setDepartments(data.items);
       setModalOpen(false);
-      setDeleteSuccess("Department was successfully deleted.");
-      setDeleteError(null);
+      toast.success("Department was successfully deleted.");
     } catch (error) {
       if (error) {
-        setDeleteError(
-          "Department can not be deleted because there is employee.",
-        );
+        toast.error("Department can not be deleted because there is employee.");
       }
-      console.error(error);
       setModalOpen(false);
     }
   };
@@ -85,18 +63,7 @@ const DepartmentList = () => {
     <>
       {!error ? (
         <>
-          {deleteError && (
-            <Message negative>
-              <Message.Header>Error</Message.Header>
-              <p>{deleteError}</p>
-            </Message>
-          )}
-          {deleteSuccess && (
-            <Message positive>
-              <Message.Header>Success</Message.Header>
-              <p>{deleteSuccess}</p>
-            </Message>
-          )}
+          <ToastContainer position="top-center" />
           <Table>
             <Table.Header>
               <Table.Row>
@@ -129,17 +96,6 @@ const DepartmentList = () => {
                 </Table.Row>
               ))}
             </Table.Body>
-            <Table.Footer>
-              <Table.Row>
-                <Table.HeaderCell colSpan="2" textAlign="left">
-                  <ModalAddDepartment
-                    open={openDepartmentModal}
-                    onClose={() => setOpenDepartmentModal(false)}
-                    onSuccess={handleAddDepartmentSuccess}
-                  />
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Footer>
           </Table>
           <ModalAddDepartment
             open={openDepartmentModal}
@@ -161,7 +117,6 @@ const DepartmentList = () => {
               </Button>
             </Modal.Actions>
           </Modal>
-
         </>
       ) : (
         <Error error={error} />
