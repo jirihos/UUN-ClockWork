@@ -15,7 +15,7 @@ const Header = () => {
     <Menu stackable>
       <MenuItem header>
         <Image
-          src={Logo} // TODO logo
+          src={Logo}
           style={{
             width: "90px",
             height: "45px",
@@ -37,13 +37,15 @@ const Header = () => {
           navigate("/search");
         }}
       />
-      <MenuItem
-        name="export"
-        active={pathname === "/export"}
-        onClick={() => {
-          navigate("/export");
-        }}
-      />
+      {user.role === "admin" && (
+        <MenuItem
+          name="export"
+          active={pathname === "/export"}
+          onClick={() => {
+            navigate("/export");
+          }}
+        />
+      )}
 
       <MenuItem position="right">
         <span style={{ marginRight: 12 }}>

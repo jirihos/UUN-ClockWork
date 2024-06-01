@@ -4,9 +4,8 @@ const schemas = require("../schema/index");
 const papa = require("papaparse");
 const { validate } = require("../validation");
 const errors = require("../errors");
-const { string } = require("joi");
 
-class eventAbl {
+class EventAbl {
   async create(req, res) {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
@@ -90,18 +89,13 @@ class eventAbl {
     //validace inputu
     await validate(schemas.eventExportschema, req.body);
 
-    // authorization
-    if (!req.user) {
-      throw new errors.NotAuthorized();
-    }
-
     // authorize roles
-    if (req.user?.role !== "admin" && req.user?.role !== "manager") {
+    if (req.user?.role !== "admin") {
       throw new errors.NotAuthorized();
     }
 
     const shifts = await eventDao.listShifts(
-      req.body.timestampFrom, // todo
+      req.body.timestampFrom,
       req.body.timestampTo,
     );
 
@@ -110,9 +104,7 @@ class eventAbl {
     // Set response headers to indicate a CSV file
     res.header("Content-Type", "text/csv");
     res.send(csv);
-
-    //res.json(shifts);
   }
 }
 
-module.exports = new eventAbl();
+module.exports = new EventAbl();
