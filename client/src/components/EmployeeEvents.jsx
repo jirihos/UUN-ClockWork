@@ -19,7 +19,7 @@ import {
   Button,
 } from "semantic-ui-react";
 
-const Employee = ({ code }) => {
+const EmployeeEvents = ({ code }) => {
   const [shiftData, setShiftData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,54 +28,38 @@ const Employee = ({ code }) => {
   const [deleteType, setDeleteType] = useState(null);
   const call = useCall();
 
-  useEffect(() => {
-    const fetchShiftData = async () => {
-      try {
-        const response = await call(
-          "GET",
-          `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
-        );
-        console.log("Shift Data:", response.items); // Ladicí výpis
-        setShiftData(response.items);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
-      }
-    };
+  const fetchShiftData = async () => {
+    try {
+      const response = await call(
+        "GET",
+        `/api/event/listShiftsByEmployeeCode?pageIndex=0&pageSize=30&employeeCode=${code}`,
+      );
+      setShiftData(response.items);
+      setLoading(false);
+    } catch (err) {
+      setError(err);
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchShiftData();
   }, [code, call]);
 
   const handleDelete = async () => {
     try {
-      console.log("Current ID:", currentId); // Ladicí výpis
       const response = await call("POST", "/api/event/delete", {
         _id: currentId,
       });
-      console.log("Delete response:", response); // Ladicí výpis
-      setShiftData(
-        shiftData.filter((entry) => {
-          if (deleteType === "arrival") {
-            return entry.arrivalEventId !== currentId;
-          } else {
-            return entry.leaveEventId !== currentId;
-          }
-        }),
-      );
+      await fetchShiftData();
       setModalOpen(false);
     } catch (err) {
-      console.error("Delete error:", err); // Ladicí výpis chyby
       setError(err);
       setModalOpen(false);
     }
   };
 
   const openModal = (id, type) => {
-    console.log(`Opening modal for ID: ${id}, Type: ${type}`); // Ladicí výpis
-    if (!id) {
-      console.error("No ID provided"); // Ladicí výpis
-    }
     setCurrentId(id);
     setDeleteType(type);
     setModalOpen(true);
@@ -109,9 +93,13 @@ const Employee = ({ code }) => {
                       icon={faDoorOpen}
                       className="arrival-icon"
                     />
-                    {new Date(entry.arrivalTimestamp).toLocaleDateString()}
+                    {entry.arrivalTimestamp
+                      ? new Date(entry.arrivalTimestamp).toLocaleDateString()
+                      : "No record"}
                   </Label>
-                  {new Date(entry.arrivalTimestamp).toLocaleTimeString()}
+                  {entry.arrivalTimestamp
+                    ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
+                    : "No record"}
                   <FontAwesomeIcon
                     icon={faTrash}
                     className="delete-icon"
@@ -124,9 +112,13 @@ const Employee = ({ code }) => {
                       icon={faDoorClosed}
                       className="departure-icon"
                     />
-                    {new Date(entry.leaveTimestamp).toLocaleDateString()}
+                    {entry.leaveTimestamp
+                      ? new Date(entry.leaveTimestamp).toLocaleDateString()
+                      : "No record"}
                   </Label>
-                  {new Date(entry.leaveTimestamp).toLocaleTimeString()}
+                  {entry.leaveTimestamp
+                    ? new Date(entry.leaveTimestamp).toLocaleTimeString()
+                    : "No record"}
                   <FontAwesomeIcon
                     icon={faTrash}
                     className="delete-icon"
@@ -156,4 +148,4 @@ const Employee = ({ code }) => {
   );
 };
 
-export default Employee;
+export default EmployeeEvents;
