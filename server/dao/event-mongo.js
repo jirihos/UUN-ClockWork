@@ -1,7 +1,6 @@
 const { ObjectId } = require("mongodb");
 const mongo = require("../db/mongo-db");
 const { shiftsPipeline } = require("../db/mongo-pipeline");
-const { ObjectId } = require("mongodb");
 
 class eventMongo {
   constructor() {
