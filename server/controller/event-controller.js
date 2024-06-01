@@ -39,4 +39,12 @@ router.post("/delete", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.post("/exportAllShifts", authenticateToken, async (req, res, next) => {
+  try {
+    await EventAbl.exportAllShifts(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
