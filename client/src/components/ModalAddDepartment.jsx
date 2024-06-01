@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Modal, Form, Button, Icon, Message } from "semantic-ui-react";
+import { useState } from "react";
+import { Modal, Form, Button, Icon } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import Error from "./Error";
 
 const ModalAddDepartment = ({ onSuccess }) => {
   const [open, setOpen] = useState(false);
@@ -46,7 +47,6 @@ const ModalAddDepartment = ({ onSuccess }) => {
       <Modal open={open} onClose={handleClose} size="tiny">
         <Modal.Header>Add Department</Modal.Header>
         <Modal.Content>
-          {error && <Message error content={error} />}
           <Form onSubmit={handleAddDepartment}>
             <Form.Input
               label="Name"
@@ -55,6 +55,7 @@ const ModalAddDepartment = ({ onSuccess }) => {
               required
             />
           </Form>
+          {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions>
           <Button type="submit" color="teal" onClick={handleAddDepartment}>

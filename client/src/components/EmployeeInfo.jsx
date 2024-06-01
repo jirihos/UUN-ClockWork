@@ -60,17 +60,22 @@ const EmployeeInfo = ({ code, onEventAdded }) => {
         <Loader active inline="centered" />
       </div>
     );
-  if (error)
-    return (
-      <div className="employee-info">
-        <Message negative>
-          <Message.Header>Employee Not Found</Message.Header>
-          <p>
-            No employee with the <strong>{code}</strong> was found.
-          </p>
-        </Message>
-      </div>
-    );
+  if (error) {
+    if (error.data?.error?.code === "EmployeeCodeNotFound") {
+      return (
+        <div className="employee-info">
+          <Message negative>
+            <Message.Header>Employee Not Found</Message.Header>
+            <p>
+              No employee with the code <strong>{code}</strong> was found.
+            </p>
+          </Message>
+        </div>
+      );
+    } else {
+      return <Error error={error} />;
+    }
+  }
 
   return (
     <div className="employee-info">

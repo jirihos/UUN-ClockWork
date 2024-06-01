@@ -11,8 +11,6 @@ const ModalAddEvent = ({ employeeCode, onClose }) => {
   const [timestampString, setTimestampString] = useState("");
   const formRef = React.createRef();
 
-  console.log(timestampString);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
