@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
-import { Message } from "semantic-ui-react";
+import { Loader, Message } from "semantic-ui-react";
+import Error from "./Error";
 
 const EmployeeInfo = ({ code }) => {
   const [employeeInfo, setEmployeeInfo] = useState(null);
@@ -38,9 +39,13 @@ const EmployeeInfo = ({ code }) => {
     fetchEmployeeInfo();
   }, [code, call]);
 
-  if (loading) return <div className="loading">Loading...</div>;
-  if (error)
-    return <div className="error">Error loading data: {error.message}</div>;
+  if (loading)
+    return (
+      <div style={{ magin: 30 }}>
+        <Loader active inline="centered" />
+      </div>
+    );
+  if (error) return <Error error={error} />;
 
   return (
     <div className="employee-info">
