@@ -10,11 +10,18 @@ class eventAbl {
     await validate(schemas.eventCreateSchema, req.body);
 
     // authorize terminal
-    if (!req.terminal) {
+    if (!req.terminal && !req.user) {
       throw new errors.NotAuthorized();
     }
 
-    const terminalId = req.terminal._id.toString();
+    let terminalId;
+
+    if (!req.terminal) {
+      terminalId = null;
+    } else {
+      terminalId = req.terminal._id.toString();
+    }
+
     const { employeeCode, type, timestamp } = req.body;
 
     let result = await employeeDao.findByCode(employeeCode);

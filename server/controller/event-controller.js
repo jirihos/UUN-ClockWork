@@ -6,7 +6,7 @@ const {
 
 const EventAbl = require("../abl/event-abl");
 
-router.post("/create", authenticateApiKey, async (req, res, next) => {
+router.post("/create", authenticateApiKey, authenticateToken, async (req, res, next) => {
   try {
     await EventAbl.create(req, res);
   } catch (e) {
