@@ -1,15 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import {
-  Modal,
-  Form,
-  Button,
-  FormField,
-  Dropdown,
-  Icon,
-} from "semantic-ui-react";
-import { useCall } from "../helpers/call-helper";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Modal, Form, Button, FormField, Dropdown } from "semantic-ui-react";
+import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
 
 const ModalAddEmployee = () => {
@@ -75,7 +68,10 @@ const ModalAddEmployee = () => {
         <>
           Employee added successfully!
           <br />
-          <strong>Code: {newEmployee.code}</strong>
+          <strong>
+            Code:{" "}
+            <Link to={`/employee/${newEmployee.code}`}>{newEmployee.code}</Link>
+          </strong>
         </>,
       );
     } catch (error) {
