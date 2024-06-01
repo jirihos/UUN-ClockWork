@@ -7,3 +7,6 @@ exports.departmentCreateSchema = Joi.object({
 exports.departmentDeleteSchema = Joi.object({
   _id: Joi.objectId().required(),
 });
+exports.departmentFindByIdSchema = Joi.object({
+  _id: Joi.objectId().required(),
+});
