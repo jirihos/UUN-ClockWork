@@ -86,10 +86,10 @@ class EmployeeMongo {
     const filter = {};
 
     if (body.firstName) {
-      filter.firstName = { $regex: body.firstName };
+      filter.firstName = { $regex: body.firstName, $options: 'i' };
     }
     if (body.lastName) {
-      filter.lastName = { $regex: body.lastName };
+      filter.lastName = { $regex: body.lastName, $options: 'i' };
     }
     if (body.departmentId) {
       filter.departmentId = body.departmentId;
