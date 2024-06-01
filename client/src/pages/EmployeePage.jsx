@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 import EmployeeEvents from "../components/EmployeeEvents";
 import EmployeeInfo from "../components/EmployeeInfo";
 import "../css/employee.css";

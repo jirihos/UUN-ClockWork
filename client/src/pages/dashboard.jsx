@@ -1,5 +1,5 @@
 import { Grid } from "semantic-ui-react";
-import Header from "../components/header";
+import Header from "../components/Header";
 import ModalAddEmployee from "../components/ModalAddEmployee";
 import DepartmentList from "../components/DepartmentList";
 import PresentEmployeesList from "../components/PresentEmployeeList";
