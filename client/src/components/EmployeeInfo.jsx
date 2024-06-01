@@ -1,5 +1,5 @@
-import { useEffect, useState, useContext } from "react";
-import { useCall } from "../helpers/call-helper"; // Import the useCall hook
+import { useEffect, useState } from "react";
+import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
 
 const EmployeeInfo = ({ code }) => {
@@ -11,9 +11,10 @@ const EmployeeInfo = ({ code }) => {
   useEffect(() => {
     const fetchEmployeeInfo = async () => {
       try {
-        const response = await call("GET", "/api/employee/findByCode", {
-          code,
-        });
+        const response = await call(
+          "GET",
+          `/api/employee/findByCode?code=${code}`,
+        );
         setEmployeeInfo(response);
         setLoading(false);
       } catch (err) {

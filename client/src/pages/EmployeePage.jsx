@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import Header from "../components/header";
-import Employee from "../components/Employee"; // Import the Employee component
-import EmployeeInfo from "../components/EmployeeInfo"; // Import the EmployeeInfo component
+import EmployeeEvents from "../components/EmployeeEvents";
+import EmployeeInfo from "../components/EmployeeInfo";
 import "../css/employee.css";
 
 const EmployeePage = () => {
@@ -11,7 +11,7 @@ const EmployeePage = () => {
     <div className="container">
       <Header />
       <EmployeeInfo code={code} />
-      <Employee code={code} />
+      <EmployeeEvents code={code} />
     </div>
   );
 };
