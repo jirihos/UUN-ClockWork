@@ -47,6 +47,11 @@ class DepartmentMongo {
       _id: new ObjectId(_id),
     });
   }
+
+  async findById(_id) {
+    console.log(_id);
+    return await this.departmentCol.findOne({ _id: new ObjectId(_id) });
+  }
 }
 
 module.exports = new DepartmentMongo();
