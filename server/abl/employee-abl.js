@@ -57,9 +57,11 @@ class EmployeeAbl {
     }
 
     //validace inputu
-    await validate(schemas.employeeFindByCodeSchema, req.body);
+    await validate(schemas.employeeFindByCodeSchema, req.query);
 
-    let result = await employeeDao.findByCode(req.body.code);
+    let result = await employeeDao.findByCode(req.query.code);
+
+    console.log(result);
 
     if (result) {
       res.json(result);
