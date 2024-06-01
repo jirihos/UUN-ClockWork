@@ -24,6 +24,45 @@ class EmployeeMongo {
     return await this.employeeCol.find({}).toArray();
   }
 
+  async listPresent(pageIndex, pageSize) {
+    const cursor = await this.employeeCol.aggregate([
+      {
+        $lookup: {
+          from: "event",
+          localField: "code",
+          foreignField: "employeeCode",
+          pipeline: [{ $sort: { timestamp: -1 } }, { $limit: 1 }],
+          as: "lastEvent",
+        },
+      },
+      {
+        $unwind: "$lastEvent",
+      },
+      {
+        $match: {
+          "lastEvent.type": "arrival",
+        },
+      },
+      {
+        $facet: {
+          pageInfo: [{ $count: "totalCount" }],
+          items: [{ $skip: pageIndex * pageSize }, { $limit: pageSize }],
+        },
+      },
+    ]);
+
+    const data = await cursor.next();
+
+    const totalCount = data.pageInfo[0]?.totalCount || 0;
+    data.pageInfo = {
+      pageIndex,
+      pageSize,
+      totalCount,
+    };
+
+    return data;
+  }
+
   async getAllExistingCodes() {
     const options = {
       projection: { _id: 0, code: 1 },
@@ -44,15 +83,13 @@ class EmployeeMongo {
   }
 
   async search(body, pageIndex, pageSize) {
-    console.log(body);
-
     const filter = {};
 
     if (body.firstName) {
-      filter.firstName = {$regex: body.firstName}
+      filter.firstName = { $regex: body.firstName, $options: 'i' };
     }
     if (body.lastName) {
-      filter.lastName = {$regex: body.lastName}
+      filter.lastName = { $regex: body.lastName, $options: 'i' };
     }
     if (body.departmentId) {
       filter.departmentId = body.departmentId;
@@ -70,7 +107,6 @@ class EmployeeMongo {
       },
     ]);
 
-
     const data = await cursor.next();
 
     const totalCount = data.pageInfo[0]?.totalCount || 0;
@@ -79,7 +115,7 @@ class EmployeeMongo {
       pageSize,
       totalCount,
     };
-    
+
     return data;
   }
 }

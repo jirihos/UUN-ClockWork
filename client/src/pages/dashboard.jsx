@@ -14,6 +14,8 @@ import {
 import Header from "../components/header";
 import ModalAddEmployee from "../components/modalAddEmployee";
 import ModalAddDepartment from "../components/modalAddDepartment";
+import PresentEmployeesList from "../components/PresentEmployeeList";
+
 
 const Dashboard = () => {
   const call = useCall();
@@ -146,6 +148,8 @@ const Dashboard = () => {
             </>
           )}
         </Segment>
+
+        <PresentEmployeesList />
       </div>
     </>
   );

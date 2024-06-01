@@ -32,19 +32,19 @@
         "env": []
     },
     {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Ideas",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "703dc2c481ddf6ab",
         "type": "tab",
         "label": "TEST FLOW",
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "f6f2187d.f17ca8",
-        "type": "tab",
-        "label": "Ideas",
-        "disabled": false,
-        "info": ""
     },
     {
         "id": "d70cc115667768df",
@@ -63,10 +63,10 @@
             "60d9f8fe0958cf50",
             "80888cdaf5d9a8b9"
         ],
-        "x": 34,
-        "y": 479,
+        "x": 74,
+        "y": 539,
         "w": 472,
-        "h": 330
+        "h": 210
     },
     {
         "id": "2124c778e288492c",
@@ -85,11 +85,12 @@
             "303311f5377ac92b",
             "9301e7d80c610b92",
             "71f7a3281684d237",
-            "00b99cdb0152d857"
+            "00b99cdb0152d857",
+            "a3f26508d916884a"
         ],
         "x": 554,
-        "y": 259,
-        "w": 752,
+        "y": 319,
+        "w": 892,
         "h": 190
     },
     {
@@ -110,8 +111,8 @@
             "a16376362f98f38f"
         ],
         "x": 554,
-        "y": 639,
-        "w": 752,
+        "y": 879,
+        "w": 892,
         "h": 170
     },
     {
@@ -130,8 +131,8 @@
             "a90667a04de81245"
         ],
         "x": 554,
-        "y": 479,
-        "w": 752,
+        "y": 779,
+        "w": 892,
         "h": 90
     },
     {
@@ -148,8 +149,8 @@
         "nodes": [
             "d6f9f320f897c6ee"
         ],
-        "x": 34,
-        "y": 271.5,
+        "x": 54,
+        "y": 351.5,
         "w": 472,
         "h": 105
     },
@@ -173,12 +174,16 @@
             "404fcafe15a83f94",
             "9b354d9dba50c1d2",
             "7fc55615f6c4ce14",
-            "9c933f3688f9d9a1"
+            "9c933f3688f9d9a1",
+            "3d15ab43c8ab519a",
+            "feb1107b306b5946",
+            "a84e35068f94e0c4",
+            "3b73e3cd944e187c"
         ],
-        "x": 34,
-        "y": 59,
-        "w": 1272,
-        "h": 170
+        "x": 14,
+        "y": -1,
+        "w": 1432,
+        "h": 270
     },
     {
         "id": "ee274060183140ba",
@@ -188,11 +193,10 @@
         "style": {
             "stroke": "#ffefbf",
             "fill": "#e3f3d3",
-            "label": true
+            "label": true,
+            "label-position": "sw"
         },
         "nodes": [
-            "2bd43a2954daefc6",
-            "2daa2cbfa085b484",
             "10186ab8cec6d099",
             "31f18681ba01a9c0",
             "4e566a1b02d91ecd"
@@ -200,7 +204,7 @@
         "x": 54,
         "y": 199,
         "w": 1432,
-        "h": 82
+        "h": 90
     },
     {
         "id": "a6515923ca5b7293",
@@ -214,13 +218,12 @@
         },
         "nodes": [
             "8d822c1ec888b9e2",
-            "cbf7c6584f0a9148",
             "ed6e78e62f6e89b8",
             "7c551ef32e98efb6"
         ],
         "x": 54,
-        "y": 79,
-        "w": 1432,
+        "y": 39,
+        "w": 1392,
         "h": 82
     },
     {
@@ -237,11 +240,11 @@
             "996b8d311bcda11f",
             "8383109a01c9660c",
             "a787e0b9e85b6bd2",
-            "8045367908ff23d5"
+            "fa1ef6a4075d912e"
         ],
-        "x": 334,
-        "y": 439,
-        "w": 1152,
+        "x": 634,
+        "y": 539,
+        "w": 1232,
         "h": 82
     },
     {
@@ -260,9 +263,9 @@
             "bace35dfe37e3ffd",
             "ba82d36c698f8a7b"
         ],
-        "x": 334,
-        "y": 339,
-        "w": 1152,
+        "x": 634,
+        "y": 419,
+        "w": 1232,
         "h": 82
     },
     {
@@ -280,12 +283,14 @@
             "c20bc9ccb77a24e8",
             "9e354968b2f4414e",
             "c4c3270d4232f020",
-            "c68bf099a6769c18"
+            "c68bf099a6769c18",
+            "879a66595b3fc576",
+            "4cc52d6208e45607"
         ],
         "x": 14,
         "y": 39,
         "w": 572,
-        "h": 282
+        "h": 302
     },
     {
         "id": "2dfa0fcb02146650",
@@ -300,12 +305,14 @@
         "nodes": [
             "a7a28555fa3fc0ad",
             "20b10770f9327a5d",
-            "f6d6d05d984eee08"
+            "f6d6d05d984eee08",
+            "71b81da74b181148",
+            "1b3bf9104b597ba7"
         ],
         "x": 634,
         "y": 199,
-        "w": 932,
-        "h": 122
+        "w": 1232,
+        "h": 162
     },
     {
         "id": "541a9b2c482b7850",
@@ -326,7 +333,7 @@
         ],
         "x": 634,
         "y": 39,
-        "w": 932,
+        "w": 1232,
         "h": 142
     },
     {
@@ -348,7 +355,8 @@
             "5e2003d9c1ad71a8",
             "991c1e6feedfa4b1",
             "dbacf1335303f72f",
-            "cddaf976743603fb"
+            "cddaf976743603fb",
+            "09aad63796c769b3"
         ],
         "x": 34,
         "y": 39,
@@ -378,19 +386,20 @@
         "id": "a9d1e52d72a110cb",
         "type": "group",
         "z": "74d70de6eea550f9",
-        "name": "Header Date/ Time",
+        "name": "Header Date/ Time + theme (https://flows.nodered.org)",
         "style": {
             "stroke": "#ffefbf",
             "fill": "#e3f3d3",
             "label": true
         },
         "nodes": [
-            "36b6ae18aa8a04e1"
+            "36b6ae18aa8a04e1",
+            "68f82fd49ed5ef19"
         ],
-        "x": 54,
-        "y": 499,
-        "w": 212,
-        "h": 82
+        "x": 1134,
+        "y": 979,
+        "w": 347,
+        "h": 242
     },
     {
         "id": "8b1fb312af5f5207",
@@ -408,12 +417,16 @@
             "e23e54d43474feff",
             "d3f22ad954efe27c",
             "bd464a090c494d7e",
-            "4ad305dfaa268fb4"
+            "4ad305dfaa268fb4",
+            "77c4966462c4c94b",
+            "8a3d368b091346dd",
+            "9bf475db6c560dc8",
+            "0dc83fdc2d1ee1ec"
         ],
         "x": 54,
-        "y": 319,
+        "y": 519,
         "w": 1432,
-        "h": 142
+        "h": 202
     },
     {
         "id": "3528e7c07d677b4d",
@@ -440,6 +453,255 @@
         "y": 219,
         "w": 932,
         "h": 270
+    },
+    {
+        "id": "1bc801493ded71d2",
+        "type": "group",
+        "z": "76b8d7d23f0dfbb5",
+        "name": "TTL userListUpdateCollection",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "b288e13cb75f301f",
+            "92deceb80e14e7ff",
+            "62d4ae1e2798fc85",
+            "2ec89de0bc1fde04",
+            "02e6cffbf5cb6392",
+            "9af2e759ee4e3b5a",
+            "421842dd816509fc"
+        ],
+        "x": 634,
+        "y": 659,
+        "w": 1232,
+        "h": 150
+    },
+    {
+        "id": "b6a8575e2f75783e",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "TTL keyboardEventsCollection",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "748fcf2c4586b526",
+            "a970f8a143ae4fc1",
+            "da301eb6488cac64",
+            "0c6587995b5b6ac2",
+            "ae6b5d826aaefdbc",
+            "17a74412e42e603f",
+            "8b72e5f5770c578a",
+            "5c044c093f63f345"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 1432,
+        "h": 210
+    },
+    {
+        "id": "a10b30921cdeeca4",
+        "type": "group",
+        "z": "703dc2c481ddf6ab",
+        "name": "Arrive all users from DB set start date/ time",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "86d715285def2972",
+            "5ea196e4fc4505ae",
+            "3e4d599b9151175b",
+            "c9b1b25e244c6b3f",
+            "964bc097266931c6",
+            "bcca943a5da1ce17",
+            "a0361fa45e35fdda",
+            "e42636be3a06d81e"
+        ],
+        "x": 234,
+        "y": 199,
+        "w": 1552,
+        "h": 90
+    },
+    {
+        "id": "e473421683d57dc0",
+        "type": "group",
+        "z": "703dc2c481ddf6ab",
+        "name": "Leave all users from DB set start date/ time",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#ffefbf",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "37dc1e350aa11259",
+            "f9bd9b9c523c512c",
+            "a4791ab37a2e6fd2",
+            "458f06ec24e848ed",
+            "344e808564720fda",
+            "d18b82a922caf95d",
+            "4f9ebc2f72f3169d",
+            "973cf5dc42eaf43d"
+        ],
+        "x": 234,
+        "y": 299,
+        "w": 1552,
+        "h": 90
+    },
+    {
+        "id": "1650f82db34b29ba",
+        "type": "group",
+        "z": "d537a249a96dc0df",
+        "name": "Terminal LED status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "2e5a1881ab9317d7",
+            "0a37d82cd78a121d",
+            "a69c25e0b94337b8",
+            "ad0f3f1f2b7cd7e9",
+            "c14ac36e164aa888",
+            "de23cc0cc57560a5"
+        ],
+        "x": 774,
+        "y": 519,
+        "w": 672,
+        "h": 230
+    },
+    {
+        "id": "17b6146060188785",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Server status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "7a2ec748e7ea9d17",
+            "1ed2eb3c4c0edf4c",
+            "ae8829c1c3f8c336"
+        ],
+        "x": 54,
+        "y": 739,
+        "w": 1432,
+        "h": 90
+    },
+    {
+        "id": "64b8798ede85c7d8",
+        "type": "group",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "a2e4e61e46401397",
+            "9d5824a429730b28",
+            "6dcf6125abb8951b",
+            "f76371fcaec11ec0",
+            "a832de492bcbf595",
+            "09a0dbbfc06fe9fa",
+            "11ece0c0373003d5",
+            "dd03fc639e1179b3"
+        ],
+        "x": 34,
+        "y": 119,
+        "w": 612,
+        "h": 262
+    },
+    {
+        "id": "d7ffca66265109a5",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Microcontroller status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "2c258774973706cd",
+            "9b12a3ecd9f3424a",
+            "60eb9ff12213c94b"
+        ],
+        "x": 54,
+        "y": 859,
+        "w": 1432,
+        "h": 90
+    },
+    {
+        "id": "0e3745d94f4715e6",
+        "type": "group",
+        "z": "74d70de6eea550f9",
+        "name": "Mocrocontroller status",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true,
+            "label-position": "sw"
+        },
+        "nodes": [
+            "9e9526883b5fb8e9",
+            "970a828d4a8e0d1d",
+            "80608c3731ce5b3d",
+            "fc64dd16a86f41a7",
+            "7d6f036c9c1b2ae2",
+            "19233c246a4b0fbf",
+            "2bc3c8c86dc19b14",
+            "e7eb87403244d7af"
+        ],
+        "x": 54,
+        "y": 979,
+        "w": 1052,
+        "h": 250
+    },
+    {
+        "id": "c380b8bac82c0dd7",
+        "type": "group",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "style": {
+            "stroke": "#ffefbf",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "34898cdf7e4ff7c0",
+            "d1170e639aef5227",
+            "f576433e951d1b68",
+            "cdf223bb7a7b0ec4",
+            "c7f6ea2f868640ce",
+            "974023178f68b771",
+            "ad82f5a13a6eb935",
+            "7289ecb03673dec5",
+            "5bf5da3728ec4507",
+            "588fd6f245e4f382",
+            "2e09f3afbe330899",
+            "13416614d578b728"
+        ],
+        "x": 234,
+        "y": 499,
+        "w": 672,
+        "h": 262
     },
     {
         "id": "1be85959efd6d9ef",
@@ -489,7 +751,7 @@
         "tab": "886cc25582355e06",
         "order": 1,
         "disp": true,
-        "width": "24",
+        "width": 30,
         "collapse": true,
         "className": ""
     },
@@ -518,13 +780,15 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
                 "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
@@ -617,7 +881,7 @@
         "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "14",
+        "width": 16,
         "collapse": true,
         "className": ""
     },
@@ -637,14 +901,14 @@
         "tab": "ac261bd52cf295e5",
         "order": 1,
         "disp": true,
-        "width": "11",
+        "width": 14,
         "collapse": true,
         "className": ""
     },
     {
         "id": "91d4b4ec44690f96",
         "type": "ui_tab",
-        "name": "List of non existent users in keyboard events",
+        "name": "List of STASHED events and NON existent users",
         "icon": "dashboard",
         "order": 3,
         "disabled": false,
@@ -662,6 +926,45 @@
         "className": ""
     },
     {
+        "id": "2a745e6b.07df92",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e63bce2d.68925",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "e63bce2d.68925",
+        "type": "ui_tab",
+        "name": "TEST",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "53bc0c7b51c50fc0",
+        "type": "ui_spacer",
+        "z": "703dc2c481ddf6ab",
+        "name": "spacer",
+        "group": "8e8c38f3867a2f4b",
+        "order": 6,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "5518c91aa2a46037",
+        "type": "ui_spacer",
+        "z": "703dc2c481ddf6ab",
+        "name": "spacer",
+        "group": "8e8c38f3867a2f4b",
+        "order": 8,
+        "width": 10,
+        "height": 1
+    },
+    {
         "id": "0e63ea1d3b6cab68",
         "type": "mqtt in",
         "z": "d537a249a96dc0df",
@@ -675,11 +978,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
+        "x": 150,
         "y": 100,
         "wires": [
             [
-                "94a2c8b60c41d056"
+                "94a2c8b60c41d056",
+                "3b73e3cd944e187c"
             ]
         ]
     },
@@ -703,7 +1007,8 @@
                 "7e09073d61ddc699"
             ],
             [
-                "404fcafe15a83f94"
+                "404fcafe15a83f94",
+                "feb1107b306b5946"
             ]
         ]
     },
@@ -713,14 +1018,14 @@
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
         "name": "set msg.payload ",
-        "func": "let payloadString = msg.payload.toString();\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n     case 'D':\n        actionName = 'doctor';\n        break;\n        case 'H':\n        actionName = 'holiday';\n        break;    \n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload = \n{\n    \"timestamp\": new Date().toISOString(),\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nlet url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\n\nreturn msg;",
+        "func": "let payloadString = msg.payload.toString();\nlet eventTimestamp = flow.get(\"timestamp\");\n\nlet user = parseInt(payloadString.substring(0, 4));\nlet action = payloadString.substring(4);\nlet actionName;\n\nswitch (action) {\n    case 'A':\n        actionName = 'arrival';\n        break;\n    case 'L':\n        actionName = 'leave';\n        break;\n    case 'D':\n        actionName = 'doctor';\n        break;\n    case 'H':\n        actionName = 'holiday';\n        break;\n    default:\n        actionName = 'unknown';\n}\n\nmsg.payload =\n{\n    \"timestamp\": eventTimestamp,\n    \"employeeCode\": user,\n    \"type\": actionName\n};\n\nlet url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/event/create\";\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
+        "x": 660,
         "y": 100,
         "wires": [
             [
@@ -740,8 +1045,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1040,
-        "y": 680,
+        "x": 1180,
+        "y": 920,
         "wires": []
     },
     {
@@ -768,8 +1073,8 @@
                 "valueValue": "api_key"
             }
         ],
-        "x": 1210,
-        "y": 180,
+        "x": 1250,
+        "y": 220,
         "wires": [
             [
                 "d6f9f320f897c6ee"
@@ -803,7 +1108,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
+        "x": 910,
         "y": 100,
         "wires": [
             [
@@ -831,8 +1136,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 140,
-        "y": 520,
+        "x": 180,
+        "y": 580,
         "wires": [
             [
                 "60d9f8fe0958cf50"
@@ -845,15 +1150,15 @@
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
         "name": "Log server response",
-        "func": "var knownUser = (flow.get(\"userPayload\").length === 0);\n\nmsg.payload = {\n    \"inputPayload\": flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload,\n    \"userInfo\": flow.get(\"userPayload\")\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n        msg.payload.status = \"OK\";\n        break;\n    case \"ECONNREFUSED\":\n        if (!knownUser) {\n            msg.payload.status = \"STASHED (connection error)\";\n        } else {\n            msg.payload.status = \"DENIED (connection error)\";\n        }\n        break;\n    default:\n        msg.payload.status = msg.payload.payload.error.code;\n        break;\n}\n\nreturn msg;\n",
+        "func": "var knownUser = (flow.get(\"userPayload\").length === 0);\n\nmsg.payload = {\n    \"inputPayload\": flow.get(\"payload\"),\n    \"statusCode\": msg.statusCode,\n    \"payload\": msg.payload,\n    \"userInfo\": flow.get(\"userPayload\"),\n    \"_tod\": msg._tod\n};\n\nswitch (msg.payload.statusCode) {\n    case 200:\n        msg.payload.status = \"OK\";\n        break;\n    case \"ECONNREFUSED\":\n        if (!knownUser) {\n            msg.payload.status = \"STASHED (connection error)\";\n        } else {\n            msg.payload.status = \"DENIED (connection error)\";\n        }\n        break;\n    default:\n        msg.payload.status = msg.payload.payload.error.code;\n        break;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 300,
+        "x": 840,
+        "y": 360,
         "wires": [
             [
                 "8d92076ea8ee2d84"
@@ -872,8 +1177,8 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1070,
-        "y": 300,
+        "x": 1210,
+        "y": 360,
         "wires": []
     },
     {
@@ -885,7 +1190,7 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 260,
+        "x": 320,
         "y": 640,
         "wires": [
             [
@@ -899,15 +1204,15 @@
         "z": "d537a249a96dc0df",
         "g": "d70cc115667768df",
         "name": "find id in usersCollection ",
-        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = {id:employeeCode};\n\nreturn msg;\n",
+        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = {code:employeeCode};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 520,
+        "x": 410,
+        "y": 580,
         "wires": [
             [
                 "c886763ff525e7f5"
@@ -927,8 +1232,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 760,
+        "x": 300,
+        "y": 700,
         "wires": [
             [
                 "a90667a04de81245"
@@ -944,66 +1249,60 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": true,
         "className": "",
         "topic": "Wrong entry",
-        "name": "Wrong entry",
-        "x": 150,
+        "name": "Wrong entry Gateway",
+        "x": 400,
         "y": 160,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "4be098b25860ece8",
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "3ae20c15f527cdf9",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
         "className": "",
         "topic": "payload",
         "name": " ACCESS DENIED (locally)",
-        "x": 1160,
-        "y": 520,
-        "wires": [
-            []
-        ]
+        "x": 1300,
+        "y": 820,
+        "wires": []
     },
     {
         "id": "12593b8dc90ac2cd",
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "dd73acae1f72be6e",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK (locally)",
-        "x": 1130,
-        "y": 760,
-        "wires": [
-            []
-        ]
+        "x": 1290,
+        "y": 1000,
+        "wires": []
     },
     {
         "id": "a90667a04de81245",
@@ -1014,9 +1313,16 @@
         "rules": [
             {
                 "t": "set",
+                "p": "payload.led",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "ACCESS DENIED (locally)",
+                "to": "USER DENIED (locally)",
                 "tot": "str"
             }
         ],
@@ -1026,10 +1332,11 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 520,
+        "y": 820,
         "wires": [
             [
-                "4be098b25860ece8"
+                "4be098b25860ece8",
+                "c14ac36e164aa888"
             ]
         ]
     },
@@ -1054,10 +1361,11 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 760,
+        "y": 1000,
         "wires": [
             [
-                "12593b8dc90ac2cd"
+                "12593b8dc90ac2cd",
+                "0a37d82cd78a121d"
             ]
         ]
     },
@@ -1082,10 +1390,11 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 360,
+        "y": 420,
         "wires": [
             [
-                "9301e7d80c610b92"
+                "9301e7d80c610b92",
+                "0a37d82cd78a121d"
             ]
         ]
     },
@@ -1094,22 +1403,20 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
         "className": "",
         "topic": "payload",
-        "name": "USER CHECKED OK",
-        "x": 1140,
-        "y": 360,
-        "wires": [
-            []
-        ]
+        "name": "USER CHECKED OK Gateway",
+        "x": 1270,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "71f7a3281684d237",
@@ -1118,6 +1425,13 @@
         "g": "2124c778e288492c",
         "name": "",
         "rules": [
+            {
+                "t": "set",
+                "p": "payload.led",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
             {
                 "t": "set",
                 "p": "payload",
@@ -1132,10 +1446,11 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 400,
+        "y": 460,
         "wires": [
             [
-                "00b99cdb0152d857"
+                "00b99cdb0152d857",
+                "c14ac36e164aa888"
             ]
         ]
     },
@@ -1144,22 +1459,20 @@
         "type": "ui_toast",
         "z": "d537a249a96dc0df",
         "g": "2124c778e288492c",
-        "position": "dialog",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
-        "outputs": 1,
+        "outputs": 0,
         "ok": "OK",
         "cancel": "",
         "raw": false,
         "className": "",
         "topic": "payload",
-        "name": "ACCESS DENIED",
-        "x": 1130,
-        "y": 400,
-        "wires": [
-            []
-        ]
+        "name": "ACCESS DENIED Gateway",
+        "x": 1280,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "a16376362f98f38f",
@@ -1182,7 +1495,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 680,
+        "y": 920,
         "wires": [
             [
                 "0c47445f94556a8b"
@@ -1195,26 +1508,26 @@
         "z": "d537a249a96dc0df",
         "g": "e167cf4c1a22efbf",
         "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\";\n\nif (msg.statusCode === 200) { // ok\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [null, msg, null];\n   \n} else { // error\n    global.set(serverConnectionKeyboard, connectionKeyboard = 0);\n    return [null, null, msg];\n};\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 320,
+        "x": 290,
+        "y": 400,
         "wires": [
             [
-                "7a6dc751a7fc8632",
-                "303311f5377ac92b"
+                "303311f5377ac92b",
+                "a3f26508d916884a"
             ],
             [
-                "7a6dc751a7fc8632",
-                "71f7a3281684d237"
+                "71f7a3281684d237",
+                "a3f26508d916884a"
             ],
             [
-                "7a6dc751a7fc8632",
+                "a3f26508d916884a",
                 "99940b665d510255"
             ]
         ]
@@ -1224,16 +1537,16 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "name": "function 5",
-        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = { id: employeeCode };\n\nreturn msg;",
+        "name": "Get user by id from user collection",
+        "func": "var employeeCode = msg.payload.employeeCode;\n\nmsg.payload = { code: employeeCode };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 180,
+        "x": 1280,
+        "y": 100,
         "wires": [
             [
                 "7fc55615f6c4ce14"
@@ -1249,8 +1562,8 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 640,
-        "y": 180,
+        "x": 760,
+        "y": 220,
         "wires": [
             [
                 "9c933f3688f9d9a1"
@@ -1284,12 +1597,252 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 180,
+        "x": 1060,
+        "y": 220,
         "wires": [
             [
                 "2f8352811aacfd89"
             ]
+        ]
+    },
+    {
+        "id": "a3f26508d916884a",
+        "type": "ttl-set",
+        "z": "d537a249a96dc0df",
+        "g": "2124c778e288492c",
+        "ttl": "48",
+        "ttlType": "num",
+        "units": "Hours",
+        "unitsType": "select",
+        "nodeName": "TTL  set 48h",
+        "x": 650,
+        "y": 360,
+        "wires": [
+            [
+                "7a6dc751a7fc8632"
+            ]
+        ]
+    },
+    {
+        "id": "2e5a1881ab9317d7",
+        "type": "mqtt out",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "",
+        "topic": "node/code-terminal:0/led/-/set/state",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 1280,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0a37d82cd78a121d",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "Set LED OK Microcontroller",
+        "func": "msg.payload = 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 560,
+        "wires": [
+            [
+                "a69c25e0b94337b8"
+            ]
+        ]
+    },
+    {
+        "id": "a69c25e0b94337b8",
+        "type": "delay",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "800",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 620,
+        "wires": [
+            [
+                "2e5a1881ab9317d7"
+            ]
+        ]
+    },
+    {
+        "id": "ad0f3f1f2b7cd7e9",
+        "type": "mqtt out",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "",
+        "topic": "node/code-terminal:0/led/-/set/state",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 1280,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "c14ac36e164aa888",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "Set LED denied Microcontroller",
+        "func": "msg.payload = 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 660,
+        "wires": [
+            [
+                "de23cc0cc57560a5"
+            ]
+        ]
+    },
+    {
+        "id": "de23cc0cc57560a5",
+        "type": "delay",
+        "z": "d537a249a96dc0df",
+        "g": "1650f82db34b29ba",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "800",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 700,
+        "wires": [
+            [
+                "ad0f3f1f2b7cd7e9"
+            ]
+        ]
+    },
+    {
+        "id": "3d15ab43c8ab519a",
+        "type": "mqtt out",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "topic": "node/code-terminal:0/led/-/set/state",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 1120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "feb1107b306b5946",
+        "type": "function",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "Set LED denied",
+        "func": "msg.payload = 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "a84e35068f94e0c4"
+            ]
+        ]
+    },
+    {
+        "id": "a84e35068f94e0c4",
+        "type": "delay",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "800",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 160,
+        "wires": [
+            [
+                "3d15ab43c8ab519a"
+            ]
+        ]
+    },
+    {
+        "id": "3b73e3cd944e187c",
+        "type": "moment",
+        "z": "d537a249a96dc0df",
+        "g": "aeb77755ee56e845",
+        "name": "Timestamp Europe\\ Prague to flow .timestamp +2h",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Prague",
+        "adjAmount": "2",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "cz-EU",
+        "output": "timestamp",
+        "outputType": "flow",
+        "outTz": "Europe/Prague",
+        "x": 490,
+        "y": 40,
+        "wires": [
+            []
         ]
     },
     {
@@ -1330,8 +1883,8 @@
         "name": "",
         "method": "GET",
         "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://host.docker.internal:8080/api/getLists",
+        "paytoqs": "body",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1341,13 +1894,13 @@
         "headers": [
             {
                 "keyType": "other",
-                "keyValue": "authorization",
-                "valueType": "other",
-                "valueValue": "1"
+                "keyValue": "x-api-key",
+                "valueType": "msg",
+                "valueValue": "api_key"
             }
         ],
-        "x": 350,
-        "y": 140,
+        "x": 130,
+        "y": 300,
         "wires": [
             [
                 "9e354968b2f4414e"
@@ -1367,20 +1920,22 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 280,
+        "x": 420,
+        "y": 300,
         "wires": [
             [
                 "a7a28555fa3fc0ad",
                 "2e68e0c1a6dff21c",
                 "f2cc5306a2411e0c",
                 "a787e0b9e85b6bd2",
-                "bace35dfe37e3ffd"
+                "bace35dfe37e3ffd",
+                "1b3bf9104b597ba7"
             ],
             [
                 "f6d6d05d984eee08",
                 "a787e0b9e85b6bd2",
-                "bace35dfe37e3ffd"
+                "bace35dfe37e3ffd",
+                "1b3bf9104b597ba7"
             ]
         ]
     },
@@ -1396,7 +1951,7 @@
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1450,
+        "x": 1770,
         "y": 80,
         "wires": []
     },
@@ -1406,7 +1961,7 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "541a9b2c482b7850",
         "name": "add users to usersCollection",
-        "func": "msg.users = JSON.parse(msg.payload);\n\nif (msg.users && Array.isArray(msg.users)) {\n    \n    msg.payload = msg.users;\n    return msg;\n\n} else {\n    node.error(\"Invalid users array.\");\n}",
+        "func": "try {\n    msg.users = JSON.parse(msg.payload);\n\n    if (msg.users && Array.isArray(msg.users.items)) {\n        msg.payload = msg.users.items;\n        return msg;\n    } else {\n        node.error(\"Invalid users array.\");\n    }\n} catch (e) {\n    node.error(\"Error parsing JSON: \" + e.message);\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1433,7 +1988,7 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 1470,
+        "x": 1770,
         "y": 140,
         "wires": []
     },
@@ -1443,7 +1998,7 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "2dfa0fcb02146650",
         "name": "Log user list update SUCESS",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 1);\n\nmsg.payload = {\n    \"timestamp\": flow.get(\"timestamp1\"),\n    \"update\": \"SUCCESFULL\",\n    \"msg\": \"OK\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1451,10 +2006,10 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
-                "20b10770f9327a5d"
+                "71b81da74b181148"
             ]
         ]
     },
@@ -1466,12 +2021,12 @@
         "mongodb": "f18849d91eb5ebcb",
         "name": "",
         "collection": "userListUpdateCollection",
-        "payonly": true,
+        "payonly": false,
         "upsert": false,
         "multi": false,
-        "operation": "store",
-        "x": 1330,
-        "y": 260,
+        "operation": "insert",
+        "x": 1630,
+        "y": 300,
         "wires": []
     },
     {
@@ -1496,10 +2051,10 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 160,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
-                "c20bc9ccb77a24e8"
+                "879a66595b3fc576"
             ]
         ]
     },
@@ -1539,14 +2094,14 @@
         "g": "bce0c0495c57ea31",
         "group": "af810a62dae6c015",
         "name": "Update list of users DB gateway",
-        "order": 0,
-        "width": "14",
-        "height": "10",
+        "order": 2,
+        "width": 16,
+        "height": 12,
         "columns": [
             {
-                "field": "timestamp",
+                "field": "payload.timestamp",
                 "title": "Timestamp",
-                "width": "",
+                "width": "26%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1554,9 +2109,9 @@
                 }
             },
             {
-                "field": "update",
+                "field": "payload.update",
                 "title": "Update statuss",
-                "width": "",
+                "width": "20%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1564,7 +2119,7 @@
                 }
             },
             {
-                "field": "msg",
+                "field": "payload.msg",
                 "title": "Message",
                 "width": "",
                 "align": "center",
@@ -1576,8 +2131,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1330,
-        "y": 480,
+        "x": 1710,
+        "y": 580,
         "wires": []
     },
     {
@@ -1589,8 +2144,8 @@
         "name": "",
         "collection": "userListUpdateCollection",
         "operation": "find",
-        "x": 950,
-        "y": 480,
+        "x": 1250,
+        "y": 580,
         "wires": [
             [
                 "996b8d311bcda11f"
@@ -1605,13 +2160,13 @@
         "group": "24fc504cdf00f66a",
         "name": "List of users in gateway DB",
         "order": 2,
-        "width": "11",
-        "height": "10",
+        "width": 14,
+        "height": 12,
         "columns": [
             {
-                "field": "id",
+                "field": "code",
                 "title": "Employee ID",
-                "width": "",
+                "width": "23%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1619,9 +2174,9 @@
                 }
             },
             {
-                "field": "surname",
-                "title": "Surname",
-                "width": "",
+                "field": "firstName",
+                "title": "First name",
+                "width": "23%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1629,9 +2184,9 @@
                 }
             },
             {
-                "field": "name",
-                "title": "Name",
-                "width": "",
+                "field": "lastName",
+                "title": "Last name",
+                "width": "23%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1639,9 +2194,9 @@
                 }
             },
             {
-                "field": "department",
-                "title": "Department",
-                "width": "",
+                "field": "departmentId",
+                "title": "Department ID",
+                "width": "31%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1651,8 +2206,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1340,
-        "y": 380,
+        "x": 1720,
+        "y": 460,
         "wires": []
     },
     {
@@ -1664,8 +2219,8 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 920,
-        "y": 380,
+        "x": 1220,
+        "y": 460,
         "wires": [
             [
                 "42382caa7092aea9"
@@ -1678,7 +2233,7 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "2dfa0fcb02146650",
         "name": "Log user list update FAIL",
-        "func": "msg.payload = {\n    \"timestamp\": new Date().toISOString(),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 0);\n\nmsg.payload = {\n    \"timestamp\": flow.get(\"timestamp1\"),\n    \"update\": \"NOT SUCCESFULL\",\n    \"msg\": msg.payload\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1686,10 +2241,10 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
-                "20b10770f9327a5d"
+                "71b81da74b181148"
             ]
         ]
     },
@@ -1758,8 +2313,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 420,
-        "y": 380,
+        "x": 720,
+        "y": 460,
         "wires": [
             [
                 "ba82d36c698f8a7b"
@@ -1784,11 +2339,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 420,
-        "y": 480,
+        "x": 720,
+        "y": 580,
         "wires": [
             [
-                "8045367908ff23d5"
+                "fa1ef6a4075d912e"
             ]
         ]
     },
@@ -1798,15 +2353,15 @@
         "z": "76b8d7d23f0dfbb5",
         "g": "4025ea06e340687a",
         "name": "Sort by employeeCode",
-        "func": "msg.sort = { 'employeeCode': 1 }\nreturn msg;",
+        "func": "msg.sort = { 'code': 1 }\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 380,
+        "x": 900,
+        "y": 460,
         "wires": [
             [
                 "02bf3d654cefb710"
@@ -1814,24 +2369,260 @@
         ]
     },
     {
-        "id": "8045367908ff23d5",
+        "id": "71b81da74b181148",
+        "type": "ttl-set",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "ttl": "10",
+        "ttlType": "num",
+        "units": "Hours",
+        "unitsType": "select",
+        "nodeName": "TTL  set 10h",
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "20b10770f9327a5d"
+            ]
+        ]
+    },
+    {
+        "id": "b288e13cb75f301f",
+        "type": "ttl-check",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "throwErrors": false,
+        "killNoTod": false,
+        "outputDeaths": true,
+        "outputs": 2,
+        "nodeName": "TTL Check",
+        "x": 1110,
+        "y": 760,
+        "wires": [
+            [],
+            [
+                "62d4ae1e2798fc85"
+            ]
+        ]
+    },
+    {
+        "id": "92deceb80e14e7ff",
+        "type": "split",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "Split 1 by 1",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 750,
+        "y": 760,
+        "wires": [
+            [
+                "2ec89de0bc1fde04"
+            ]
+        ]
+    },
+    {
+        "id": "62d4ae1e2798fc85",
         "type": "function",
         "z": "76b8d7d23f0dfbb5",
-        "g": "bce0c0495c57ea31",
-        "name": "Sort by employeeCode",
-        "func": "msg.sort = { 'timestamp': -1 }\nreturn msg;",
+        "g": "1bc801493ded71d2",
+        "name": "Remove _id with TTL \"dead\"",
+        "func": "var _id = msg._id;\n\nmsg.payload = { '_id':_id };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 480,
+        "x": 1340,
+        "y": 760,
+        "wires": [
+            [
+                "02e6cffbf5cb6392"
+            ]
+        ]
+    },
+    {
+        "id": "fa1ef6a4075d912e",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "bce0c0495c57ea31",
+        "name": "Sort by timestamp",
+        "func": "msg.sort = { 'payload.timestamp': -1 }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 580,
         "wires": [
             [
                 "8383109a01c9660c"
             ]
+        ]
+    },
+    {
+        "id": "2ec89de0bc1fde04",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "Set msg _id & _tod",
+        "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 760,
+        "wires": [
+            [
+                "b288e13cb75f301f"
+            ]
+        ]
+    },
+    {
+        "id": "02e6cffbf5cb6392",
+        "type": "mongodb out",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "REMOVE by _id userListUpdateCollection",
+        "collection": "userListUpdateCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1680,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9af2e759ee4e3b5a",
+        "type": "mongodb in",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "GET userListUpdateCollection",
+        "collection": "userListUpdateCollection",
+        "operation": "find",
+        "x": 1170,
+        "y": 700,
+        "wires": [
+            [
+                "92deceb80e14e7ff"
+            ]
+        ]
+    },
+    {
+        "id": "421842dd816509fc",
+        "type": "inject",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "1bc801493ded71d2",
+        "name": "1x hour check TTL",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 770,
+        "y": 700,
+        "wires": [
+            [
+                "9af2e759ee4e3b5a",
+                "a787e0b9e85b6bd2"
+            ]
+        ]
+    },
+    {
+        "id": "879a66595b3fc576",
+        "type": "function",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "set msg.payload ",
+        "func": "let url = env.get('BACKEND_URL');\nmsg.url = url + \"/api/employee/list\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "4cc52d6208e45607"
+            ]
+        ]
+    },
+    {
+        "id": "4cc52d6208e45607",
+        "type": "change",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "57ab287daac428f3",
+        "name": "Set header - api key",
+        "rules": [
+            {
+                "t": "set",
+                "p": "api_key",
+                "pt": "msg",
+                "to": "api_key",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "c20bc9ccb77a24e8"
+            ]
+        ]
+    },
+    {
+        "id": "1b3bf9104b597ba7",
+        "type": "moment",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "name": "Timestamp Europe\\ Prague to flow .timestamp +2h",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Prague",
+        "adjAmount": "2",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "cz-EU",
+        "output": "timestamp1",
+        "outputType": "flow",
+        "outTz": "Europe/Prague",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            []
         ]
     },
     {
@@ -1872,7 +2663,7 @@
         "z": "d7790596fee7e9be",
         "g": "7607e31cccc8cd69",
         "name": "response switch 1:200 2:EmployeeCodeNotFound 3: else",
-        "func": "if (msg.statusCode === 200) { // ok\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    return [null, msg, null];\n   \n} else { // error\n    return [null, null, msg];\n};\n",
+        "func": "var connectionKeyboard = 0;\nvar serverConnectionKeyboard = \"serverResponse\"\n\nglobal.set(serverConnectionKeyboard, connectionKeyboard = 1);\n\n\nif (msg.statusCode === 200) { // ok\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [msg, null, null];\n\n} else if (msg?.payload?.error?.code === \"EmployeeCodeNotFound\") { // bad request\n    global.set(serverConnectionKeyboard, connectionKeyboard = 1);\n    return [null, msg, null];\n   \n} else { // error\n    global.set(serverConnectionKeyboard, connectionKeyboard = 0);\n    return [null, null, msg];\n};\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
@@ -1989,7 +2780,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 180,
+        "x": 160,
         "y": 140,
         "wires": [
             [
@@ -2057,7 +2848,7 @@
         "y": 80,
         "wires": [
             [
-                "984d777333c3e122"
+                "09aad63796c769b3"
             ]
         ]
     },
@@ -2066,7 +2857,7 @@
         "type": "ui_toast",
         "z": "d7790596fee7e9be",
         "g": "3528e7c07d677b4d",
-        "position": "bottom right",
+        "position": "top right",
         "displayTime": "3",
         "highlight": "",
         "sendall": true,
@@ -2242,6 +3033,108 @@
         ]
     },
     {
+        "id": "09aad63796c769b3",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "g": "b834f4ef255fea59",
+        "name": "function 6",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 80,
+        "wires": [
+            [
+                "984d777333c3e122"
+            ]
+        ]
+    },
+    {
+        "id": "05cb095c1d4a76c4",
+        "type": "inject",
+        "z": "d7790596fee7e9be",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "f2c2d61087e2ced7"
+            ]
+        ]
+    },
+    {
+        "id": "2109abbeb7bf00d8",
+        "type": "mongodb in",
+        "z": "d7790596fee7e9be",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "operation": "find",
+        "x": 840,
+        "y": 560,
+        "wires": [
+            [
+                "ac762c9c9b70cbbc"
+            ]
+        ]
+    },
+    {
+        "id": "ac762c9c9b70cbbc",
+        "type": "debug",
+        "z": "d7790596fee7e9be",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f2c2d61087e2ced7",
+        "type": "function",
+        "z": "d7790596fee7e9be",
+        "name": "function 8",
+        "func": "msg.limit = 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "2109abbeb7bf00d8"
+            ]
+        ]
+    },
+    {
         "id": "8d822c1ec888b9e2",
         "type": "ui_table",
         "z": "74d70de6eea550f9",
@@ -2250,7 +3143,7 @@
         "name": "Stashed keyboard events",
         "order": 1,
         "width": "10",
-        "height": "15",
+        "height": "12",
         "columns": [
             {
                 "field": "timestamp",
@@ -2285,40 +3178,10 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 1350,
-        "y": 120,
+        "x": 1310,
+        "y": 80,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "cbf7c6584f0a9148",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "g": "a6515923ca5b7293",
-        "name": "Refresh Table 5s todo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 120,
-        "wires": [
-            [
-                "7c551ef32e98efb6"
-            ]
         ]
     },
     {
@@ -2330,70 +3193,11 @@
         "name": "",
         "collection": "stashedKeyboardEventsCollection",
         "operation": "find",
-        "x": 860,
-        "y": 120,
+        "x": 660,
+        "y": 80,
         "wires": [
             [
                 "8d822c1ec888b9e2"
-            ]
-        ]
-    },
-    {
-        "id": "2bd43a2954daefc6",
-        "type": "inject",
-        "z": "74d70de6eea550f9",
-        "g": "ee274060183140ba",
-        "name": "Refresh Table 5s todo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 240,
-        "wires": [
-            [
-                "2daa2cbfa085b484"
-            ]
-        ]
-    },
-    {
-        "id": "2daa2cbfa085b484",
-        "type": "ui_button",
-        "z": "74d70de6eea550f9",
-        "g": "ee274060183140ba",
-        "name": "",
-        "group": "8e8c38f3867a2f4b",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh todo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [
-                "31f18681ba01a9c0"
             ]
         ]
     },
@@ -2406,7 +3210,7 @@
         "name": "",
         "collection": "keyboardEventsCollection",
         "operation": "find",
-        "x": 970,
+        "x": 610,
         "y": 240,
         "wires": [
             [
@@ -2427,7 +3231,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 190,
         "y": 240,
         "wires": [
             [
@@ -2443,13 +3247,13 @@
         "group": "8e8c38f3867a2f4b",
         "name": "Keyboard events",
         "order": 2,
-        "width": "24",
-        "height": "15",
+        "width": 20,
+        "height": 13,
         "columns": [
             {
                 "field": "inputPayload.timestamp",
                 "title": "Timestamp",
-                "width": "",
+                "width": "20%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2459,7 +3263,7 @@
             {
                 "field": "inputPayload.employeeCode",
                 "title": "Employee ID",
-                "width": "",
+                "width": "10%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2467,9 +3271,9 @@
                 }
             },
             {
-                "field": "userInfo.0.surname",
+                "field": "userInfo.0.lastName",
                 "title": "Surname",
-                "width": "",
+                "width": "11%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2477,9 +3281,9 @@
                 }
             },
             {
-                "field": "userInfo.0.name",
+                "field": "userInfo.0.firstName",
                 "title": "Name",
-                "width": "",
+                "width": "11%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2487,9 +3291,9 @@
                 }
             },
             {
-                "field": "userInfo.0.department",
+                "field": "userInfo.0.departmentId",
                 "title": "Department",
-                "width": "",
+                "width": "14%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2499,7 +3303,7 @@
             {
                 "field": "inputPayload.type",
                 "title": "Action",
-                "width": "",
+                "width": "10%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2509,7 +3313,7 @@
             {
                 "field": "status",
                 "title": "Server response",
-                "width": "",
+                "width": "25%",
                 "align": "center",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -2530,17 +3334,17 @@
         "g": "a9d1e52d72a110cb",
         "group": "8e8c38f3867a2f4b",
         "name": "Clock Toolbar",
-        "order": 2,
-        "width": "0",
-        "height": "0",
+        "order": 7,
+        "width": 10,
+        "height": 1,
         "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
         "templateScope": "global",
         "className": "",
-        "x": 160,
-        "y": 540,
+        "x": 1240,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -2558,8 +3362,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 120,
+        "x": 190,
+        "y": 80,
         "wires": [
             [
                 "ed6e78e62f6e89b8"
@@ -2589,10 +3393,10 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 360,
+        "y": 560,
         "wires": [
             [
-                "9224049ff9507c2b"
+                "77c4966462c4c94b"
             ]
         ]
     },
@@ -2609,8 +3413,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 360,
+        "x": 610,
+        "y": 560,
         "wires": [
             [
                 "e23e54d43474feff"
@@ -2626,8 +3430,8 @@
         "name": "",
         "collection": "nonExistentUsersEnymoreCollection",
         "operation": "find",
-        "x": 340,
-        "y": 420,
+        "x": 1220,
+        "y": 560,
         "wires": [
             [
                 "d3f22ad954efe27c"
@@ -2641,9 +3445,9 @@
         "g": "8b1fb312af5f5207",
         "group": "2429789384419515",
         "name": "Non existent users keyboard events",
-        "order": 1,
+        "order": 2,
         "width": "18",
-        "height": "15",
+        "height": "12",
         "columns": [
             {
                 "field": "timestamp",
@@ -2678,11 +3482,11 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 700,
-        "y": 360,
+        "x": 240,
+        "y": 620,
         "wires": [
             [
-                "4ad305dfaa268fb4"
+                "9bf475db6c560dc8"
             ]
         ]
     },
@@ -2698,8 +3502,8 @@
         "upsert": false,
         "multi": false,
         "operation": "delete",
-        "x": 1220,
-        "y": 360,
+        "x": 520,
+        "y": 680,
         "wires": []
     },
     {
@@ -2707,8 +3511,69 @@
         "type": "function",
         "z": "74d70de6eea550f9",
         "g": "8b1fb312af5f5207",
-        "name": "function 4",
-        "func": "var timestamp = msg.payload.timestamp;\n\nmsg.payload = { timestamp };\n\nreturn msg;",
+        "name": "IF OK delete item by timestamp",
+        "func": "var toDelete = flow.get('toDelete');\nvar timestamp = toDelete ? toDelete.timestamp : null;\n\nif (msg.payload && msg.payload === \"Cancel\") {\n    return [msg, null]; // Send first output\n} else {\n    return [null, {timestamp}]; // Send timestamp directly\n}\n\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 620,
+        "wires": [
+            [],
+            [
+                "0dc83fdc2d1ee1ec"
+            ]
+        ]
+    },
+    {
+        "id": "748fcf2c4586b526",
+        "type": "ttl-check",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "throwErrors": false,
+        "killNoTod": false,
+        "outputDeaths": true,
+        "outputs": 2,
+        "nodeName": "TTL Check",
+        "x": 630,
+        "y": 460,
+        "wires": [
+            [],
+            [
+                "da301eb6488cac64"
+            ]
+        ]
+    },
+    {
+        "id": "a970f8a143ae4fc1",
+        "type": "split",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "Split 1 by 1",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "0c6587995b5b6ac2"
+            ]
+        ]
+    },
+    {
+        "id": "da301eb6488cac64",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "Remove _id with TTL \"dead\"",
+        "func": "var _id = msg._id;\n\nmsg = { '_id':_id };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2716,18 +3581,442 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
-                "bd464a090c494d7e"
+                "ae6b5d826aaefdbc"
             ]
         ]
     },
     {
-        "id": "d87ac70e8db63cda",
+        "id": "0c6587995b5b6ac2",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "Set msg _id & _tod",
+        "func": "msg = {\n   \"_id\":  msg.payload._id,\n   \"_tod\": msg.payload._tod\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 460,
+        "wires": [
+            [
+                "748fcf2c4586b526"
+            ]
+        ]
+    },
+    {
+        "id": "ae6b5d826aaefdbc",
+        "type": "mongodb out",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "DELETE by _id keyboardEventsCollection",
+        "collection": "keyboardEventsCollection",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 1300,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "17a74412e42e603f",
+        "type": "mongodb in",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "GET keyboardEventsCollection",
+        "collection": "keyboardEventsCollection",
+        "operation": "find",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "a970f8a143ae4fc1"
+            ]
+        ]
+    },
+    {
+        "id": "8b72e5f5770c578a",
         "type": "inject",
-        "z": "703dc2c481ddf6ab",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "1x hour check TTL",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "17a74412e42e603f",
+                "5c044c093f63f345"
+            ]
+        ]
+    },
+    {
+        "id": "77c4966462c4c94b",
+        "type": "ui_button",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
         "name": "",
+        "group": "2429789384419515",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "9224049ff9507c2b"
+            ]
+        ]
+    },
+    {
+        "id": "68f82fd49ed5ef19",
+        "type": "ui_template",
+        "z": "74d70de6eea550f9",
+        "g": "a9d1e52d72a110cb",
+        "group": "2a745e6b.07df92",
+        "name": "Dashboard Theme : Modern Dark",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "    <div>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            --background: #212529;\n            --on-background: white;\n            --surface: #2d3136;\n            --on-surface: white;\n            --primary: var(--nr-dashboard-widgetColor);\n            --on-primary: white;\n            --secondary: var(--nr-dashboard-groupTextColor);\n            --accent: red;\n            --radius-s: 8px;\n            --font-weight-m: 300;\n            --font-weight-m: 500;\n            --font-weight-l: 700;\n            --space-s: 8px;\n            --space-m: 16px;\n            --space-l: 32px;\n        }\n\n        body.nr-dashboard-theme {\n            background-color: var(--background);\n            font-family: 'Montserrat', sans-serif;\n        }\n        .nr-dashboard-theme ui-card-panel {\n            background-color: var(--background);\n            border: 0;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button {\n            background-color: var(--primary);\n            border-radius: var(--radius-s);\n            padding: 8px !important;\n            line-height: inherit;\n            font-weight: var(--font-weight-l);\n            color: var(--on-primary);\n        }\n        .nr-dashboard-theme [ui-card-size=\"2x2\"].nr-dashboard-button .md-button {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            white-space: pre-line;\n        }\n        \n        .nr-dashboard-theme .nr-dashboard-button .md-button ui-icon {\n                margin-bottom: 8px;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button:hover {\n            background-color: var(--secondary);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            background-color: var(--surface);\n        }\n        md-card.md-default-theme, md-card {\n            border-radius: var(--radius-s);\n        }\n        .nr-dashboard-theme .nr-dashboard-gauge-titlel {\n            font-weight: var(--font-weight-l) !important;      \n        }\n        .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n            font-weight: var(--font-weight-l);  \n            text-transform: capitalize;\n            color: var(--on-background);\n        }\n        .nr-dashboard-cardpanel > p {\n            margin-left: 0;\n            padding-left: 16px;\n        }\n        body.nr-dashboard-theme md-toolbar {\n            background-color: var(--surface);\n        }\n        .md-default-theme .md-datepicker-calendar, .md-datepicker-calendar,\n        .md-default-theme .md-calendar, .md-calendar{\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .md-default-theme .md-datepicker-calendar-pane, .md-datepicker-calendar-pane{\n            border: 0;\n        }\n        .md-default-theme .md-calendar-month-label md-icon, .md-calendar-month-label md-icon, .md-default-theme .md-datepicker-input, .md-datepicker-input {\n            color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-numeric .value {\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value, .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value.md-select-placeholder {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown .md-select-icon {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker md-input-container .md-input {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker .md-datepicker-triangle-button .md-datepicker-expand-triangle {\n            border-top-color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-sidenav {\n            background-color: var(--surface);\n        }\n        md-list-item._md-button-wrap > div.md-button:first-child, md-list-item .md-list-item-inner {\n            background-color: var(--surface);\n        }\n    </style>\n</div>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "global",
+        "className": "",
+        "x": 1300,
+        "y": 1180,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_colour_picker.png",
+        "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
+    },
+    {
+        "id": "7a2ec748e7ea9d17",
+        "type": "ui_text",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "group": "8e8c38f3867a2f4b",
+        "order": 4,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "SERVER STATUS",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#bab521",
+        "x": 1370,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1ed2eb3c4c0edf4c",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "name": "Server statuss ",
+        "func": "if (global.get('serverResponse') === 1) { // ok\n    msg.payload = \"CONNECTED\";\n} else { // error\n    msg.payload = \"NOT CONNECTED\";\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 780,
+        "wires": [
+            [
+                "7a2ec748e7ea9d17"
+            ]
+        ]
+    },
+    {
+        "id": "ae8829c1c3f8c336",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "17b6146060188785",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 780,
+        "wires": [
+            [
+                "1ed2eb3c4c0edf4c"
+            ]
+        ]
+    },
+    {
+        "id": "9e9526883b5fb8e9",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "",
+        "topic": "node/code-terminal:0/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1180,
+        "wires": [
+            [
+                "80608c3731ce5b3d",
+                "fc64dd16a86f41a7",
+                "e7eb87403244d7af"
+            ]
+        ]
+    },
+    {
+        "id": "970a828d4a8e0d1d",
+        "type": "ui_gauge",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "",
+        "group": "8e8c38f3867a2f4b",
+        "order": 3,
+        "width": 10,
+        "height": 9,
+        "gtype": "gage",
+        "title": "WORKPLACE TEMPERATURE",
+        "label": "celsius",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "50",
+        "colors": [
+            "#2547d0",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "16",
+        "seg2": "37",
+        "diff": false,
+        "className": "",
+        "x": 950,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "80608c3731ce5b3d",
+        "type": "trigger",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Watchdog 70s then set",
+        "op1": "",
+        "op2": "timeout",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "70",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 540,
+        "y": 1120,
+        "wires": [
+            [
+                "7d6f036c9c1b2ae2"
+            ]
+        ]
+    },
+    {
+        "id": "fc64dd16a86f41a7",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set  status to connected",
+        "func": "var connection = 0;\nvar microcontrollerConnection = \"microcontrollerConnection\";\n\nglobal.set(microcontrollerConnection, connection = 1);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d6f036c9c1b2ae2",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set  status to not connected",
+        "func": "var connection = 0;\nvar microcontrollerConnection = \"microcontrollerConnection\";\n\nglobal.set(microcontrollerConnection, connection = 0);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c258774973706cd",
+        "type": "ui_text",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "group": "8e8c38f3867a2f4b",
+        "order": 5,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "MICROCONTROLLER STATUS",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#bab521",
+        "x": 1330,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "9b12a3ecd9f3424a",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "name": "Microcontroller status",
+        "func": "if (global.get('microcontrollerConnection') === 1) { // ok\n    msg.payload = \"CONNECTED\";\n} else { // error\n    msg.payload = \"NOT CONNECTED\";\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 900,
+        "wires": [
+            [
+                "2c258774973706cd"
+            ]
+        ]
+    },
+    {
+        "id": "60eb9ff12213c94b",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "d7ffca66265109a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 900,
+        "wires": [
+            [
+                "9b12a3ecd9f3424a"
+            ]
+        ]
+    },
+    {
+        "id": "19233c246a4b0fbf",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Every msg set  status to connected",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1020,
+        "wires": [
+            [
+                "fc64dd16a86f41a7"
+            ]
+        ]
+    },
+    {
+        "id": "2bc3c8c86dc19b14",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "Set \"not connected after start\"",
         "props": [
             {
                 "p": "payload"
@@ -2739,33 +4028,189 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 100,
+        "x": 230,
+        "y": 1100,
         "wires": [
-            []
+            [
+                "7d6f036c9c1b2ae2",
+                "e7eb87403244d7af"
+            ]
         ]
     },
     {
-        "id": "3e4d599b9151175b",
+        "id": "b56f1d7b3baafd18",
+        "type": "mqtt in",
+        "z": "74d70de6eea550f9",
+        "name": "LED MQTT message to refresh tables",
+        "topic": "node/code-terminal:0/led/-/set/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "7c551ef32e98efb6",
+                "31f18681ba01a9c0"
+            ]
+        ]
+    },
+    {
+        "id": "e7eb87403244d7af",
         "type": "function",
-        "z": "703dc2c481ddf6ab",
-        "name": "function 6",
-        "func": "\nreturn msg;",
+        "z": "74d70de6eea550f9",
+        "g": "0e3745d94f4715e6",
+        "name": "IF microcontroller disconnected temp = \"\"",
+        "func": "if (global.get('microcontrollerConnection') === 0) { // ok\n    msg.payload = \"\";\n} else { // error\n    msg.payload = msg.payload;\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 100,
+        "x": 600,
+        "y": 1180,
         "wires": [
-            []
+            [
+                "970a828d4a8e0d1d"
+            ]
+        ]
+    },
+    {
+        "id": "8a3d368b091346dd",
+        "type": "ui_toast",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": true,
+        "className": "",
+        "topic": "Do you want to delete this log?",
+        "name": "Do you want to delete this log?",
+        "x": 930,
+        "y": 620,
+        "wires": [
+            [
+                "4ad305dfaa268fb4"
+            ]
+        ]
+    },
+    {
+        "id": "9bf475db6c560dc8",
+        "type": "change",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "toDelete",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "8a3d368b091346dd"
+            ]
+        ]
+    },
+    {
+        "id": "0dc83fdc2d1ee1ec",
+        "type": "function",
+        "z": "74d70de6eea550f9",
+        "g": "8b1fb312af5f5207",
+        "name": "function 7",
+        "func": "var timestamp = msg.timestamp;\n\nmsg.payload = { timestamp };\n\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "bd464a090c494d7e"
+            ]
+        ]
+    },
+    {
+        "id": "a79b4a5e876a3be0",
+        "type": "inject",
+        "z": "74d70de6eea550f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "7c551ef32e98efb6"
+            ]
+        ]
+    },
+    {
+        "id": "5c044c093f63f345",
+        "type": "delay",
+        "z": "74d70de6eea550f9",
+        "g": "b6a8575e2f75783e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "31f18681ba01a9c0"
+            ]
         ]
     },
     {
@@ -2784,7 +4229,9 @@
         "x": 130,
         "y": 60,
         "wires": [
-            []
+            [
+                "afb0369c1244ceda"
+            ]
         ]
     },
     {
@@ -2796,11 +4243,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
+        "x": 400,
         "y": 60,
         "wires": []
     },
@@ -2808,6 +4255,7 @@
         "id": "a2e4e61e46401397",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "props": [
             {
@@ -2833,6 +4281,7 @@
         "id": "9d5824a429730b28",
         "type": "mqtt out",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "topic": "gateway/usb-dongle/nodes/get",
         "qos": "",
@@ -2851,6 +4300,7 @@
         "id": "6dcf6125abb8951b",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "props": [
             {
@@ -2876,6 +4326,7 @@
         "id": "f76371fcaec11ec0",
         "type": "mqtt out",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "topic": "gateway/usb-dongle/pairing-mode/start",
         "qos": "",
@@ -2894,6 +4345,7 @@
         "id": "a832de492bcbf595",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "props": [
             {
@@ -2919,6 +4371,7 @@
         "id": "09a0dbbfc06fe9fa",
         "type": "mqtt out",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "topic": "gateway/usb-dongle/pairing-mode/stop",
         "qos": "",
@@ -2937,6 +4390,7 @@
         "id": "11ece0c0373003d5",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "props": [
             {
@@ -2962,6 +4416,7 @@
         "id": "dd03fc639e1179b3",
         "type": "mqtt out",
         "z": "f6f2187d.f17ca8",
+        "g": "64b8798ede85c7d8",
         "name": "",
         "topic": "gateway/usb-dongle/nodes/purge",
         "qos": "",
@@ -2989,7 +4444,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 360,
-        "y": 680,
+        "y": 440,
         "wires": [
             [
                 "a5d844aacdfdd2ac"
@@ -3008,7 +4463,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 140,
-        "y": 680,
+        "y": 440,
         "wires": [
             [
                 "7ecfbdc3ca34f211"
@@ -3035,7 +4490,7 @@
         "to": "",
         "reg": false,
         "x": 610,
-        "y": 680,
+        "y": 440,
         "wires": [
             []
         ]
@@ -3052,7 +4507,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
-        "y": 740,
+        "y": 500,
         "wires": [
             [
                 "e08953d02ae6cb07"
@@ -3073,7 +4528,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 480,
-        "y": 740,
+        "y": 500,
         "wires": []
     },
     {
@@ -3096,11 +4551,815 @@
         "to": "",
         "reg": false,
         "x": 300,
-        "y": 740,
+        "y": 500,
         "wires": [
             [
                 "1abbe845999c9e55"
             ]
         ]
+    },
+    {
+        "id": "3e4d599b9151175b",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "Events",
+        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp,\n    \"employeeCode\": userId,\n    \"type\": \"arrival\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp\", timestamp);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 240,
+        "wires": [
+            [
+                "c9b1b25e244c6b3f",
+                "6d63d79286fada62",
+                "0b2310e9cf221788"
+            ]
+        ]
+    },
+    {
+        "id": "86d715285def2972",
+        "type": "split",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "Split 1 by 1",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            [
+                "e42636be3a06d81e"
+            ]
+        ]
+    },
+    {
+        "id": "5ea196e4fc4505ae",
+        "type": "mongodb in",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "GET usersCollection",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "a0361fa45e35fdda"
+            ]
+        ]
+    },
+    {
+        "id": "c9b1b25e244c6b3f",
+        "type": "delay",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1360,
+        "y": 240,
+        "wires": [
+            [
+                "964bc097266931c6"
+            ]
+        ]
+    },
+    {
+        "id": "964bc097266931c6",
+        "type": "change",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "previousTimestamp",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bcca943a5da1ce17",
+        "type": "delay",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "5ea196e4fc4505ae"
+            ]
+        ]
+    },
+    {
+        "id": "37dc1e350aa11259",
+        "type": "split",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "Split 1 by 1",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [
+                "458f06ec24e848ed"
+            ]
+        ]
+    },
+    {
+        "id": "f9bd9b9c523c512c",
+        "type": "mongodb in",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "GET usersCollection",
+        "collection": "usersCollection",
+        "operation": "find",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            [
+                "973cf5dc42eaf43d"
+            ]
+        ]
+    },
+    {
+        "id": "a4791ab37a2e6fd2",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "Events",
+        "func": "\nvar previousTimestamp = flow.get(\"previousTimestamp1\") || new Date();\n\nvar userIndex = flow.get(\"userIndex\") || 0;\n\nvar userId = msg.payload.id;\n\nif (!userId) {\n    return null;\n}\n\nvar timestamp = new Date(previousTimestamp);\n\n//  random milliseconds between 5000 and 15000\nfunction getRandomMilliseconds() {\n    return Math.floor(Math.random() * (200_000 - 5000 + 1)) + 15000;\n}\n\nmsg.payload = {\n    \"timestamp\": timestamp,\n    \"employeeCode\": userId,\n    \"type\": \"leave\"\n};\n\ntimestamp.setMilliseconds(timestamp.getMilliseconds() + getRandomMilliseconds());\n\nflow.set(\"previousTimestamp1\", timestamp);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 340,
+        "wires": [
+            [
+                "344e808564720fda",
+                "6d63d79286fada62",
+                "0b2310e9cf221788"
+            ]
+        ]
+    },
+    {
+        "id": "458f06ec24e848ed",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "Set msg _id",
+        "func": "var id = (msg.payload.code);\n\nmsg.payload = {\n   \"id\":  id\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 340,
+        "wires": [
+            [
+                "a4791ab37a2e6fd2"
+            ]
+        ]
+    },
+    {
+        "id": "344e808564720fda",
+        "type": "delay",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1380,
+        "y": 340,
+        "wires": [
+            [
+                "d18b82a922caf95d"
+            ]
+        ]
+    },
+    {
+        "id": "d18b82a922caf95d",
+        "type": "change",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "previousTimestamp1",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f9ebc2f72f3169d",
+        "type": "delay",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "f9bd9b9c523c512c"
+            ]
+        ]
+    },
+    {
+        "id": "a0361fa45e35fdda",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "Sort rnd",
+        "func": "\nfunction shuffleArray(array) {\n   \n    function compareRandom(a, b) {\n        return Math.random() - 0.5;\n    }\n    \n    array.sort(compareRandom);\n    return array;\n}\n\nvar inputArray = msg.payload; \n\nvar shuffledArray = shuffleArray(inputArray);\n\nmsg.payload = shuffledArray;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "86d715285def2972"
+            ]
+        ]
+    },
+    {
+        "id": "973cf5dc42eaf43d",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "e473421683d57dc0",
+        "name": "Sort rnd",
+        "func": "\nfunction shuffleArray(array) {\n    \n    function compareRandom(a, b) {\n        return Math.random() - 0.5;\n    }\n\n    array.sort(compareRandom);\n    return array;\n}\n\nvar inputArray = msg.payload; \n\nvar shuffledArray = shuffleArray(inputArray);\n\nmsg.payload = shuffledArray;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "37dc1e350aa11259"
+            ]
+        ]
+    },
+    {
+        "id": "6138466ad9d300ab",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "name": "Set date time",
+        "func": "// Get the original timestamp from the payload\nlet originalTimestamp = new Date(msg.payload);\n\nlet year = originalTimestamp.getFullYear();\nlet month = originalTimestamp.getMonth();\nlet date = originalTimestamp.getDate();\n\nlet newTimestamp = new Date(year, month, date, 7, 0, 0);\nlet newTimestamp1 = new Date(year, month, date, 15, 0, 0);\n\nlet utcTimestamp = new Date(newTimestamp.getTime() - newTimestamp.getTimezoneOffset() * 60000);\nlet utcTimestamp1 = new Date(newTimestamp1.getTime() - newTimestamp1.getTimezoneOffset() * 60000);\n\nflow.set('previousTimestamp', utcTimestamp.toISOString());\nflow.set('previousTimestamp1', utcTimestamp1.toISOString());\n\n//msg.payload = utcTimestamp.toISOString();\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "bcca943a5da1ce17",
+                "4f9ebc2f72f3169d"
+            ]
+        ]
+    },
+    {
+        "id": "0b2310e9cf221788",
+        "type": "mongodb out",
+        "z": "703dc2c481ddf6ab",
+        "d": true,
+        "mongodb": "f18849d91eb5ebcb",
+        "name": "",
+        "collection": "stashedKeyboardEventsCollection",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1540,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6d63d79286fada62",
+        "type": "debug",
+        "z": "703dc2c481ddf6ab",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c8dc967a95966515",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "name": "function 5",
+        "func": "\nconst dateString = msg.payload;\n\nconst date = new Date(dateString);\n\nconst dayOfMonth = date.getUTCDate();\n\nconst formattedDay = dayOfMonth.toString().padStart(2, '0');\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "6138466ad9d300ab"
+            ]
+        ]
+    },
+    {
+        "id": "a7f3dac2d7b542f9",
+        "type": "ui_date_picker",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "label": "date",
+        "group": "2a745e6b.07df92",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "c8dc967a95966515"
+            ]
+        ]
+    },
+    {
+        "id": "e42636be3a06d81e",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "a10b30921cdeeca4",
+        "name": "Set msg _id",
+        "func": "var id = (msg.payload.code);\n\nmsg.payload = {\n   \"id\":  id\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 240,
+        "wires": [
+            [
+                "3e4d599b9151175b"
+            ]
+        ]
+    },
+    {
+        "id": "34898cdf7e4ff7c0",
+        "type": "inject",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "5bf5da3728ec4507"
+            ]
+        ]
+    },
+    {
+        "id": "d1170e639aef5227",
+        "type": "mqtt out",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/get",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 710,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "f576433e951d1b68",
+        "type": "inject",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 330,
+        "y": 600,
+        "wires": [
+            [
+                "588fd6f245e4f382"
+            ]
+        ]
+    },
+    {
+        "id": "cdf223bb7a7b0ec4",
+        "type": "mqtt out",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/start",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c7f6ea2f868640ce",
+        "type": "inject",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 330,
+        "y": 660,
+        "wires": [
+            [
+                "2e09f3afbe330899"
+            ]
+        ]
+    },
+    {
+        "id": "974023178f68b771",
+        "type": "mqtt out",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "topic": "gateway/usb-dongle/pairing-mode/stop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 730,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "ad82f5a13a6eb935",
+        "type": "inject",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 330,
+        "y": 720,
+        "wires": [
+            [
+                "13416614d578b728"
+            ]
+        ]
+    },
+    {
+        "id": "7289ecb03673dec5",
+        "type": "mqtt out",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "topic": "gateway/usb-dongle/nodes/purge",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1be85959efd6d9ef",
+        "x": 720,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "5bf5da3728ec4507",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "GET",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "d1170e639aef5227",
+                "bfb096e007cec840"
+            ]
+        ]
+    },
+    {
+        "id": "588fd6f245e4f382",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "START",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 600,
+        "wires": [
+            [
+                "cdf223bb7a7b0ec4"
+            ]
+        ]
+    },
+    {
+        "id": "2e09f3afbe330899",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "STOP",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 660,
+        "wires": [
+            [
+                "974023178f68b771"
+            ]
+        ]
+    },
+    {
+        "id": "13416614d578b728",
+        "type": "ui_button",
+        "z": "703dc2c481ddf6ab",
+        "g": "c380b8bac82c0dd7",
+        "name": "",
+        "group": "2a745e6b.07df92",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "PURGE",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "\"\"",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "7289ecb03673dec5"
+            ]
+        ]
+    },
+    {
+        "id": "62699983f402c823",
+        "type": "mqtt in",
+        "z": "703dc2c481ddf6ab",
+        "name": "",
+        "topic": "gateway/usb-dongle/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1be85959efd6d9ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 820,
+        "wires": [
+            [
+                "8261b5a8d40b4a1d"
+            ]
+        ]
+    },
+    {
+        "id": "8261b5a8d40b4a1d",
+        "type": "debug",
+        "z": "703dc2c481ddf6ab",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "bfb096e007cec840",
+        "type": "debug",
+        "z": "703dc2c481ddf6ab",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 460,
+        "wires": []
     }
 ]

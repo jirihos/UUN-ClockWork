@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { useCall } from "./call-helper";
 import { UserContext } from "../components/userContext";
 
@@ -6,24 +6,27 @@ export function useLogin() {
   const userContext = useContext(UserContext);
   const call = useCall();
 
-  return async (username, password) => {
-    const response = await call("POST", "/api/user/login", {
-      username,
-      password,
-    });
+  return useCallback(
+    async (username, password) => {
+      const response = await call("POST", "/api/user/login", {
+        username,
+        password,
+      });
 
-    localStorage.setItem("token", response.token);
+      localStorage.setItem("token", response.token);
 
-    await userContext.reload();
-  };
+      await userContext.reload();
+    },
+    [userContext, call],
+  );
 }
 
 export function useLogout() {
   const userContext = useContext(UserContext);
 
-  return async () => {
+  return useCallback(async () => {
     localStorage.removeItem("token");
 
     await userContext.reload();
-  };
+  }, [userContext]);
 }

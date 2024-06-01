@@ -28,7 +28,7 @@ class UserAbl {
         role,
       };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn: "14d", // TODO: change to 1h
+        expiresIn: "1h",
       });
 
       res.json({
@@ -75,9 +75,12 @@ class UserAbl {
       throw new errors.NotAuthorized();
     }
 
+    const { username, role, exp } = req.user;
+
     res.json({
-      username: req.user.username,
-      role: req.user.role,
+      username: username,
+      role: role,
+      expiresIn: exp * 1000 - Date.now(),
     });
   }
 

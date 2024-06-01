@@ -27,6 +27,13 @@ const Header = () => {
         }}
       />
       <MenuItem
+        name="search"
+        active={pathname === "/search"}
+        onClick={() => {
+          navigate("/search");
+        }}
+      />
+      <MenuItem
         name="export"
         active={pathname === "/export"}
         onClick={() => {
