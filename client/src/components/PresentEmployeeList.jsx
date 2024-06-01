@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
+  ButtonContent,
   Header,
   Icon,
   List,
@@ -48,8 +49,18 @@ const PresentEmployeesList = () => {
 
   return (
     <div style={{ minWidth: 300, maxWidth: 400 }}>
-      <Header attached="top" size="huge">
+      <Header
+        attached="top"
+        size="huge"
+        className="center-vertical"
+        style={{ justifyContent: "space-between" }}
+      >
         Present Employees
+        <Button primary size="tiny" onClick={reload}>
+          <ButtonContent>
+            <Icon name="redo" style={{ marginRight: "0.25rem" }} />
+          </ButtonContent>
+        </Button>
       </Header>
       <Segment
         attached

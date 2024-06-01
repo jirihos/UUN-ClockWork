@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Table, Button, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ModalAddDepartment from "./ModalAddDepartment";
 import Error from "./Error";
 
