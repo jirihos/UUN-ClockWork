@@ -7,7 +7,7 @@ import Dashboard from "./pages/dashboard";
 import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
 import ExportPage from "./pages/ExportPage";
-import NotFound from "./pages/notFound";
+import NotFound from "./pages/NotFoundPage";
 import EmployeePage from "./pages/EmployeePage";
 
 function App() {
