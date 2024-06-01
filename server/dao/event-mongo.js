@@ -40,8 +40,17 @@ class eventMongo {
     return await this.eventCol.deleteOne({ _id: new ObjectId(_id) });
   }
 
-  async listShifts(pageIndex, pageSize, timestampFrom, timestampTo) {
+  async listShifts(timestampFrom, timestampTo) {
     const extendedPipeline = [
+      {
+        $match: {
+          timestamp: {
+            $gte: new Date(timestampFrom),
+            $lte: new Date(timestampTo),
+          }, // Filter arrivals after 'from'
+        },
+      },
+
       ...shiftsPipeline,
 
       // Step 1: Join with the employee collection
@@ -82,11 +91,11 @@ class eventMongo {
       {
         $project: {
           employeeCode: 1,
-          arrivalTs: "$arrivalTimestamp",
-          leaveTs: "$leaveTimestamp",
           employeeFirstName: "$employeeDetails.firstName",
           employeeLastName: "$employeeDetails.lastName",
           department: "$departmentDetails.name", // Adjust the field names as needed
+          arrivalTs: "$arrivalTimestamp",
+          leaveTs: "$leaveTimestamp",
         },
       },
       // {
@@ -95,40 +104,10 @@ class eventMongo {
       //     leaveTs: { $lte: new Date(timestampTo) }, // Filter leaves before 'to'
       //   },
       // },
-      // Step 6: Pagination stage
-      {
-        $facet: {
-          pageInfo: [
-            { $count: "totalCount" },
-            {
-              $addFields: {
-                pageIndex: pageIndex,
-                pageSize: pageSize,
-              },
-            },
-          ],
-          items: [{ $skip: pageIndex * pageSize }, { $limit: pageSize }],
-        },
-      },
-      // Step 7: Unwind pageInfo
-      {
-        $unwind: "$pageInfo",
-      },
-      // Step 8: Final projection
-      {
-        $project: {
-          pageInfo: 1,
-          items: 1,
-        },
-      },
     ];
 
-    return await mongo.listPipelinePage(
-      this.eventCol,
-      extendedPipeline,
-      pageIndex,
-      pageSize,
-    );
+    const cursor = await this.eventCol.aggregate(extendedPipeline);
+    return await cursor.toArray();
   }
 }
 
