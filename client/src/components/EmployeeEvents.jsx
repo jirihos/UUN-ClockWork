@@ -4,6 +4,7 @@ import {
   faDoorOpen,
   faDoorClosed,
   faTrash,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
@@ -87,41 +88,55 @@ const EmployeeEvents = ({ code }) => {
           {shiftData &&
             shiftData.map((entry, index) => (
               <TableRow key={index}>
-                <TableCell className="table-cell">
+                <TableCell>
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorOpen}
                       className="arrival-icon"
+                      color={entry.arrivalTimestamp ? "black" : "red"}
                     />
-                    {entry.arrivalTimestamp
-                      ? new Date(entry.arrivalTimestamp).toLocaleDateString()
-                      : "No record"}
+                    <span
+                      style={{ color: entry.arrivalTimestamp ? "" : "red" }}
+                    >
+                      {entry.arrivalTimestamp
+                        ? new Date(entry.arrivalTimestamp).toLocaleDateString()
+                        : "No record"}
+                    </span>
                   </Label>
-                  {entry.arrivalTimestamp
-                    ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
-                    : "No record"}
+                  <span style={{ color: entry.arrivalTimestamp ? "" : "red" }}>
+                    {entry.arrivalTimestamp
+                      ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
+                      : "No record"}
+                  </span>
                   <FontAwesomeIcon
-                    icon={faTrash}
-                    className="delete-icon"
+                    icon={entry.arrivalTimestamp ? faTrash : faTimes}
+                    className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
                     onClick={() => openModal(entry.arrivalEventId, "arrival")}
                   />
                 </TableCell>
-                <TableCell className="table-cell">
+                <TableCell
+                  className={`table-cell ${entry.leaveTimestamp ? "" : "no-record"}`}
+                >
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorClosed}
                       className="departure-icon"
+                      color={entry.leaveTimestamp ? "black" : "red"}
                     />
-                    {entry.leaveTimestamp
-                      ? new Date(entry.leaveTimestamp).toLocaleDateString()
-                      : "No record"}
+                    <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
+                      {entry.leaveTimestamp
+                        ? new Date(entry.leaveTimestamp).toLocaleDateString()
+                        : "No record"}
+                    </span>
                   </Label>
-                  {entry.leaveTimestamp
-                    ? new Date(entry.leaveTimestamp).toLocaleTimeString()
-                    : "No record"}
+                  <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
+                    {entry.leaveTimestamp
+                      ? new Date(entry.leaveTimestamp).toLocaleTimeString()
+                      : "No record"}
+                  </span>
                   <FontAwesomeIcon
-                    icon={faTrash}
-                    className="delete-icon"
+                    icon={entry.leaveTimestamp ? faTrash : faTimes}
+                    className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
                     onClick={() => openModal(entry.leaveEventId, "leave")}
                   />
                 </TableCell>
