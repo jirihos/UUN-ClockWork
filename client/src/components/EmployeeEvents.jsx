@@ -130,11 +130,15 @@ const EmployeeEvents = ({ code }) => {
                         ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
                         : ""}
                     </span>
-                    <FontAwesomeIcon
-                      icon={entry.arrivalTimestamp ? faTrash : ""}
-                      className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
-                      onClick={() => openModal(entry.arrivalEventId, "arrival")}
-                    />
+                    {entry.arrivalTimestamp && (
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        className="delete-icon"
+                        onClick={() =>
+                          openModal(entry.arrivalEventId, "arrival")
+                        }
+                      />
+                    )}
                   </TableCell>
                   <TableCell
                     className={`table-cell ${entry.leaveTimestamp ? "" : "no-record"}`}
@@ -158,11 +162,13 @@ const EmployeeEvents = ({ code }) => {
                         ? new Date(entry.leaveTimestamp).toLocaleTimeString()
                         : ""}
                     </span>
-                    <FontAwesomeIcon
-                      icon={entry.leaveTimestamp ? faTrash : ""}
-                      className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
-                      onClick={() => openModal(entry.leaveEventId, "leave")}
-                    />
+                    {entry.leaveTimestamp && (
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        className="delete-icon"
+                        onClick={() => openModal(entry.leaveEventId, "leave")}
+                      />
+                    )}
                   </TableCell>
                 </TableRow>
               ))}
