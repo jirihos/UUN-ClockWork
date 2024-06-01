@@ -6,13 +6,18 @@ const {
 
 const EventAbl = require("../abl/event-abl");
 
-router.post("/create", authenticateApiKey, authenticateToken, async (req, res, next) => {
-  try {
-    await EventAbl.create(req, res);
-  } catch (e) {
-    next(e);
-  }
-});
+router.post(
+  "/create",
+  authenticateApiKey,
+  authenticateToken,
+  async (req, res, next) => {
+    try {
+      await EventAbl.create(req, res);
+    } catch (e) {
+      next(e);
+    }
+  },
+);
 
 router.get(
   "/listShiftsByEmployeeCode",
@@ -25,5 +30,13 @@ router.get(
     }
   },
 );
+
+router.post("/delete", authenticateToken, async (req, res, next) => {
+  try {
+    await EventAbl.delete(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
 
 module.exports = router;

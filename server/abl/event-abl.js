@@ -67,6 +67,20 @@ class eventAbl {
 
     res.json(shifts);
   }
+
+  async delete(req, res) {
+    //validace inputu
+    await validate(schemas.eventDeleteSchema, req.body);
+
+    // authorize user
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await eventDao.delete(req.body._id);
+
+    res.json("Successfully deleted " + result.deletedCount + " entry/ies.");
+  }
 }
 
 module.exports = new eventAbl();

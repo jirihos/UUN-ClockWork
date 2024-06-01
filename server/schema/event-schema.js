@@ -5,3 +5,6 @@ exports.eventCreateSchema = Joi.object({
   type: Joi.string().valid("arrival", "leave").min(16).max(16).required(),
   timestamp: Joi.date().iso().required(),
 });
+exports.eventDeleteSchema = Joi.object({
+  _id: Joi.objectId().required(),
+});
