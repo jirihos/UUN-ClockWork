@@ -92,11 +92,13 @@ const EmployeeEvents = ({ code }) => {
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorOpen}
-                      className="arrival-icon"
+                      className={`arrival-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
                       color={entry.arrivalTimestamp ? "black" : "red"}
                     />
                     <span
-                      style={{ color: entry.arrivalTimestamp ? "" : "red" }}
+                      style={{
+                        color: entry.arrivalTimestamp ? "" : "red",
+                      }}
                     >
                       {entry.arrivalTimestamp
                         ? new Date(entry.arrivalTimestamp).toLocaleDateString()
@@ -106,10 +108,10 @@ const EmployeeEvents = ({ code }) => {
                   <span style={{ color: entry.arrivalTimestamp ? "" : "red" }}>
                     {entry.arrivalTimestamp
                       ? new Date(entry.arrivalTimestamp).toLocaleTimeString()
-                      : "No record"}
+                      : ""}
                   </span>
                   <FontAwesomeIcon
-                    icon={entry.arrivalTimestamp ? faTrash : faTimes}
+                    icon={entry.arrivalTimestamp ? faTrash : ""}
                     className={`delete-icon ${entry.arrivalTimestamp ? "" : "red-icon"}`}
                     onClick={() => openModal(entry.arrivalEventId, "arrival")}
                   />
@@ -120,7 +122,7 @@ const EmployeeEvents = ({ code }) => {
                   <Label ribbon>
                     <FontAwesomeIcon
                       icon={faDoorClosed}
-                      className="departure-icon"
+                      className={`departure-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
                       color={entry.leaveTimestamp ? "black" : "red"}
                     />
                     <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
@@ -132,10 +134,10 @@ const EmployeeEvents = ({ code }) => {
                   <span style={{ color: entry.leaveTimestamp ? "" : "red" }}>
                     {entry.leaveTimestamp
                       ? new Date(entry.leaveTimestamp).toLocaleTimeString()
-                      : "No record"}
+                      : ""}
                   </span>
                   <FontAwesomeIcon
-                    icon={entry.leaveTimestamp ? faTrash : faTimes}
+                    icon={entry.leaveTimestamp ? faTrash : ""}
                     className={`delete-icon ${entry.leaveTimestamp ? "" : "red-icon"}`}
                     onClick={() => openModal(entry.leaveEventId, "leave")}
                   />
