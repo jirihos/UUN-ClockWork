@@ -29,4 +29,12 @@ router.post("/delete", authenticateToken, async (req, res, next) => {
   }
 });
 
+router.get("/findById", authenticateToken, async (req, res, next) => {
+  try {
+    await DepartmentAbl.findById(req, res);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;

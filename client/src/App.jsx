@@ -4,10 +4,11 @@ import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./components/userContext";
 
 import Dashboard from "./pages/dashboard";
-import LoginForm from "./pages/loginForm";
+import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
-import ExportPage from "./pages/exportPage";
+import ExportPage from "./pages/ExportPage";
 import NotFound from "./pages/notFound";
+import EmployeePage from "./pages/EmployeePage";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/export" element={<ExportPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/employee/:code" element={<EmployeePage />} />
         </Routes>
         <ToastContainer position="top-center" />
       </Container>

@@ -10,12 +10,21 @@ class eventAbl {
     await validate(schemas.eventCreateSchema, req.body);
 
     // authorize terminal
-    if (!req.terminal) {
+    if (!req.terminal && !req.user) {
       throw new errors.NotAuthorized();
     }
 
-    const terminalId = req.terminal._id.toString();
-    const { employeeCode, type, timestamp } = req.body;
+    let terminalId;
+
+    if (!req.terminal) {
+      terminalId = null;
+    } else {
+      terminalId = req.terminal._id.toString();
+    }
+
+    let { employeeCode, type, timestamp } = req.body;
+
+    employeeCode = Number(employeeCode) 
 
     let result = await employeeDao.findByCode(employeeCode);
 
@@ -59,6 +68,20 @@ class eventAbl {
     );
 
     res.json(shifts);
+  }
+
+  async delete(req, res) {
+    //validace inputu
+    await validate(schemas.eventDeleteSchema, req.body);
+
+    // authorize user
+    if (!req.user) {
+      throw new errors.NotAuthorized();
+    }
+
+    let result = await eventDao.delete(req.body._id);
+
+    res.json("Successfully deleted " + result.deletedCount + " entry/ies.");
   }
 }
 

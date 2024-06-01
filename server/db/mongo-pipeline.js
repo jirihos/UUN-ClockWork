@@ -156,12 +156,16 @@ const shiftsPipeline = [
                     $eq: ["$$doc.nextDocument.type", "leave"],
                   },
                   then: {
+                    arrivalEventId: "$$doc._id",
+                    leaveEventId: "$$doc.nextDocument._id",
                     arrivalTerminalId: "$$doc.terminalId",
                     leaveTerminalId: "$$doc.nextDocument.terminalId",
                     arrivalTimestamp: "$$doc.timestamp",
                     leaveTimestamp: "$$doc.nextDocument.timestamp",
                   },
                   else: {
+                    arrivalEventId: "$$doc._id",
+                    leaveEventId: null,
                     arrivalTerminalId: "$$doc.terminalId",
                     leaveTerminalId: null,
                     arrivalTimestamp: "$$doc.timestamp",
@@ -176,6 +180,8 @@ const shiftsPipeline = [
                   },
                   then: null,
                   else: {
+                    arrivalEventId: null,
+                    leaveEventId: "$$doc._id",
                     arrivalTerminalId: null,
                     leaveTerminalId: "$$doc.terminalId",
                     arrivalTimestamp: null,

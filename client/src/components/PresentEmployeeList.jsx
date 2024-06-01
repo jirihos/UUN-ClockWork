@@ -64,7 +64,7 @@ const PresentEmployeesList = () => {
                   <ListContent>
                     <Icon name="user" style={{ marginRight: 5 }} />
                     <Link
-                      to={`/employee?code=${employee.code}`}
+                      to={`/employee/${employee.code}`}
                     >{`${employee.firstName} ${employee.lastName}`}</Link>
                   </ListContent>
                 </ListItem>

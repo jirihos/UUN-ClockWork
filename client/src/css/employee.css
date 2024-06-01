@@ -1,0 +1,73 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.employee-info {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.loading,
+.error {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ff0000;
+}
+
+.arrival-icon {
+  margin-right: 5px;
+  font-size: 1.5em;
+  color: teal;
+}
+
+.departure-icon {
+  margin-right: 5px;
+  font-size: 1.5em;
+  color: teal;
+}
+
+.delete-icon {
+  cursor: pointer;
+  float: right;
+  color: rgb(180, 180, 180);
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.red-icon {
+  cursor: pointer;
+  float: right;
+  color: rgb(255, 0, 0);
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.table-cell {
+  position: relative;
+}

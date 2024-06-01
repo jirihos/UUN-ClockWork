@@ -110,7 +110,7 @@ const EmployeeSearchResults = ({ filter, departments }) => {
                   <TableCell>{employee.lastName}</TableCell>
                   <TableCell>{employee.code}</TableCell>
                   <TableCell textAlign="center">
-                    <Link to={`/employee?code=${employee.code}`}>
+                    <Link to={`/employee/${employee.code}`}>
                       <Icon name="linkify" />
                     </Link>
                   </TableCell>
