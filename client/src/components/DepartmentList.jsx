@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Table, Segment, Button, Icon } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import ModalAddDepartment from "./modalAddDepartment";
@@ -52,7 +53,11 @@ const DepartmentList = () => {
             <Table.Body>
               {departments.map((department) => (
                 <Table.Row key={department._id}>
-                  <Table.Cell>{department.name}</Table.Cell>
+                  <Table.Cell>
+                    <Link to={`/search?departmentId=${department._id}`}>
+                      {department.name}
+                    </Link>
+                  </Table.Cell>
                   <Table.Cell textAlign="right">
                     <Button
                       onClick={() => handleDeleteDepartment(department._id)}
