@@ -1,6 +1,5 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
-import { UserContext } from "../components/userContext";
 import "../css/employee.css";
 import {
   Table,
@@ -17,7 +16,6 @@ const Employee = ({ code }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const call = useCall();
-  const userContext = useContext(UserContext);
 
   useEffect(() => {
     const fetchShiftData = async () => {
