@@ -18,6 +18,7 @@ import {
   Modal,
   Button,
 } from "semantic-ui-react";
+import ModalAddEvent from "./ModalAddEvent";
 
 const Employee = ({ code }) => {
   const [shiftData, setShiftData] = useState(null);
@@ -71,6 +72,7 @@ const Employee = ({ code }) => {
 
   return (
     <div className="container">
+      <ModalAddEvent employeeCode={code} />
       <Table celled>
         <TableHeader>
           <TableRow>
