@@ -13,14 +13,16 @@ import {
 
 import Header from "../components/header";
 import ModalAddEmployee from "../components/modalAddEmployee";
+import ModalAddDepartment from "../components/modalAddDepartment";
 import PresentEmployeesList from "../components/PresentEmployeeList";
+
 
 const Dashboard = () => {
   const call = useCall();
   const [departments, setDepartments] = useState([]);
   const [users, setUsers] = useState([]);
   const [activeItem, setActiveItem] = useState("departmentList");
-  const [name, setName] = useState("");
+  const [openDepartmentModal, setOpenDepartmentModal] = useState(false);
   const [openUser, setOpenUser] = useState(null);
 
   useEffect(() => {
@@ -41,20 +43,14 @@ const Dashboard = () => {
     };
 
     loadData();
-  }, []);
+  }, [call]);
 
   const handleItemClick = (e, { name }) => setActiveItem(name);
-  const handleNameChange = (e) => setName(e.target.value);
-  const handleAddDepartment = async () => {
-    try {
-      await call("POST", "/api/department/create", { name });
-      setName("");
-      const data = await call("GET", "/api/department/list");
-      setDepartments(data.items);
-    } catch (error) {
-      console.error(error);
-    }
+
+  const handleAddDepartmentSuccess = (newDepartment) => {
+    setDepartments([...departments, newDepartment]);
   };
+
   const handleDeleteDepartment = async (departmentId) => {
     try {
       await call("POST", "/api/department/delete", { _id: departmentId });
@@ -115,15 +111,11 @@ const Dashboard = () => {
                   ))}
                 </Table.Body>
               </Table>
-              <Input
-                fluid
-                placeholder="Name"
-                value={name}
-                onChange={handleNameChange}
+              <ModalAddDepartment
+                open={openDepartmentModal}
+                onClose={() => setOpenDepartmentModal(false)}
+                onSuccess={handleAddDepartmentSuccess}
               />
-              <Button color="teal" onClick={handleAddDepartment}>
-                Add Department
-              </Button>
             </>
           )}
           {activeItem === "userList" && (
@@ -135,7 +127,6 @@ const Dashboard = () => {
                     <Table.HeaderCell>Code</Table.HeaderCell>
                     <Table.HeaderCell>First Name</Table.HeaderCell>
                     <Table.HeaderCell>Last Name</Table.HeaderCell>
-                    <Table.HeaderCell></Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
                 <Table.Body>
