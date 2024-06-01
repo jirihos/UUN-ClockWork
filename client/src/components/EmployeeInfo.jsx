@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
-import { Loader, Message } from "semantic-ui-react";
+import { Loader, Message, Button, Icon, Modal } from "semantic-ui-react";
 import Error from "./Error";
+import ModalAddEvent from "./ModalAddEvent";
 
-const EmployeeInfo = ({ code }) => {
+const EmployeeInfo = ({ code, onEventAdded }) => {
   const [employeeInfo, setEmployeeInfo] = useState(null);
   const [departmentName, setDepartmentName] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const call = useCall();
 
   useEffect(() => {
@@ -39,9 +41,16 @@ const EmployeeInfo = ({ code }) => {
     fetchEmployeeInfo();
   }, [code, call]);
 
+  const handleModalClose = () => {
+    setModalOpen(false);
+    if (onEventAdded) {
+      onEventAdded();
+    }
+  };
+
   if (loading)
     return (
-      <div style={{ magin: 30 }}>
+      <div style={{ margin: 30 }}>
         <Loader active inline="centered" />
       </div>
     );
@@ -53,7 +62,23 @@ const EmployeeInfo = ({ code }) => {
         <Message
           icon="user"
           header={`${employeeInfo.firstName} ${employeeInfo.lastName}`}
-          content={`Code: ${employeeInfo.code}, Department: ${departmentName || "N/A"}`}
+          content={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <span>
+                Code: {employeeInfo.code}, Department: {departmentName || "N/A"}
+              </span>
+              <ModalAddEvent
+                employeeCode={employeeInfo.code}
+                onClose={handleModalClose}
+              />
+            </div>
+          }
         />
       )}
     </div>
