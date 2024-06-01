@@ -1,15 +1,43 @@
-import { useState } from "react";
-import { Modal, Form, Button } from "semantic-ui-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Modal, Form, Button, FormField, Dropdown } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
+import Error from "./Error";
 
 import "../css/modalAddEmployee.css";
 
 const ModalAddEmployee = () => {
+  const call = useCall();
+  const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [departmentId, setDepartmentId] = useState("");
-  const call = useCall();
+  const [departments, setDepartments] = useState(null);
+
+  const departmentOptions = useMemo(() => {
+    if (departments === null) return null;
+    return departments.map((department) => {
+      return { value: department._id, text: department.name };
+    });
+  }, [departments]);
+
+  const reloadDepartments = useCallback(async () => {
+    let response;
+    try {
+      response = await call(
+        "GET",
+        "/api/department/list?pageIndex=0&pageSize=1000",
+      );
+    } catch (e) {
+      setError(e);
+      throw e;
+    }
+    setDepartments(response.items);
+  }, [call]);
+
+  useEffect(() => {
+    reloadDepartments();
+  }, [reloadDepartments]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -19,18 +47,17 @@ const ModalAddEmployee = () => {
     setOpen(false);
   };
 
-  const handleNameChange = (e) => setName(e.target.value);
+  const handleFirstNameChange = (e) => setFirstName(e.target.value);
   const handleLastNameChange = (e) => setLastName(e.target.value);
-  const handleDepartmentIdChange = (e) => setDepartmentId(e.target.value);
 
   const handleAddEmployee = async () => {
     try {
       await call("POST", "/api/employee/create", {
         departmentId,
-        firstName: name,
+        firstName,
         lastName,
       });
-      setName("");
+      setFirstName("");
       setLastName("");
       setDepartmentId("");
       setOpen(false);
@@ -50,20 +77,33 @@ const ModalAddEmployee = () => {
           <Form>
             <Form.Input
               label="First Name"
-              value={name}
-              onChange={handleNameChange}
+              value={firstName}
+              onChange={handleFirstNameChange}
+              required
             />
             <Form.Input
               label="Last Name"
               value={lastName}
               onChange={handleLastNameChange}
+              required
             />
-            <Form.Input
-              label="Department Id"
-              value={departmentId}
-              onChange={handleDepartmentIdChange}
-            />
+            <FormField>
+              <label>Department</label>
+              <Dropdown
+                placeholder="Department"
+                name="departmentId"
+                selection
+                search
+                options={departmentOptions}
+                loading={departmentOptions === null}
+                disabled={departmentOptions === null}
+                value={departmentId}
+                onChange={(e, { value }) => setDepartmentId(value)}
+                required
+              />
+            </FormField>
           </Form>
+          {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions className="modal-actions">
           <Button color="teal" onClick={handleAddEmployee}>
