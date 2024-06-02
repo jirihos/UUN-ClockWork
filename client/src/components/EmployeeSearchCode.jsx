@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Input } from "semantic-ui-react";
+import { Button, Form, Input } from "semantic-ui-react";
 import "../css/employee.css"; // Adjust the path to your CSS file
 
 const EmployeeSearchCode = () => {
@@ -15,7 +15,7 @@ const EmployeeSearchCode = () => {
     }
   };
 
-  const handleClick = () => {
+  const onSubmit = () => {
     if (code.length === 4) {
       navigate(`/employee/${code}`);
     } else {
@@ -25,18 +25,19 @@ const EmployeeSearchCode = () => {
 
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <Input
-        className="wide-input" // Apply the CSS class
-        type="text"
-        placeholder="Enter 4-digit Employee code"
-        value={code}
-        onChange={handleChange}
-        maxLength="4"
-        style={{ marginRight: "1em" }}
-      />
-      <Button color="teal" onClick={handleClick}>
-        Search
-      </Button>
+      <Form onSubmit={onSubmit}>
+        <Input
+          className="wide-input" // Apply the CSS class
+          type="text"
+          placeholder="Enter 4-digit Employee code"
+          value={code}
+          onChange={handleChange}
+          maxLength="4"
+          style={{ marginRight: "1em" }}
+          required
+        />
+        <Button color="teal">Go</Button>
+      </Form>
     </div>
   );
 };
