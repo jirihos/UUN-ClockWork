@@ -90,7 +90,7 @@
         ],
         "x": 554,
         "y": 319,
-        "w": 892,
+        "w": 952,
         "h": 190
     },
     {
@@ -112,7 +112,7 @@
         ],
         "x": 554,
         "y": 879,
-        "w": 892,
+        "w": 952,
         "h": 170
     },
     {
@@ -132,7 +132,7 @@
         ],
         "x": 554,
         "y": 779,
-        "w": 892,
+        "w": 952,
         "h": 90
     },
     {
@@ -180,9 +180,9 @@
             "a84e35068f94e0c4",
             "3b73e3cd944e187c"
         ],
-        "x": 14,
+        "x": 54,
         "y": 19,
-        "w": 1432,
+        "w": 1452,
         "h": 270
     },
     {
@@ -311,12 +311,13 @@
             "20b10770f9327a5d",
             "f6d6d05d984eee08",
             "71b81da74b181148",
-            "1b3bf9104b597ba7"
+            "1b3bf9104b597ba7",
+            "91c3e59987613439"
         ],
-        "x": 734,
-        "y": 179,
-        "w": 1312,
-        "h": 162
+        "x": 754,
+        "y": 219,
+        "w": 1292,
+        "h": 122
     },
     {
         "id": "541a9b2c482b7850",
@@ -461,7 +462,7 @@
         ],
         "x": 774,
         "y": 519,
-        "w": 672,
+        "w": 732,
         "h": 230
     },
     {
@@ -619,7 +620,7 @@
             "29d70df83aa79d0a",
             "6a978d299f03f7d9",
             "49b76f0e17936237",
-            "117f0fde4f77dd6d"
+            "81089df9badd5116"
         ],
         "x": 34,
         "y": 59,
@@ -768,7 +769,8 @@
             "2e782492fb32f1c1",
             "c199e2ca4889ab34",
             "4c3871ef9f753bd0",
-            "5602f56123759665"
+            "5602f56123759665",
+            "b6a3896aed5662f7"
         ],
         "x": 54,
         "y": 619,
@@ -851,7 +853,7 @@
     {
         "id": "886cc25582355e06",
         "type": "ui_tab",
-        "name": "Home",
+        "name": "CLOCKWORK Home",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -1152,11 +1154,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 120,
+        "x": 190,
+        "y": 60,
         "wires": [
             [
-                "94a2c8b60c41d056",
                 "3b73e3cd944e187c"
             ]
         ]
@@ -1166,7 +1167,7 @@
         "type": "function",
         "z": "d537a249a96dc0df",
         "g": "aeb77755ee56e845",
-        "name": "Filter msg === 5 ",
+        "name": "? msg === 5 digits",
         "func": "if (typeof msg.payload === 'string' && msg.payload.length ===5){\n    return [msg, null]; // Send first output\n} else {\n    return [null, msg]; // Send second output\n    \n}\n    ",
         "outputs": 2,
         "timeout": 0,
@@ -1174,7 +1175,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 470,
         "y": 120,
         "wires": [
             [
@@ -1199,7 +1200,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 720,
         "y": 120,
         "wires": [
             [
@@ -1219,7 +1220,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1180,
+        "x": 1240,
         "y": 920,
         "wires": []
     },
@@ -1247,7 +1248,7 @@
                 "valueValue": "api_key"
             }
         ],
-        "x": 1250,
+        "x": 1310,
         "y": 240,
         "wires": [
             [
@@ -1282,7 +1283,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 910,
+        "x": 970,
         "y": 120,
         "wires": [
             [
@@ -1351,7 +1352,7 @@
         "upsert": false,
         "multi": false,
         "operation": "store",
-        "x": 1210,
+        "x": 1270,
         "y": 360,
         "wires": []
     },
@@ -1434,7 +1435,7 @@
         "className": "",
         "topic": "Wrong entry",
         "name": "Wrong entry Gateway",
-        "x": 400,
+        "x": 480,
         "y": 180,
         "wires": []
     },
@@ -1454,7 +1455,7 @@
         "className": "",
         "topic": "payload",
         "name": " ACCESS DENIED (locally)",
-        "x": 1300,
+        "x": 1360,
         "y": 820,
         "wires": []
     },
@@ -1474,7 +1475,7 @@
         "className": "",
         "topic": "payload",
         "name": "USER CHECKED OK (locally)",
-        "x": 1290,
+        "x": 1330,
         "y": 1000,
         "wires": []
     },
@@ -1719,7 +1720,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
+        "x": 1340,
         "y": 120,
         "wires": [
             [
@@ -1736,7 +1737,7 @@
         "name": "",
         "collection": "usersCollection",
         "operation": "find",
-        "x": 760,
+        "x": 820,
         "y": 240,
         "wires": [
             [
@@ -1771,7 +1772,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
+        "x": 1120,
         "y": 240,
         "wires": [
             [
@@ -1812,7 +1813,7 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 1280,
+        "x": 1340,
         "y": 600,
         "wires": []
     },
@@ -1878,7 +1879,7 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 1280,
+        "x": 1340,
         "y": 700,
         "wires": []
     },
@@ -1944,7 +1945,7 @@
         "correl": "",
         "expiry": "",
         "broker": "1be85959efd6d9ef",
-        "x": 1120,
+        "x": 1180,
         "y": 180,
         "wires": []
     },
@@ -1961,7 +1962,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 720,
         "y": 180,
         "wires": [
             [
@@ -1987,7 +1988,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 850,
+        "x": 910,
         "y": 180,
         "wires": [
             [
@@ -2013,10 +2014,12 @@
         "output": "timestamp",
         "outputType": "flow",
         "outTz": "Europe/Prague",
-        "x": 420,
-        "y": 60,
+        "x": 240,
+        "y": 120,
         "wires": [
-            []
+            [
+                "94a2c8b60c41d056"
+            ]
         ]
     },
     {
@@ -2024,7 +2027,7 @@
         "type": "inject",
         "z": "76b8d7d23f0dfbb5",
         "g": "57ab287daac428f3",
-        "name": "Every 10 min get list of users",
+        "name": "GET start and every 15 min",
         "props": [
             {
                 "p": "payload"
@@ -2034,14 +2037,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "600",
+        "repeat": "900",
         "crontab": "",
         "once": true,
-        "onceDelay": "5",
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
+        "x": 180,
         "y": 100,
         "wires": [
             [
@@ -2098,7 +2101,6 @@
         "y": 320,
         "wires": [
             [
-                "a7a28555fa3fc0ad",
                 "2e68e0c1a6dff21c",
                 "f2cc5306a2411e0c",
                 "a787e0b9e85b6bd2",
@@ -2106,10 +2108,9 @@
                 "1b3bf9104b597ba7"
             ],
             [
-                "f6d6d05d984eee08",
                 "a787e0b9e85b6bd2",
                 "bace35dfe37e3ffd",
-                "1b3bf9104b597ba7"
+                "91c3e59987613439"
             ]
         ]
     },
@@ -2179,7 +2180,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
+        "x": 1230,
         "y": 260,
         "wires": [
             [
@@ -2414,7 +2415,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
+        "x": 1210,
         "y": 300,
         "wires": [
             [
@@ -2552,7 +2553,7 @@
         "units": "Hours",
         "unitsType": "select",
         "nodeName": "TTL  set 10h",
-        "x": 1130,
+        "x": 1490,
         "y": 280,
         "wires": [
             [
@@ -2793,10 +2794,12 @@
         "output": "timestamp1",
         "outputType": "flow",
         "outTz": "Europe/Prague",
-        "x": 880,
-        "y": 220,
+        "x": 900,
+        "y": 260,
         "wires": [
-            []
+            [
+                "a7a28555fa3fc0ad"
+            ]
         ]
     },
     {
@@ -2847,11 +2850,37 @@
         ]
     },
     {
+        "id": "91c3e59987613439",
+        "type": "moment",
+        "z": "76b8d7d23f0dfbb5",
+        "g": "2dfa0fcb02146650",
+        "name": "Timestamp Europe\\ Prague",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Prague",
+        "adjAmount": "0",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "cz-EU",
+        "output": "timestamp1",
+        "outputType": "flow",
+        "outTz": "Europe/Prague",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "f6d6d05d984eee08"
+            ]
+        ]
+    },
+    {
         "id": "6f319aa65f5e582b",
         "type": "inject",
         "z": "d7790596fee7e9be",
         "g": "4d28f1b79c60d799",
-        "name": "",
+        "name": "POST start/ every 30min",
         "props": [
             {
                 "p": "payload"
@@ -2861,14 +2890,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "1800",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "2",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
+        "x": 190,
         "y": 100,
         "wires": [
             [
@@ -2889,7 +2918,7 @@
         "y": 100,
         "wires": [
             [
-                "117f0fde4f77dd6d"
+                "81089df9badd5116"
             ]
         ]
     },
@@ -2914,7 +2943,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 410,
+        "x": 470,
         "y": 100,
         "wires": [
             [
@@ -3078,7 +3107,7 @@
         "className": "",
         "topic": "Stashed events 'Server not responding'",
         "name": "Stashed events 'Server not responding'",
-        "x": 740,
+        "x": 750,
         "y": 660,
         "wires": []
     },
@@ -3220,31 +3249,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 440,
         "y": 160,
         "wires": [
             [
                 "29d70df83aa79d0a"
-            ]
-        ]
-    },
-    {
-        "id": "117f0fde4f77dd6d",
-        "type": "split",
-        "z": "d7790596fee7e9be",
-        "g": "4d28f1b79c60d799",
-        "name": "Split array into objects",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 180,
-        "y": 160,
-        "wires": [
-            [
-                "49b76f0e17936237"
             ]
         ]
     },
@@ -3381,6 +3390,26 @@
         "wires": [
             [
                 "3a0448e67072b1ec"
+            ]
+        ]
+    },
+    {
+        "id": "81089df9badd5116",
+        "type": "split",
+        "z": "d7790596fee7e9be",
+        "g": "4d28f1b79c60d799",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "49b76f0e17936237"
             ]
         ]
     },
@@ -3587,7 +3616,7 @@
         "order": 7,
         "width": 10,
         "height": 1,
-        "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    div[0].style.width = '180px';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
+        "format": "<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    //div[0].style.width = '180px';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -4355,8 +4384,7 @@
         "y": 700,
         "wires": [
             [
-                "bd464a090c494d7e",
-                "b8e416f13fcd9fec"
+                "bd464a090c494d7e"
             ]
         ]
     },
@@ -4575,23 +4603,6 @@
         ]
     },
     {
-        "id": "b8e416f13fcd9fec",
-        "type": "debug",
-        "z": "74d70de6eea550f9",
-        "name": "debug 20",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1600,
-        "y": 640,
-        "wires": []
-    },
-    {
         "id": "34898cdf7e4ff7c0",
         "type": "inject",
         "z": "703dc2c481ddf6ab",
@@ -4604,8 +4615,8 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "2",
         "topic": "",
         "payload": "",
         "payloadType": "str",
@@ -5061,7 +5072,7 @@
         "y": 820,
         "wires": [
             [
-                "9f4c52fd86b5192b"
+                "b6a3896aed5662f7"
             ]
         ]
     },
@@ -5079,7 +5090,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
+        "x": 700,
         "y": 820,
         "wires": []
     },
@@ -5146,7 +5157,7 @@
         "type": "function",
         "z": "703dc2c481ddf6ab",
         "g": "51eae7e42c2ec71a",
-        "name": "function 6",
+        "name": "Is device connected?",
         "func": "var payload = msg.payload;\n\nif (Object.keys(payload).length === 0 || payload === \"\") {\n     msg.payload = [{\n            id: \"?\",\n            alias: \"NO device connected\",\n            firmware: \"?\",\n            version: \"?\"\n        }];;\n} \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
@@ -5521,6 +5532,27 @@
         "wires": [
             [
                 "2e782492fb32f1c1"
+            ]
+        ]
+    },
+    {
+        "id": "b6a3896aed5662f7",
+        "type": "function",
+        "z": "703dc2c481ddf6ab",
+        "g": "51eae7e42c2ec71a",
+        "name": "Set  status to not connected",
+        "func": "var connection = 0;\nvar microcontrollerConnection = \"microcontrollerConnection\";\n\nglobal.set(microcontrollerConnection, connection = 0);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 820,
+        "wires": [
+            [
+                "9f4c52fd86b5192b"
             ]
         ]
     },

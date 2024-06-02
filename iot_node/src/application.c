@@ -101,7 +101,7 @@ void matrix_event_handler(twr_matrix_t *self, twr_matrix_event_t event, void *ev
         sprintf(codeBuffer, "%s%s", codeBuffer, xFunc);
         twr_radio_pub_string("user", codeBuffer);
         memset(codeBuffer, 0, sizeof(codeBuffer));
-        twr_led_pulse(&led, 30);
+        twr_led_pulse(&led, 100);
         return;
     }
     else if (matrix_state & (1 << 7)) // Left
@@ -110,7 +110,7 @@ void matrix_event_handler(twr_matrix_t *self, twr_matrix_event_t event, void *ev
         sprintf(codeBuffer, "%s%s", codeBuffer, xFunc);
         twr_radio_pub_string("user", codeBuffer);
         memset(codeBuffer, 0, sizeof(codeBuffer));
-        twr_led_pulse(&led, 30);
+        twr_led_pulse(&led, 100);
         return;
     }
     else if (matrix_state & (1 << 11)) // Spare (DELETE)
