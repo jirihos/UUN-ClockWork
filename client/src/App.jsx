@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import { ToastContainer } from "react-toastify";
-import { UserProvider } from "./components/userContext";
+import { UserProvider } from "./components/UserContext";
 
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
 import ExportPage from "./pages/ExportPage";
-import NotFound from "./pages/notFound";
+import NotFound from "./pages/NotFoundPage";
 import EmployeePage from "./pages/EmployeePage";
 
 function App() {

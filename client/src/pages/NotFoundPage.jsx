@@ -1,8 +1,6 @@
-import React from "react";
+import Header from "../components/Header";
 
-import Header from "../components/header";
-
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <>
       <Header />
@@ -15,4 +13,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

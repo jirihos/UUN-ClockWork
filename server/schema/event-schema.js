@@ -8,3 +8,7 @@ exports.eventCreateSchema = Joi.object({
 exports.eventDeleteSchema = Joi.object({
   _id: Joi.objectId().required(),
 });
+exports.eventExportschema = Joi.object({
+  timestampFrom: Joi.date().iso().required(),
+  timestampTo: Joi.date().iso().required(),
+});

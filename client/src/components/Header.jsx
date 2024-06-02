@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Image, Menu, MenuItem } from "semantic-ui-react";
 import { useLogout } from "../helpers/authentication-helper";
-import { UserContext } from "./userContext";
+import { UserContext } from "./UserContext";
+import Logo from "../assets/ClockWork_Logo.png";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -14,10 +15,13 @@ const Header = () => {
     <Menu stackable>
       <MenuItem header>
         <Image
-          src="https://placehold.co/50x40" // TODO logo
-          style={{ marginRight: 5 }}
+          src={Logo}
+          style={{
+            width: "90px",
+            height: "45px",
+            marginRight: "5px",
+          }}
         ></Image>
-        ClockWork
       </MenuItem>
       <MenuItem
         name="dashboard"
@@ -33,13 +37,15 @@ const Header = () => {
           navigate("/search");
         }}
       />
-      <MenuItem
-        name="export"
-        active={pathname === "/export"}
-        onClick={() => {
-          navigate("/export");
-        }}
-      />
+      {user.role === "admin" && (
+        <MenuItem
+          name="export"
+          active={pathname === "/export"}
+          onClick={() => {
+            navigate("/export");
+          }}
+        />
+      )}
 
       <MenuItem position="right">
         <span style={{ marginRight: 12 }}>

@@ -1,10 +1,11 @@
 const eventDao = require("../dao/event-mongo");
 const employeeDao = require("../dao/employee-mongo");
 const schemas = require("../schema/index");
+const papa = require("papaparse");
 const { validate } = require("../validation");
 const errors = require("../errors");
 
-class eventAbl {
+class EventAbl {
   async create(req, res) {
     //validace inputu
     await validate(schemas.eventCreateSchema, req.body);
@@ -24,7 +25,7 @@ class eventAbl {
 
     let { employeeCode, type, timestamp } = req.body;
 
-    employeeCode = Number(employeeCode) 
+    employeeCode = Number(employeeCode);
 
     let result = await employeeDao.findByCode(employeeCode);
 
@@ -83,6 +84,27 @@ class eventAbl {
 
     res.json("Successfully deleted " + result.deletedCount + " entry/ies.");
   }
+
+  async exportAllShifts(req, res) {
+    //validace inputu
+    await validate(schemas.eventExportschema, req.body);
+
+    // authorize roles
+    if (req.user?.role !== "admin") {
+      throw new errors.NotAuthorized();
+    }
+
+    const shifts = await eventDao.listShifts(
+      req.body.timestampFrom,
+      req.body.timestampTo,
+    );
+
+    // Convert JSON to CSV
+    const csv = papa.unparse(shifts);
+    // Set response headers to indicate a CSV file
+    res.header("Content-Type", "text/csv");
+    res.send(csv);
+  }
 }
 
-module.exports = new eventAbl();
+module.exports = new EventAbl();

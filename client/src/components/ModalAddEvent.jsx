@@ -1,23 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Dropdown, Form, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
 
-const ModalAddEvent = ({ employeeCode }) => {
+const ModalAddEvent = ({ employeeCode, onClose }) => {
   const call = useCall();
   const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
   const [type, setType] = useState("arrival");
   const [timestampString, setTimestampString] = useState("");
-  const formRef = React.createRef();
-
-  console.log(timestampString);
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   async function onSubmit(e) {
-    e.preventDefault();
     try {
       await call("POST", "/api/event/create", {
         employeeCode,
@@ -31,22 +32,15 @@ const ModalAddEvent = ({ employeeCode }) => {
     handleClose();
   }
 
-  function submitForm() {
-    // TODO validation doesn't trigger
-    formRef.current.dispatchEvent(
-      new Event("submit", { cancelable: true, bubbles: true }),
-    );
-  }
-
   return (
     <div>
-      <Button onClick={handleOpen}>
+      <Button color="teal" onClick={handleOpen}>
         <Icon name="plus" /> Add Event
       </Button>
       <Modal open={open} onClose={handleClose} size="tiny">
         <Modal.Header>Add Event</Modal.Header>
         <Modal.Content>
-          <Form onSubmit={onSubmit} ref={formRef}>
+          <Form id="ModalAddEventForm" onSubmit={onSubmit}>
             <Form.Group>
               <Form.Field>
                 <label>Type</label>
@@ -75,7 +69,7 @@ const ModalAddEvent = ({ employeeCode }) => {
           {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions>
-          <Button color="teal" onClick={submitForm}>
+          <Button color="teal" type="submit" form="ModalAddEventForm">
             <Icon name="check" /> Add
           </Button>
           <Button onClick={handleClose}>

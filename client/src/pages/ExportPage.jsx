@@ -1,4 +1,4 @@
-import Header from "../components/header";
+import Header from "../components/Header";
 import ExportShifts from "../components/ExportShifts";
 
 const ExportPage = () => {

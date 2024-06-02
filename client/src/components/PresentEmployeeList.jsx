@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
+  ButtonContent,
   Header,
   Icon,
   List,
@@ -47,9 +48,19 @@ const PresentEmployeesList = () => {
   }, [reload]);
 
   return (
-    <div style={{ minWidth: 300, maxWidth: 400 }}>
-      <Header attached="top" size="huge">
+    <div>
+      <Header
+        attached="top"
+        size="huge"
+        className="center-vertical"
+        style={{ justifyContent: "space-between", marginTop: 0 }}
+      >
         Present Employees
+        <Button primary size="tiny" onClick={reload}>
+          <ButtonContent>
+            <Icon name="redo" style={{ marginRight: "0.25rem" }} />
+          </ButtonContent>
+        </Button>
       </Header>
       <Segment
         attached
@@ -85,7 +96,7 @@ const PresentEmployeesList = () => {
         {totalPages === 0 && (
           <div className="center" style={{ flexDirection: "column" }}>
             <Header>No employees are present</Header>
-            <Button primary onClick={reload}>
+            <Button color="teal" onClick={reload}>
               Reload
             </Button>
           </div>

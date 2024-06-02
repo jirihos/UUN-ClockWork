@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Modal, Form, Button, FormField, Dropdown } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
 import Error from "./Error";
-
-import "../css/modalAddEmployee.css";
 
 const ModalAddEmployee = () => {
   const call = useCall();
@@ -41,6 +41,9 @@ const ModalAddEmployee = () => {
 
   const handleOpen = () => {
     setOpen(true);
+    setFirstName("");
+    setLastName("");
+    setDepartmentId("");
   };
 
   const handleClose = () => {
@@ -52,7 +55,7 @@ const ModalAddEmployee = () => {
 
   const handleAddEmployee = async () => {
     try {
-      await call("POST", "/api/employee/create", {
+      const newEmployee = await call("POST", "/api/employee/create", {
         departmentId,
         firstName,
         lastName,
@@ -61,20 +64,31 @@ const ModalAddEmployee = () => {
       setLastName("");
       setDepartmentId("");
       setOpen(false);
+      toast.success(
+        <>
+          Employee added successfully!
+          <br />
+          <strong>
+            Code:{" "}
+            <Link to={`/employee/${newEmployee.code}`}>{newEmployee.code}</Link>
+          </strong>
+        </>,
+      );
     } catch (error) {
-      console.error(error);
+      setError(error);
+      throw error;
     }
   };
 
   return (
     <div>
-      <Button primary onClick={handleOpen}>
+      <Button color="teal" onClick={handleOpen}>
         Add Employee
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>Add Employee</Modal.Header>
         <Modal.Content>
-          <Form>
+          <Form id="ModalAddEmployeeForm" onSubmit={handleAddEmployee}>
             <Form.Input
               label="First Name"
               value={firstName}
@@ -90,6 +104,7 @@ const ModalAddEmployee = () => {
             <FormField>
               <label>Department</label>
               <Dropdown
+                onClick={reloadDepartments}
                 placeholder="Department"
                 name="departmentId"
                 selection
@@ -106,7 +121,7 @@ const ModalAddEmployee = () => {
           {error && <Error error={error} />}
         </Modal.Content>
         <Modal.Actions className="modal-actions">
-          <Button color="teal" onClick={handleAddEmployee}>
+          <Button color="teal" type="submit" form="ModalAddEmployeeForm">
             Add
           </Button>
           <Button onClick={handleClose}>Close</Button>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Table, Segment, Button, Icon } from "semantic-ui-react";
+import { toast } from "react-toastify";
+import { Table, Button, Icon, Modal } from "semantic-ui-react";
 import { useCall } from "../helpers/call-helper";
-import ModalAddDepartment from "./modalAddDepartment";
+import ModalAddDepartment from "./ModalAddDepartment";
 import Error from "./Error";
 
 const DepartmentList = () => {
@@ -10,6 +11,8 @@ const DepartmentList = () => {
   const [error, setError] = useState(null);
   const [departments, setDepartments] = useState([]);
   const [openDepartmentModal, setOpenDepartmentModal] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentDepartmentId, setCurrentDepartmentId] = useState(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -29,21 +32,37 @@ const DepartmentList = () => {
     setDepartments([...departments, newDepartment]);
   };
 
-  const handleDeleteDepartment = async (departmentId) => {
+  const handleDeleteDepartment = async () => {
     try {
-      await call("POST", "/api/department/delete", { _id: departmentId });
+      await call("POST", "/api/department/delete", {
+        _id: currentDepartmentId,
+      });
       const data = await call("GET", "/api/department/list");
       setDepartments(data.items);
+      setModalOpen(false);
+      toast.success("Department was successfully deleted.");
     } catch (error) {
-      console.error(error);
+      if (error) {
+        toast.error("Department can not be deleted because there is employee.");
+      }
+      setModalOpen(false);
     }
   };
 
+  const openModal = (departmentId) => {
+    setCurrentDepartmentId(departmentId);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
-    <Segment>
+    <>
       {!error ? (
         <>
-          <Table>
+          <Table style={{ marginTop: "0px" }}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Name</Table.HeaderCell>
@@ -54,31 +73,58 @@ const DepartmentList = () => {
               {departments.map((department) => (
                 <Table.Row key={department._id}>
                   <Table.Cell>
-                    <Link to={`/search?departmentId=${department._id}`}>
+                    <Link
+                      to={`/search?departmentId=${department._id}`}
+                      color="teal"
+                    >
                       {department.name}
                     </Link>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
                     <Button
-                      onClick={() => handleDeleteDepartment(department._id)}
+                      color="teal"
+                      icon
+                      labelPosition="left"
+                      onClick={() => openModal(department._id)}
                     >
                       <Icon name="trash" />
+                      Delete
                     </Button>
                   </Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>
+            <Table.Footer>
+              <Table.Row>
+                <Table.HeaderCell colSpan="2" textAlign="left">
+                  <ModalAddDepartment
+                    open={openDepartmentModal}
+                    onClose={() => setOpenDepartmentModal(false)}
+                    onSuccess={handleAddDepartmentSuccess}
+                  />
+                </Table.HeaderCell>
+              </Table.Row>
+            </Table.Footer>
           </Table>
-          <ModalAddDepartment
-            open={openDepartmentModal}
-            onClose={() => setOpenDepartmentModal(false)}
-            onSuccess={handleAddDepartmentSuccess}
-          />
+          <Modal open={modalOpen} onClose={closeModal} size="small">
+            <Modal.Header>Confirm Deletion</Modal.Header>
+            <Modal.Content>
+              <p>Are you sure you want to delete this department?</p>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button onClick={closeModal} negative>
+                No
+              </Button>
+              <Button onClick={handleDeleteDepartment} positive>
+                Yes
+              </Button>
+            </Modal.Actions>
+          </Modal>
         </>
       ) : (
         <Error error={error} />
       )}
-    </Segment>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 .container {
-  padding: 20px;
+  /*padding: 20px;*/
   font-family: Arial, sans-serif;
 }
 
@@ -33,7 +33,7 @@ tr:hover {
 
 .loading,
 .error {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 18px;
   color: #ff0000;
 }
@@ -60,14 +60,15 @@ tr:hover {
 }
 
 .red-icon {
-  cursor: pointer;
-  float: right;
-  color: rgb(255, 0, 0);
+  margin-right: 5px;
   font-size: 1.5em;
-  margin-left: 10px;
-  margin-right: 10px;
+  color: red;
 }
 
 .table-cell {
   position: relative;
+}
+
+.wide-input {
+  width: 210px; /* Adjust width as needed */
 }

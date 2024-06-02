@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { useCall } from "../helpers/call-helper";
 import "../css/employee.css";
+import { Loader, Message, Button, Icon } from "semantic-ui-react";
+import Error from "./Error";
+import ModalAddEvent from "./ModalAddEvent";
 
-const EmployeeInfo = ({ code }) => {
+const EmployeeInfo = ({ code, onEventAdded }) => {
   const [employeeInfo, setEmployeeInfo] = useState(null);
   const [departmentName, setDepartmentName] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [employeeNotFound, setEmployeeNotFound] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const call = useCall();
 
   useEffect(() => {
@@ -16,6 +21,11 @@ const EmployeeInfo = ({ code }) => {
           "GET",
           `/api/employee/findByCode?code=${code}`,
         );
+        if (!response) {
+          setEmployeeNotFound(true);
+          setLoading(false);
+          return;
+        }
         setEmployeeInfo(response);
 
         // Fetch department name
@@ -37,19 +47,60 @@ const EmployeeInfo = ({ code }) => {
     fetchEmployeeInfo();
   }, [code, call]);
 
-  if (loading) return <div className="loading">Loading...</div>;
-  if (error)
-    return <div className="error">Error loading data: {error.message}</div>;
+  const handleModalClose = () => {
+    setModalOpen(false);
+    if (onEventAdded) {
+      onEventAdded();
+    }
+  };
+
+  if (loading)
+    return (
+      <div style={{ margin: 30 }}>
+        <Loader active inline="centered" />
+      </div>
+    );
+  if (error) {
+    if (error.data?.error?.code === "EmployeeCodeNotFound") {
+      return (
+        <div className="employee-info">
+          <Message negative>
+            <Message.Header>Employee Not Found</Message.Header>
+            <p>
+              No employee with the code <strong>{code}</strong> was found.
+            </p>
+          </Message>
+        </div>
+      );
+    } else {
+      return <Error error={error} />;
+    }
+  }
 
   return (
     <div className="employee-info">
       {employeeInfo && (
-        <>
-          <h2>
-            {employeeInfo.firstName} {employeeInfo.lastName}
-          </h2>
-          <h3>Department: {departmentName || "N/A"}</h3>
-        </>
+        <Message
+          icon="user"
+          header={`${employeeInfo.firstName} ${employeeInfo.lastName}`}
+          content={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <span>
+                Code: {employeeInfo.code}, Department: {departmentName || "N/A"}
+              </span>
+              <ModalAddEvent
+                employeeCode={employeeInfo.code}
+                onClose={handleModalClose}
+              />
+            </div>
+          }
+        />
       )}
     </div>
   );
